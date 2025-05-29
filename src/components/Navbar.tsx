@@ -49,7 +49,7 @@ const Navbar = () => {
                 <Link to="/papers">Papers</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link to="/gallery">Gallery</Link>
+                <Link to="/gallery">Locations</Link>
               </Button>
               <Button className="ml-2 bg-red-600 hover:bg-red-700 text-white" asChild>
                 <Link to="/donate">Donate</Link>
