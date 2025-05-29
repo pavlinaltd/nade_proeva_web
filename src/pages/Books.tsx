@@ -99,49 +99,6 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
 const Books = () => {
   const books: BookProps[] = [
     {
-      title: "Religion of the Ancient Macedonians",
-      originalTitle: "Религијата на Античките Македонци",
-      author: "Nade Proeva",
-      editor: "Nade Proeva",
-      year: "2014",
-      publisher: "Grafotisok, Skopje, Macedonia",
-      series: "HISTORIA ANTIQUA MACEDONICA",
-      volume: "11",
-      description: "A detailed study of religious practices, beliefs, and mythological traditions in ancient Macedonia. This book explores both the indigenous elements of Macedonian religion and the syncretic influences from neighboring cultures.",
-      imageUrl: "/lovable-uploads/a914d7e4-d98e-4959-a9d7-917951c81625.png",
-      isbn: "978-9989-2978-5-4",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Religion+Ancient+Macedonians"
-    },
-    {
-      title: "Triptych for Macedonian Identity",
-      originalTitle: "Триптих за Македонскиот идентитет",
-      author: "Nade Proeva",
-      editor: "Nikola Minov",
-      year: "2018",
-      publisher: "Ilino Int., Skopje",
-      series: "Monograph Series",
-      volume: "2",
-      description: "A scholarly analysis of the development of Macedonian identity through three distinct historical periods, examining cultural continuity and evolution of national consciousness.",
-      imageUrl: "/lovable-uploads/e1908f6c-4b04-4e2b-ac65-0eef5d1277e5.png",
-      isbn: "978-608-245-363-7",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Triptych+Macedonian+Identity"
-    },
-    {
-      title: "National Awareness of the Macedonian Slavs",
-      originalTitle: "Народносната свест на македонските Словени",
-      author: "Angel Dinev",
-      editor: "Nikola Minov",
-      translator: "Nade Proeva",
-      year: "2022",
-      publisher: "Ilino Int., Skopje",
-      series: "Monograph Series",
-      volume: "3",
-      description: "An examination of the development of national consciousness among Macedonian Slavs throughout history, with particular focus on identity formation processes during the 19th and early 20th centuries.",
-      imageUrl: "/lovable-uploads/ebecb8bf-e9a1-4310-804f-140346e65835.png",
-      isbn: "978-608-66974-0-2",
-      amazonUrl: "https://www.amazon.com/s?k=Angel+Dinev+National+Awareness+Macedonian+Slavs"
-    },
-    {
       title: "Studies for Ancient Macedonians",
       originalTitle: "Studii za Antičkite Makedonci",
       author: "Nade Proeva",
@@ -154,6 +111,21 @@ const Books = () => {
       imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "9989-619-26-3",
       amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Studies+Ancient+Macedonians"
+    },
+    {
+      title: "Cradle of Macedonian Statehood",
+      originalTitle: "Lulkata na Makedonskata Državnost",
+      author: "Alfred Delakoulonša",
+      editor: "Nade Proeva",
+      translator: "Nade Proeva",
+      year: "2000",
+      publisher: "Macedonia Prima, Ohrid",
+      series: "HISTORIA ANTIQUA MACEDONICA",
+      volume: "6",
+      description: "An exploration of the origins and early development of Macedonian statehood, examining archaeological evidence, historical sources, and the emergence of political institutions in the region.",
+      imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+      isbn: "9989-619-40-9",
+      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Cradle+Macedonian+Statehood"
     },
     {
       title: "History of the Argeadites",
@@ -199,19 +171,47 @@ const Books = () => {
       amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Alexander+of+Macedon"
     },
     {
-      title: "Cradle of Macedonian Statehood",
-      originalTitle: "Lulkata na Makedonskata Državnost",
-      author: "Alfred Delakoulonša",
+      title: "Religion of the Ancient Macedonians",
+      originalTitle: "Религијата на Античките Македонци",
+      author: "Nade Proeva",
       editor: "Nade Proeva",
-      translator: "Nade Proeva",
-      year: "2000",
-      publisher: "Macedonia Prima, Ohrid",
+      year: "2014",
+      publisher: "Grafotisok, Skopje, Macedonia",
       series: "HISTORIA ANTIQUA MACEDONICA",
-      volume: "6",
-      description: "An exploration of the origins and early development of Macedonian statehood, examining archaeological evidence, historical sources, and the emergence of political institutions in the region.",
-      imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-      isbn: "9989-619-40-9",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Cradle+Macedonian+Statehood"
+      volume: "11",
+      description: "A detailed study of religious practices, beliefs, and mythological traditions in ancient Macedonia. This book explores both the indigenous elements of Macedonian religion and the syncretic influences from neighboring cultures.",
+      imageUrl: "/lovable-uploads/a914d7e4-d98e-4959-a9d7-917951c81625.png",
+      isbn: "978-9989-2978-5-4",
+      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Religion+Ancient+Macedonians"
+    },
+    {
+      title: "Triptych for Macedonian Identity",
+      originalTitle: "Триптих за Македонскиот идентитет",
+      author: "Nade Proeva",
+      editor: "Nikola Minov",
+      year: "2018",
+      publisher: "Ilino Int., Skopje",
+      series: "Monograph Series",
+      volume: "2",
+      description: "A scholarly analysis of the development of Macedonian identity through three distinct historical periods, examining cultural continuity and evolution of national consciousness.",
+      imageUrl: "/lovable-uploads/e1908f6c-4b04-4e2b-ac65-0eef5d1277e5.png",
+      isbn: "978-608-245-363-7",
+      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Triptych+Macedonian+Identity"
+    },
+    {
+      title: "National Awareness of the Macedonian Slavs",
+      originalTitle: "Народносната свест на македонските Словени",
+      author: "Angel Dinev",
+      editor: "Nikola Minov",
+      translator: "Nade Proeva",
+      year: "2022",
+      publisher: "Ilino Int., Skopje",
+      series: "Monograph Series",
+      volume: "3",
+      description: "An examination of the development of national consciousness among Macedonian Slavs throughout history, with particular focus on identity formation processes during the 19th and early 20th centuries.",
+      imageUrl: "/lovable-uploads/ebecb8bf-e9a1-4310-804f-140346e65835.png",
+      isbn: "978-608-66974-0-2",
+      amazonUrl: "https://www.amazon.com/s?k=Angel+Dinev+National+Awareness+Macedonian+Slavs"
     }
   ];
 
