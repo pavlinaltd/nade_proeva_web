@@ -210,12 +210,6 @@ const About = () => {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Cultural Preservation</h4>
-                  <p>
-                    Through her archaeological work and publications, she contributed significantly to the preservation and documentation of Macedonian cultural heritage.
-                  </p>
-                </div>
-                <div>
                   <h4 className="font-semibold mb-2">International Recognition</h4>
                   <p>
                     Her receipt of the Order of Knight of Academic Palms from France in 1997 highlights the international recognition of her contributions to historical scholarship and education.
