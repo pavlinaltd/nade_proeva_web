@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@radix-ui/react-navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,13 +28,72 @@ const Navbar = () => {
                 className="h-10 w-auto"
               />
               <span className="ml-3 text-xl font-playfair font-semibold text-memorial-900">
-                The Nade Proeva<br />
-                <span className="text-sm font-normal">Endowment Fund</span>
+                Nade Proeva
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
+          {/* {!isMobile && (
+            <NavigationMenu className="flex items-center space-x-1">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/" className={"flex items-center gap-1"}>
+                  Home
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/about" className={"flex items-center gap-1"}>
+                  About
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="flex items-center gap-1">
+                  Work
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <NavigationMenuLink href="/books" className={"flex items-center gap-1"}>
+                      Books
+                    </NavigationMenuLink>
+                    <NavigationMenuLink href="/papers" className={"flex items-center gap-1"}>
+                      Papers
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="flex items-center gap-1">
+                  Components
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  {/* <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {components.map((component) => (
+                      <div
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                      >
+                        {component.description}
+                      </div>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/about" className="ml-2 bg-red-600 hover:bg-red-700 text-white">
+                  Donate
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+            <NavigationMenuIndicator />
+          </NavigationMenu>
+          )} */}
+
           {!isMobile && (
             <nav className="flex items-center space-x-1">
               <Button variant="ghost" asChild>
@@ -49,7 +109,16 @@ const Navbar = () => {
                 <Link to="/papers">Papers</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link to="/gallery">Locations</Link>
+                <Link to="/locations">Locations</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link to="/columns">Columns</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link to="/interviews">Interviews</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link to="/testimonials">Testimonials</Link>
               </Button>
               <Button className="ml-2 bg-red-600 hover:bg-red-700 text-white" asChild>
                 <Link to="/donate">Donate</Link>
