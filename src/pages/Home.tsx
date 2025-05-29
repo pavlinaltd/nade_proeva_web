@@ -8,25 +8,25 @@ const Home = () => {
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="relative py-20 rounded-lg overflow-hidden bg-gradient-to-r from-burgundy-900 to-burgundy-700 text-white">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6">
-              Professor Nade Proeva
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-100">
-              September 9, 1949 - November 6, 2024
-            </p>
-            <p className="text-lg md:text-xl mb-8 leading-relaxed">
-              A distinguished Macedonian historian, academic, and devoted educator 
-              whose work illuminated ancient Macedonian history.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-white text-memorial-900 hover:bg-gray-100">
-                <Link to="/about">About Her Life</Link>
-              </Button>
-              <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white">
-                <Link to="/donate">Support the Scholarship</Link>
-              </Button>
+        <div className="flex flex-row justify-center px-20 gap-10">
+          <img
+            src="/nade.jpg"
+            alt="Professor Dr. Nade Proeva"
+            className="max-w-md h-auto border-0 rounded-lg"
+          ></img>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-left">
+              <h1 className="text-3xl md:text-3xl lg:text-4xl font-playfair italic mb-6">
+                "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
+              </h1>
+              <p className="text-lg md:text-xl mb-8 leading-relaxed">
+                - Professor Dr. Nade Proeva
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button asChild size="lg" className="bg-amber-300 hover:bg-amber-400 text-burgundy-950 font-semibold">
+                  <Link to="/donate">Contribute to the Endowment Fund</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
