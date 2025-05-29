@@ -111,7 +111,7 @@ const Gallery = () => {
   return (
     <div>
       <SectionHeader
-        title="Gallery"
+        title="Locations"
         subtitle="Explore photos, videos, and media related to Professor Proeva's academic career and public appearances."
       />
 
