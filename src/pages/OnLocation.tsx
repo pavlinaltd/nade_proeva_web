@@ -13,45 +13,10 @@ interface MediaItem {
   year?: string;
 }
 
-const Gallery = () => {
+const OnLocation = () => {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
 
   const photos: MediaItem[] = [
-    {
-      type: "image",
-      src: "/lovable-uploads/2ef56b0a-f180-4990-9f80-6f37c63e77de.png",
-      title: "Press Conference",
-      caption: "Professor Proeva speaking at a press conference discussing her research on ancient Macedonian history, circa 1998.",
-      year: "1998"
-    },
-    {
-      type: "image",
-      src: "/lovable-uploads/5d1835c6-1681-427e-aa7d-25a3e8bb20a7.png",
-      title: "Academic Seminar",
-      caption: "Professor Proeva presenting her findings at an academic seminar on Macedonian cultural heritage at the University of Skopje.",
-      year: "2000"
-    },
-    {
-      type: "image",
-      src: "/lovable-uploads/660bb366-35d6-4b6f-bc49-ae9c81a462ec.png",
-      title: "Media Interview",
-      caption: "Professor Proeva during a media interview about her groundbreaking research on ancient Macedonian identity, with the Macedonian flag visible.",
-      year: "2002"
-    },
-    {
-      type: "image",
-      src: "/lovable-uploads/b91fd4ae-3268-4a67-9c4d-9c2bc84bdb77.png",
-      title: "Conference Lecture",
-      caption: "Professor Proeva delivering a lecture at an international conference on ancient history in Athens, highlighting her expertise in classical studies.",
-      year: "1995"
-    },
-    {
-      type: "image",
-      src: "/lovable-uploads/44b706b2-4703-46fa-bff5-f685fd5cc269.png",
-      title: "Public Lecture",
-      caption: "Professor Proeva giving a public lecture on the history of ancient Macedonia to a large audience at the National Library in Skopje.",
-      year: "2007"
-    },
     {
       type: "image",
       src: "/images/jan1.jpg",
@@ -166,7 +131,6 @@ const Gallery = () => {
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-playfair font-semibold text-memorial-900 mb-1">{photo.title}</h3>
                   {photo.year && <p className="text-sm text-gray-500 mb-2">{photo.year}</p>}
                   {photo.caption && <p className="text-sm text-gray-700">{photo.caption}</p>}
                 </div>
@@ -273,4 +237,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default OnLocation;

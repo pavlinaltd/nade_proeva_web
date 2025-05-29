@@ -9,12 +9,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Books from "./pages/Books";
 import Papers from "./pages/Papers";
-import Gallery from "./pages/Gallery";
+import OnLocation from "./pages/OnLocation";
 import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import Testimonials from "./pages/Testimonials";
 import Columns from "./pages/Columns";
-import Interviews from "./pages/Interviews";
+import Media from "./pages/Media";
 
 const queryClient = new QueryClient();
 
@@ -30,9 +30,9 @@ const App = () => (
             <Route path="about" element={<About />} />
             <Route path="books" element={<Books />} />
             <Route path="papers" element={<Papers />} />
-            <Route path="locations" element={<Gallery />} />
+            <Route path="on-location" element={<OnLocation />} />
             <Route path="columns" element={<Columns />} />
-            <Route path="interviews" element={<Interviews />} />
+            <Route path="media" element={<Media />} />
             <Route path="testimonials" element={<Testimonials />} />
             <Route path="donate" element={<Donate />} />
             <Route path="*" element={<NotFound />} />

@@ -109,13 +109,13 @@ const Navbar = () => {
                 <Link to="/papers">Papers</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link to="/locations">Locations</Link>
+                <Link to="/on-location">On-Location</Link>
               </Button>
               <Button variant="ghost" asChild>
                 <Link to="/columns">Columns</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link to="/interviews">Interviews</Link>
+                <Link to="/media">Media</Link>
               </Button>
               <Button variant="ghost" asChild>
                 <Link to="/testimonials">Testimonials</Link>

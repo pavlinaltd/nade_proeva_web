@@ -1,13 +1,13 @@
 import SectionHeader from "@/components/SectionHeader";
 
-const Interviews = () => {
+const Media = () => {
   return (
     <SectionHeader
-      title="Interviews"
+      title="Media"
       subtitle="Subtitle"
     />
   )
 
 };
 
-export default Interviews;
+export default Media;
