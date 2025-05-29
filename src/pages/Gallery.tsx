@@ -51,7 +51,35 @@ const Gallery = () => {
       title: "Public Lecture",
       caption: "Professor Proeva giving a public lecture on the history of ancient Macedonia to a large audience at the National Library in Skopje.",
       year: "2007"
-    }
+    },
+    {
+      type: "image",
+      src: "/images/jan1.jpg",
+      title: "Title",
+      caption: "Caption",
+      year: "Year"
+    },
+    {
+      type: "image",
+      src: "/images/jan2.jpg",
+      title: "Title",
+      caption: "Caption",
+      year: "Year"
+    },
+    {
+      type: "image",
+      src: "/images/march1.jpg",
+      title: "Title",
+      caption: "Caption",
+      year: "Year"
+    },
+    {
+      type: "image",
+      src: "/images/march2.jpg",
+      title: "Title",
+      caption: "Caption",
+      year: "Year"
+    },
   ];
 
   const videos: MediaItem[] = [
