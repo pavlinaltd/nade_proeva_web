@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative py-20 rounded-lg overflow-hidden bg-gradient-to-r from-memorial-900 to-memorial-700 text-white">
+      <section className="relative py-20 rounded-lg overflow-hidden bg-gradient-to-r from-burgundy-900 to-burgundy-700 text-white">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6">
