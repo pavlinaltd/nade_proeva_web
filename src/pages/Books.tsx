@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
-import { 
+import {
   Table,
   TableBody,
   TableCell,
@@ -47,7 +47,6 @@ const BookCard = ({ book }: { book: BookProps }) => {
           {book.translator && <p>Translator: {book.translator}</p>}
           <p>{book.year} • {book.publisher}</p>
           <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
-          {book.isbn && <p>ISBN: {book.isbn}</p>}
         </div>
         <p className="text-gray-700 mb-4">{book.description}</p>
         {book.amazonUrl && (
