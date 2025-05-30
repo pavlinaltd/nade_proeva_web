@@ -1,5 +1,5 @@
 import SectionHeader from "@/components/SectionHeader";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface VideoItem {
   type: "video";
@@ -13,14 +13,13 @@ interface VideoItem {
 const Media = () => {
 
   const audios = [
-    // TODO: remove placeholder or replace with actual audio files
-    {
-      type: "audio",
-      src: "/audio/interview.mp3",
-      title: "Interview with Professor Proeva",
-      caption: "Discussing her research on ancient Macedonian identity.",
-      year: "2015"
-    }
+    // {
+    //   type: "audio",
+    //   src: "/audio/interview.mp3",
+    //   title: "Interview with Professor Proeva",
+    //   caption: "Discussing her research on ancient Macedonian identity.",
+    //   year: "2015"
+    // }
   ];
 
   const videos: VideoItem[] = [
@@ -41,8 +40,8 @@ const Media = () => {
       subtitle="Subtitle"
     />
 
-    <Tabs defaultValue="photos" className="w-full mb-8">
-      <TabsList className="grid w-full grid-cols-3 mb-6">
+    <Tabs defaultValue="audio" className="w-full mb-8">
+      <TabsList className="grid w-full grid-cols-2 mb-6">
         <TabsTrigger value="audio">Audio</TabsTrigger>
         <TabsTrigger value="video">Video</TabsTrigger>
       </TabsList>
@@ -77,17 +76,15 @@ const Media = () => {
           {videos.map((video, index) => (
             <div
               key={index} 
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
+              className="bg-white rounded-lg overflow-hidden shadow-md"
             >
-              <div className="aspect-video relative">
+              <div className="aspect-[4/3] relative">
                 <video
-                  width="640"
-                  height="480"
                   className="w-full h-full object-cover"
                   controls
                   controlsList="nodownload"
                 >
-                  <source 
+                  <source
                     src={video.src} 
                     type="video/mp4"
                   />
