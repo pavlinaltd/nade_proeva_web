@@ -48,6 +48,13 @@ const Media = () => {
       
       <TabsContent value="audio" className="animate-fade-in">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Podium */}
+          <img 
+            src="/images/podium.webp" 
+            alt="Podium"
+            className="w-full h-auto rounded-lg shadow-md mb-6"
+          />
+          {/* Items */}
           {audios.map((photo, index) => (
             <div 
               key={index} 
