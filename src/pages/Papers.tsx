@@ -111,7 +111,12 @@ const Papers = () => {
     <div>
       <SectionHeader
         title="Academic Papers"
-        subtitle="Professor Proeva published numerous scholarly articles in prestigious academic journals throughout her career. Her papers are characterized by meticulous research, innovative methodologies, and insightful analysis."
+        subtitle="
+          Professor Proeva's scholarly legacy encompasses over 50 academic publications,
+          including research articles, book reviews, conference papers, and encyclopedia entries.
+          Her work is distinguished by meticulous research, innovative methodology, and insightful analysis.
+          Many of these works are accessible through academic databases such as academia.edu or by
+          contacting the Department of History at Ss. Cyril and Methodius University in Skopje."
       />
 
       <Tabs defaultValue="table" className="w-full mb-8">
@@ -187,13 +192,6 @@ const Papers = () => {
           </div>
         </TabsContent>
       </Tabs>
-
-      <div className="bg-memorial-50 rounded-lg p-6 border border-memorial-100 mt-8">
-        <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-4">Additional Resources</h3>
-        <p className="text-gray-700">
-          Professor Proeva's complete scholarly output includes over 50 academic papers, book reviews, conference proceedings, and encyclopedia entries. Many of these can be accessed through academic databases or by contacting the Department of History at Ss. Cyril and Methodius University in Skopje.
-        </p>
-      </div>
     </div>
   );
 };
