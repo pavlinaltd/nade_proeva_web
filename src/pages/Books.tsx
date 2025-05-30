@@ -49,12 +49,15 @@ const BookCard = ({ book }: { book: BookProps }) => {
           <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
         </div>
         <p className="text-gray-700 mb-4">{book.description}</p>
-        {book.amazonUrl && (
+        {book.amazonUrl ? (
           <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
             <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink size={16} />
-              Find on Amazon
+              Find on Amazon Books
             </a>
+          </Button>) : (
+          <Button className="flex items-center bg-gray-900" disabled>
+            Available Soon to Amazon Books
           </Button>
         )}
       </div>
@@ -109,7 +112,7 @@ const Books = () => {
       description: "A comprehensive analysis of ancient Macedonian society, culture, and political structures. This groundbreaking work challenges traditional interpretations of ancient Macedonian identity and provides new insights based on archaeological and epigraphic evidence.",
       imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "9989-619-26-3",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Studies+Ancient+Macedonians"
+      amazonUrl: ""
     },
     {
       title: "Cradle of Macedonian Statehood",
@@ -124,7 +127,6 @@ const Books = () => {
       description: "An exploration of the origins and early development of Macedonian statehood, examining archaeological evidence, historical sources, and the emergence of political institutions in the region.",
       imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "9989-619-40-9",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Cradle+Macedonian+Statehood"
     },
     {
       title: "History of the Argeadites",
@@ -138,7 +140,7 @@ const Books = () => {
       description: "An in-depth examination of the Argead dynasty of ancient Macedonia, from its mythical origins to the reign of Alexander the Great. This work provides a critical reassessment of primary sources and recent archaeological discoveries.",
       imageUrl: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
       isbn: "",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+History+Argeadites"
+      amazonUrl: ""
     },
     {
       title: "History of Epigonites",
@@ -153,7 +155,6 @@ const Books = () => {
       description: "A scholarly analysis of the period following Alexander the Great's death, examining the complex power dynamics and conflicts among his successors known as the Epigoni.",
       imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
       isbn: "",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+History+Epigonites"
     },
     {
       title: "Alexander of Macedon",
@@ -167,7 +168,6 @@ const Books = () => {
       description: "A detailed biographical work on Alexander the Great, examining his conquests, policies, and lasting impact on world history through a critical historical lens.",
       imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "978-9989-2978-2-3",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Alexander+of+Macedon"
     },
     {
       title: "Religion of the Ancient Macedonians",
@@ -181,7 +181,7 @@ const Books = () => {
       description: "A detailed study of religious practices, beliefs, and mythological traditions in ancient Macedonia. This book explores both the indigenous elements of Macedonian religion and the syncretic influences from neighboring cultures.",
       imageUrl: "/lovable-uploads/a914d7e4-d98e-4959-a9d7-917951c81625.png",
       isbn: "978-9989-2978-5-4",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Religion+Ancient+Macedonians"
+      amazonUrl: ""
     },
     {
       title: "Triptych for Macedonian Identity",
@@ -195,7 +195,7 @@ const Books = () => {
       description: "A scholarly analysis of the development of Macedonian identity through three distinct historical periods, examining cultural continuity and evolution of national consciousness.",
       imageUrl: "/lovable-uploads/e1908f6c-4b04-4e2b-ac65-0eef5d1277e5.png",
       isbn: "978-608-245-363-7",
-      amazonUrl: "https://www.amazon.com/s?k=Nade+Proeva+Triptych+Macedonian+Identity"
+      amazonUrl: ""
     },
     {
       title: "National Awareness of the Macedonian Slavs",
@@ -210,7 +210,6 @@ const Books = () => {
       description: "An examination of the development of national consciousness among Macedonian Slavs throughout history, with particular focus on identity formation processes during the 19th and early 20th centuries.",
       imageUrl: "/lovable-uploads/ebecb8bf-e9a1-4310-804f-140346e65835.png",
       isbn: "978-608-66974-0-2",
-      amazonUrl: "https://www.amazon.com/s?k=Angel+Dinev+National+Awareness+Macedonian+Slavs"
     }
   ];
 
@@ -222,7 +221,7 @@ const Books = () => {
       />
 
       <div className="space-y-8">
-        {books.slice(0, 5).map((book, index) => (
+        {books.filter((book) => book.author === "Nade Proeva").map((book, index) => (
           <BookCard key={index} book={book} />
         ))}
       </div>
