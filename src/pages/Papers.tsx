@@ -145,7 +145,13 @@ const Papers = () => {
                       <TableCell>{paper.year}</TableCell>
                       <TableCell>
                         <Button asChild variant="ghost" size="sm">
-                          <a href={paper.url} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={paper.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Read "${paper.title}" on Academia.edu`}
+                            title={`Read "${paper.title}" on Academia.edu`}
+                          >
                             <ExternalLink size={16} />
                           </a>
                         </Button>
