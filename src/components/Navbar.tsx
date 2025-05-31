@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@radix-ui/react-navigation-menu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,96 +34,65 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          {/* {!isMobile && (
-            <NavigationMenu className="flex items-center space-x-1">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/" className={"flex items-center gap-1"}>
-                  Home
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/about" className={"flex items-center gap-1"}>
-                  About
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="flex items-center gap-1">
-                  Work
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    <NavigationMenuLink href="/books" className={"flex items-center gap-1"}>
-                      Books
-                    </NavigationMenuLink>
-                    <NavigationMenuLink href="/papers" className={"flex items-center gap-1"}>
-                      Papers
-                    </NavigationMenuLink>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="flex items-center gap-1">
-                  Components
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  {/* <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {components.map((component) => (
-                      <div
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </div>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/about" className="ml-2 bg-red-600 hover:bg-red-700 text-white">
-                  Donate
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-            <NavigationMenuIndicator />
-          </NavigationMenu>
-          )} */}
-
           {!isMobile && (
-            <nav className="flex items-center space-x-1">
-              <Button variant="ghost" asChild>
-                <Link to="/">Home</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/about">About</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/books">Books</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/papers">Papers</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/on-location">On Location</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/columns">Columns</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/media">Media</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/testimonials">Testimonials</Link>
-              </Button>
-              <Button className="ml-2 bg-red-600 hover:bg-red-700 text-white" asChild>
-                <Link to="/donate">Donate</Link>
-              </Button>
-            </nav>
+            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink  href="/" className={"flex items-center gap-1"}>
+                    Home
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/about" className={"flex items-center gap-1"}>
+                    About
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger> Work </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="flex flex-col gap-3 p-6 position-absolute top-0 bg-white shadow-lg rounded-lg">
+                      <NavigationMenuLink href="/books" className={"flex items-center gap-1"}>
+                        Books
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/papers" className={"flex items-center gap-1"}>
+                        Papers
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>
+                    Photos
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="flex flex-col gap-3 p-6 position-absolute top-0 bg-white shadow-lg rounded-lg">
+                      <NavigationMenuLink href="/media">
+                        Media
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/on-location">
+                        On Location
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/columns">
+                        Columns
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/testimonials">
+                        Testimonials
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+            
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/about" className="ml-2 bg-red-600 hover:bg-red-700 text-white">
+                    Donate
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+              <NavigationMenuIndicator />
+            </NavigationMenu>
           )}
 
           {/* Mobile Menu Button */}
