@@ -22,7 +22,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img 
+              <img
                 src="/logo_italic.jpg" 
                 alt="The Nade Proeva Endowment Fund" 
                 className="h-10 w-auto"
@@ -39,25 +39,25 @@ const Navbar = () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuLink  href="/" className={"flex items-center gap-1"}>
-                    Home
+                    HOME
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                   <NavigationMenuLink href="/about" className={"flex items-center gap-1"}>
-                    About
+                    ABOUT
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger> Work </NavigationMenuTrigger>
+                  <NavigationMenuTrigger> WORK </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="flex flex-col gap-3 p-6 position-absolute top-0 bg-white shadow-lg rounded-lg">
                       <NavigationMenuLink href="/books" className={"flex items-center gap-1"}>
-                        Books
+                        BOOKS
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/papers" className={"flex items-center gap-1"}>
-                        Papers
+                        PAPERS
                       </NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>
@@ -65,21 +65,21 @@ const Navbar = () => {
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>
-                    Photos
+                    PHOTOS
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="flex flex-col gap-3 p-6 position-absolute top-0 bg-white shadow-lg rounded-lg">
                       <NavigationMenuLink href="/media">
-                        Media
+                        MEDIA
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/on-location">
-                        On Location
+                        ON LOCATION
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/columns">
-                        Columns
+                        COLUMNS
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/testimonials">
-                        Testimonials
+                        TESTIMONIALS
                       </NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>
@@ -87,7 +87,7 @@ const Navbar = () => {
             
                 <NavigationMenuItem>
                   <NavigationMenuLink href="/about" className="ml-2 bg-red-600 hover:bg-red-700 text-white">
-                    Donate
+                    CONTRIBUTE
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
