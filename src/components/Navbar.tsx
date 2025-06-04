@@ -38,45 +38,45 @@ const Navbar = () => {
             <NavigationMenu className="flex flex-row gap-8 items-center space-x-1">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink  href="/" className={"flex items-center gap-1"}>
+                  <Link to="/" className={"flex items-center gap-1"}>
                     HOME
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/about" className={"flex items-center gap-1"}>
+                  <Link to="/about" className={"flex items-center gap-1"}>
                     ABOUT
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/books" className={"flex items-center gap-1"}>
+                  <Link to="/books" className={"flex items-center gap-1"}>
                     BOOKS
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/papers" className={"flex items-center gap-1"}>
+                  <Link to="/papers" className={"flex items-center gap-1"}>
                     PAPERS
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/columns" className={"flex items-center gap-1"}>
+                  <Link to="/columns" className={"flex items-center gap-1"}>
                     COLUMNS
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/media" className={"flex items-center gap-1"}>
+                  <Link to="/media" className={"flex items-center gap-1"}>
                     MEDIA
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/on-location" className={"flex items-center gap-1"}>
+                  <Link to="/on-location" className={"flex items-center gap-1"}>
                     ON LOCATION
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
