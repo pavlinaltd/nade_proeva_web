@@ -93,6 +93,8 @@ export default {
 			fontFamily: {
 				playfair: ['"Playfair Display"', 'serif'],
 				opensans: ['"Open Sans"', 'sans-serif'],
+				droidserif: ['"Droid Serif"', 'serif'], // Use 400 or 700
+				droidsans: ['"Droid Sans"', 'sans-serif'], // Use 400 or 700
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
