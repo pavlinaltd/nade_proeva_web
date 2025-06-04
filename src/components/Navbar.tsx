@@ -22,13 +22,13 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img
+              {/* <img
                 src="/logo_italic.jpg" 
                 alt="The Nade Proeva Endowment Fund" 
                 className="h-10 w-auto"
-              />
+              /> */}
               <span className="ml-3 text-xl font-playfair font-semibold text-memorial-900">
-                Nade Proeva
+                Professor Dr. Nade Proeva
               </span>
             </Link>
           </div>
@@ -50,44 +50,38 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger> WORK </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="flex flex-col gap-3 p-6 position-absolute top-0 bg-white shadow-lg rounded-lg">
-                      <NavigationMenuLink href="/books" className={"flex items-center gap-1"}>
-                        BOOKS
-                      </NavigationMenuLink>
-                      <NavigationMenuLink href="/papers" className={"flex items-center gap-1"}>
-                        PAPERS
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink href="/books" className={"flex items-center gap-1"}>
+                    BOOKS
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>
-                    PHOTOS
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="flex flex-col gap-3 p-6 position-absolute top-0 bg-white shadow-lg rounded-lg">
-                      <NavigationMenuLink href="/media">
-                        MEDIA
-                      </NavigationMenuLink>
-                      <NavigationMenuLink href="/on-location">
-                        ON LOCATION
-                      </NavigationMenuLink>
-                      <NavigationMenuLink href="/columns">
-                        COLUMNS
-                      </NavigationMenuLink>
-                      <NavigationMenuLink href="/testimonials">
-                        TESTIMONIALS
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink href="/papers" className={"flex items-center gap-1"}>
+                    PAPERS
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
-            
+
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/about" className="ml-2 bg-red-600 hover:bg-red-700 text-white">
-                    CONTRIBUTE
+                  <NavigationMenuLink href="/columns" className={"flex items-center gap-1"}>
+                    COLUMNS
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/media" className={"flex items-center gap-1"}>
+                    MEDIA
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/on-location" className={"flex items-center gap-1"}>
+                    ON LOCATION
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/testimonials" className={"flex items-center gap-1"}>
+                    REMEMBERING A SCHOLAR
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
