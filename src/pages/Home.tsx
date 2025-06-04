@@ -15,17 +15,22 @@ const Home = () => {
             className="max-w-md h-auto border-0 rounded-lg"
           ></img>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-left">
-              <h1 className="text-3xl md:text-3xl lg:text-4xl font-playfair italic mb-6">
-                "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
-              </h1>
-              <p className="text-lg md:text-xl mb-8 leading-relaxed">
-                - Professor Dr. Nade Proeva
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-amber-300 hover:bg-amber-400 text-burgundy-950 font-semibold">
-                  <Link to="/donate">Contribute to the Endowment Fund</Link>
-                </Button>
+            <div className="flex flex-col gap-20 max-w-3xl mx-auto text-left">
+              <div className="flex text-justify">
+                <h1 className="text-3xl md:text-3xl lg:text-4xl italic mb-6">
+                  "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future." -
+                  <span className="lg:text-2xl md:text-xl font-bold font-droidserif mb-8 leading-relaxed self-end">
+                    <i> Nade Proeva</i>
+                  </span>
+                </h1>
+              </div>
+              <div className="flex flex-col gap-4">
+                <img
+                  src="/images/temp-medal.jpg"
+                  alt=""
+                  width="150"
+                  height="400"
+                />
               </div>
             </div>
           </div>
@@ -36,10 +41,10 @@ const Home = () => {
       {/* Introduction Section */}
       <section className="container mx-0 px-4">
         <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="md:w-1/2">
-            <h2 className="text-3xl font-playfair font-semibold text-memorial-900 mb-4">
+          <div className="text-lg md:w-1/2">
+            {/* <h2 className="text-3xl font-bold text-memorial-900 mb-4">
               Remembering a Scholar
-            </h2>
+            </h2> */}
             <p className="text-gray-700 mb-4 leading-relaxed">
               <strong>Professor Dr. Nade Proeva</strong> was a distinguished Macedonian historian and classicist who
               served as a full professor at the Faculty of Philosophy, Department of History, at Ss.
@@ -54,14 +59,6 @@ const Home = () => {
               particularly on the history of ancient Macedonia, where she left a lasting legacy. Professor Proeva
               made enduring contributions to the academic community in her bellowed Macedonia and beyond.
             </p>
-            <div className="flex items-center">
-              <Button asChild variant="outline" className="flex items-center gap-2">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink size={16} />
-                  <span>Watch Documentary</span>
-                </a>
-              </Button>
-            </div>
           </div>
           <div className="md:w-1/2">
             <div className="rounded-lg overflow-hidden shadow-md bg-white p-3">
@@ -85,7 +82,7 @@ const Home = () => {
           <div className="w-16 h-16 bg-memorial-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Heart className="h-8 w-8 text-red-600" />
           </div>
-          <h2 className="text-3xl font-playfair font-semibold text-memorial-900 mb-4">
+          <h2 className="text-3xl font-semibold text-memorial-900 mb-4">
             Support the Nade Proeva Endowment Fund
           </h2>
           <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
