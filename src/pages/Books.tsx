@@ -41,7 +41,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
       <div className="flex gap-8 md:w-2/3 p-6">
         <div
           className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}>
-          <h3 className="text-xl font-semibold text-memorial-900 mb-2">{book.title}</h3>
+          <h3 className="text-xl font-semibold text-burgundy-900 mb-2">{book.title}</h3>
           {book.originalTitle && (
             <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
           )}
@@ -253,7 +253,7 @@ const Books = () => {
       </div>
 
       <div className="my-12">
-        <h3 className="text-xl font-semibold text-memorial-900 mb-4">Complete Bibliography</h3>
+        <h3 className="text-xl font-semibold text-burgundy-900 mb-4">Complete Bibliography</h3>
         <p className="text-gray-700 mb-6">
           Below is a comprehensive listing of books authored, edited, or translated by Professor Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
         </p>
@@ -261,16 +261,19 @@ const Books = () => {
         <BookTable books={books} />
       </div>
 
-      <div className="mt-12 bg-memorial-50 rounded-lg p-6 border border-memorial-100">
-        <h3 className="text-xl font-semibold text-memorial-900 mb-4">Additional Publications</h3>
+      <div className="mt-12 bg-burgundy-50 rounded-lg p-6 border border-burgundy-100">
+        <h3 className="text-xl font-semibold text-burgundy-900 mb-4">Additional Publications</h3>
         <p className="text-gray-700 mb-4">
           Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
         </p>
         <p className="text-gray-700 mb-6">
-          For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-memorial-700 hover:underline">info@macedonianarts.org</a>.
+          For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>.
         </p>
         
-        <Button className="flex items-center gap-2" asChild>
+        <Button
+          className="flex items-center gap-2 bg-amber-400 text-black hover:bg-amber-500 hover:text-black"
+          variant="ghost" asChild
+        >
           <a href="https://www.amazon.com/s?k=Nade+Proeva" target="_blank" rel="noopener noreferrer">
             <ExternalLink size={16} />
             Browse Professor Proeva's Books on Amazon

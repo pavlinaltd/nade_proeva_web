@@ -60,7 +60,6 @@ const Columns = () => {
     <>
     <div
       className="flex items-start gap-6"
-      // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6"
     >
       {columns.map((column, index) => (
         <div
@@ -86,7 +85,7 @@ const Columns = () => {
         className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
         onClick={closeLightbox}
       >
-        <div 
+        <div
           className="max-w-4xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
