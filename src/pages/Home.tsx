@@ -16,13 +16,11 @@ const Home = () => {
           ></img>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col gap-20 max-w-3xl mx-auto text-left">
-              <div className="flex text-justify">
+              <div className="flex flex-col text-justify">
                 <h1 className="text-3xl md:text-3xl lg:text-4xl italic mb-6">
                   "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future." -
-                  <span className="lg:text-2xl md:text-xl font-bold font-droidserif mb-8 leading-relaxed self-end">
-                    <i> Nade Proeva</i>
-                  </span>
                 </h1>
+                <p className="lg:text-2xl md:text-xl font-bold font-droidserif mb-8 leading-relaxed self-end"><i>Nade Proeva</i></p>
               </div>
               <div className="flex flex-col gap-4">
                 <img
