@@ -59,7 +59,7 @@ const Testimonials = () => {
             />
           </div>
           <div className="p-4">
-            <h3 className="font-playfair font-semibold text-memorial-900 mb-1">{testimonial.title}</h3>
+            <h3 className="font-semibold text-memorial-900 mb-1">{testimonial.title}</h3>
             {testimonial.year && <p className="text-sm text-gray-500 mb-2">{testimonial.year}</p>}
             {testimonial.caption && <p className="text-sm text-gray-700">{testimonial.caption}</p>}
           </div>
@@ -93,7 +93,7 @@ const Testimonials = () => {
             </Button>
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-2">
+            <h3 className="text-xl font-semibold text-memorial-900 mb-2">
               {selectedImage.title}
             </h3>
             {selectedImage.year && (

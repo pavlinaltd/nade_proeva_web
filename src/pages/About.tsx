@@ -20,7 +20,7 @@ const About = () => {
               </div>
             </div>
             <div className="md:w-2/3">
-              <h3 className="text-2xl font-playfair font-semibold text-memorial-800 mb-3">
+              <h3 className="text-2xl font-semibold text-memorial-800 mb-3">
                 A Life of Scholarship
               </h3>
               <p className="text-gray-700 mb-4">
@@ -33,7 +33,7 @@ const About = () => {
           </div>
           
           <div className="bg-memorial-50 p-6 rounded-lg border border-memorial-100">
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               Academic Journey
             </h3>
             <ul className="space-y-3 text-gray-700">
@@ -61,7 +61,7 @@ const About = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               International Experience
             </h3>
             <p className="text-gray-700 mb-4">
@@ -73,7 +73,7 @@ const About = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               Archaeological Work
             </h3>
             <p className="text-gray-700">
@@ -82,7 +82,7 @@ const About = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               Publications and Editorial Work
             </h3>
             <p className="text-gray-700">
@@ -91,7 +91,7 @@ const About = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               Honors and Recognition
             </h3>
             <p className="text-gray-700">
@@ -111,7 +111,7 @@ const About = () => {
               </div>
             </div>
             <div className="md:w-2/3">
-              <h3 className="text-2xl font-playfair font-semibold text-memorial-800 mb-3">
+              <h3 className="text-2xl font-semibold text-memorial-800 mb-3">
                 Dedicated Educator
               </h3>
               <p className="text-gray-700 mb-4">
@@ -125,7 +125,7 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-              <h4 className="text-lg font-playfair font-semibold text-memorial-800 mb-2">
+              <h4 className="text-lg font-semibold text-memorial-800 mb-2">
                 Areas of Expertise
               </h4>
               <ul className="space-y-2 text-gray-700">
@@ -138,7 +138,7 @@ const About = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-              <h4 className="text-lg font-playfair font-semibold text-memorial-800 mb-2">
+              <h4 className="text-lg font-semibold text-memorial-800 mb-2">
                 Public Education
               </h4>
               <p className="text-gray-700">
@@ -148,7 +148,7 @@ const About = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               Academic Impact
             </h3>
             <p className="text-gray-700 mb-4">
@@ -171,7 +171,7 @@ const About = () => {
               </div>
             </div>
             <div className="md:w-2/3">
-              <h3 className="text-2xl font-playfair font-semibold text-memorial-800 mb-3">
+              <h3 className="text-2xl font-semibold text-memorial-800 mb-3">
                 Beyond Academia
               </h3>
               <p className="text-gray-700 mb-4">
@@ -184,7 +184,7 @@ const About = () => {
           </div>
           
           <div className="bg-memorial-50 p-6 rounded-lg border border-memorial-100">
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               Cultural Contributions
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
@@ -210,7 +210,7 @@ const About = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-playfair font-semibold text-memorial-800 mb-3">
+            <h3 className="text-xl font-semibold text-memorial-800 mb-3">
               Legacy and Remembrance
             </h3>
             <p className="text-gray-700 mb-4">

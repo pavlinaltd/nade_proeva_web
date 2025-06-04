@@ -16,7 +16,7 @@ const Footer = () => {
                 alt="Nade Proeva Endowment Fund"
                 className="w-12 h-auto mr-3"
               />
-              <h3 className="font-playfair text-xl">Professor Nade Proeva</h3>
+              <h3 className="text-xl">Professor Nade Proeva</h3>
             </div>
             <p className="text-gray-300 text-sm">
               Dedicated to preserving the memory and academic legacy of 
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-2">
-            <h3 className="font-playfair text-xl mb-4">Quick Links</h3>
+            <h3 className="text-xl mb-4">Quick Links</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <ul className="space-y-2">

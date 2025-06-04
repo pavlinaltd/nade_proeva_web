@@ -41,7 +41,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
       <div className="flex gap-8 md:w-2/3 p-6">
         <div
           className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}>
-          <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-2">{book.title}</h3>
+          <h3 className="text-xl font-semibold text-memorial-900 mb-2">{book.title}</h3>
           {book.originalTitle && (
             <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
           )}
@@ -253,7 +253,7 @@ const Books = () => {
       </div>
 
       <div className="my-12">
-        <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-4">Complete Bibliography</h3>
+        <h3 className="text-xl font-semibold text-memorial-900 mb-4">Complete Bibliography</h3>
         <p className="text-gray-700 mb-6">
           Below is a comprehensive listing of books authored, edited, or translated by Professor Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
         </p>
@@ -262,7 +262,7 @@ const Books = () => {
       </div>
 
       <div className="mt-12 bg-memorial-50 rounded-lg p-6 border border-memorial-100">
-        <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-4">Additional Publications</h3>
+        <h3 className="text-xl font-semibold text-memorial-900 mb-4">Additional Publications</h3>
         <p className="text-gray-700 mb-4">
           Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
         </p>

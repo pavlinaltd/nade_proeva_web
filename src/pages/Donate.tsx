@@ -25,7 +25,7 @@ const Donate = () => {
                 />
               </div>
               <div className="lg:w-2/3 p-8">
-                <h3 className="text-2xl font-playfair font-semibold text-memorial-900 mb-4">
+                <h3 className="text-2xl font-semibold text-memorial-900 mb-4">
                   About the Scholarship
                 </h3>
                 <p className="text-gray-700 mb-4">
@@ -78,7 +78,7 @@ const Donate = () => {
 
         {/* Call to Action */}
         <section className="text-center bg-memorial-900 text-white p-10 rounded-lg">
-          <h3 className="text-2xl font-playfair font-semibold mb-4">
+          <h3 className="text-2xl font-semibold mb-4">
             Support the Next Generation of Scholars
           </h3>
           <p className="mb-6 max-w-2xl mx-auto">

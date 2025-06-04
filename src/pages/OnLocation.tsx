@@ -159,7 +159,7 @@ const OnLocation = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-playfair font-semibold text-memorial-900 mb-1">{video.title}</h3>
+                  <h3 className="font-semibold text-memorial-900 mb-1">{video.title}</h3>
                   {video.year && <p className="text-sm text-gray-500 mb-2">{video.year}</p>}
                   {video.caption && <p className="text-sm text-gray-700">{video.caption}</p>}
                 </div>
@@ -184,7 +184,7 @@ const OnLocation = () => {
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-playfair font-semibold text-memorial-900 mb-1">{item.title}</h3>
+                  <h3 className="font-semibold text-memorial-900 mb-1">{item.title}</h3>
                   {item.year && <p className="text-sm text-gray-500 mb-2">{item.year}</p>}
                   {item.caption && <p className="text-sm text-gray-700">{item.caption}</p>}
                 </div>
@@ -220,7 +220,7 @@ const OnLocation = () => {
               </Button>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-2">
+              <h3 className="text-xl font-semibold text-memorial-900 mb-2">
                 {selectedImage.title}
               </h3>
               {selectedImage.year && (

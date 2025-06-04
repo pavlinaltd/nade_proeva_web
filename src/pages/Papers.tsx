@@ -168,14 +168,14 @@ const Papers = () => {
           <div className="space-y-12">
             {categories.map((category, idx) => (
               <div key={idx} className="space-y-6">
-                <h3 className="text-2xl font-playfair text-memorial-800 font-semibold">
+                <h3 className="text-2xl text-memorial-800 font-semibold">
                   {category.name}
                 </h3>
                 
                 <div className="space-y-6">
                   {category.papers.map((paper, index) => (
                     <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                      <h4 className="text-lg font-playfair font-semibold text-memorial-900 mb-2">
+                      <h4 className="text-lg font-semibold text-memorial-900 mb-2">
                         {paper.title}
                       </h4>
                       <div className="text-sm text-gray-500 mb-3">

@@ -27,9 +27,9 @@ const Navbar = () => {
                 alt="The Nade Proeva Endowment Fund" 
                 className="h-10 w-auto"
               /> */}
-              <span className="ml-3 text-xl font-playfair font-semibold text-memorial-900">
+              <h1 className="text-xl font-bold text-memorial-900">
                 Professor Dr. Nade Proeva
-              </span>
+              </h1>
             </Link>
           </div>
 
