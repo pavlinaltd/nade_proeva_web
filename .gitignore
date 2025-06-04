@@ -25,5 +25,4 @@ dist-ssr
 
 # Media
 public/audio
-public/images
 public/videos
