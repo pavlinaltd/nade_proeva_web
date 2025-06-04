@@ -24,6 +24,8 @@ interface BookProps {
   imageUrl: string;
   isbn?: string;
   amazonUrl?: string;
+  promoImage?: string;
+  promoAudio?: string;
 }
 
 const BookCard = ({ book }: { book: BookProps }) => {
@@ -36,30 +38,52 @@ const BookCard = ({ book }: { book: BookProps }) => {
           className="max-w-full h-auto max-h-[300px] object-contain rounded"
         />
       </div>
-      <div className="md:w-2/3 p-6">
-        <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-2">{book.title}</h3>
-        {book.originalTitle && (
-          <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
-        )}
-        <div className="text-sm text-gray-500 mb-4">
-          {book.author && <p>Author: {book.author}</p>}
-          <p>Editor: {book.editor}</p>
-          {book.translator && <p>Translator: {book.translator}</p>}
-          <p>{book.year} • {book.publisher}</p>
-          <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
+      <div className="flex gap-8 md:w-2/3 p-6">
+        <div
+          className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}>
+          <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-2">{book.title}</h3>
+          {book.originalTitle && (
+            <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
+          )}
+          <div className="text-sm text-gray-500 mb-4">
+            {book.author && <p>Author: {book.author}</p>}
+            <p>Editor: {book.editor}</p>
+            {book.translator && <p>Translator: {book.translator}</p>}
+            <p>{book.year} • {book.publisher}</p>
+            <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
+          </div>
+          <p className="text-gray-700 mb-4">{book.description}</p>
+          {book.amazonUrl ? (
+            <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
+              <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink size={16} />
+                Find on Amazon Books
+              </a>
+            </Button>) : (
+            <Button className="flex items-center bg-gray-900" disabled>
+              Coming Soon to Amazon Books
+            </Button>
+          )}
         </div>
-        <p className="text-gray-700 mb-4">{book.description}</p>
-        {book.amazonUrl ? (
-          <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
-            <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink size={16} />
-              Find on Amazon Books
-            </a>
-          </Button>) : (
-          <Button className="flex items-center bg-gray-900" disabled>
-            Available Soon to Amazon Books
-          </Button>
-        )}
+        
+        {book.promoImage || book.promoAudio ? (
+          <div className="flex flex-col items-center gap-10 self-center w-1/2">
+          {book.promoImage && (
+            <img
+              src="/images/religion-book-promotional.jpg"
+              alt=""
+            />
+          )}
+          
+          {book.promoAudio && (
+            <audio controls>
+              <source src="/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          )}
+        </div>
+        )
+        : <></>}
       </div>
     </div>
   );
@@ -181,7 +205,9 @@ const Books = () => {
       description: "A detailed study of religious practices, beliefs, and mythological traditions in ancient Macedonia. This book explores both the indigenous elements of Macedonian religion and the syncretic influences from neighboring cultures.",
       imageUrl: "/lovable-uploads/a914d7e4-d98e-4959-a9d7-917951c81625.png",
       isbn: "978-9989-2978-5-4",
-      amazonUrl: ""
+      amazonUrl: "",
+      promoImage: "/images/religion-book-promotional.jpg",
+      promoAudio: "/audio/16-04-2014-Religion-of-Antique-.mp3"
     },
     {
       title: "Triptych for Macedonian Identity",
