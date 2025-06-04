@@ -1,15 +1,14 @@
-import SectionHeader from "@/components/SectionHeader";
 import { X } from "lucide-react";
 import { useState } from "react";
-import { Button } from "react-day-picker";
+import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface MediaItem {
   type: "image" | "video";
-  src: string;
-  thumbnail?: string;
   title: string;
   caption?: string;
   year?: string;
+  pageImages?: string[];
 }
 
 const Columns = () => {
@@ -18,17 +17,32 @@ const Columns = () => {
   const columns: MediaItem[] = [
     {
       type: "image",
-      src: "images/Column_1_Nova_Makedonija.JPG",
-      title: "Column 1: Nova Makedonija",
+      title: "Neglecting Well-Known Facts",
       caption: "Caption",
       year: "Year",
+      pageImages: [
+        "images/Neglecting-Facts-1.jpeg",
+        "images/Neglecting-Facts-2.jpeg",
+        "images/Neglecting-Facts-3.jpeg"
+      ]
     },
     {
       type: "image",
-      src: "/images/Column_2_Nova_Makedonija.JPG",
+      title: "Column 1: Nova Makedonija",
+      caption: "Caption",
+      year: "Year",
+      pageImages: [
+        "images/Column_1_Nova_Makedonija.JPG"
+      ]
+    },
+    {
+      type: "image",
       title: "Column 2: Nova Makedonija",
       caption: "Caption",
       year: "Year",
+      pageImages: [
+        "images/Column_2_Nova_Makedonija.JPG"
+      ]
     },
   ];
 
@@ -44,29 +58,23 @@ const Columns = () => {
 
   return (
     <>
-    <SectionHeader
-      title="Columns"
-      subtitle="Subtitle"
-    />
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div
+      className="flex items-start gap-6"
+      // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6"
+    >
       {columns.map((column, index) => (
-        <div 
+        <div
           key={index}
-          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
+          className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
+          // className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
           onClick={() => openLightbox(column)}
         >
-          <div className="aspect-video overflow-hidden">
+          <div className="overflow-hidden">
             <img
-              src={column.src}
+              src={column.pageImages?.[0] || ""}
               alt={column.title}
-              className="w-full h-full object-cover"
+              className="w-[360px] h-full object-fit"
             />
-          </div>
-          <div className="p-4">
-            <h3 className="font-playfair font-semibold text-memorial-900 mb-1">{column.title}</h3>
-            {column.year && <p className="text-sm text-gray-500 mb-2">{column.year}</p>}
-            {column.caption && <p className="text-sm text-gray-700">{column.caption}</p>}
           </div>
         </div>
       ))}
@@ -82,32 +90,25 @@ const Columns = () => {
           className="max-w-4xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="relative">
-            <img 
-              src={selectedImage.src} 
-              alt={selectedImage.title} 
-              className="w-full h-auto"
-            />
-            <Button 
-              // variant="secondary"
-              // size="icon"
-              className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-white"
-              onClick={closeLightbox}
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
-          <div className="p-6">
-            <h3 className="text-xl font-playfair font-semibold text-memorial-900 mb-2">
-              {selectedImage.title}
-            </h3>
-            {selectedImage.year && (
-              <p className="text-sm text-gray-500 mb-3">{selectedImage.year}</p>
-            )}
-            {selectedImage.caption && (
-              <p className="text-gray-700">{selectedImage.caption}</p>
-            )}
-          </div>
+          {/* Carousel */}
+          <Carousel className="w-full max-w-2xl">
+            <CarouselContent>
+              {selectedImage.pageImages?.map((image, index) => (
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 w-full h-auto"
+                >
+                  <img 
+                    src={image} 
+                    alt={`${selectedImage.title} - ${index + 1}`} 
+                    className="w-full h-auto object-fit"
+                  />
+                </div>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     )}
