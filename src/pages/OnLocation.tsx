@@ -9,8 +9,6 @@ interface MediaItem {
   src: string;
   thumbnail?: string;
   title: string;
-  caption?: string;
-  year?: string;
 }
 
 const OnLocation = () => {
@@ -19,31 +17,58 @@ const OnLocation = () => {
   const photos: MediaItem[] = [
     {
       type: "image",
-      src: "/images/jan1.jpg",
+      src: "/images/march3.jpg",
       title: "Title",
-      caption: "Caption",
-      year: "Year"
     },
     {
       type: "image",
-      src: "/images/jan2.jpg",
+      src: "/images/wheat.jpg",
       title: "Title",
-      caption: "Caption",
-      year: "Year"
     },
     {
       type: "image",
       src: "/images/march1.jpg",
       title: "Title",
-      caption: "Caption",
-      year: "Year"
+    },
+    {
+      type: "image",
+      src: "/images/sepia.jpg",
+      title: "Title",
+    },
+    {
+      type: "image",
+      src: "/images/students.jpg",
+      title: "Title",
+    },
+    {
+      type: "image",
+      src: "/images/students.jpg",
+      title: "Title",
+    },
+    {
+      type: "image",
+      src: "/images/jan2.jpg",
+      title: "Title",
+    },
+    {
+      type: "image",
+      src: "/images/jan1.jpg",
+      title: "Title",
+    },
+    {
+      type: "image",
+      src: "/images/white-hat.jpg",
+      title: "Title",
+    },
+    {
+      type: "image",
+      src: "/images/columns-bw.jpg",
+      title: "Title",
     },
     {
       type: "image",
       src: "/images/march2.jpg",
       title: "Title",
-      caption: "Caption",
-      year: "Year"
     },
   ];
 
@@ -116,23 +141,22 @@ const OnLocation = () => {
         </TabsList>
         
         <TabsContent value="photos" className="animate-fade-in">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="flex flex-wrap gap-6 items-start"
+          >
             {photos.map((photo, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale max-w-sm h-auto"
                 onClick={() => openLightbox(photo)}
               >
-                <div className="aspect-video overflow-hidden">
+                <div className="overflow-hidden">
                   <img 
                     src={photo.src} 
                     alt={photo.title} 
                     className="w-full h-full object-cover"
                   />
-                </div>
-                <div className="p-4">
-                  {photo.year && <p className="text-sm text-gray-500 mb-2">{photo.year}</p>}
-                  {photo.caption && <p className="text-sm text-gray-700">{photo.caption}</p>}
                 </div>
               </div>
             ))}
@@ -201,14 +225,14 @@ const OnLocation = () => {
           onClick={closeLightbox}
         >
           <div 
-            className="max-w-4xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
+            className="max-w-xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
               <img 
                 src={selectedImage.src} 
                 alt={selectedImage.title} 
-                className="w-full h-auto"
+                className="w-full h-auto object-fit"
               />
               <Button 
                 variant="secondary"

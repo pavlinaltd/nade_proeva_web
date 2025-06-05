@@ -2,6 +2,7 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import TranslatorImage from "@/components/Translator";
 
 interface MediaItem {
   type: "image" | "video";
@@ -21,9 +22,9 @@ const Columns = () => {
       caption: "Caption",
       year: "Year",
       pageImages: [
-        "images/Neglecting-Facts-1.jpeg",
-        "images/Neglecting-Facts-2.jpeg",
-        "images/Neglecting-Facts-3.jpeg"
+        "images/columns/Neglecting-Facts-1.jpeg",
+        "images/columns/Neglecting-Facts-2.jpeg",
+        "images/columns/Neglecting-Facts-3.jpeg"
       ]
     },
     {
@@ -32,16 +33,25 @@ const Columns = () => {
       caption: "Caption",
       year: "Year",
       pageImages: [
-        "images/Column_1_Nova_Makedonija.JPG"
+        "images/columns/column-3.jpg"
       ]
     },
+    // {
+    //   type: "image",
+    //   title: "Column 2: Nova Makedonija",
+    //   caption: "Caption",
+    //   year: "Year",
+    //   pageImages: [
+    //     "images/columns/Column_2_Nova_Makedonija.JPG"
+    //   ]
+    // },
     {
       type: "image",
-      title: "Column 2: Nova Makedonija",
+      title: "Column 1: Nova Makedonija",
       caption: "Caption",
       year: "Year",
       pageImages: [
-        "images/Column_2_Nova_Makedonija.JPG"
+        "images/columns/column-4.jpg"
       ]
     },
   ];
@@ -59,7 +69,7 @@ const Columns = () => {
   return (
     <>
     <div
-      className="flex items-start gap-6"
+      className="flex flex-col flex-wrap max-h-[500px] items-start gap-6"
     >
       {columns.map((column, index) => (
         <div
