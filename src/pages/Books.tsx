@@ -40,7 +40,9 @@ const BookCard = ({ book }: { book: BookProps }) => {
       </div>
       <div className="flex gap-8 md:w-2/3 p-6">
         <div
-          className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}>
+          // className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}
+          className="flex flex-col w-1/2"
+        >
           <h3 className="text-xl font-semibold text-burgundy-900 mb-2">{book.title}</h3>
           {book.originalTitle && (
             <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
@@ -72,6 +74,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
             <img
               src="/images/religion-book-promotional.jpg"
               alt=""
+              className="border-gray-600 border-4 rounded-sm"
             />
           )}
           
