@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/SectionHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Headphones, Mic, MicVocal } from "lucide-react";
 
 interface VideoItem {
   type: "video";
@@ -13,13 +14,46 @@ interface VideoItem {
 const Media = () => {
 
   const audios = [
-    // {
-    //   type: "audio",
-    //   src: "/audio/interview.mp3",
-    //   title: "Interview with Professor Proeva",
-    //   caption: "Discussing her research on ancient Macedonian identity.",
-    //   year: "2015"
-    // }
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+    },
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+    },
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+    },
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+    },
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+    },
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+    },
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+    },
+    {
+      type: "audio",
+      src: "/audio/interview.mp3",
+      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+    },
   ];
 
   const videos: VideoItem[] = [
@@ -30,57 +64,37 @@ const Media = () => {
       caption: "At the unveiling of the Alexander the Great monument",
       location: "Prilep, Macedonia",
       year: "2003"
-    }
+    },
+    {
+      type: "video",
+      src: "/videos/Speech-2004-Prilep.mp4",
+      title: "Interview on Ancient Macedonian Identity",
+      caption: "At the unveiling of the Alexander the Great monument",
+      location: "Prilep, Macedonia",
+      year: "2003"
+    },
+    {
+      type: "video",
+      src: "/videos/Speech-2004-Prilep.mp4",
+      title: "Interview on Ancient Macedonian Identity",
+      caption: "At the unveiling of the Alexander the Great monument",
+      location: "Prilep, Macedonia",
+      year: "2003"
+    },
   ]
 
   return (
     <>
-    <SectionHeader
-      title="Media"
-      subtitle="Subtitle"
-    />
-
     {/* Content Wrapper */}
+    {/* Header */}
+    <div className="flex justify-around mt-10 mb-8">
+      <h3 className="text-3xl font-bold text-center text-black">VIDEO</h3>
+      <h3 className="text-3xl font-bold text-center text-black">AUDIO</h3>
+    </div>
+    <hr className="my-8 border-2 rounded-full"/>
     <div className="flex justify-center mt-4 gap-[10rem] items-start">
-      {/* Audio */}
-      <div className="flex flex-col w-2/5 bg-gradient-to-b from-burgundy-700 to-burgundy-900 rounded-md p-10">
-        {/* Header */}
-        <h3 className="text-3xl font-bold text-center text-white">Audio</h3>
-        <hr className="my-8 border-2 rounded-full"/>
-        {/* Podium */}
-        <img
-          src="/images/nade-podium.jpg" 
-          alt="Podium"
-          className="w-[300] h-[500] rounded-lg shadow-md"
-        />
-        {/* Items */}
-        {audios.map((photo, index) => (
-          <div 
-            key={index} 
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
-            // onClick={() => openLightbox(photo)}
-            // Don't need lightbox for audio
-          >
-            <div className="aspect-video overflow-hidden">
-              <img 
-                src={photo.src} 
-                alt={photo.title} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              {photo.year && <p className="text-sm text-gray-500 mb-2">{photo.year}</p>}
-              {photo.caption && <p className="text-sm text-gray-700">{photo.caption}</p>}
-            </div>
-          </div>
-        ))}
-      </div>
-
       {/* Video */}
-      <div className="flex flex-col w-2/5 bg-gradient-to-b from-burgundy-700 to-burgundy-900 rounded-md p-10">
-        {/* Header */}
-        <h3 className="text-3xl font-bold text-center text-white">Video</h3>
-        <hr className="my-8 border-2 rounded-full"/>
+      <div className="flex flex-col gap-10 w-2/5  rounded-md p-10">
         {/* Items */}
         {videos.map((video, index) => (
           <div
@@ -104,6 +118,35 @@ const Media = () => {
             <div className="p-4">
               <h3 className="font-droidsans font-semibold text-memorial-900 mb-1">{video.caption}</h3>
               {video.year && <p className="text-sm text-gray-500 mb-2">{video.location} - {video.year}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Audio */}
+      <div className="flex flex-col w-2/5 rounded-md p-10">
+        {/* Podium */}
+        <img
+          src="/images/nade-podium.jpg" 
+          alt="Podium"
+          className="h-[450px] object-cover rounded-lg shadow-md"
+        />
+        {/* Items */}
+        {audios.map((audio, index) => (
+          <div 
+            key={index} 
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer h-min"
+            // onClick={() => openLightbox(photo)}
+            // Don't need lightbox for audio
+          >
+            <div className="p-4">
+              <a
+                href="/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
+                title=""
+                className="flex gap-4 justify-start items-center hover:underline"
+              ><Headphones />
+                {audio.title && <p className="text-sm text-gray-700">{audio.title}</p>}
+              </a>
             </div>
           </div>
         ))}
