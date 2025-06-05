@@ -75,13 +75,13 @@ const Navbar = () => {
 
                 <NavigationMenuItem>
                   <Link to="/on-location" className={"flex items-center gap-1"}>
-                    ON LOCATION
+                    ON SITE
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                   <NavigationMenuLink href="/testimonials" className={"flex items-center gap-1"}>
-                    REMEMBERING A SCHOLAR
+                    REMEMBERING NADE
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
