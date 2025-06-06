@@ -40,7 +40,7 @@ const Testimonials = () => {
   return (
     <>
     <SectionHeader
-      title="Testimonials"
+      title="TESTIMONIALS"
       subtitle="What people had to say about Professor Proeva."
     />
 

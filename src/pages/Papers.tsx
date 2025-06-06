@@ -110,7 +110,7 @@ const Papers = () => {
   return (
     <div>
       <SectionHeader
-        title="Academic Papers"
+        title="ACADEMIC PAPERS"
         subtitle="
           Professor Proeva's scholarly legacy encompasses over 50 academic publications,
           including research articles, book reviews, conference papers, and encyclopedia entries.

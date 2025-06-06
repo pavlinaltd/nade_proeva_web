@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <SectionHeader
-        title="About Professor Nade Proeva"
+        title="ABOUT PROFESSOR DR. NADE PROEVA"
         subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
       />
       <div className="space-y-6">

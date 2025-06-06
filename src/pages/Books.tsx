@@ -245,7 +245,7 @@ const Books = () => {
   return (
     <div>
       <SectionHeader
-        title="Books by Professor Nade Proeva"
+        title="BOOKS BY PROFESSOR NADE PROEVA"
         subtitle="Professor Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
       />
 

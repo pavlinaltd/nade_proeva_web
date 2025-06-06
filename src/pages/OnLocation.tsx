@@ -129,7 +129,7 @@ const OnLocation = () => {
   return (
     <div>
       <SectionHeader
-        title="On Location"
+        title="ON SITE"
         subtitle="Explore photos, videos, and media related to Professor Proeva's academic career and public appearances."
       />
 
