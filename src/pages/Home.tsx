@@ -8,46 +8,55 @@ const Home = () => {
     {
       src: "/images/temp-medal.jpg",
       alt: "Chevalier des Palmes Académiques Medal",
-      caption: "Chevalier des Palmes Académiques"
+      title: "Chevalier des Palmes Académiques"
     },
     {
       src: "/images/uni-medal.jpg",
-      alt: "University Medal",
-      caption: "Caption for University Medal"
+      alt: "Filozovski Fakultet",
+      title: "Filozovski Fakultet"
     },
     {
       src: "/images/uni-medal.jpg",
-      alt: "University Medal",
-      caption: "Caption for University Medal"
+      alt: "Filozovski Fakultet",
+      title: "Filozovski Fakultet"
     },
     {
       src: "/images/uni-medal.jpg",
-      alt: "University Medal",
-      caption: "Caption for University Medal"
+      alt: "Filozovski Fakultet",
+      title: "Filozovski Fakultet"
     }
   ];
 
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative py-20 rounded-lg overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 text-white">
+      <section className="relative py-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
         <div className="flex flex-row justify-center px-20 gap-10">
           <img
             src="/images/nade.jpg"
             alt="Professor Dr. Nade Proeva"
-            className="max-w-md h-auto border-0 object-cover rounded-lg"
+            className="w-2/5 h-auto border-0 object-cover rounded-lg"
           ></img>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
               <div className="flex flex-col justify-center text-justify gap-10">
-                <h1 className="text-4xl md:text-3xl lg:text-4xl italic mb-6 text-burgundy-900 font-bold">
-                  "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future." -
-                  <span className="lg:text-2xl md:text-xl font-bold font-droidserif mb-8 leading-relaxed self-end"><i> Nade Proeva</i></span>
+                <h1 className="text-4xl md:text-3xl lg:text-3xl italic mb-6 text-black font-bold">
+                  "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
                 </h1>
-                <h1 className="text-4xl md:text-3xl lg:text-4xl mb-6 font-bold text-black">
-                  "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење." -
-                  <span ><i className="lg:text-3xl md:text-xl font-bold font-droidserif mb-8 leading-relaxed self-end"> Наде Проева</i></span>
+                <h1 className="text-4xl md:text-3xl lg:text-3xl mb-6 italic font-bold text-burgundy-900">
+                  "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење."
                 </h1>
+                <span className="lg:text-2xl md:text-xl self-end">
+                  <img
+                    title="Nade Proeva"
+                    src="/images/sign-luna.png"
+                    className="aspect-auto w-[300px]"
+                  />
+                  <h2
+                    className="text-center text-black font-bold text-3xl mt-2"
+                  >
+                    Nade Proeva</h2>
+                </span>
               </div>
             </div>
           </div>
@@ -67,56 +76,45 @@ const Home = () => {
               Cyril and Methodius University in Skopje, Macedonia from 1984 until her retirement in 2014.
             </p>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Born on September 9, 1949 in the town of Resen,  in the SFR of Macedonia, (YU) she pursued 
-              her higher education at the University of Belgrade, graduating with a degree in Classical Archaeology in 1973.
+              Born on September 9, 1949, in the town of Resen, in the Socialist Republic of Macedonia
+              (then part of the SFR Yugoslavia), Nade Proeva pursued her higher education at the
+              University of Belgrade, earning a degree in Classical Archaeology in 1973.
+              She went on to defend her master's thesis, <i>Typology of Tombstones in the Yugoslav Part
+              of the Roman Province of Macedonia</i>, at the Faculty of Philosophy in Belgrade in 1978.
+              Her academic journey culminated in the successful defense of her doctoral dissertation,
+              <i>The Influence of Settlers on the Development of Cultural Conditions in the Roman Province of Macedonia</i>, in 1992.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Renowned for her rigorous scholarship and commitment to historical integrity, her work focused
-              particularly on the history of ancient Macedonia, where she left a lasting legacy. Professor Proeva
-              made enduring contributions to the academic community in her bellowed Macedonia and beyond.
+              Renowned for her intellectual rigor and unwavering commitment to historical truth,
+              Professor Proeva devoted her scholarly career to the study of ancient Macedonia.
+              Her research left a profound and lasting impact on the field, earning her a respected place
+              among historians and archaeologists. Through her teaching, publications,
+              and dedication to scholarship, she made enduring contributions to the academic life
+              of her beloved Macedonia and to the broader international community.
             </p>
           </div>
         </div>
       </section>
 
-
       <h1 className="text-3xl text-center text-burgundy-800 font-bold">AWARDS IN RECOGNITION OF HER CONTRIBUTIONS TO EDUCATION AND ACADEMIC RESEARCH</h1>
 
-      <div className="flex flex-row justify-around gap-4">
-        <div className="flex flex-col text-center items-center gap-2">
-          <img
-            src="/images/temp-medal.jpg"
-            alt=""
-            width="150"
-            height="400"
-            className="rounded-lg"
-          />
-          <p>Chevalier des Palmes Académiques</p>
-        </div>
-        <div className="flex flex-col text-center items-center gap-2">
-          <img
-            src="/images/uni-medal.jpg"
-            alt=""
-            width="150"
-            height="400"
-            className="rounded-lg"
-          />
-          <p>Filozovski Fakultet</p>
-        </div>
-        <img
-          src="/images/uni-medal.jpg"
-          alt=""
-          width="150"
-          height="400"
-          className="rounded-lg object-cover"
-        />
-        <img
-          src="/images/uni-medal.jpg"
-          alt=""
-          width="150"
-          height="400"
-          className="rounded-lg object-cover"
-        />
+      <div className="flex flex-row justify-around gap-4 bg-yellow-500 p-5 rounded-lg">
+        {medals.map((medal) => (
+          <div className="flex flex-col text-center items-center gap-2">
+            <img
+              src={medal.src}
+              alt={medal.alt}
+              width="150"
+              height="400"
+              className="rounded-lg"
+            />
+            <p
+              className="font-bold text-wrap w-3/4"
+            >
+              {medal.title}
+            </p>
+          </div>
+        ))}
       </div>
 
       <div className="rounded-lg overflow-hidden shadow-md bg-slate-300 p-3">
@@ -143,7 +141,7 @@ const Home = () => {
             Your contribution to the endowment will help support the next generation 
             of historians dedicated to studying Macedonian history and culture.
           </p>
-          <Button asChild className="bg-amber-500 border-amber-600/50 border-2 hover:bg-amber-600 text-white">
+          <Button asChild className="bg-burgundy-600 hover:bg-burgundy-700 text-white">
             <Link to="/donate">Contribute</Link>
           </Button>
         </div>
