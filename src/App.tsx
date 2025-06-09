@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Books from "./pages/Books";
 import Papers from "./pages/Papers";
-import OnLocation from "./pages/OnLocation";
+import OnSite from "./pages/OnSite";
 import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import Testimonials from "./pages/Testimonials";
@@ -30,7 +30,7 @@ const App = () => (
             <Route path="about" element={<About />} />
             <Route path="books" element={<Books />} />
             <Route path="papers" element={<Papers />} />
-            <Route path="on-location" element={<OnLocation />} />
+            <Route path="on-location" element={<OnSite />} />
             <Route path="columns" element={<Columns />} />
             <Route path="media" element={<Media />} />
             <Route path="testimonials" element={<Testimonials />} />
