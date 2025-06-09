@@ -85,11 +85,16 @@ const Media = () => {
 
   return (
     <>
+    <SectionHeader
+      title="MEDIA"
+      subtitle="Browse Professor Nade Proeva's speeches and presentations."
+    />
+
     {/* Content Wrapper */}
     {/* Header */}
     <div className="flex justify-around mt-10 mb-8">
-      <h3 className="text-3xl font-bold text-center text-black">VIDEO</h3>
-      <h3 className="text-3xl font-bold text-center text-black">AUDIO</h3>
+      <h3 className="text-2xl font-bold text-center text-black">VIDEO</h3>
+      <h3 className="text-2xl font-bold text-center text-black">AUDIO</h3>
     </div>
     <hr className="my-8 border-2 rounded-full"/>
     <div className="flex justify-center mt-4 gap-[10rem] items-start">

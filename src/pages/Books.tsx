@@ -274,7 +274,7 @@ const Books = () => {
         </p>
         
         <Button
-          className="flex items-center gap-2 bg-amber-400 text-black hover:bg-amber-500 hover:text-black"
+          className="flex items-center gap-2 text-white bg-burgundy-600 hover:bg-burgundy-700"
           variant="ghost" asChild
         >
           <a href="https://www.amazon.com/s?k=Nade+Proeva" target="_blank" rel="noopener noreferrer">

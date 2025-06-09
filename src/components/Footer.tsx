@@ -29,7 +29,7 @@ const Footer = () => {
           <div
             className="flex flex-col items-start gap-[10px]"
           >
-            <h3 className="text-lg mb-4 text-black">Endowment Fund Contact</h3>
+            <h3 className="text-xl mb-4 text-black">Endowment Fund Contact</h3>
             <p className="text-black text-md">
               Arizona State University<br />
               X St.<br />
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Links */}
           <div className="">
-            <h3 className="text-lg mb-4 text-black">Links</h3>
+            <h3 className="text-xl mb-4 text-black">Links</h3>
             <div className="grid grid-cols-3 gap-8 w-full">
               <div>
                 <ul className="space-y-2">

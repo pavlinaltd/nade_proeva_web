@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import TranslatorImage from "@/components/Translator";
+import SectionHeader from "@/components/SectionHeader";
 
 interface MediaItem {
   type: "image" | "video";
@@ -68,6 +69,12 @@ const Columns = () => {
 
   return (
     <>
+    <SectionHeader
+      title="COLUMNS"
+      subtitle="Read Professor Nade Proeva's columns in their original text.
+        Click a picture to enlarge it and swipe to read any additional pages."
+    />
+
     <div
       className="flex flex-col flex-wrap max-h-[500px] items-start gap-6"
     >
@@ -96,11 +103,11 @@ const Columns = () => {
         onClick={closeLightbox}
       >
         <div
-          className="max-w-4xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
+          className="max-w-4xl w-full overflow-hidden shadow-2xl flex justify-center"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Carousel */}
-          <Carousel className="w-full max-w-2xl">
+          <Carousel className="w-full max-w-2xl bg-white rounded-sm">
             <CarouselContent>
               {selectedImage.pageImages?.map((image, index) => (
                 <div 
@@ -115,9 +122,17 @@ const Columns = () => {
                 </div>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="text-white bg-burgundy-700 hover:bg-burgundy-900"/>
+            <CarouselNext className="text-white bg-burgundy-700 hover:bg-burgundy-900" />
           </Carousel>
+          <Button 
+              variant="secondary"
+              size="icon"
+              className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-white"
+              onClick={closeLightbox}
+            >
+              <X className="h-4 w-4" />
+            </Button>
         </div>
       </div>
     )}
