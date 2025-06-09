@@ -35,7 +35,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           {/* {!isMobile && ( */}
-            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden lg:block">
+            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden lg:block lg:text-xs xl:text-sm">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/" className={"flex items-center gap-1"}>
@@ -105,25 +105,15 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav className="pt-4 pb-2 space-y-2">
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link to="/">Home</Link>
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link to="/about">About</Link>
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link to="/books">Books</Link>
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link to="/papers">Papers</Link>
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" asChild>
-              <Link to="/gallery">Gallery</Link>
-            </Button>
-            <Button className="w-full mt-2 bg-red-600 hover:bg-red-700 text-white" asChild>
-              <Link to="/donate">Donate</Link>
-            </Button>
+          <nav className="pt-4 pb-2 space-y-2 flex flex-col items-end gap-2">
+            <Link to="/">HOME</Link>
+            <Link to="/about">ABOUT</Link>
+            <Link to="/books">BOOKS</Link>
+            <Link to="/papers">PAPERS</Link>
+            <Link to="/columns">COLUMNS</Link>
+            <Link to="/media">MEDIA</Link>
+            <Link to="/on-location">ON SITE</Link>
+            <Link to="/testimonials">REMEMBERING NADE</Link>
           </nav>
         )}
       </div>
