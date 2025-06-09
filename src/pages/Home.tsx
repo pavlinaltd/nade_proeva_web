@@ -35,22 +35,22 @@ const Home = () => {
           <img
             src="/images/nade.jpg"
             alt="Professor Dr. Nade Proeva"
-            className="w-2/5 h-auto border-0 object-cover rounded-lg"
+            className="w-1/2 h-auto border-0 object-cover rounded-lg hidden lg:block"
           ></img>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
-              <div className="flex flex-col justify-center text-justify gap-10">
-                <h1 className="text-4xl md:text-3xl lg:text-3xl italic mb-6 text-black font-bold">
+              <div className="flex flex-col justify-center text-justify xl:gap-10">
+                <h1 className="text-3xl lg:text-2xl xl:text-3xl italic mb-6 text-black font-bold">
                   "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
                 </h1>
-                <h1 className="text-4xl md:text-3xl lg:text-3xl mb-6 italic font-bold text-burgundy-900">
+                <h1 className="text-3xl lg:text-2xl xl:text-3xl mb-6 italic font-bold text-burgundy-900">
                   "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење."
                 </h1>
                 <span className="lg:text-2xl md:text-xl self-end">
                   <img
                     title="Nade Proeva"
                     src="/images/sign-luna.png"
-                    className="aspect-auto w-[300px]"
+                    className="aspect-auto md:w-[300px] lg:w-[200px] xl:w-[300px]"
                   />
                 </span>
               </div>
@@ -122,7 +122,7 @@ const Home = () => {
           <video
             controls
             controlsList="nodownload"
-            className="aspect-video rounded-lg max-w-6xl"
+            className="aspect-video rounded-lg md:max-w-3xl xl:max-w-6xl"
           >
             <source src="/videos/NADE.mp4" type="video/mp4" />
             Your browser does not support the video tag.
