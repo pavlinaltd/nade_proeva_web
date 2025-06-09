@@ -8,12 +8,12 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, Navigat
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
   
   // Close menu when route changes or screen size changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [isMobile]);
+  // useEffect(() => {
+  //   setIsOpen(false);
+  // }, [isMobile]);
 
   return (
     <header className="bg-white border-b border-gray-200">
@@ -35,7 +35,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           {/* {!isMobile && ( */}
-            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 block md:hidden">
+            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden lg:block">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/" className={"flex items-center gap-1"}>
@@ -96,7 +96,7 @@ const Navbar = () => {
               size="icon" 
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Menu"
-              className="hidden md:block"
+              className="block lg:hidden"
             >
               {isOpen ? <X /> : <Menu />}
             </Button>
