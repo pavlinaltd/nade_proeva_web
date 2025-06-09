@@ -11,7 +11,7 @@ interface MediaItem {
   title: string;
 }
 
-const OnLocation = () => {
+const OnSite = () => {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
 
   const photos: MediaItem[] = [
@@ -142,8 +142,8 @@ const OnLocation = () => {
         
         <TabsContent value="photos" className="animate-fade-in">
           <div
-            // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            className="flex flex-wrap gap-6 items-start"
+            // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center"
+            className="flex flex-wrap gap-6 items-start justify-center align-left"
           >
             {photos.map((photo, index) => (
               <div 
@@ -261,4 +261,4 @@ const OnLocation = () => {
   );
 };
 
-export default OnLocation;
+export default OnSite;
