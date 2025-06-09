@@ -34,8 +34,8 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          {!isMobile && (
-            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1">
+          {/* {!isMobile && ( */}
+            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 block md:hidden">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/" className={"flex items-center gap-1"}>
@@ -87,23 +87,24 @@ const Navbar = () => {
               </NavigationMenuList>
               <NavigationMenuIndicator />
             </NavigationMenu>
-          )}
+          {/* )} */}
 
           {/* Mobile Menu Button */}
-          {isMobile && (
+          {/* {isMobile && ( */}
             <Button 
               variant="ghost" 
               size="icon" 
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Menu"
+              className="hidden md:block"
             >
               {isOpen ? <X /> : <Menu />}
             </Button>
-          )}
+          {/* )} */}
         </div>
 
         {/* Mobile Navigation */}
-        {isMobile && isOpen && (
+        {isOpen && (
           <nav className="pt-4 pb-2 space-y-2">
             <Button variant="ghost" className="w-full justify-start" asChild>
               <Link to="/">Home</Link>
