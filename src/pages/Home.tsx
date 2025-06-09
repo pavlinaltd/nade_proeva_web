@@ -52,10 +52,6 @@ const Home = () => {
                     src="/images/sign-luna.png"
                     className="aspect-auto w-[300px]"
                   />
-                  <h2
-                    className="text-center text-black font-bold text-3xl mt-2"
-                  >
-                    Nade Proeva</h2>
                 </span>
               </div>
             </div>
@@ -96,37 +92,43 @@ const Home = () => {
         </div>
       </section>
 
-      <h1 className="text-3xl text-center text-burgundy-800 font-bold">AWARDS IN RECOGNITION OF HER CONTRIBUTIONS TO EDUCATION AND ACADEMIC RESEARCH</h1>
+      {/* Awards Section */}
+      <section className="container mx-0 px-4">
+        <h1 className="text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1>
 
-      <div className="flex flex-row justify-around gap-4 bg-yellow-500 p-5 rounded-lg">
-        {medals.map((medal) => (
-          <div className="flex flex-col text-center items-center gap-2">
-            <img
-              src={medal.src}
-              alt={medal.alt}
-              width="150"
-              height="400"
-              className="rounded-lg"
-            />
-            <p
-              className="font-bold text-wrap w-3/4"
-            >
-              {medal.title}
-            </p>
-          </div>
-        ))}
-      </div>
+        <div className="flex flex-row justify-around gap-4 bg-yellow-500 p-5 rounded-lg">
+          {medals.map((medal) => (
+            <div className="flex flex-col text-center items-center gap-2">
+              <img
+                src={medal.src}
+                alt={medal.alt}
+                width="150"
+                height="400"
+                className="rounded-lg"
+              />
+              <p
+                className="font-bold text-wrap w-3/4"
+              >
+                {medal.title}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <div className="rounded-lg overflow-hidden shadow-md bg-slate-300 p-3">
-        <video
-          controls
-          controlsList="nodownload"
-          className="aspect-video"
-        >
-          <source src="/videos/NADE.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      {/* Video Section */}
+      <section className="container mx-0 px-4">
+        <div className="flex justify-center overflow-hidden">
+          <video
+            controls
+            controlsList="nodownload"
+            className="aspect-video rounded-lg max-w-6xl"
+          >
+            <source src="/videos/NADE.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
 
       {/* Fund Call-to-Action */}
       <section className="container mx-auto px-4 max-w-4xl">
