@@ -9,11 +9,11 @@ const Footer = () => {
     <footer className="bg-gradient-to-b from-amber-500 to-yellow-100 text-white py-8">
       <div className="container mx-auto px-4">
         <div
-          className="grid grid-cols-3 gap-8"
-          // className="flex items-start justify-start"
+          // className="grid grid-cols-3 gap-8"
+          className="flex items-start justify-between"
         >
           {/* Logo and About Page */}
-          <div>
+          <div className="w-1/3">
             <img
               src="/logo_italic.jpg"
               alt="The Nade Proeva Endowment Fund"
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
           
           {/* Endowment Contact */}
-          <div
+          {/* <div
             className="flex flex-col items-start gap-[10px]"
           >
             <h3 className="text-xl mb-4 text-black">Endowment Fund Contact</h3>
@@ -53,10 +53,10 @@ const Footer = () => {
             >
               <Link to="/donate">Contribute</Link>
             </Button>
-          </div>
+          </div> */}
 
           {/* Links */}
-          <div className="">
+          <div className="w-1/3">
             <h3 className="text-xl mb-4 text-black">Links</h3>
             <div className="grid grid-cols-3 gap-8 w-full">
               <div>
@@ -104,7 +104,7 @@ const Footer = () => {
         
         <div className="border-t border-amber-800 mt-8 pt-6 text-center text-black text-sm">
           <p>
-            &copy; {currentYear} Nade Proeva Scholarship Endowment. All rights reserved. Website by ...
+            &copy; {currentYear} Nade Proeva Scholarship Endowment. All rights reserved. Website by <a href="https://linkedin.com/in/coriebeale" className="hover:underline">Corie Beale</a>
           </p>
         </div>
       </div>
