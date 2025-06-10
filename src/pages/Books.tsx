@@ -38,10 +38,10 @@ const BookCard = ({ book }: { book: BookProps }) => {
           className=" object-contain rounded"
         />
       </div>
-      <div className="flex gap-8 md:w-2/3 p-6">
+      <div className="flex relative gap-8 md:w-2/3 p-6">
         <div
           // className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}
-          className="flex flex-col w-1/2 justify-center"
+          className="flex flex-col w-1/2 my-auto"
         >
           <div>
             <h3 className="text-xl font-semibold text-burgundy-900 mb-2">{book.title}</h3>
@@ -57,9 +57,9 @@ const BookCard = ({ book }: { book: BookProps }) => {
             </div>
             <p className="text-gray-700 text-lg text-justify mb-4">{book.description}</p>
           </div>
-          <div className="w-full text-lg">
+          <div className="text-lg absolute bottom-6">
             {book.amazonUrl ? (
-              <Button className="flex items-center self-end gap-2 bg-amber-500 hover:bg-amber-600" asChild>
+              <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
                 <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink size={16} />
                   Find on Amazon Books
