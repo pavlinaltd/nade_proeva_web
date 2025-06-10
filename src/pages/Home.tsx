@@ -96,7 +96,7 @@ const Home = () => {
       <section className="container mx-0 px-4">
         <h1 className="text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1>
 
-        <div className="flex flex-row justify-around gap-4 w-4/5 mx-auto bg-yellow-500 p-5 rounded-lg">
+        <div className="flex flex-row justify-around gap-4 w-2/3 mx-auto bg-yellow-500 p-5 rounded-lg">
           {medals.map((medal) => (
             <div className="flex flex-col text-center items-center gap-2">
               <img
@@ -118,7 +118,7 @@ const Home = () => {
 
       {/* Video Section */}
       <section className="container mx-0 px-4">
-        <div className="flex justify-center overflow-hidden">
+        <div className="flex justify-center overflow-hidden w-4/5 mx-auto">
           <video
             controls
             controlsList="nodownload"
@@ -131,7 +131,7 @@ const Home = () => {
       </section>
 
       {/* Fund Call-to-Action */}
-      <section className="container mx-auto px-4 max-w-4xl">
+      <section className="container mx-auto px-4 w-2/3">
         <div className="bg-amber-50 border border-burgundy-900/50 rounded-lg p-8 text-center">
           <div className="w-16 h-16 bg-burgundy-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Heart className="h-8 w-8 text-red-600" />
