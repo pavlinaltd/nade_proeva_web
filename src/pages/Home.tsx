@@ -31,7 +31,7 @@ const Home = () => {
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="relative py-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
-        <div className="flex flex-row justify-center px-20 gap-10">
+        <div className="flex flex-row justify-center items-center px-20 gap-10">
           <img
             src="/images/nade.jpg"
             alt="Professor Dr. Nade Proeva"
@@ -39,20 +39,20 @@ const Home = () => {
           ></img>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
-              <div className="flex flex-col justify-center text-justify xl:gap-10">
-                <h1 className="text-3xl lg:text-2xl xl:text-3xl italic mb-6 text-black font-bold">
+              <div className="flex flex-col justify-center text-justify">
+                <h1 className="text-3xl lg:text-2xl xl:text-3xl italic text-black font-bold">
                   "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
-                </h1>
-                <h1 className="text-3xl lg:text-2xl xl:text-3xl mb-6 italic font-bold text-burgundy-900">
-                  "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење."
                 </h1>
                 <span className="lg:text-2xl md:text-xl self-end">
                   <img
                     title="Nade Proeva"
                     src="/images/sign-luna.png"
-                    className="aspect-auto md:w-[300px] lg:w-[200px] xl:w-[300px]"
+                    className="aspect-auto md:w-[300px] lg:w-[200px] xl:w-[300px] mt-[-40px] mb-[-40px]"
                   />
                 </span>
+                <h1 className="text-3xl lg:text-2xl xl:text-3xl italic font-bold text-burgundy-900">
+                  "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење."
+                </h1>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Home = () => {
       <section className="container mx-0 px-4">
         <h1 className="text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1>
 
-        <div className="flex flex-row justify-around gap-4 bg-yellow-500 p-5 rounded-lg">
+        <div className="flex flex-row justify-around gap-4 w-4/5 mx-auto bg-yellow-500 p-5 rounded-lg">
           {medals.map((medal) => (
             <div className="flex flex-col text-center items-center gap-2">
               <img
@@ -122,7 +122,7 @@ const Home = () => {
           <video
             controls
             controlsList="nodownload"
-            className="aspect-video rounded-lg md:max-w-3xl xl:max-w-6xl"
+            className="aspect-video rounded-lg"
           >
             <source src="/videos/NADE.mp4" type="video/mp4" />
             Your browser does not support the video tag.
