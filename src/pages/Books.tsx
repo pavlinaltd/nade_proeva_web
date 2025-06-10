@@ -35,37 +35,41 @@ const BookCard = ({ book }: { book: BookProps }) => {
         <img 
           src={book.imageUrl} 
           alt={book.title} 
-          className="max-w-full h-auto max-h-[300px] object-contain rounded"
+          className=" object-contain rounded"
         />
       </div>
       <div className="flex gap-8 md:w-2/3 p-6">
         <div
           // className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}
-          className="flex flex-col w-1/2"
+          className="flex flex-col w-1/2 justify-center"
         >
-          <h3 className="text-xl font-semibold text-burgundy-900 mb-2">{book.title}</h3>
-          {book.originalTitle && (
-            <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
-          )}
-          <div className="text-sm text-gray-500 mb-4">
-            {book.author && <p>Author: {book.author}</p>}
-            <p>Editor: {book.editor}</p>
-            {book.translator && <p>Translator: {book.translator}</p>}
-            <p>{book.year} • {book.publisher}</p>
-            <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
+          <div>
+            <h3 className="text-xl font-semibold text-burgundy-900 mb-2">{book.title}</h3>
+            {book.originalTitle && (
+              <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
+            )}
+            <div className="text-sm text-gray-500 mb-4">
+              {book.author && <p>Author: {book.author}</p>}
+              <p>Editor: {book.editor}</p>
+              {book.translator && <p>Translator: {book.translator}</p>}
+              <p>{book.year} • {book.publisher}</p>
+              <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
+            </div>
+            <p className="text-gray-700 text-lg text-justify mb-4">{book.description}</p>
           </div>
-          <p className="text-gray-700 mb-4">{book.description}</p>
-          {book.amazonUrl ? (
-            <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
-              <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink size={16} />
-                Find on Amazon Books
-              </a>
-            </Button>) : (
-            <Button className="flex items-center bg-gray-900" disabled>
-              Coming Soon to Amazon Books
-            </Button>
-          )}
+          <div className="w-full text-lg">
+            {book.amazonUrl ? (
+              <Button className="flex items-center self-end gap-2 bg-amber-500 hover:bg-amber-600" asChild>
+                <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink size={16} />
+                  Find on Amazon Books
+                </a>
+              </Button>) : (
+              <Button className="flex items-center bg-gray-900" disabled>
+                Coming Soon to Amazon Books
+              </Button>
+            )}
+          </div>
         </div>
         
         {book.promoImage || book.promoAudio ? (
@@ -74,7 +78,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
             <img
               src="/images/religion-book-promotional.jpg"
               alt=""
-              className="border-gray-600 border-4 rounded-sm"
+              className="shadow-lg rounded-sm w-[595px]"
             />
           )}
           
@@ -128,7 +132,7 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
 const Books = () => {
   const books: BookProps[] = [
     {
-      title: "Studies for Ancient Macedonians",
+      title: "Studies of the Ancient Macedonians",
       originalTitle: "Studii za Antičkite Makedonci",
       author: "Nade Proeva",
       editor: "Nade Proeva",
@@ -137,7 +141,7 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "5",
       description: "A comprehensive analysis of ancient Macedonian society, culture, and political structures. This groundbreaking work challenges traditional interpretations of ancient Macedonian identity and provides new insights based on archaeological and epigraphic evidence.",
-      imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+      imageUrl: "/images/temp-book.jpg",
       isbn: "9989-619-26-3",
       amazonUrl: ""
     },
@@ -165,7 +169,7 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "8",
       description: "An in-depth examination of the Argead dynasty of ancient Macedonia, from its mythical origins to the reign of Alexander the Great. This work provides a critical reassessment of primary sources and recent archaeological discoveries.",
-      imageUrl: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
+      imageUrl: "/images/temp-book.jpg",
       isbn: "",
       amazonUrl: ""
     },
@@ -206,14 +210,14 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "11",
       description: "A detailed study of religious practices, beliefs, and mythological traditions in ancient Macedonia. This book explores both the indigenous elements of Macedonian religion and the syncretic influences from neighboring cultures.",
-      imageUrl: "/lovable-uploads/a914d7e4-d98e-4959-a9d7-917951c81625.png",
+      imageUrl: "/images/temp-book.jpg",
       isbn: "978-9989-2978-5-4",
       amazonUrl: "",
       promoImage: "/images/religion-book-promotional.jpg",
       promoAudio: "/audio/16-04-2014-Religion-of-Antique-.mp3"
     },
     {
-      title: "Triptych for Macedonian Identity",
+      title: "Macedonia: A Nation on the Betting Table",
       originalTitle: "Триптих за Македонскиот идентитет",
       author: "Nade Proeva",
       editor: "Nikola Minov",
@@ -222,7 +226,7 @@ const Books = () => {
       series: "Monograph Series",
       volume: "2",
       description: "A scholarly analysis of the development of Macedonian identity through three distinct historical periods, examining cultural continuity and evolution of national consciousness.",
-      imageUrl: "/lovable-uploads/e1908f6c-4b04-4e2b-ac65-0eef5d1277e5.png",
+      imageUrl: "/images/temp-book.jpg",
       isbn: "978-608-245-363-7",
       amazonUrl: ""
     },
@@ -245,8 +249,8 @@ const Books = () => {
   return (
     <div>
       <SectionHeader
-        title="BOOKS BY PROFESSOR NADE PROEVA"
-        subtitle="Professor Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
+        title="BOOKS"
+        subtitle="Professor Dr. Nade Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
       />
 
       <div className="space-y-8">

@@ -3,12 +3,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Headphones, Mic, MicVocal } from "lucide-react";
 
 interface VideoItem {
-  type: "video";
+  type: "localVideo" | "youtube";
+  format: string;
   src: string;
   title: string;
   caption?: string;
-  location?: string;
-  year?: string;
 }
 
 const Media = () => {
@@ -58,28 +57,25 @@ const Media = () => {
 
   const videos: VideoItem[] = [
     {
-      type: "video",
+      type: "localVideo",
+      format: "mp4",
       src: "/videos/Speech-2004-Prilep.mp4",
       title: "Interview on Ancient Macedonian Identity",
-      caption: "At the unveiling of the Alexander the Great monument",
-      location: "Prilep, Macedonia",
-      year: "2003"
+      caption: "The unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
     },
     {
-      type: "video",
-      src: "/videos/Speech-2004-Prilep.mp4",
+      type: "youtube",
+      format: "",
+      src: "https://www.youtube.com/embed/XQ4uFrdFAUM",
       title: "Interview on Ancient Macedonian Identity",
-      caption: "At the unveiling of the Alexander the Great monument",
-      location: "Prilep, Macedonia",
-      year: "2003"
+      caption: "Strumica, Macedonia - 2005",
     },
     {
-      type: "video",
-      src: "/videos/Speech-2004-Prilep.mp4",
+      type: "localVideo",
+      format: "mpg",
+      src: "/videos/ON-TV-NOVA-2005.mp4",
       title: "Interview on Ancient Macedonian Identity",
-      caption: "At the unveiling of the Alexander the Great monument",
-      location: "Prilep, Macedonia",
-      year: "2003"
+      caption: "Strumica, Macedonia, TV NOVA - 2005",
     },
   ]
 
@@ -97,9 +93,9 @@ const Media = () => {
       <h3 className="text-2xl font-bold text-center text-black">AUDIO</h3>
     </div>
     <hr className="my-8 border-2 rounded-full"/>
-    <div className="flex justify-center mt-4 gap-[10rem] items-start">
+    <div className="flex justify-center mt-4 items-start gap-10">
       {/* Video */}
-      <div className="flex flex-col gap-10 w-2/5  rounded-md p-10">
+      <div className="flex flex-col gap-10 w-1/2 rounded-md">
         {/* Items */}
         {videos.map((video, index) => (
           <div
@@ -107,34 +103,42 @@ const Media = () => {
             className="bg-white rounded-lg overflow-hidden shadow-md"
             // had margin 200px, removed for more consistency
           >
-            <div className="aspect-[4/3] relative">
+            <div className="aspect-video relative">
+              {video.type === "youtube" ? (
+                <iframe
+                  className="w-full h-full object-cover"
+                  src={video.src}
+                  title={video.title}
+                >
+                </iframe>
+              ) : (
               <video
                 className="w-full h-full object-cover"
                 controls
                 controlsList="nodownload"
               >
                 <source
-                  src={video.src} 
+                  src={video.src}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
               </video>
+              )}
             </div>
             <div className="p-4">
               <h3 className="font-droidsans font-semibold text-memorial-900 mb-1">{video.caption}</h3>
-              {video.year && <p className="text-sm text-gray-500 mb-2">{video.location} - {video.year}</p>}
             </div>
           </div>
         ))}
       </div>
 
       {/* Audio */}
-      <div className="flex flex-col w-2/5 rounded-md p-10">
+      <div className="flex flex-col w-1/2 gap-10 rounded-md">
         {/* Podium */}
         <img
           src="/images/nade-podium.jpg" 
           alt="Podium"
-          className="h-[450px] object-cover rounded-lg shadow-md"
+          className="object-cover rounded-lg shadow-md"
         />
         {/* Items */}
         {audios.map((audio, index) => (

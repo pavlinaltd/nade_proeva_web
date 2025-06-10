@@ -6,7 +6,7 @@ import TranslatorImage from "@/components/Translator";
 import SectionHeader from "@/components/SectionHeader";
 
 interface MediaItem {
-  type: "image" | "video";
+  type: "image" | "pdf";
   title: string;
   caption?: string;
   year?: string;
@@ -37,15 +37,6 @@ const Columns = () => {
         "images/columns/column-3.jpg"
       ]
     },
-    // {
-    //   type: "image",
-    //   title: "Column 2: Nova Makedonija",
-    //   caption: "Caption",
-    //   year: "Year",
-    //   pageImages: [
-    //     "images/columns/Column_2_Nova_Makedonija.JPG"
-    //   ]
-    // },
     {
       type: "image",
       title: "Column 1: Nova Makedonija",
@@ -71,9 +62,11 @@ const Columns = () => {
     <>
     <SectionHeader
       title="COLUMNS"
-      subtitle="Read Professor Nade Proeva's columns in their original text.
+      subtitle="Read Professor Dr. Nade Proeva's columns in their original text.
         Click a picture to enlarge it and swipe to read any additional pages."
     />
+
+    {/* <a href="images/columns/UTRINSKI-24-10-2006.pdf" target="_blank">Column</a> */}
 
     <div
       className="flex flex-col flex-wrap max-h-[500px] items-start gap-6"
