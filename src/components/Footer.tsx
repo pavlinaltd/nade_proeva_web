@@ -13,7 +13,7 @@ const Footer = () => {
           className="flex items-start justify-between"
         >
           {/* Logo and About Page */}
-          <div className="w-1/3">
+          <div className="w-1/2">
             <img
               src="/logo_italic.jpg"
               alt="The Nade Proeva Endowment Fund"
@@ -21,7 +21,11 @@ const Footer = () => {
             />
             <p className="text-black text-md">
               This site is dedicated to preserving the memory and academic legacy of
-              Professor Nade Proeva, a distinguished Macedonian scholar, historian, researcher, and educator.
+              Professor Dr. Nade Proeva, a distinguished Macedonian scholar, historian, researcher, and educator.
+            </p>
+            <br />
+            <p className="text-black text-md">
+              &copy; All rights reserved. To use portions of the writings featured on this site, you need permission from the copyright holder.
             </p>
           </div>
           
@@ -58,7 +62,7 @@ const Footer = () => {
           {/* Links */}
           <div className="w-1/3">
             <h3 className="text-xl mb-4 text-black">Links</h3>
-            <div className="grid grid-cols-3 gap-8 w-full">
+            <div className="grid grid-cols-2 w-full">
               <div>
                 <ul className="space-y-2">
                   <li>
@@ -91,20 +95,16 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/#" className="text-black hover:underline text-md">Privacy Policy</Link>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-amber-800 mt-8 pt-6 text-center text-black text-sm">
+        <div className="flex justify-between border-t-2 border-amber-800 mt-8 pt-6 text-center text-black text-sm">
           <p>
-            &copy; {currentYear} Nade Proeva Scholarship Endowment. All rights reserved. Website by <a href="https://linkedin.com/in/coriebeale" className="hover:underline">Corie Beale</a>
+            &copy; {currentYear} Nade Proeva Scholarship Endowment. All rights reserved.
+          </p>
+          <p>
+            Website courtesy of <a href="https://linkedin.com/in/coriebeale" className="hover:underline">Corie Beale</a>
           </p>
         </div>
       </div>
