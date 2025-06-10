@@ -89,8 +89,8 @@ const Media = () => {
     {/* Content Wrapper */}
     {/* Header */}
     <div className="flex justify-around mt-10 mb-8">
-      <h3 className="text-2xl font-bold text-center text-black">VIDEO</h3>
-      <h3 className="text-2xl font-bold text-center text-black">AUDIO</h3>
+      <h3 className="text-2xl font-bold text-center text-burgundy-900">VIDEO</h3>
+      <h3 className="text-2xl font-bold text-center text-burgundy-900">AUDIO</h3>
     </div>
     <hr className="my-8 border-2 rounded-full"/>
     <div className="flex justify-center mt-4 items-start gap-10">
@@ -101,7 +101,6 @@ const Media = () => {
           <div
             key={index}
             className="bg-white rounded-lg overflow-hidden shadow-md"
-            // had margin 200px, removed for more consistency
           >
             <div className="aspect-video relative">
               {video.type === "youtube" ? (
@@ -126,7 +125,7 @@ const Media = () => {
               )}
             </div>
             <div className="p-4">
-              <h3 className="font-droidsans font-semibold text-memorial-900 mb-1">{video.caption}</h3>
+              <h3 className="font-droidsans text-black mb-1">{video.caption}</h3>
             </div>
           </div>
         ))}
