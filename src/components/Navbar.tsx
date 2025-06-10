@@ -35,7 +35,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           {/* {!isMobile && ( */}
-            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden lg:block lg:text-xs xl:text-sm">
+            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-bold lg:block lg:text-xs xl:text-sm">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/" className={"flex items-center gap-1"}>
@@ -91,9 +91,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           {/* {isMobile && ( */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Menu"
               className="block lg:hidden"
