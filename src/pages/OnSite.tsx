@@ -162,7 +162,7 @@ const OnSite = () => {
             {photos.map((photo, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale max-w-sm h-auto"
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 max-w-sm h-auto"
                 onClick={() => openLightbox(photo)}
               >
                 <div className="overflow-hidden">
