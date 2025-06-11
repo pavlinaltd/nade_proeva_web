@@ -262,7 +262,7 @@ const Books = () => {
       <div className="my-12">
         <h3 className="text-xl font-semibold text-burgundy-900 mb-4">Complete Bibliography</h3>
         <p className="text-gray-700 mb-6">
-          Below is a comprehensive listing of books authored, edited, or translated by Professor Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
+          Below is a comprehensive listing of books authored, edited, or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
         </p>
         
         <BookTable books={books} />

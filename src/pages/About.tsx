@@ -222,7 +222,7 @@ const About = () => {
             <blockquote className="border-l-4 border-memorial-500 pl-4 italic text-gray-600 mt-6">
               "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
               <footer className="text-sm text-gray-500 mt-2 not-italic">
-                - Professor Nade Proeva
+                - Professor Dr. Nade Proeva
               </footer>
             </blockquote>
           </div>

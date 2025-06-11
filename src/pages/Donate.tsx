@@ -29,7 +29,7 @@ const Donate = () => {
                   About the Scholarship
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  The Professor Nade Proeva Scholarship Fund was established to honor the legacy of a distinguished scholar 
+                  The Professor Dr. Nade Proeva Scholarship Fund was established to honor the legacy of a distinguished scholar 
                   (September 9, 1949 - November 6, 2024) who dedicated her life to advancing Macedonian historical research 
                   and education.
                 </p>
@@ -68,7 +68,7 @@ const Donate = () => {
                   <h4 className="font-semibold text-memorial-900">University Foundation</h4>
                   <p className="text-gray-700">
                     Donations can be made through the Ss. Cyril and Methodius University Foundation, 
-                    earmarked for the "Professor Nade Proeva Scholarship Fund."
+                    earmarked for the "Professor Dr. Nade Proeva Scholarship Fund."
                   </p>
                 </div>
               </div>
