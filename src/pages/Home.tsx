@@ -30,8 +30,8 @@ const Home = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative py-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
-        <div className="flex flex-row justify-center items-center px-20 gap-10">
+      <section className="relative p-10 md:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
+        <div className="flex flex-row justify-center items-center gap-10">
           <img
             src="/images/nade.jpg"
             alt="Professor Dr. Nade Proeva"
@@ -39,18 +39,19 @@ const Home = () => {
           ></img>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
-              <div className="flex flex-col justify-center text-justify">
-                <h1 className="text-3xl lg:text-2xl xl:text-3xl italic text-black font-bold">
+              <div className="flex flex-col justify-center text-justify sm:text-lg lg:text-2xl xl:text-3xl italic">
+                <h1 className=" text-black font-bold">
                   "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
                 </h1>
-                <span className="lg:text-2xl md:text-xl self-end">
+                <span className="self-end">
                   <img
                     title="Nade Proeva"
                     src="/images/sign-luna.png"
-                    className="aspect-auto md:w-[300px] lg:w-[200px] xl:w-[300px] mt-[-40px] mb-[-40px]"
+                    className="aspect-auto hidden md:block md:w-[200px] lg:w-[200px] xl:w-[300px] md:mt-[-40px] md:mb-[-40px]"
                   />
                 </span>
-                <h1 className="text-3xl lg:text-2xl xl:text-3xl italic font-bold text-burgundy-900">
+                <br />
+                <h1 className="font-bold text-burgundy-900">
                   "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење."
                 </h1>
               </div>
@@ -62,7 +63,7 @@ const Home = () => {
       {/* Introduction Section */}
       <section className="container mx-0 px-4">
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-          <div className="text-lg text-justify w-4/5">
+          <div className="text-xs md:text-base lg:text-base xl:text-lg text-justify w-4/5">
             {/* <h2 className="text-3xl font-bold text-memorial-900 mb-4">
               Remembering a Scholar
             </h2> */}
@@ -133,17 +134,17 @@ const Home = () => {
       {/* Fund Call-to-Action */}
       <section className="container mx-auto px-4 w-2/3">
         <div className="bg-amber-50 border border-burgundy-900/50 rounded-lg p-8 text-center">
-          <div className="w-16 h-16 bg-burgundy-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Heart className="h-8 w-8 text-red-600" />
+          <div className="w-10 h-10 lg:w-16 lg:h-16 bg-burgundy-100 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-6">
+            <Heart className="h-6 w-6 lg:h-8 lg:w-8 text-red-600" />
           </div>
-          <h2 className="text-3xl font-semibold text-burgundy-800 mb-4">
+          <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 mb-4">
             Support the Nade Proeva Scholarship Endowment
           </h2>
-          <p className="text-gray-800 mb-6 max-w-2xl mx-auto">
+          <p className="text-gray-800 mb-6 max-w-2xl mx-auto text-xs md:text-sm lg:text-base xl:text-lg">
             Your contribution to the endowment will help support the next generation 
             of historians dedicated to studying Macedonian history and culture.
           </p>
-          <Button asChild className="bg-burgundy-600 hover:bg-burgundy-700 text-white">
+          <Button asChild className="text-xs lg:text-base bg-burgundy-600 hover:bg-burgundy-700 text-white">
             <Link to="/donate">Contribute</Link>
           </Button>
         </div>
