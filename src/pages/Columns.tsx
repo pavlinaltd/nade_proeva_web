@@ -11,12 +11,13 @@ interface MediaItem {
   caption?: string;
   year?: string;
   pageImages?: string[];
+  orientation: "horizontal" | "vertical";
 }
 
 const Columns = () => {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
 
-  const columns: MediaItem[] = [
+  const columnsForeign: MediaItem[] = [
     {
       type: "image",
       title: "Neglecting Well-Known Facts",
@@ -26,8 +27,34 @@ const Columns = () => {
         "images/columns/Neglecting-Facts-1.jpeg",
         "images/columns/Neglecting-Facts-2.jpeg",
         "images/columns/Neglecting-Facts-3.jpeg"
-      ]
+      ],
+      orientation: "vertical"
     },
+    {
+      type: "image",
+      title: "Title",
+      caption: "Caption",
+      year: "Year",
+      pageImages: [
+        "images/columns/vert-1.jpg",
+        "images/columns/vert-2.jpg",
+      ],
+      orientation: "vertical"
+    },
+    {
+      type: "image",
+      title: "Title",
+      caption: "Caption",
+      year: "Year",
+      pageImages: [
+        "images/columns/vert-1.jpg",
+        "images/columns/vert-2.jpg",
+      ],
+      orientation: "vertical"
+    },
+  ];
+
+  const columnsOriginal: MediaItem[] = [
     {
       type: "image",
       title: "Column 1: Nova Makedonija",
@@ -35,7 +62,8 @@ const Columns = () => {
       year: "Year",
       pageImages: [
         "images/columns/column-3.jpg"
-      ]
+      ],
+      orientation: "horizontal"
     },
     {
       type: "image",
@@ -44,9 +72,20 @@ const Columns = () => {
       year: "Year",
       pageImages: [
         "images/columns/column-4.jpg"
-      ]
+      ],
+      orientation: "horizontal"
     },
-  ];
+    {
+      type: "image",
+      title: "Column 1: Nova Makedonija",
+      caption: "Caption",
+      year: "Year",
+      pageImages: [
+        "images/columns/col-1.jpg"
+      ],
+      orientation: "horizontal"
+    },
+  ]
 
   const openLightbox = (image: MediaItem) => {
     setSelectedImage(image);
@@ -63,30 +102,49 @@ const Columns = () => {
     <SectionHeader
       title="COLUMNS"
       subtitle="Read Professor Dr. Nade Proeva's columns in their original text.
-        Click a picture to enlarge it and swipe to read any additional pages."
+        Click a picture to enlarge it and swipe to read any additional pages. You
+        may use any translator or AI tool to translate these texts."
     />
 
     {/* <a href="images/columns/UTRINSKI-24-10-2006.pdf" target="_blank">Column</a> */}
 
-    <div
-      className="flex flex-col flex-wrap max-h-[500px] items-start gap-6"
-    >
-      {columns.map((column, index) => (
-        <div
-          key={index}
-          className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
-          // className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
-          onClick={() => openLightbox(column)}
-        >
-          <div className="overflow-hidden">
-            <img
-              src={column.pageImages?.[0] || ""}
-              alt={column.title}
-              className="w-[360px] h-full object-fit"
-            />
+    <div className="flex flex-col gap-10">    
+      <div className="flex flex-row max-h-[500px] items-start gap-6 justify-between">
+        {columnsForeign.map((column, index) => (
+          <div
+            key={index}
+            className="rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105"
+            // className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
+            onClick={() => openLightbox(column)}
+          >
+            <div className="overflow-hidden">
+              <img
+                src={column.pageImages?.[0] || ""}
+                alt={column.title}
+                className="w-[360px] h-full object-fit"
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
+      <div className="flex h-[600px] items-start gap-6 justify-between">
+        {columnsOriginal.map((column, index) => (
+          <div
+            key={index}
+            className="rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer w-1/2 transform transition-transform duration-200 hover:scale-105"
+            onClick={() => openLightbox(column)}
+          >
+            <div className="overflow-hidden">
+              <img
+                src={column.pageImages?.[0] || ""}
+                alt={column.title}
+                className="w-full h-[350px] object-left-top object-cover"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
 
     {/* Lightbox */}
