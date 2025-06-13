@@ -26,6 +26,11 @@ const OnSite = () => {
     },
     {
       type: "image",
+      src: "/images/onsite/11.jpg",
+      orientation: "horizontal"
+    },
+    {
+      type: "image",
       src: "/images/onsite/2.jpg",
       orientation: "horizontal"
     },
@@ -56,12 +61,22 @@ const OnSite = () => {
     },
     {
       type: "image",
-      src: "/images/onsite/10.jpg",
+      src: "/images/onsite/13.jpg",
       orientation: "horizontal"
     },
     {
       type: "image",
-      src: "/images/onsite/7B.jpeg",
+      src: "/images/onsite/14.jpg",
+      orientation: "horizontal"
+    },
+    {
+      type: "image",
+      src: "/images/onsite/15.jpg",
+      orientation: "horizontal"
+    },
+    {
+      type: "image",
+      src: "/images/onsite/7D.jpg",
       orientation: "vertical"
     },
     {
@@ -71,7 +86,7 @@ const OnSite = () => {
     },
     {
       type: "image",
-      src: "/images/onsite/7D.jpg",
+      src: "/images/onsite/16.jpg",
       orientation: "vertical"
     },
     {
@@ -82,6 +97,11 @@ const OnSite = () => {
     {
       type: "image",
       src: "/images/onsite/3.jpg",
+      orientation: "vertical"
+    },
+    {
+      type: "image",
+      src: "/images/onsite/12.jpg",
       orientation: "vertical"
     },
   ];
@@ -143,96 +163,34 @@ const OnSite = () => {
   return (
     <div>
       <SectionHeader
-        title="ON SITE"
-        subtitle="Explore photos, videos, and media related to Professor Proeva's academic career and public appearances."
+        title="SHARING HISTORY"
+        subtitle="...with her students and foreign visitors interested in Macedonia's archeological past."
       />
 
-      <Tabs defaultValue="photos" className="w-full mb-8">
-        <TabsList className="grid w-full grid-cols-3 mb-6">
-          <TabsTrigger value="photos">Photographs</TabsTrigger>
-          <TabsTrigger value="videos">Videos</TabsTrigger>
-          <TabsTrigger value="news">Media Coverage</TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="photos" className="animate-fade-in">
-          <div
-            // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center"
-            className="flex flex-wrap gap-6 items-start justify-center align-left"
-          >
-            {photos.map((photo, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 max-w-sm h-auto"
-                onClick={() => openLightbox(photo)}
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={photo.src}
-                    alt=""
-                    className={photo.orientation === "vertical" ? 'object-cover w-full h-[600px]' :
-                      'object-cover w-full h-[300px]'
-                    }
-                  />
-                </div>
+      <div className="animate-fade-in">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          // className="flex flex-wrap gap-6 items-start justify-between align-left"
+        >
+          {photos.map((photo, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-auto"//TODO: fix widths to fit max margins
+              onClick={() => openLightbox(photo)}
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={photo.src}
+                  alt=""
+                  className={photo.orientation === "vertical" ? 'object-cover w-full h-[600px]' :
+                    'object-cover w-full h-[300px]'
+                  }
+                />
               </div>
-            ))}
-          </div>
-        </TabsContent>
-        
-        {/* <TabsContent value="videos" className="animate-fade-in">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
-              >
-                <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={video.thumbnail || video.src} 
-                    alt={video.title} 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center">
-                      <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-memorial-700 border-b-8 border-b-transparent ml-1"></div>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-memorial-900 mb-1">{video.title}</h3>
-                  {video.year && <p className="text-sm text-gray-500 mb-2">{video.year}</p>}
-                  {video.caption && <p className="text-sm text-gray-700">{video.caption}</p>}
-                </div>
-              </div>
-            ))}
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="news" className="animate-fade-in">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {news.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
-                onClick={() => item.type === "image" ? openLightbox(item) : null}
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={item.thumbnail || item.src} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-memorial-900 mb-1">{item.title}</h3>
-                  {item.year && <p className="text-sm text-gray-500 mb-2">{item.year}</p>}
-                  {item.caption && <p className="text-sm text-gray-700">{item.caption}</p>}
-                </div>
-              </div>
-            ))}
-          </div>
-        </TabsContent> */}
-      </Tabs>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Lightbox */}
       {selectedImage && (
