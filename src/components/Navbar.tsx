@@ -63,7 +63,7 @@ const Navbar = () => {
 
                 <NavigationMenuItem>
                   <Link to="/columns" className={"flex items-center gap-1"}>
-                    COLUMNS
+                    PRESS
                   </Link>
                 </NavigationMenuItem>
 
