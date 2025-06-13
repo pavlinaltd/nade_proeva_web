@@ -95,7 +95,7 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-0 px-4">
-        <h1 className="text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1>
+        <h1 className="text-2xl lg:text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1>
 
         <div className="flex flex-row justify-around gap-4 w-2/3 mx-auto bg-yellow-500 p-5 rounded-lg">
           {medals.map((medal) => (
