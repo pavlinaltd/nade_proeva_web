@@ -56,7 +56,7 @@ const Footer = () => {
               </ul>
               <ul className="space-y-2">
                 <li>
-                  <Link to="#" className="text-black hover:underline text-md">University Page</Link>
+                  <Link to="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="text-black hover:underline text-md">University Page</Link>
                 </li>
               </ul>
             </div>
