@@ -11,11 +11,11 @@ interface SectionHeaderProps {
 const SectionHeader = ({ title, subtitle, children, center = false }: SectionHeaderProps) => {
   return (
     <div className={`mb-8 ${center ? "text-center" : ""}`}>
-      <h2 className="text-3xl md:text-4xl font-bold text-burgundy-900 mb-3">
+      <h2 className="text-2xl lg:text-3xl font-bold text-burgundy-900 mb-3">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg text-gray-600 w-2/3">
+        <p className="text-xs md:text-sm lg:text-base xl:text-lg text-gray-600 w-2/3">
           {subtitle}
         </p>
       )}
