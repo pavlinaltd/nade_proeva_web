@@ -226,9 +226,10 @@ const Books = () => {
       series: "Monograph Series",
       volume: "2",
       description: "A scholarly analysis of the development of Macedonian identity through three distinct historical periods, examining cultural continuity and evolution of national consciousness.",
-      imageUrl: "/images/temp-book.jpg",
+      imageUrl: "/images/books/triptych.jpg",
       isbn: "978-608-245-363-7",
-      amazonUrl: ""
+      amazonUrl: "",
+      promoImage: "/images/books/triptych-promo.jpg",
     },
     {
       title: "National Awareness of the Macedonian Slavs",
