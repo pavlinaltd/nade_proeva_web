@@ -30,12 +30,12 @@ const Home = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative p-10 md:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
-        <div className="flex flex-row justify-center items-center gap-10">
+      <section className="relative p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
           <img
             src="/images/nade.jpg"
             alt="Professor Dr. Nade Proeva"
-            className="w-1/2 h-auto border-0 object-cover rounded-lg hidden lg:block"
+            className="w-1/2 h-auto border-0 object-cover rounded-lg block"
           ></img>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
