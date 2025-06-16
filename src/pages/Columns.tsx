@@ -65,30 +65,31 @@ const Columns = () => {
     {
       type: "image",
       title: "translator test",
+      // title: "Бугарското китење со туѓи перја и нашиот громогласен молк",
       pageImages: [
-        "images/columns/column-3.jpg"
+        "images/columns/bugarskoto.jpg"
       ],
       orientation: "horizontal"
     },
     {
       type: "image",
-      title: "Column 1: Nova Makedonija",
+      title: "Бугарска койија на грчкото однесување",
       pageImages: [
-        "images/columns/column-4.jpg"
+        "images/columns/bugarska.jpg"
       ],
       orientation: "horizontal"
     },
     {
       type: "image",
-      title: "Column 1: Nova Makedonija",
+      title: "Историјата можат да ја одбранаш само историчарите",
       pageImages: [
-        "images/columns/icsh.jpg"
+        "images/columns/istoriyata.jpg"
       ],
       orientation: "horizontal"
     },
     {
       type: "image",
-      title: "Column 1: Nova Makedonija",
+      title: "Француска цивилизациска утка на отворањето на ЛОИ",
       pageImages: [
         "images/columns/fran.jpg"
       ],
@@ -96,7 +97,7 @@ const Columns = () => {
     },
     {
       type: "image",
-      title: "Column 1: Nova Makedonija",
+      title: "Институционализирање на неинституционалното",
       pageImages: [
         "images/columns/instit.jpg"
       ],
