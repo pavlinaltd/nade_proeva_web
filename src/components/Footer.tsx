@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -13,10 +13,10 @@ const Footer = () => {
           className="flex items-start justify-between"
         >
           {/* About and Links */}
-          <div className="w-2/5">
-            <p className="text-black text-md">
+          <div className="w-[42%]">
+            <p className="text-black text-md text-justify">
               This site is dedicated to preserving the memory and academic legacy of
-              Professor Dr. Nade Proeva, a distinguished Macedonian scholar, historian, researcher, and educator.
+              Professor Dr. Nade Proeva, a distinguished Macedonian scholar, author, historian, researcher, and educator.
             </p>
             <br />
             <h3 className="text-xl mb-4 text-black">Links</h3>
@@ -28,14 +28,16 @@ const Footer = () => {
                 <li>
                   <Link to="/about" className="text-black hover:underline text-md">About</Link>
                 </li>
-                <li>
-                  <Link to="/books" className="text-black hover:underline text-md">Books</Link>
-                </li>
               </ul>
               <ul className="space-y-2">
                 <li>
+                  <Link to="/books" className="text-black hover:underline text-md">Books</Link>
+                </li>
+                <li>
                   <Link to="/papers" className="text-black hover:underline text-md">Papers</Link>
                 </li>
+              </ul>
+              <ul className="space-y-2">
                 <li>
                   <Link to="/columns" className="text-black hover:underline text-md">Columns</Link>
                 </li>
@@ -48,22 +50,14 @@ const Footer = () => {
                   <Link to="/on-location" className="text-black hover:underline text-md">On Location</Link>
                 </li>
                 <li>
-                  <Link to="/testimonials" className="text-black hover:underline text-md">Remembering a Scholar</Link>
-                </li>
-                <li>
-                  <Link to="https://ukim.academia.edu/NadeProeva" className="text-black hover:underline text-md">Academia.edu</Link>
-                </li>
-              </ul>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="text-black hover:underline text-md">University Page</Link>
+                  <Link to="/testimonials" className="text-black hover:underline text-md">Remembering Nade</Link>
                 </li>
               </ul>
             </div>
           </div>
 
           {/* Copyright Statement */}
-          <div className="w-2/5">
+          <div className="w-[42%]">
             <p className="text-black text-md text-justify">
               <span className="font-bold">&copy; All rights reserved.</span> The contents of this website, including but not limited to text,
               images, and other media, are protected by copyright law. No part of these materials may be copied,
@@ -71,6 +65,12 @@ const Footer = () => {
               including electronic, mechanical, photocopying, recording, or otherwise, without 
               the prior written permission of the copyright holder. Unauthorized use is strictly prohibited and may result in legal action.
             </p>
+            <br />
+            <div className="flex justify-between gap-10 text-burgundy-800 font-bold text-md">
+              <Link to="https://ukim.academia.edu/NadeProeva" className="hover:underline">academia.edu</Link>
+              <Link to="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="hover:underline">fzf.ukim.edu.mk</Link>
+              <Link to="https://mk.wikipedia.org/wiki/Наде_Проева" className="hover:underline">mk.wikipedia.org</Link>
+            </div>
           </div>
         </div>
         
