@@ -76,7 +76,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
           <div className="flex flex-col items-center gap-10 self-center w-1/2">
           {book.promoImage && (
             <img
-              src="/images/religion-book-promotional.jpg"
+              src={book.promoImage}
               alt=""
               className="shadow-lg rounded-sm w-[595px]"
             />
@@ -213,7 +213,7 @@ const Books = () => {
       imageUrl: "/images/temp-book.jpg",
       isbn: "978-9989-2978-5-4",
       amazonUrl: "",
-      promoImage: "/images/religion-book-promotional.jpg",
+      promoImage: "/images/launch-of-religion.jpg",
       promoAudio: "/audio/16-04-2014-Religion-of-Antique-.mp3"
     },
     {
