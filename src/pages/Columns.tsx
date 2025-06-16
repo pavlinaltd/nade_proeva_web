@@ -1,14 +1,12 @@
-import { X } from "lucide-react";
+import { X, Expand } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import TranslatorImage from "@/components/Translator";
 import SectionHeader from "@/components/SectionHeader";
 
 interface MediaItem {
   type: "image";
   title: string;
-  caption?: string;
   year?: string;
   pageImages?: string[];
   orientation: "horizontal" | "vertical";
@@ -17,15 +15,10 @@ interface MediaItem {
 const Columns = () => {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
 
-  const columnsForeign: MediaItem[] = [
-  ];
-
   const columns: MediaItem[] = [
     {
       type: "image",
       title: "Neglecting Well-Known Facts",
-      caption: "Caption",
-      year: "Year",
       pageImages: [
         "images/columns/Neglecting-Facts-1.jpeg",
         "images/columns/Neglecting-Facts-2.jpeg",
@@ -35,9 +28,7 @@ const Columns = () => {
     },
     {
       type: "image",
-      title: "Title",
-      caption: "Caption",
-      year: "Year",
+      title: "Quo Vadis Scientia Nostra",
       pageImages: [
         "images/columns/quo-vadis.jpg"
       ],
@@ -45,19 +36,15 @@ const Columns = () => {
     },
     {
       type: "image",
-      title: "Title",
-      caption: "Caption",
-      year: "Year",
+      title: "Еден човек со грчко презиме ... си ја има мувата на капата и си ја ишка",
       pageImages: [
-        "images/columns/column-red.jpg"
+        "images/columns/eden.jpg"
       ],
       orientation: "vertical"
     },
     {
       type: "image",
-      title: "Title",
-      caption: "Caption",
-      year: "Year",
+      title: "Златната маска на Македонците",
       pageImages: [
         "images/columns/zlatnata-1.jpg",
         "images/columns/zlatnata-2.jpg",
@@ -68,33 +55,16 @@ const Columns = () => {
     },
     {
       type: "image",
-      title: "Title",
-      caption: "Caption",
-      year: "Year",
+      title: "Господа политичари, настрана рацете од историската наука",
       pageImages: [
-        "images/columns/zlatnata-1.jpg",
-        "images/columns/zlatnata-2.jpg",
-        "images/columns/zlatnata-3.jpg",
-        "images/columns/zlatnata-4.jpg",
-      ],
-      orientation: "vertical"
-    },
-    {
-      type: "image",
-      title: "Title",
-      caption: "Caption",
-      year: "Year",
-      pageImages: [
-        "images/columns/vert-1.jpg",
-        "images/columns/vert-2.jpg",
+        "images/columns/gospoda-1.jpg",
+        "images/columns/gospoda-2.jpg",
       ],
       orientation: "vertical"
     },
     {
       type: "image",
       title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
       pageImages: [
         "images/columns/column-3.jpg"
       ],
@@ -103,8 +73,6 @@ const Columns = () => {
     {
       type: "image",
       title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
       pageImages: [
         "images/columns/column-4.jpg"
       ],
@@ -113,8 +81,6 @@ const Columns = () => {
     {
       type: "image",
       title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
       pageImages: [
         "images/columns/icsh.jpg"
       ],
@@ -123,8 +89,6 @@ const Columns = () => {
     {
       type: "image",
       title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
       pageImages: [
         "images/columns/fran.jpg"
       ],
@@ -133,43 +97,8 @@ const Columns = () => {
     {
       type: "image",
       title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
       pageImages: [
         "images/columns/instit.jpg"
-      ],
-      orientation: "horizontal"
-    },
-  ];
-
-  const columnsHorizontal: MediaItem[] = [
-    {
-      type: "image",
-      title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
-      pageImages: [
-        "images/columns/column-3.jpg"
-      ],
-      orientation: "horizontal"
-    },
-    {
-      type: "image",
-      title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
-      pageImages: [
-        "images/columns/column-4.jpg"
-      ],
-      orientation: "horizontal"
-    },
-    {
-      type: "image",
-      title: "Column 1: Nova Makedonija",
-      caption: "Caption",
-      year: "Year",
-      pageImages: [
-        "images/columns/col-1.jpg"
       ],
       orientation: "horizontal"
     },
@@ -192,28 +121,29 @@ const Columns = () => {
       subtitle="Translators or AI tools can be used to translate these texts."
     />
 
-    {/* <a href="images/columns/UTRINSKI-24-10-2006.pdf" target="_blank">Column</a> */}
-
     <div className="animate-fade-in">
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-fit mx-auto"
-        // className="flex flex-wrap gap-6 items-start justify-between align-left"
-      >
+      <div className="columns-4 gap-0">
         {columns.map((col, index) => (
-          <div
+            <div
             key={index}
-            className="rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105"
-            // className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
+            className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"
             onClick={() => openLightbox(col)}
-          >
+            >
             <div className="overflow-hidden">
               <img
-                src={col.pageImages?.[0] || ""}
-                alt={col.title}
-                className="w-[360px] h-full object-fit"
+              src={col.pageImages?.[0] || ""}
+              alt={col.title}
+              className="w-[360px] h-full object-fit"
               />
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+              <Expand 
+                className={ col.orientation === "vertical" ?
+                  "w-14 h-14 text-white drop-shadow-2xl" :
+                  "w-10 h-10 text-white drop-shadow-2xl"}
+              />
+              </span>
             </div>
-          </div>
+            </div>
         ))}
       </div>
     </div>
