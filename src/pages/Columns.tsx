@@ -64,7 +64,7 @@ const Columns = () => {
     },
     {
       type: "image",
-      title: "Column 1: Nova Makedonija",
+      title: "translator test",
       pageImages: [
         "images/columns/column-3.jpg"
       ],
@@ -124,26 +124,32 @@ const Columns = () => {
     <div className="animate-fade-in">
       <div className="columns-4 gap-0">
         {columns.map((col, index) => (
-            <div
+          <div
             key={index}
             className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"
             onClick={() => openLightbox(col)}
-            >
+          >
             <div className="overflow-hidden">
               <img
               src={col.pageImages?.[0] || ""}
               alt={col.title}
               className="w-[360px] h-full object-fit"
               />
-              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
-              <Expand 
-                className={ col.orientation === "vertical" ?
-                  "w-14 h-14 text-white drop-shadow-2xl" :
-                  "w-10 h-10 text-white drop-shadow-2xl"}
-              />
-              </span>
+              {col.title === "translator test" ? (
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+                  <img src="images/columns/col-3-trans.png" alt="Translator Test" className="w-full h-auto object-fit" />
+                </span>
+              ) : (
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+                <Expand 
+                  className={ col.orientation === "vertical" ?
+                    "w-14 h-14 text-white drop-shadow-2xl" :
+                    "w-10 h-10 text-white drop-shadow-2xl"}
+                />
+                </span>
+              )}
             </div>
-            </div>
+          </div>
         ))}
       </div>
     </div>
