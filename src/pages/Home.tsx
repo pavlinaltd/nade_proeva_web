@@ -6,7 +6,7 @@ const Home = () => {
 
   const medals = [
     {
-      src: "/images/temp-medal.jpg",
+      src: "/images/chevalier.jpg",
       alt: "Chevalier des Palmes Académiques Medal",
       title: "Chevalier des Palmes Académiques"
     },
@@ -16,16 +16,16 @@ const Home = () => {
       title: "Filozovski Fakultet"
     },
     {
-      src: "/images/uni-medal.jpg",
-      alt: "Filozovski Fakultet",
-      title: "Filozovski Fakultet"
+      src: "/images/award-unknown.jpg",
+      alt: "Award",
+      title: "Award"
     },
     {
       src: "/images/uni-medal.jpg",
       alt: "Filozovski Fakultet",
       title: "Filozovski Fakultet"
     }
-  ];
+  ];  
 
   return (
     <div className="space-y-16">
