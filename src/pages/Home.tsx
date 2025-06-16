@@ -6,25 +6,17 @@ const Home = () => {
 
   const medals = [
     {
-      src: "/images/chevalier.jpg",
+      medal: "/images/chevalier.jpg",
+      certificate: "/images/palmes-academiques.jpg",
       alt: "Chevalier des Palmes Académiques Medal",
       title: "Chevalier des Palmes Académiques"
     },
     {
-      src: "/images/uni-medal.jpg",
+      medal: "/images/award-unknown.jpg",
+      certificate: "/images/sertifikat.jpg",
       alt: "Filozovski Fakultet",
       title: "Filozovski Fakultet"
     },
-    {
-      src: "/images/award-unknown.jpg",
-      alt: "Award",
-      title: "Award"
-    },
-    {
-      src: "/images/uni-medal.jpg",
-      alt: "Filozovski Fakultet",
-      title: "Filozovski Fakultet"
-    }
   ];  
 
   return (
@@ -95,24 +87,48 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-0 px-4">
-        <h1 className="text-2xl lg:text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1>
+        {/* <h1 className="text-2xl lg:text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1> */}
 
-        <div className="flex flex-row justify-around gap-4 w-2/3 mx-auto bg-yellow-500 p-5 rounded-lg">
-          {medals.map((medal) => (
-            <div className="flex flex-col text-center items-center gap-2">
-              <img
-                src={medal.src}
-                alt={medal.alt}
-                width="150"
-                height="400"
-                className="rounded-lg"
-              />
-              <p
-                className="font-bold text-wrap w-3/4"
-              >
-                {medal.title}
-              </p>
-            </div>
+        <div className="flex flex-col items-center gap-4 w-2/3 mx-auto bg-yellow-500 p-5 rounded-lg">
+          <h1 className="text-2xl lg:text-3xl text-center text-burgundy-800 font-bold mb-5">HONORS</h1>
+          {medals.map((medal, i) => (
+            <div className="flex flex-row text-center items-center gap-2">
+              { i % 2 === 0 ? (
+                <>
+                  <img
+                    src={medal.certificate}
+                    alt={medal.title}
+                    width="150"
+                    height="400"
+                    className="rounded-lg"
+                  />
+                  <img
+                    src={medal.medal}
+                    alt={medal.title}
+                    width="150"
+                    height="400"
+                    className="rounded-lg"
+                  />
+                </>
+              ) : (
+                <>
+                  <img
+                    src={medal.medal}
+                    alt={medal.title}
+                    width="150"
+                    height="400"
+                    className="rounded-lg"
+                  />
+                  <img
+                    src={medal.certificate}
+                    alt={medal.title}
+                    width="150"
+                    height="400"
+                    className="rounded-lg"
+                  />
+                </>
+              )}
+            </div>            
           ))}
         </div>
       </section>
