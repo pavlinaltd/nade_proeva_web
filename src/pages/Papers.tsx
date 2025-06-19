@@ -112,11 +112,11 @@ const Papers = () => {
       <SectionHeader
         title="ACADEMIC PAPERS"
         subtitle="
-          Professor Proeva's scholarly legacy encompasses over 50 academic publications,
-          including research articles, book reviews, conference papers, and encyclopedia entries.
-          Her work is distinguished by meticulous research, innovative methodology, and insightful analysis.
-          Many of these works are accessible through academic databases such as academia.edu or by
-          contacting the Department of History at Ss. Cyril and Methodius University in Skopje."
+          Professor Proeva's scholarly legacy encompasses over fifty academic publications,
+          including articles, book reviews, conference papers, and encyclopedia entries.
+          Her work involved meticulous research, innovative methodology, and insightful analysis.
+          Many of her works are accessible through academic databases such as academia.edu or by
+          contacting the Department of History at Ss. Cyril and Methodius University in Skopje, Macedonia."
       />
 
       <Tabs defaultValue="table" className="w-full mb-8">
