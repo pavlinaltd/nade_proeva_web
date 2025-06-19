@@ -22,12 +22,12 @@ const Home = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
+      <section className="relative p-5 md:p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-500 to-yellow-600 text-white">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
           <img
             src="/images/nade.jpg"
             alt="Professor Dr. Nade Proeva"
-            className="w-2/5 lg:w-1/2 h-auto border-0 object-cover rounded-lg block"
+            className="w-2/5 lg:w-1/2 h-auto object-cover rounded-lg block"
           ></img>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
@@ -39,7 +39,7 @@ const Home = () => {
                   <img
                     title="Nade Proeva"
                     src="/images/sign-luna.png"
-                    className="aspect-auto hidden md:block md:w-[200px] lg:w-[200px] xl:w-[300px] md:mt-[-40px] md:mb-[-40px]"
+                    className="aspect-auto w-[150px] md:w-[200px] xl:w-[300px] mt-[-40px] mb-[-40px]"
                   />
                 </span>
                 <br />
