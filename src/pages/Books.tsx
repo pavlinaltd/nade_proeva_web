@@ -31,15 +31,15 @@ interface BookProps {
 
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
-      <div className="md:w-1/3 p-6 flex items-center justify-center">
+    <div className="bg-white rounded-l-md shadow-md overflow-hidden flex flex-col md:flex-row">
+      <div className="md:w-1/3 flex">
         <img
           src={book.imageUrl}
           alt={book.title}
-          className="object-cover w-[400px] h-[400px] rounded"
+          className="object-cover"
         />
       </div>
-      <div className="flex gap-16 md:w-1/3 p-6">
+      <div className="flex gap-16 md:w-2/5 p-6">
         <div
           className="flex flex-col justify-between"
         >
@@ -219,7 +219,7 @@ const Books = () => {
       isbn: "978-9989-2978-5-4",
       amazonUrl: "",
       promoImage: "/images/books/launch-of-religion.jpg",
-      promoAudio: "/audio/16-04-2014-Religion-of-Antique-.mp3"
+      promoAudio: "/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
     },
     {
       title: "Macedonia: A Nation on the Betting Table",
