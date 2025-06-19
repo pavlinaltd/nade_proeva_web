@@ -44,7 +44,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
           className="flex flex-col justify-between"
         >
           <div>
-            <h3 className="text-xl font-semibold text-burgundy-900 mb-2">{book.title}</h3>
+            <h3 className="text-xl font-semibold text-burgundy-800 mb-2">{book.title}</h3>
             {book.originalTitle && (
               <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
             )}
@@ -274,8 +274,8 @@ const Books = () => {
         <BookTable books={books} />
       </div>
 
-      <div className="mt-12 bg-burgundy-50 rounded-lg p-6 border border-burgundy-100">
-        <h3 className="text-xl font-semibold text-burgundy-900 mb-4">Additional Publications</h3>
+      <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900/50">
+        <h3 className="text-xl font-semibold text-burgundy-800 mb-4">Additional Publications</h3>
         <p className="text-gray-700 mb-4">
           Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
         </p>

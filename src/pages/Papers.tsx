@@ -129,7 +129,7 @@ const Papers = () => {
               <div className="space-y-6">
                 {category.papers.map((paper, index) => (
                   <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                    <h4 className="text-lg font-semibold text-burgundy-900 mb-2">
+                    <h4 className="text-lg font-semibold text-burgundy-800 mb-2">
                       {paper.title}
                     </h4>
                     <div className="text-sm text-gray-500 mb-3">
