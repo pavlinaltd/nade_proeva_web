@@ -25,6 +25,7 @@ interface BookProps {
   isbn?: string;
   amazonUrl?: string;
   promoImage?: string;
+  promoVideo?: string;
   promoAudio?: string;
 }
 
@@ -32,10 +33,10 @@ const BookCard = ({ book }: { book: BookProps }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
       <div className="md:w-1/3 p-6 flex items-center justify-center bg-gray-50">
-        <img 
-          src={book.imageUrl} 
-          alt={book.title} 
-          className=" object-contain rounded"
+        <img
+          src={book.imageUrl}
+          alt={book.title}
+          className="object-contain rounded"
         />
       </div>
       <div className="flex relative gap-8 md:w-2/3 p-6">
@@ -71,8 +72,8 @@ const BookCard = ({ book }: { book: BookProps }) => {
             )}
           </div>
         </div>
-        
-        {book.promoImage || book.promoAudio ? (
+
+        {book.promoImage || book.promoAudio  || book.promoVideo ? (
           <div className="flex flex-col items-center gap-10 self-center w-1/2">
           {book.promoImage && (
             <img
@@ -81,7 +82,14 @@ const BookCard = ({ book }: { book: BookProps }) => {
               className="shadow-lg rounded-sm w-[595px]"
             />
           )}
-          
+
+          {book.promoVideo && (
+            <video controls className="w-full h-full rounded-lg shadow-lg">
+              <source src={book.promoVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+
           {book.promoAudio && (
             <audio controls>
               <source src="/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3" type="audio/mpeg" />
@@ -143,7 +151,8 @@ const Books = () => {
       description: "A comprehensive analysis of ancient Macedonian society, culture, and political structures. This groundbreaking work challenges traditional interpretations of ancient Macedonian identity and provides new insights based on archaeological and epigraphic evidence.",
       imageUrl: "/images/temp-book.jpg",
       isbn: "9989-619-26-3",
-      amazonUrl: ""
+      amazonUrl: "",
+      promoVideo: "/images/books/studies-promo.mp4"
     },
     {
       title: "Cradle of Macedonian Statehood",
@@ -171,7 +180,8 @@ const Books = () => {
       description: "An in-depth examination of the Argead dynasty of ancient Macedonia, from its mythical origins to the reign of Alexander the Great. This work provides a critical reassessment of primary sources and recent archaeological discoveries.",
       imageUrl: "/images/temp-book.jpg",
       isbn: "",
-      amazonUrl: ""
+      amazonUrl: "",
+      promoImage: "/images/books/istorija-promo.jpg",
     },
     {
       title: "History of Epigonites",

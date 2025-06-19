@@ -18,6 +18,17 @@ const Columns = () => {
   const columns: MediaItem[] = [
     {
       type: "image",
+      title: "Златната маска на Македонците",
+      pageImages: [
+        "images/columns/zlatnata-1.jpg",
+        "images/columns/zlatnata-2.jpg",
+        "images/columns/zlatnata-3.jpg",
+        "images/columns/zlatnata-4.jpg",
+      ],
+      orientation: "vertical"
+    },
+    {
+      type: "image",
       title: "Neglecting Well-Known Facts",
       pageImages: [
         "images/columns/Neglecting-Facts-1.jpeg",
@@ -39,17 +50,6 @@ const Columns = () => {
       title: "Еден човек со грчко презиме ... си ја има мувата на капата и си ја ишка",
       pageImages: [
         "images/columns/eden.jpg"
-      ],
-      orientation: "vertical"
-    },
-    {
-      type: "image",
-      title: "Златната маска на Македонците",
-      pageImages: [
-        "images/columns/zlatnata-1.jpg",
-        "images/columns/zlatnata-2.jpg",
-        "images/columns/zlatnata-3.jpg",
-        "images/columns/zlatnata-4.jpg",
       ],
       orientation: "vertical"
     },
@@ -123,7 +123,7 @@ const Columns = () => {
     />
 
     <div className="animate-fade-in">
-      <div className="columns-4 gap-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 w-fit mx-auto">
         {columns.map((col, index) => (
           <div
             key={index}
