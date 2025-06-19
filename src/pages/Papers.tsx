@@ -118,86 +118,39 @@ const Papers = () => {
           Many of her works are accessible through academic databases such as academia.edu or by
           contacting the Department of History at Ss. Cyril and Methodius University in Skopje, Macedonia."
       />
-
-      <Tabs defaultValue="table" className="w-full mb-8">
-        <TabsList className="grid w-full grid-cols-2 mb-6">
-          <TabsTrigger value="table">Table View</TabsTrigger>
-          <TabsTrigger value="categories">Categories</TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="table" className="animate-fade-in">
-          <div className="bg-white rounded-lg shadow overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Title</TableHead>
-                  <TableHead>Journal</TableHead>
-                  <TableHead>Year</TableHead>
-                  <TableHead className="w-[100px]">Link</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {categories.flatMap(category => 
-                  category.papers.map((paper, index) => (
-                    <TableRow key={`${category.name}-${index}`}>
-                      <TableCell className="font-medium">{paper.title}</TableCell>
-                      <TableCell>{paper.journal}</TableCell>
-                      <TableCell>{paper.year}</TableCell>
-                      <TableCell>
-                        <Button asChild variant="ghost" size="sm">
-                          <a
-                            href={paper.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`Read "${paper.title}" on Academia.edu`}
-                            title={`Read "${paper.title}" on Academia.edu`}
-                          >
-                            <ExternalLink size={16} />
-                          </a>
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  ))
-                )}
-              </TableBody>
-            </Table>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="categories" className="animate-fade-in">
-          <div className="space-y-12">
-            {categories.map((category, idx) => (
-              <div key={idx} className="space-y-6">
-                <h3 className="text-2xl text-memorial-800 font-semibold">
-                  {category.name}
-                </h3>
-                
-                <div className="space-y-6">
-                  {category.papers.map((paper, index) => (
-                    <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                      <h4 className="text-lg font-semibold text-memorial-900 mb-2">
-                        {paper.title}
-                      </h4>
-                      <div className="text-sm text-gray-500 mb-3">
-                        {paper.journal} • {paper.year}
-                      </div>
-                      {paper.abstract && (
-                        <p className="text-gray-700 mb-4">{paper.abstract}</p>
-                      )}
-                      <Button asChild variant="outline" size="sm" className="flex items-center gap-2">
-                        <a href={paper.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink size={16} />
-                          <span>Read on Academia.edu</span>
-                        </a>
-                      </Button>
+      <div className="animate-fade-in">
+        <div className="space-y-12">
+          {categories.map((category, idx) => (
+            <div key={idx} className="space-y-6">
+              <h3 className="text-2xl text-burgundy-900 font-semibold">
+                {category.name}
+              </h3>
+              
+              <div className="space-y-6">
+                {category.papers.map((paper, index) => (
+                  <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-burgundy-900 mb-2">
+                      {paper.title}
+                    </h4>
+                    <div className="text-sm text-gray-500 mb-3">
+                      {paper.journal} • {paper.year}
                     </div>
-                  ))}
-                </div>
+                    {paper.abstract && (
+                      <p className="text-gray-700 mb-4">{paper.abstract}</p>
+                    )}
+                    <Button asChild variant="ghost" size="sm" className="flex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white">
+                      <a href={paper.url} target="_blank" rel="noopener noreferrer">
+                        <span>Read on Academia.edu</span>
+                        <ExternalLink size={16} />
+                      </a>
+                    </Button>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
