@@ -90,8 +90,10 @@ export default {
 				}
 			},
 			fontFamily: {
-				droidserif: ['"Droid Serif"', 'serif'], // Use 400 or 700
-				droidsans: ['"Droid Sans"', 'sans-serif'], // Use 400 or 700
+				droidserif: ['"Droid Serif"', 'serif'],
+				droidsans: ['"Droid Sans"', 'sans-serif'],
+				vollkorn: ['"vollkorn"', 'sans-serif'],
+				vollkornsc: ['"vollkorn-sc"', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

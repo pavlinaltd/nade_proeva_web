@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
@@ -35,7 +34,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           {/* {!isMobile && ( */}
-            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-bold lg:block lg:text-xs xl:text-sm">
+            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-semibold font-vollkornsc lg:block lg:text-xs xl:text-base">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/" className={"flex items-center gap-1"}>

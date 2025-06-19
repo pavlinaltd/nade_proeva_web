@@ -87,10 +87,8 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-0 px-4">
-        {/* <h1 className="text-2xl lg:text-3xl text-center text-burgundy-800 font-bold mb-5">AWARDS AND RECOGNITION</h1> */}
-
         <div className="flex flex-col items-center gap-4 w-2/3 mx-auto bg-yellow-500 p-5 rounded-lg">
-          <h1 className="text-2xl lg:text-3xl text-center text-burgundy-800 font-bold mb-5">HONORS</h1>
+          <h1 className="text-2xl lg:text-3xl font-vollkornsc text-center text-burgundy-800 font-bold mb-5">HONORS</h1>
           {medals.map((medal, i) => (
             <div className="flex flex-row text-center items-center gap-2">
               { i % 2 === 0 ? (
@@ -128,7 +126,7 @@ const Home = () => {
                   />
                 </>
               )}
-            </div>            
+            </div>
           ))}
         </div>
       </section>
