@@ -32,17 +32,16 @@ interface BookProps {
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
-      <div className="md:w-1/3 p-6 flex items-center justify-center bg-gray-50">
+      <div className="md:w-1/3 p-6 flex items-center justify-center">
         <img
           src={book.imageUrl}
           alt={book.title}
-          className="object-contain rounded"
+          className="object-cover w-[400px] h-[400px] rounded"
         />
       </div>
-      <div className="flex relative gap-8 md:w-2/3 p-6">
+      <div className="flex gap-16 md:w-1/3 p-6">
         <div
-          // className={book.promoImage || book.promoAudio ? "flex flex-col w-1/2" : "flex flex-col w-full"}
-          className="flex flex-col w-1/2 my-auto"
+          className="flex flex-col justify-between"
         >
           <div>
             <h3 className="text-xl font-semibold text-burgundy-900 mb-2">{book.title}</h3>
@@ -56,25 +55,23 @@ const BookCard = ({ book }: { book: BookProps }) => {
               <p>{book.year} • {book.publisher}</p>
               <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
             </div>
-            <p className="text-gray-700 text-lg text-justify mb-4">{book.description}</p>
+            <p className="text-gray-700 text-justify mb-4">{book.description}</p>
           </div>
-          <div className="text-lg absolute bottom-6">
-            {book.amazonUrl ? (
-              <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
-                <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink size={16} />
-                  Find on Amazon Books
-                </a>
-              </Button>) : (
-              <Button className="flex items-center bg-gray-900" disabled>
-                Coming Soon to Amazon Books
-              </Button>
-            )}
-          </div>
+          {book.amazonUrl ? (
+            <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
+              <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink size={16} />
+                Find on Amazon Books
+              </a>
+            </Button>) : (
+            <Button className="flex items-center bg-gray-900" disabled>
+              Coming Soon to Amazon Books
+            </Button>
+          )}
         </div>
-
-        {book.promoImage || book.promoAudio  || book.promoVideo ? (
-          <div className="flex flex-col items-center gap-10 self-center w-1/2">
+      </div>
+      {(book.promoImage || book.promoAudio || book.promoVideo) && (
+        <div className="flex flex-col justify-center items-center gap-10 w-1/3 bg-gray-50 p-6">
           {book.promoImage && (
             <img
               src={book.promoImage}
@@ -84,7 +81,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
           )}
 
           {book.promoVideo && (
-            <video controls className="w-full h-full rounded-lg shadow-lg">
+            <video controls className="w-full h-full rounded-lg shadow-lg bg-black">
               <source src={book.promoVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -92,14 +89,12 @@ const BookCard = ({ book }: { book: BookProps }) => {
 
           {book.promoAudio && (
             <audio controls>
-              <source src="/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3" type="audio/mpeg" />
+              <source src={book.promoAudio} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           )}
         </div>
-        )
-        : <></>}
-      </div>
+      )}
     </div>
   );
 };
@@ -223,7 +218,7 @@ const Books = () => {
       imageUrl: "/images/books/religiyata.jpg",
       isbn: "978-9989-2978-5-4",
       amazonUrl: "",
-      promoImage: "/images/launch-of-religion.jpg",
+      promoImage: "/images/books/launch-of-religion.jpg",
       promoAudio: "/audio/16-04-2014-Religion-of-Antique-.mp3"
     },
     {
