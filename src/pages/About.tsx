@@ -3,14 +3,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const About = () => {
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl">
       <SectionHeader
-        title="ABOUT PROFESSOR DR. NADE PROEVA"
+        title="About Professor Dr. Nade Proeva"
         subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
       />
-      <div className="space-y-6">
+      <div className="space-y-6 text-justify">
         <p>
-          Prof. Dr. Nade Proeva was a renowned Macedonian historian and classicist, best known for her
+          Professor Dr. Nade Proeva was a renowned Macedonian historian and classicist, best known for her
           pioneering work on the history and identity of the ancient Macedonians. She served as a full
           professor at the Faculty of Philosophy, Ss. Cyril and Methodius University in Skopje, where
           she taught from 1984 until her retirement in 2014.
