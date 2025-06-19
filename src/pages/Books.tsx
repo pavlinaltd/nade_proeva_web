@@ -149,7 +149,7 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "5",
       description: "A comprehensive analysis of ancient Macedonian society, culture, and political structures. This groundbreaking work challenges traditional interpretations of ancient Macedonian identity and provides new insights based on archaeological and epigraphic evidence.",
-      imageUrl: "/images/temp-book.jpg",
+      imageUrl: "/images/books/studii.jpg",
       isbn: "9989-619-26-3",
       amazonUrl: "",
       promoVideo: "/images/books/studies-promo.mp4"
@@ -178,7 +178,7 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "8",
       description: "An in-depth examination of the Argead dynasty of ancient Macedonia, from its mythical origins to the reign of Alexander the Great. This work provides a critical reassessment of primary sources and recent archaeological discoveries.",
-      imageUrl: "/images/temp-book.jpg",
+      imageUrl: "/images/books/istoriya.jpg",
       isbn: "",
       amazonUrl: "",
       promoImage: "/images/books/istorija-promo.jpg",
@@ -220,7 +220,7 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "11",
       description: "A detailed study of religious practices, beliefs, and mythological traditions in ancient Macedonia. This book explores both the indigenous elements of Macedonian religion and the syncretic influences from neighboring cultures.",
-      imageUrl: "/images/temp-book.jpg",
+      imageUrl: "/images/books/religiyata.jpg",
       isbn: "978-9989-2978-5-4",
       amazonUrl: "",
       promoImage: "/images/launch-of-religion.jpg",
@@ -252,7 +252,7 @@ const Books = () => {
       series: "Monograph Series",
       volume: "3",
       description: "An examination of the development of national consciousness among Macedonian Slavs throughout history, with particular focus on identity formation processes during the 19th and early 20th centuries.",
-      imageUrl: "/lovable-uploads/ebecb8bf-e9a1-4310-804f-140346e65835.png",
+      imageUrl: "",
       isbn: "978-608-66974-0-2",
     }
   ];
