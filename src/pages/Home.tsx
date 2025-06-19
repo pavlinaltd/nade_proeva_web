@@ -87,47 +87,36 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-0 px-4">
-        <div className="flex flex-col items-center gap-4 w-2/3 mx-auto bg-yellow-500 p-5 rounded-lg">
-          <h1 className="text-2xl lg:text-3xl font-vollkornsc text-center text-burgundy-800 font-bold mb-5">HONORS</h1>
-          {medals.map((medal, i) => (
-            <div className="flex flex-row text-center items-center gap-2">
-              { i % 2 === 0 ? (
-                <>
-                  <img
-                    src={medal.certificate}
-                    alt={medal.title}
-                    width="150"
-                    height="400"
-                    className="rounded-lg"
-                  />
-                  <img
-                    src={medal.medal}
-                    alt={medal.title}
-                    width="150"
-                    height="400"
-                    className="rounded-lg"
-                  />
-                </>
-              ) : (
-                <>
-                  <img
-                    src={medal.medal}
-                    alt={medal.title}
-                    width="150"
-                    height="400"
-                    className="rounded-lg"
-                  />
-                  <img
-                    src={medal.certificate}
-                    alt={medal.title}
-                    width="150"
-                    height="400"
-                    className="rounded-lg"
-                  />
-                </>
-              )}
-            </div>
-          ))}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-4/5 mx-auto bg-yellow-500 p-5 rounded-lg">
+          <img
+            src={medals[0].certificate}
+            alt={medals[0].title}
+            width="150"
+            height="400"
+            className="rounded-lg"
+          />
+          <img
+            src={medals[0].medal}
+            alt={medals[0].title}
+            width="150"
+            height="400"
+            className="rounded-lg"
+          />
+          <h1 className="text-2xl lg:text-3xl font-vollkornsc self-start text-burgundy-800 font-bold">HONORS</h1>
+          <img
+            src={medals[1].certificate}
+            alt={medals[1].title}
+            width="150"
+            height="400"
+            className="rounded-lg"
+          />
+          <img
+            src={medals[1].medal}
+            alt={medals[1].title}
+            width="150"
+            height="400"
+            className="rounded-lg"
+          />
         </div>
       </section>
 
@@ -148,19 +137,14 @@ const Home = () => {
       {/* Fund Call-to-Action */}
       <section className="container mx-auto px-4 w-2/3">
         <div className="bg-amber-50 border border-burgundy-900/50 rounded-lg p-8 text-center">
-          <div className="w-10 h-10 lg:w-16 lg:h-16 bg-burgundy-100 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-6">
-            <Heart className="h-6 w-6 lg:h-8 lg:w-8 text-red-600" />
-          </div>
           <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 mb-4">
             Support the Nade Proeva Scholarship Endowment
           </h2>
-          <p className="text-gray-800 mb-6 max-w-2xl mx-auto text-xs md:text-sm lg:text-base xl:text-lg">
-            Your contribution to the endowment will help support the next generation 
-            of historians dedicated to studying Macedonian history and culture.
+          <p className="text-gray-800 max-w-2xl mx-auto text-xs md:text-sm lg:text-base xl:text-lg">
+            Your contribution to the endowment will help support the next generation
+            of historians dedicated to studying Macedonian history and culture. To grow the endowment, contact&nbsp;
+            <Link to="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</Link>.
           </p>
-          <Button asChild className="text-xs lg:text-base bg-burgundy-600 hover:bg-burgundy-700 text-white">
-            <Link to="/donate">Contribute</Link>
-          </Button>
         </div>
       </section>
     </div>
