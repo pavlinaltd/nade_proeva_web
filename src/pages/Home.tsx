@@ -133,16 +133,16 @@ const Home = () => {
       </section>
 
       {/* Fund Call-to-Action */}
-      <section className="container mx-auto px-4 w-2/3">
-        <div className="bg-amber-50 border border-burgundy-900/50 rounded-lg p-8 text-center">
-          <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 mb-4">
+      <section className="container mx-auto px-4 w-4/5">
+        <div className="bg-amber-50 border border-burgundy-900/50 rounded-lg p-8">
+          <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 text-center mb-4">
             Support the Nade Proeva Scholarship Endowment
           </h2>
-          <p className="text-gray-800 max-w-2xl mx-auto text-xs md:text-sm lg:text-base xl:text-lg">
+            <p className="text-gray-800 text-justify max-w-2xl mx-auto text-xs md:text-sm lg:text-base xl:text-lg">
             Your contribution to the endowment will help support the next generation
-            of historians dedicated to studying Macedonian history and culture. To grow the endowment, contact&nbsp;
-            <Link to="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</Link>.
-          </p>
+            of historians dedicated to studying Macedonian history and culture. To grow the endowment, contact
+            <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>.
+            </p>
         </div>
       </section>
     </div>
