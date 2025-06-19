@@ -68,6 +68,19 @@ const About = () => {
           young researchers in Macedonian history and archaeology, ensuring that her passion for truth,
           knowledge, and education lives on.
         </p>
+
+        <p>
+          Please do not e-mail any correspondence for Noam Chomsky to the addresses below. You will not receive a reply and the message will not be forwarded.
+          <br />
+          For website content and administration issues only, you may contact the site admin at:
+          <br />
+          website-admin[at]chomsky[dot]info
+          <br />
+          Again, please note that the website administrator is not Noam Chomsky, and he cannot arrange interviews, or put you in contact with Noam Chomsky. You can contact Noam Chomsky directly! Just use the link provided above to obtain his email address.
+          <br />
+          Also please do not add the email addresses provided here to any mailing lists or listservs without the account holder's consent.
+        </p>
+
       </div>
     </div>
   );
