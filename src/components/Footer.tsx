@@ -65,9 +65,9 @@ const Footer = () => {
             </p>
             <br />
             <div className="flex justify-between text-burgundy-800 font-bold text-xs md:text-sm lg:text-base">
-              <Link to="https://ukim.academia.edu/NadeProeva" className="hover:underline">academia.edu</Link>
-              <Link to="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="hover:underline">fzf.ukim.edu.mk</Link>
-              <Link to="https://mk.wikipedia.org/wiki/Наде_Проева" className="hover:underline">mk.wikipedia.org</Link>
+              <Link to="https://ukim.academia.edu/NadeProeva" className="hover:underline" target="_blank" rel="noopener">academia.edu</Link>
+              <Link to="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="hover:underline" target="_blank" rel="noopener">fzf.ukim.edu.mk</Link>
+              <Link to="https://mk.wikipedia.org/wiki/Наде_Проева" className="hover:underline" target="_blank" rel="noopener">mk.wikipedia.org</Link>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ const Footer = () => {
             &copy; {currentYear} <i>Nade Proeva Scholarship Endowment</i>.
           </p>
           <p className="self-end">
-            Website courtesy of <a href="https://linkedin.com/in/coriebeale" className="font-bold hover:underline">Corie Beale</a>
+            Website courtesy of <a href="https://linkedin.com/in/coriebeale" target="_blank" rel="noopener" className="font-bold hover:underline">Corie Beale</a>
           </p>
         </div>
       </div>
