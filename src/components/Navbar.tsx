@@ -15,7 +15,7 @@ const Navbar = () => {
   // }, [isMobile]);
 
   return (
-    <header className="bg-white border-b border-gray-200">
+    <header className="bg-burgundy-50 border-b border-burgundy-200">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -37,51 +37,51 @@ const Navbar = () => {
             <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-semibold font-vollkornsc lg:block lg:text-xs xl:text-base">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link to="/" className={"flex items-center gap-1"}>
+                  <Link to="/" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     HOME
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/about" className={"flex items-center gap-1"}>
+                  <Link to="/about" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     ABOUT
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/books" className={"flex items-center gap-1"}>
+                  <Link to="/books" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     BOOKS
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/papers" className={"flex items-center gap-1"}>
+                  <Link to="/papers" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     PAPERS
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/columns" className={"flex items-center gap-1"}>
+                  <Link to="/columns" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     PRESS
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/media" className={"flex items-center gap-1"}>
+                  <Link to="/media" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     MEDIA
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/on-location" className={"flex items-center gap-1"}>
+                  <Link to="/on-location" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     ON SITE
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/testimonials" className={"flex items-center gap-1"}>
+                  <Link to="/testimonials" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
                     REMEMBERING NADE
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
               <NavigationMenuIndicator />

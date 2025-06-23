@@ -101,29 +101,29 @@ const BookCard = ({ book }: { book: BookProps }) => {
 
 const BookTable = ({ books }: { books: BookProps[] }) => {
   return (
-    <div className="rounded-md border my-8">
+    <div className="rounded-md border border-burgundy-900 my-8">
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Title</TableHead>
+            <TableHead className="rounded-tl-md">Title</TableHead>
             <TableHead>Original Title</TableHead>
             <TableHead>Author/Editor</TableHead>
             <TableHead>Series</TableHead>
             <TableHead>Year</TableHead>
             <TableHead>Publisher</TableHead>
-            <TableHead>ISBN</TableHead>
+            <TableHead className="rounded-tr-md">ISBN</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {books.map((book, index) => (
-            <TableRow key={index}>
-              <TableCell className="font-medium">{book.title}</TableCell>
+            <TableRow className={index % 2 === 0 ? "bg-amber-100/25" : "bg-amber-100/50"} key={index}>
+              <TableCell className={index === books.length - 1 && "rounded-bl-md"}>{book.title}</TableCell>
               <TableCell>{book.originalTitle || "-"}</TableCell>
               <TableCell>{book.author || book.editor}</TableCell>
               <TableCell>{book.series} {book.volume && `Vol. ${book.volume}`}</TableCell>
               <TableCell>{book.year}</TableCell>
               <TableCell>{book.publisher}</TableCell>
-              <TableCell>{book.isbn || "-"}</TableCell>
+              <TableCell className={index === books.length - 1 && "rounded-br-md"}>{book.isbn || "-"}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -274,7 +274,7 @@ const Books = () => {
         <BookTable books={books} />
       </div>
 
-      <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900/50">
+      <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900">
         <h3 className="text-xl font-semibold text-burgundy-800 mb-4">Additional Publications</h3>
         <p className="text-gray-700 mb-4">
           Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.

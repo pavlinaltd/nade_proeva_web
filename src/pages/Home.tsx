@@ -134,7 +134,7 @@ const Home = () => {
 
       {/* Fund Call-to-Action */}
       <section className="container mx-auto px-4 w-4/5">
-        <div className="bg-amber-50 border border-burgundy-900/50 rounded-lg p-8">
+        <div className="bg-amber-50 border border-burgundy-900 rounded-lg p-8">
           <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 text-center mb-4">
             Support the Nade Proeva Scholarship Endowment
           </h2>
