@@ -15,7 +15,7 @@ const Navbar = () => {
   // }, [isMobile]);
 
   return (
-    <header className="bg-burgundy-50 border-b border-burgundy-200">
+    <header className="bg-burgundy-100 border-b border-burgundy-200">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
