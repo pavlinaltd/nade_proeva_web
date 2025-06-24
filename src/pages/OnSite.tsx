@@ -164,7 +164,7 @@ const OnSite = () => {
     <div>
       <SectionHeader
         title="SHARING HISTORY"
-        subtitle="...with her students and foreign visitors interested in Macedonia's archeological past."
+        subtitle="...with her students and foreign visitors interested in Macedonia's archeological past."//TODO: reword
       />
 
       <div className="animate-fade-in">
