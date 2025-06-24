@@ -55,16 +55,13 @@ const Home = () => {
       {/* Introduction Section */}
       <section className="container mx-0 px-4">
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-          <div className="text-xs md:text-base lg:text-base xl:text-lg text-justify w-4/5">
-            {/* <h2 className="text-3xl font-bold text-memorial-900 mb-4">
-              Remembering a Scholar
-            </h2> */}
-            <p className="text-gray-700 mb-4 leading-relaxed">
+          <div className="text-justify w-4/5">
+            <p className="xl:text-lg text-gray-700 mb-4 leading-relaxed">
               <strong>Professor Dr. Nade Proeva</strong> was a distinguished Macedonian historian and classicist who
               served as a full professor at the Faculty of Philosophy, Department of History, at Ss.
               Cyril and Methodius University in Skopje, Macedonia from 1984 until her retirement in 2014.
             </p>
-            <p className="text-gray-700 mb-4 leading-relaxed">
+            <p className="xl:text-lg text-gray-700 mb-4 leading-relaxed">
               Born on September 9, 1949, in the town of Resen, in the Socialist Republic of Macedonia
               (then part of the SFR Yugoslavia), Nade Proeva pursued her higher education at the
               University of Belgrade, earning a degree in Classical Archaeology in 1973.
@@ -73,7 +70,7 @@ const Home = () => {
               Her academic journey culminated in the successful defense of her doctoral dissertation,
               <i>The Influence of Settlers on the Development of Cultural Conditions in the Roman Province of Macedonia</i>, in 1992.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="xl:text-lg text-gray-700 leading-relaxed">
               Renowned for her intellectual rigor and unwavering commitment to historical truth,
               Professor Proeva devoted her scholarly career to the study of ancient Macedonia.
               Her research left a profound and lasting impact on the field, earning her a respected place
@@ -138,7 +135,7 @@ const Home = () => {
           <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 text-center mb-4">
             Support the Nade Proeva Scholarship Endowment
           </h2>
-            <p className="text-gray-800 text-justify max-w-2xl mx-auto text-xs md:text-sm lg:text-base xl:text-lg">
+            <p className="text-gray-800 text-center max-w-2xl mx-auto xl:text-lg">
             Your contribution to the endowment will help support the next generation
             of historians dedicated to studying Macedonian history and culture. To grow the endowment, contact
             <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>.
