@@ -31,31 +31,34 @@ interface BookProps {
 
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
-    <div className="bg-amber-50 rounded-md shadow-lg overflow-hidden flex flex-col md:flex-row">
-      <div className="md:w-1/3 flex">
+    // Original
+    <div className="bg-amber-50 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap lg:flex-nowrap ">
+      {/* Book image */}
+      <div className="w-full md:w-1/2 lg:w-1/3 flex order-0">
         <img
           src={book.imageUrl}
           alt={book.title}
           className="object-cover"
         />
       </div>
-      <div className="flex gap-16 md:w-2/5 p-6">
+      {/* Text content */}
+      <div className="flex gap-16 w-full lg:w-1/2 p-6 order-1 sm:order-2 lg:order-1">
         <div
           className="flex flex-col justify-between"
         >
           <div>
-            <h3 className="text-xl font-semibold text-burgundy-800 mb-2">{book.title}</h3>
+            <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-2">{book.title}</h3>
             {book.originalTitle && (
-              <p className="text-sm text-gray-600 mb-2">Original title: {book.originalTitle}</p>
+              <p className="text-xs md:text-sm lg:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
             )}
-            <div className="text-sm text-gray-500 mb-4">
+            <div className="text-xs md:text-sm lg:text-base text-gray-500 mb-4">
               {book.author && <p>Author: {book.author}</p>}
               <p>Editor: {book.editor}</p>
               {book.translator && <p>Translator: {book.translator}</p>}
               <p>{book.year} • {book.publisher}</p>
               <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
             </div>
-            <p className="text-gray-700 text-justify mb-4">{book.description}</p>
+            <p className="text-xs md:text-sm lg:text-base text-gray-700 text-justify mb-4">{book.description}</p>
           </div>
           {book.amazonUrl ? (
             <Button className="flex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white" asChild>
@@ -70,8 +73,9 @@ const BookCard = ({ book }: { book: BookProps }) => {
           )}
         </div>
       </div>
+      {/* Promo section */}
       {(book.promoImage || book.promoAudio || book.promoVideo) && (
-        <div className="flex flex-col justify-center items-center gap-10 w-1/3 bg-burgundy-900 p-6">
+        <div className="flex flex-col order-2 md:order-1 lg:order-2 justify-center items-center gap-10 w-full md:w-1/2 lg:w-1/3 bg-burgundy-900 p-6">
           {book.promoImage && (
             <img
               src={book.promoImage}
@@ -143,7 +147,7 @@ const Books = () => {
   const books: BookProps[] = [
     {
       title: "Studies of the Ancient Macedonians",
-      originalTitle: "Studii za Antičkite Makedonci",
+      originalTitle: "Студии за Античките Македонци",
       author: "Nade Proeva",
       editor: "Nade Proeva",
       year: "1997",
@@ -158,7 +162,7 @@ const Books = () => {
     },
     {
       title: "Cradle of Macedonian Statehood",
-      originalTitle: "Lulkata na Makedonskata Državnost",
+      originalTitle: "Лулката на Македонската Државност",
       author: "Alfred Delakoulonša",
       editor: "Nade Proeva",
       translator: "Nade Proeva",
@@ -172,7 +176,7 @@ const Books = () => {
     },
     {
       title: "History of the Argeadites",
-      originalTitle: "Istorija na Argeadite",
+      originalTitle: "Историја на Аргеадите",
       author: "Nade Proeva",
       editor: "Vojislav Sarakinski",
       year: "2004",
@@ -187,7 +191,7 @@ const Books = () => {
     },
     {
       title: "History of Epigonites",
-      originalTitle: "Istorija na Epigonite",
+      originalTitle: "Историја на Епигоните",
       author: "Fanula Papazoglu",
       editor: "Nade Proeva",
       translator: "Vojislav Sarakinski",
@@ -201,7 +205,7 @@ const Books = () => {
     },
     {
       title: "Alexander of Macedon",
-      originalTitle: "Aleksandar Makedonski",
+      originalTitle: "Александар Македонски",
       editor: "Nade Proeva",
       translator: "Vojislav Sarakinski",
       year: "2012",
@@ -230,7 +234,7 @@ const Books = () => {
     },
     {
       title: "Macedonia: A Nation on the Betting Table",
-      originalTitle: "Триптих за Македонскиот идентитет",
+      originalTitle: "Триптих за Македонскиот Идентитет",
       author: "Nade Proeva",
       editor: "Nikola Minov",
       year: "2018",
@@ -245,7 +249,7 @@ const Books = () => {
     },
     {
       title: "National Awareness of the Macedonian Slavs",
-      originalTitle: "Народносната свест на македонските Словени",
+      originalTitle: "Народносната Свест на Македонските Словени",
       author: "Angel Dinev",
       editor: "Nikola Minov",
       translator: "Nade Proeva",
@@ -266,14 +270,14 @@ const Books = () => {
         subtitle="Professor Dr. Nade Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
       />
 
-      <div className="space-y-8">
+      <div className="space-y-8 sm:mx-20">
         {books.filter((book) => book.author === "Nade Proeva").map((book, index) => (
           <BookCard key={index} book={book} />
         ))}
       </div>
 
       <div className="my-12">
-        <h3 className="text-xl font-semibold text-burgundy-900 mb-4">Complete Bibliography</h3>
+        <h3 className="font-semibold text-burgundy-900 mb-4">Complete Bibliography</h3>
         <p className="text-gray-700 mb-6">
           Below is a comprehensive listing of books authored, edited, or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
         </p>
@@ -282,11 +286,11 @@ const Books = () => {
       </div>
 
       <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900">
-        <h3 className="text-xl font-semibold text-burgundy-800 mb-4">Additional Publications</h3>
-        <p className="text-gray-700 mb-4">
+        <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-4">Additional Publications</h3>
+        <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-4">
           Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
         </p>
-        <p className="text-gray-700 mb-6">
+        <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-6">
           For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>.
         </p>
         
