@@ -31,7 +31,7 @@ interface BookProps {
 
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
-    <div className="bg-white rounded-l-md shadow-md overflow-hidden flex flex-col md:flex-row">
+    <div className="bg-amber-50 rounded-md shadow-lg overflow-hidden flex flex-col md:flex-row">
       <div className="md:w-1/3 flex">
         <img
           src={book.imageUrl}
@@ -58,7 +58,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
             <p className="text-gray-700 text-justify mb-4">{book.description}</p>
           </div>
           {book.amazonUrl ? (
-            <Button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600" asChild>
+            <Button className="flex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white" asChild>
               <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={16} />
                 Find on Amazon Books
@@ -71,7 +71,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
         </div>
       </div>
       {(book.promoImage || book.promoAudio || book.promoVideo) && (
-        <div className="flex flex-col justify-center items-center gap-10 w-1/3 bg-gray-50 p-6">
+        <div className="flex flex-col justify-center items-center gap-10 w-1/3 bg-burgundy-900 p-6">
           {book.promoImage && (
             <img
               src={book.promoImage}
@@ -101,7 +101,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
 
 const BookTable = ({ books }: { books: BookProps[] }) => {
   return (
-    <div className="rounded-md border border-burgundy-900 my-8">
+    <div className="rounded-md border border-burgundy-900 my-8 overflow-x-auto">
       <Table>
         <TableHeader>
           <TableRow>
@@ -111,19 +111,19 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
             <TableHead>Series</TableHead>
             <TableHead>Year</TableHead>
             <TableHead>Publisher</TableHead>
-            <TableHead className="rounded-tr-md">ISBN</TableHead>
+            <TableHead className="rounded-tr-md border-r-0">ISBN</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {books.map((book, index) => (
-            <TableRow className={index % 2 === 0 ? "bg-amber-100/25" : "bg-amber-100/50"} key={index}>
+            <TableRow className={index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"} key={index}>
               <TableCell className={index === books.length - 1 && "rounded-bl-md"}>{book.title}</TableCell>
               <TableCell>{book.originalTitle || "-"}</TableCell>
               <TableCell>{book.author || book.editor}</TableCell>
               <TableCell>{book.series} {book.volume && `Vol. ${book.volume}`}</TableCell>
               <TableCell>{book.year}</TableCell>
               <TableCell>{book.publisher}</TableCell>
-              <TableCell className={index === books.length - 1 && "rounded-br-md"}>{book.isbn || "-"}</TableCell>
+              <TableCell className={index === books.length - 1 ? "rounded-br-md border-r-0" : "border-r-0"}>{book.isbn || "-"}</TableCell>
             </TableRow>
           ))}
         </TableBody>
