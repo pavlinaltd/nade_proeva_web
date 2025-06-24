@@ -81,14 +81,21 @@ const BookCard = ({ book }: { book: BookProps }) => {
           )}
 
           {book.promoVideo && (
-            <video controls className="w-full h-full rounded-lg shadow-lg bg-black">
+            <video
+              controls
+              controlsList="nodownload"
+              className="w-full h-full rounded-lg shadow-lg bg-black"
+            >
               <source src={book.promoVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           )}
 
           {book.promoAudio && (
-            <audio controls>
+            <audio
+              controls
+              controlsList="nodownload"
+            >
               <source src={book.promoAudio} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
