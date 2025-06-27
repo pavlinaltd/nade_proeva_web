@@ -67,7 +67,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
                 Find on Amazon Books
               </a>
             </Button>) : (
-            <Button className="flex items-center bg-gray-900" disabled>
+            <Button className="flex items-center bg-gray-600 pointer-events-none">
               Coming Soon to Amazon Books
             </Button>
           )}
