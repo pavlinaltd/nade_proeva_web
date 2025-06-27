@@ -194,20 +194,30 @@ const Columns = () => {
         onClick={closeLightbox}
       >
         <div
-          className="max-w-4xl w-full overflow-hidden shadow-2xl flex justify-center"
+          className={
+            selectedImage.orientation === "vertical" ?
+            "w-[900px] overflow-hidden shadow-2xl flex justify-center" :
+            "w-[1200px] overflow-hidden shadow-2xl flex justify-center"
+          }
           onClick={(e) => e.stopPropagation()}
         >
           {/* Carousel */}
-          <Carousel className="w-full max-w-2xl bg-white rounded-sm">
+          <Carousel
+            // className="w-full max-w-2xl bg-white rounded-sm"
+            className={
+              selectedImage.orientation === "vertical" ? 'w-[700px] bg-white rounded-sm' :
+              'w-[1000px] bg-white rounded-sm'
+            }
+          >
             <CarouselContent>
-              {isEnglish ? selectedImage.pageImagesEnglish?.map((image, index) => (
+              {isEnglish && selectedImage.pageImagesEnglish ? selectedImage.pageImagesEnglish?.map((image, index) => (
                 <div 
                   key={index} 
                   className="flex-shrink-0 w-full h-auto"
                 >
                   <img 
                     src={image} 
-                    alt={`${selectedImage.title} - ${index + 1}`} 
+                    alt={`${selectedImage.title} page ${index + 1}`} 
                     className="w-full h-auto object-fit"
                   />
                 </div>
@@ -218,14 +228,14 @@ const Columns = () => {
                 >
                   <img
                     src={image}
-                    alt={`${selectedImage.title} - ${index + 1}`}
-                    className="w-full h-auto object-fit"
+                    alt={`${selectedImage.title} page ${index + 1}`}
+                    className="w-full h-auto object-cover"
                   />
                 </div>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="text-white bg-burgundy-700 hover:bg-burgundy-900"/>
-            <CarouselNext className="text-white bg-burgundy-700 hover:bg-burgundy-900" />
+            <CarouselPrevious className="text-white bg-burgundy-700 hover:bg-burgundy-900" />
+            <CarouselNext className="text-white bg-burgundy-700 hover:bg-burgundy-900"/>
           </Carousel>
           <Button 
               variant="secondary"
