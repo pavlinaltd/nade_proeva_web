@@ -3,34 +3,43 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import SectionHeader from "@/components/SectionHeader";
+import { Switch } from "@/components/ui/switch";
 
 interface MediaItem {
   type: "image";
   title: string;
   year?: string;
-  pageImages?: string[];
+  pageImagesOriginal?: string[];
+  pageImagesEnglish?: string[];
   orientation: "horizontal" | "vertical";
 }
 
 const Columns = () => {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
+  const [isEnglish, setIsEnglish] = useState(false);
 
   const columns: MediaItem[] = [
     {
       type: "image",
       title: "Златната маска на Македонците",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/zlatnata-1.jpg",
         "images/columns/zlatnata-2.jpg",
         "images/columns/zlatnata-3.jpg",
         "images/columns/zlatnata-4.jpg",
+      ],
+      pageImagesEnglish: [
+        "images/columns/zlatnata-1-eng.jpg",
+        "images/columns/zlatnata-2-eng.jpg",
+        "images/columns/zlatnata-3-eng.jpg",
+        "images/columns/zlatnata-4-eng.jpg",
       ],
       orientation: "vertical"
     },
     {
       type: "image",
       title: "Neglecting Well-Known Facts",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/Neglecting-Facts-1.jpeg",
         "images/columns/Neglecting-Facts-2.jpeg",
         "images/columns/Neglecting-Facts-3.jpeg"
@@ -40,33 +49,42 @@ const Columns = () => {
     {
       type: "image",
       title: "Quo Vadis Scientia Nostra",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/quo-vadis.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/quo-vadis-eng.jpg"
       ],
       orientation: "vertical"
     },
     {
       type: "image",
       title: "Еден човек со грчко презиме ... си ја има мувата на капата и си ја ишка",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/eden.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/eden-eng.jpg"
       ],
       orientation: "vertical"
     },
     {
       type: "image",
       title: "Господа политичари, настрана рацете од историската наука",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/gospoda-1.jpg",
         "images/columns/gospoda-2.jpg",
+      ],
+      pageImagesEnglish: [
+        "images/columns/gospoda-1-eng.jpg",
+        "images/columns/gospoda-2-eng.jpg",
       ],
       orientation: "vertical"
     },
     {
       type: "image",
-      title: "translator test",
-      // title: "Бугарското китење со туѓи перја и нашиот громогласен молк",
-      pageImages: [
+      title: "Бугарското китење со туѓи перја и нашиот громогласен молк",
+      pageImagesOriginal: [
         "images/columns/bugarskoto.jpg"
       ],
       orientation: "horizontal"
@@ -74,7 +92,7 @@ const Columns = () => {
     {
       type: "image",
       title: "Бугарска койија на грчкото однесување",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/bugarska.jpg"
       ],
       orientation: "horizontal"
@@ -82,7 +100,7 @@ const Columns = () => {
     {
       type: "image",
       title: "Историјата можат да ја одбранаш само историчарите",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/istoriyata.jpg"
       ],
       orientation: "horizontal"
@@ -90,7 +108,7 @@ const Columns = () => {
     {
       type: "image",
       title: "Француска цивилизациска утка на отворањето на ЛОИ",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/fran.jpg"
       ],
       orientation: "horizontal"
@@ -98,7 +116,7 @@ const Columns = () => {
     {
       type: "image",
       title: "Институционализирање на неинституционалното",
-      pageImages: [
+      pageImagesOriginal: [
         "images/columns/instit.jpg"
       ],
       orientation: "horizontal"
@@ -119,8 +137,22 @@ const Columns = () => {
     <>
     <SectionHeader
       title="PRESS"
-      subtitle="Translators or AI tools can be used to translate these texts."
+      subtitle="Use the switch to toggle between the original languages and their English translation by Google Translate."
     />
+
+    <div className="flex items-center gap-2 mb-6 justify-start">
+      <div className="flex items-center gap-2">
+        <span className="text-sm font-medium text-gray-700">Original</span>
+        <Switch
+          id="language-switch"
+          aria-label="Switch to English"
+          className="data-[state=checked]:bg-gray-900"
+          checked={isEnglish}
+          onCheckedChange={setIsEnglish}
+        />
+        <span className="text-sm font-medium text-gray-700">ENG</span>
+      </div>
+    </div>
 
     <div className="animate-fade-in">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 w-fit mx-auto">
@@ -132,7 +164,7 @@ const Columns = () => {
           >
             <div className="overflow-hidden">
               <img
-              src={col.pageImages?.[0] || ""}
+              src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
               className="w-[360px] h-full object-fit"
               />
@@ -168,7 +200,7 @@ const Columns = () => {
           {/* Carousel */}
           <Carousel className="w-full max-w-2xl bg-white rounded-sm">
             <CarouselContent>
-              {selectedImage.pageImages?.map((image, index) => (
+              {isEnglish ? selectedImage.pageImagesEnglish?.map((image, index) => (
                 <div 
                   key={index} 
                   className="flex-shrink-0 w-full h-auto"
@@ -176,6 +208,17 @@ const Columns = () => {
                   <img 
                     src={image} 
                     alt={`${selectedImage.title} - ${index + 1}`} 
+                    className="w-full h-auto object-fit"
+                  />
+                </div>
+              )) : selectedImage.pageImagesOriginal?.map((image, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-full h-auto"
+                >
+                  <img
+                    src={image}
+                    alt={`${selectedImage.title} - ${index + 1}`}
                     className="w-full h-auto object-fit"
                   />
                 </div>
