@@ -159,7 +159,7 @@ const Columns = () => {
       </div>
 
       {/* Content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 w-fit mx-auto">
+      <div className="flex flex-col flex-wrap md:max-h-[2000px] xl:max-h-[1500px] items-center md:items-start gap-6 mx-auto">
         {columns.map((col, index) => (
           <div
             key={index}
@@ -170,21 +170,19 @@ const Columns = () => {
               <img
               src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
-              className="w-[360px] h-full object-fit"
+              className={
+                col.orientation === "vertical"
+                  ? "w-[360px] h-[480px] object-cover"
+                  : "w-[360px] h-[228px] object-cover object-left-top"
+              }
               />
-              {col.title === "translator test" ? (
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
-                  <img src="images/columns/col-3-trans.png" alt="Translator Test" className="w-full h-auto object-fit" />
-                </span>
-              ) : (
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
-                <Expand 
-                  className={ col.orientation === "vertical" ?
-                    "w-14 h-14 text-white drop-shadow-2xl" :
-                    "w-10 h-10 text-white drop-shadow-2xl"}
-                />
-                </span>
-              )}
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+              <Expand
+                className={ col.orientation === "vertical" ?
+                  "w-14 h-14 text-white drop-shadow-2xl" :
+                  "w-10 h-10 text-white drop-shadow-2xl"}
+              />
+              </span>
             </div>
           </div>
         ))}
