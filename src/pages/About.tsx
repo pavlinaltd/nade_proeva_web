@@ -8,7 +8,7 @@ const About = () => {
         title="About Professor Dr. Nade Proeva"
         subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
       />
-      <div className="space-y-6 text-justify">
+      <div className="animate-fade-in space-y-6 text-justify">
         <p>
           Professor Dr. Nade Proeva was a renowned Macedonian historian and classicist, best known for her
           pioneering work on the history and identity of the ancient Macedonians. She served as a full
@@ -70,7 +70,7 @@ const About = () => {
         </p>
 
         <p>
-          Please do not e-mail any correspondence for Noam Chomsky to the addresses below. You will not receive a reply and the message will not be forwarded.
+          Please do not e-mail any correspondence for Nade Proeva to the addresses below. You will not receive a reply and the message will not be forwarded.
           <br />
           For website content and administration issues only, you may contact the site admin at:
           <br />

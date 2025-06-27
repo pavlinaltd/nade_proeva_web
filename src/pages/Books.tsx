@@ -270,39 +270,41 @@ const Books = () => {
         subtitle="Professor Dr. Nade Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
       />
 
-      <div className="space-y-8 sm:mx-20">
-        {books.filter((book) => book.author === "Nade Proeva").map((book, index) => (
-          <BookCard key={index} book={book} />
-        ))}
-      </div>
+      <div className="animate-fade-in">
+        <div className="space-y-8 sm:mx-20">
+          {books.filter((book) => book.author === "Nade Proeva").map((book, index) => (
+            <BookCard key={index} book={book} />
+          ))}
+        </div>
 
-      <div className="my-12">
-        <h3 className="font-semibold text-burgundy-900 mb-4">Complete Bibliography</h3>
-        <p className="text-gray-700 mb-6">
-          Below is a comprehensive listing of books authored, edited, or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
-        </p>
-        
-        <BookTable books={books} />
-      </div>
+        <div className="my-12">
+          <h3 className="font-semibold text-burgundy-900 mb-4">Complete Bibliography</h3>
+          <p className="text-gray-700 mb-6">
+            Below is a comprehensive listing of books authored, edited, or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
+          </p>
+          
+          <BookTable books={books} />
+        </div>
 
-      <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900">
-        <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-4">Additional Publications</h3>
-        <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-4">
-          Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
-        </p>
-        <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-6">
-          For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>.
-        </p>
-        
-        <Button
-          className="flex items-center gap-2 text-white bg-burgundy-600 hover:bg-burgundy-700"
-          variant="ghost" asChild
-        >
-          <a href="https://www.amazon.com/s?k=Nade+Proeva" target="_blank" rel="noopener noreferrer">
-            <ExternalLink size={16} />
-            Browse Professor Proeva's Books on Amazon
-          </a>
-        </Button>
+        <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900">
+          <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-4">Additional Publications</h3>
+          <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-4">
+            Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
+          </p>
+          <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-6">
+            For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>.
+          </p>
+          
+          <Button
+            className="flex items-center gap-2 text-white bg-burgundy-600 hover:bg-burgundy-700"
+            variant="ghost" asChild
+          >
+            <a href="https://www.amazon.com/s?k=Nade+Proeva" target="_blank" rel="noopener noreferrer">
+              <ExternalLink size={16} />
+              Browse Professor Proeva's Books on Amazon
+            </a>
+          </Button>
+        </div>
       </div>
     </div>
   );
