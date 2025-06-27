@@ -137,24 +137,28 @@ const Columns = () => {
     <>
     <SectionHeader
       title="PRESS"
-      subtitle="Use the switch to toggle between the original languages and their English translation by Google Translate."
+      subtitle="Use the switch to toggle between the original publications and their English translations by Google Translate."
     />
 
-    <div className="flex items-center gap-2 mb-6 justify-start">
-      <div className="flex items-center gap-2">
-        <span className="text-sm font-medium text-gray-700">Original</span>
+    <div className="animate-fade-in">
+      {/* Language Switch */}
+      <div className="flex items-center gap-2 mb-6 justify-start">
+        <span
+          className={isEnglish ? "text-gray-400 transition-colors duration-200" : "text-black transition-colors duration-200"}
+        >
+          Original
+        </span>
         <Switch
           id="language-switch"
           aria-label="Switch to English"
-          className="data-[state=checked]:bg-gray-900"
+          className="data-[state=unchecked]:bg-burgundy-600 data-[state=checked]:bg-burgundy-700"
           checked={isEnglish}
           onCheckedChange={setIsEnglish}
         />
-        <span className="text-sm font-medium text-gray-700">ENG</span>
+        <span className={isEnglish ? "text-black transition-colors duration-200" : "text-gray-400 transition-colors duration-200"}>English</span>
       </div>
-    </div>
 
-    <div className="animate-fade-in">
+      {/* Content */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 w-fit mx-auto">
         {columns.map((col, index) => (
           <div
