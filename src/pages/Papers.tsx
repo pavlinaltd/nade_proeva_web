@@ -14,7 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface PaperProps {
   title: string;
-  journal: string;
+  journal?: string;
   year: string;
   url: string;
   abstract?: string;
@@ -38,6 +38,13 @@ const Papers = () => {
           abstract: "This paper examines the ethnic origins of the ancient Macedonians through an analysis of archaeological evidence, linguistic data, and historical texts. It challenges prevailing narratives and offers new perspectives on Macedonian identity formation."
         },
         {
+          title: "The legend of Philemon and Baucis and the reminiscence of afterlife beliefs on Roman tombstones in Macedonia",
+          journal: "Macedonian Archaeology",
+          year: "XXXX",
+          url: "https://www.academia.edu/91218402/The_legend_of_Philemon_and_Baucis_and_the_reminiscence_of_afterlife_beliefs_on_Roman_tombstones_in_Macedonia_Epic_Society_and_Religion_in_the_Ancient_Near_Eastern_and_Mediterranean_cultures_Tartu_July_16_18_2021",
+          abstract: "This article investigates the authorship of the Trebenište culture and the gold funeral masks, analyzing archaeological finds and their implications for understanding ancient Macedonian society."
+        },
+        {
           title: "Macedonian Onomastics as Evidence of Ethnic Identity",
           journal: "Balkan Studies",
           year: "1998",
@@ -50,7 +57,14 @@ const Papers = () => {
           year: "2001",
           url: "#",
           abstract: "This study evaluates the linguistic evidence for ancient Macedonian as a distinct language rather than a dialect of Greek, based on preserved glosses and onomastic material."
-        }
+        },
+        {
+          title: "Who Were the Authors of the Trebenište Culture and the Gold Funeral Masks?",
+          journal: "Macedonian Archaeology",
+          year: "XXXX",
+          url: "https://www.academia.edu/1439976/Nade_Proeva_WHO_WERE_THE_AUTHORS_OF_THE_TREBENIŠTE_CULTURE_AND_THE_GOLD_FUNERAL_MASKS",
+          abstract: "This article investigates the authorship of the Trebenište culture and the gold funeral masks, analyzing archaeological finds and their implications for understanding ancient Macedonian society."
+        },
       ]
     },
     {
@@ -90,10 +104,10 @@ const Papers = () => {
           abstract: "This paper critically examines how ancient Greek authors portrayed Macedonia and Macedonians, analyzing biases and political motivations in these accounts."
         },
         {
-          title: "Modern Historiography on Ancient Macedonia",
+          title: "A Brief Chronology of Historical Events",
           journal: "Journal of Historical Studies",
           year: "2009",
-          url: "#",
+          url: "https://www.academia.edu/6808303/MACEDONIA_A_BRIEF_CHRONOLOGY_OF_HISTORICAL_EVENTS",
           abstract: "A survey and critique of modern scholarly approaches to ancient Macedonian history, identifying trends, biases, and methodological issues."
         },
         {
