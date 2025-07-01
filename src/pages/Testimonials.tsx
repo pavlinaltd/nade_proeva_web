@@ -2,28 +2,38 @@ import SectionHeader from "@/components/SectionHeader";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { X } from "lucide-react";
 import { useState } from "react";
-import { Button } from "react-day-picker";
+import { Button } from "@/components/ui/button";
 
 interface MediaItem {
   type: "image" | "video";
   src: string;
   thumbnail?: string;
   title: string;
-  caption?: string;
-  year?: string;
+  orientation: "horizontal" | "vertical";
 }
 
 const Testimonials = () => {
 
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
 
-  const testimonials: MediaItem[] = [
+  const media: MediaItem[] = [
+    {
+      type: "video",
+      src: "/images/memories/nade.mp4",
+      title: "Title",
+      orientation: "horizontal",
+    },
     {
       type: "image",
-      src: "/images/testimonials.jpg",
+      src: "/images/memories/intro.png",
       title: "Title",
-      caption: "Caption",
-      year: "Year",
+      orientation: "vertical",
+    },
+    {
+      type: "image",
+      src: "/images/memories/bilyana.jpg",
+      title: "Title",
+      orientation: "vertical",
     },
   ];
 
@@ -45,23 +55,27 @@ const Testimonials = () => {
     />
 
     <div className="animate-fade-in grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {testimonials.map((testimonial, index) => (
+      {media.map((item, index) => (
         <div 
           key={index}
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
-          onClick={() => openLightbox(testimonial)}
+          onClick={() => openLightbox(item)}
         >
           <div className="aspect-video overflow-hidden">
-            <img
-              src={testimonial.src}
-              alt={testimonial.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="p-4">
-            <h3 className="font-semibold text-memorial-900 mb-1">{testimonial.title}</h3>
-            {testimonial.year && <p className="text-sm text-gray-500 mb-2">{testimonial.year}</p>}
-            {testimonial.caption && <p className="text-sm text-gray-700">{testimonial.caption}</p>}
+            {item.type === "video" ? (
+              <video
+                src={item.src}
+                className="w-full h-full object-cover"
+                controls
+                controlsList="nodownload"
+              />
+            ) : (
+              <img
+                src={item.src}
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
         </div>
       ))}
@@ -73,35 +87,27 @@ const Testimonials = () => {
         className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
         onClick={closeLightbox}
       >
-        <div 
-          className="max-w-4xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
+        <div
+          className={
+            selectedImage.orientation === "vertical" ? 'w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl' :
+            'w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl'
+          }
           onClick={(e) => e.stopPropagation()}
         >
           <div className="relative">
-            <img 
-              src={selectedImage.src} 
-              alt={selectedImage.title} 
-              className="w-full h-auto"
+            <img
+              src={selectedImage.src}
+              alt=""
+              className="w-full h-auto object-fit"
             />
-            <Button 
+            <Button
               // variant="secondary"
               // size="icon"
-              className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-white"
+              className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-burgundy-500 hover:text-white"
               onClick={closeLightbox}
             >
               <X className="h-4 w-4" />
             </Button>
-          </div>
-          <div className="p-6">
-            <h3 className="text-xl font-semibold text-memorial-900 mb-2">
-              {selectedImage.title}
-            </h3>
-            {selectedImage.year && (
-              <p className="text-sm text-gray-500 mb-3">{selectedImage.year}</p>
-            )}
-            {selectedImage.caption && (
-              <p className="text-gray-700">{selectedImage.caption}</p>
-            )}
           </div>
         </div>
       </div>
