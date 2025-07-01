@@ -133,7 +133,7 @@ const Columns = () => {
       {/* Language Switch */}
       <div className="flex items-center gap-2 mb-6 justify-start">
         <span
-          className={isEnglish ? "text-gray-400 transition-colors duration-200" : "text-black transition-colors duration-200"}
+          className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
         >
           Original
         </span>
@@ -144,39 +144,30 @@ const Columns = () => {
           checked={isEnglish}
           onCheckedChange={setIsEnglish}
         />
-        <span className={isEnglish ? "text-black transition-colors duration-200" : "text-gray-400 transition-colors duration-200"}>English</span>
+        <span className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}>English</span>
       </div>
 
       {/* Content */}
       <div
         // className="flex flex-col flex-wrap md:max-h-[2000px] xl:max-h-[1500px] items-center md:items-start gap-6 mx-auto"
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 w-fit mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6"
       >
         {columns.map((col, index) => (
           <div
             key={index}
-            className={
-              col.orientation === "vertical"
-                ? "relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"
-                : "relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 mx-auto"
-            }
+            className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 ${col.orientation === "horizontal" && "mx-auto"}`}
             onClick={() => openLightbox(col)}
           >
-            <div className="overflow-hidden">
+            <div className={`${col.orientation === "vertical" ? "w-[380px] h-[400px]" : "w-[300px] h-[300px] mx-auto"}`}>
               <img
               src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
-              className={
-                col.orientation === "vertical"
-                  ? "w-[380px] h-[380px] object-cover"
-                  : "h-[380px] object-scale-down"
-              }
+              className={`${col.orientation === "vertical" ? "w-[380px] h-[400px]" : "w-[300px] h-[300px] mx-auto"} object-left object-cover`}
               />
-              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+              <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
               <Expand
-                className={ col.orientation === "vertical" ?
-                  "w-14 h-14 text-white drop-shadow-2xl" :
-                  "w-10 h-10 text-white drop-shadow-2xl"}
+                className={`text-white drop-shadow-2xl w-14 h-14`}
+                  // ${col.orientation === "vertical" ? "w-14 h-14" : "w-10 h-10"}`}
               />
               </span>
             </div>
@@ -192,11 +183,7 @@ const Columns = () => {
         onClick={closeLightbox}
       >
         <div
-          className={
-            selectedImage.orientation === "vertical" ?
-            "w-[900px] overflow-hidden shadow-2xl flex justify-center" :
-            "w-[1200px] overflow-hidden shadow-2xl flex justify-center"
-          }
+          className={`overflow-hidden shadow-2xl flex justify-center ${selectedImage.orientation === "vertical" ? "w-[900px] " : "w-[1200px] "}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Carousel */}
