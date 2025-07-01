@@ -88,7 +88,9 @@ const About = () => {
       {/* Steinbeck quote */}
       <div className="w-full md:w-1/4 lg:text-xl">
         <blockquote>
-          "<i>The writer is a solitary creature. He is alone in a world of his own making, and he must find his own way through it.</i>"
+          "<i>
+            I have come to believe that a great teacher is a great artist and that there are as a few as
+            there are any other great artists. Teaching might even be the greatest of the arts since the medium is the human mind and spirit.</i>"
         </blockquote>
         <p className="text-right">
           — John Steinbeck
