@@ -3,12 +3,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const About = () => {
   return (
-    <div className="max-w-4xl">
-      <SectionHeader
-        title="About Professor Dr. Nade Proeva"
-        subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
-      />
-      <div className="animate-fade-in space-y-6 text-justify">
+    <>
+    <SectionHeader
+      title="About Professor Dr. Nade Proeva"
+      subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
+    />
+    <div className="animate-fade-in flex flex-col md:flex-row gap-10">
+      {/* Text content */}
+      <div className="animate-fade-in space-y-6 text-justify w-full md:w-3/4">
         <p>
           Professor Dr. Nade Proeva was a renowned Macedonian historian and classicist, best known for her
           pioneering work on the history and identity of the ancient Macedonians. She served as a full
@@ -82,7 +84,18 @@ const About = () => {
         </p>
 
       </div>
+
+      {/* Steinbeck quote */}
+      <div className="w-full md:w-1/4 lg:text-xl">
+        <blockquote>
+          "<i>The writer is a solitary creature. He is alone in a world of his own making, and he must find his own way through it.</i>"
+        </blockquote>
+        <p className="text-right">
+          — John Steinbeck
+        </p>
+      </div>
     </div>
+    </>
   );
 };
 
