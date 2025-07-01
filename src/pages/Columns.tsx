@@ -48,17 +48,6 @@ const Columns = () => {
     },
     {
       type: "image",
-      title: "Quo Vadis Scientia Nostra",
-      pageImagesOriginal: [
-        "images/columns/quo-vadis.jpg"
-      ],
-      pageImagesEnglish: [
-        "images/columns/quo-vadis-eng.jpg"
-      ],
-      orientation: "vertical"
-    },
-    {
-      type: "image",
       title: "Еден човек со грчко презиме ... си ја има мувата на капата и си ја ишка",
       pageImagesOriginal: [
         "images/columns/eden.jpg"
@@ -159,11 +148,18 @@ const Columns = () => {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-wrap md:max-h-[2000px] xl:max-h-[1500px] items-center md:items-start gap-6 mx-auto">
+      <div
+        // className="flex flex-col flex-wrap md:max-h-[2000px] xl:max-h-[1500px] items-center md:items-start gap-6 mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 w-fit mx-auto"
+      >
         {columns.map((col, index) => (
           <div
             key={index}
-            className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"
+            className={
+              col.orientation === "vertical"
+                ? "relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"
+                : "relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 mx-auto"
+            }
             onClick={() => openLightbox(col)}
           >
             <div className="overflow-hidden">
@@ -172,8 +168,8 @@ const Columns = () => {
               alt={col.title}
               className={
                 col.orientation === "vertical"
-                  ? "w-[360px] h-[480px] object-cover"
-                  : "w-[360px] h-[228px] object-cover object-left-top"
+                  ? "w-[380px] h-[380px] object-cover"
+                  : "h-[380px] object-scale-down"
               }
               />
               <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
