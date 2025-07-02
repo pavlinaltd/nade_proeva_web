@@ -66,23 +66,13 @@ const About = () => {
         </p>
 
         <p>
-          In her honor, an Endowment Fund has been established at a U.S.-based university to support
-          young researchers in Macedonian history and archaeology, ensuring that her passion for truth,
-          knowledge, and education lives on.
+          An Endowment Fund has been established at a U.S.-based university to support young researchers in
+          Macedonian history and archaeology, ensuring that her passion for historical truth, knowledge, and education lives on.
         </p>
 
         <p>
-          Please do not e-mail any correspondence for Nade Proeva to the addresses below. You will not receive a reply and the message will not be forwarded.
-          <br />
-          For website content and administration issues only, you may contact the site admin at:
-          <br />
-          website-admin[at]chomsky[dot]info
-          <br />
-          Again, please note that the website administrator is not Noam Chomsky, and he cannot arrange interviews, or put you in contact with Noam Chomsky. You can contact Noam Chomsky directly! Just use the link provided above to obtain his email address.
-          <br />
-          Also please do not add the email addresses provided here to any mailing lists or listservs without the account holder's consent.
+          For website content and permissions to reprint published works, please email: <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>
         </p>
-
       </div>
 
       {/* Steinbeck quote */}
