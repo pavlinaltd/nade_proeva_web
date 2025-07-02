@@ -8,7 +8,19 @@ const About = () => {
       title="About Professor Dr. Nade Proeva"
       subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
     />
-    <div className="animate-fade-in flex flex-col md:flex-row gap-10">
+    <div className="animate-fade-in flex flex-col gap-10 items-center">
+      {/* Steinbeck quote */}
+      <div className="w-full md:w-3/4 text-gray-700">
+        <blockquote className="lg:text-xl">
+          "<i>
+            I have come to believe that a great teacher is a great artist and that there are as a few as
+            there are any other great artists. Teaching might even be the greatest of the arts since the medium is the human mind and spirit.</i>"
+        </blockquote>
+        <p className="text-right lg:text-xl">
+          — John Steinbeck
+        </p>
+      </div>
+    
       {/* Text content */}
       <div className="animate-fade-in space-y-6 text-justify w-full md:w-3/4">
         <p>
@@ -72,18 +84,6 @@ const About = () => {
 
         <p>
           For website content and permissions to reprint published works, please email: <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>
-        </p>
-      </div>
-
-      {/* Steinbeck quote */}
-      <div className="w-full md:w-1/4 lg:text-xl">
-        <blockquote>
-          "<i>
-            I have come to believe that a great teacher is a great artist and that there are as a few as
-            there are any other great artists. Teaching might even be the greatest of the arts since the medium is the human mind and spirit.</i>"
-        </blockquote>
-        <p className="text-right">
-          — John Steinbeck
         </p>
       </div>
     </div>
