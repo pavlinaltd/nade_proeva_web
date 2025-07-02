@@ -15,7 +15,7 @@ const SectionHeader = ({ title, subtitle, children, center = false }: SectionHea
         {title}
       </h2>
       {subtitle && (
-        <p className="text-justify italic text-gray-600 w-full md:w-2/3">
+        <p className="text-justify italic text-gray-600 w-full md:w-2/3 text-base md:text-lg lg:text-xl">
           {subtitle}
         </p>
       )}
