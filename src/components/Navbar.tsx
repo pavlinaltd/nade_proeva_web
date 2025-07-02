@@ -1,18 +1,29 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const isMobile = useIsMobile();
-  
-  // Close menu when route changes or screen size changes
-  // useEffect(() => {
-  //   setIsOpen(false);
-  // }, [isMobile]);
+  const location = useLocation();
+
+  const links = [
+    { to: "/", label: "HOME" },
+    { to: "/about", label: "ABOUT" },
+    { to: "/books", label: "BOOKS" },
+    { to: "/papers", label: "PAPERS" },
+    { to: "/columns", label: "PRESS" },
+    { to: "/media", label: "MEDIA" },
+    { to: "/on-location", label: "ON SITE" },
+    { to: "/testimonials", label: "REMEMBERING NADE" }
+  ];
+
+  useEffect(() => {
+    // Close the mobile menu when the location changes
+    console.log("Location changed:", location.pathname);
+  }, [location.pathname]);
 
   return (
     <header className="bg-yellow-400 border-b border-burgundy-200">
@@ -33,73 +44,34 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          {/* {!isMobile && ( */}
-            <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-semibold font-vollkornsc lg:block lg:text-xs xl:text-base">
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <Link to="/" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    HOME
-                  </Link>
+          <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-semibold font-vollkornsc lg:block lg:text-xs xl:text-base">
+            <NavigationMenuList>
+              {links.map((link) => (
+                <NavigationMenuItem key={link.to}>
+                  <NavigationMenuLink>
+                    <Link
+                      to={link.to}
+                      className={`${location.pathname === link.to ? "text-burgundy-700" : "text-black"} relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center`}
+                    >
+                      {link.label}
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/about" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    ABOUT
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/books" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    BOOKS
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/papers" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    PAPERS
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/columns" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    PRESS
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/media" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    MEDIA
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/on-location" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    ON SITE
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link to="/testimonials" className={"relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"}>
-                    REMEMBERING NADE
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-              <NavigationMenuIndicator />
-            </NavigationMenu>
-          {/* )} */}
+              ))}
+            </NavigationMenuList>
+            <NavigationMenuIndicator />
+          </NavigationMenu>
 
           {/* Mobile Menu Button */}
-          {/* {isMobile && ( */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Menu"
-              className="block lg:hidden"
-            >
-              {isOpen ? <X /> : <Menu />}
-            </Button>
-          {/* )} */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Menu"
+            className="block lg:hidden"
+          >
+            {isOpen ? <X /> : <Menu />}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
