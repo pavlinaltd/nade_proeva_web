@@ -51,6 +51,7 @@ const Navbar = () => {
                   <NavigationMenuLink>
                     <Link
                       to={link.to}
+                      // Source for animation: https://dev.to/vincentdorian/cool-nav-link-hover-animations-with-tailwindcss-3gf2
                       className={`${location.pathname === link.to ? "text-burgundy-700" : "text-black"} relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center`}
                     >
                       {link.label}
