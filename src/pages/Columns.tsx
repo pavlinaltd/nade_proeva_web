@@ -19,6 +19,7 @@ const Columns = () => {
   const [isEnglish, setIsEnglish] = useState(false);
 
   const columns: MediaItem[] = [
+    // VERTICAL
     {
       type: "image",
       title: "Златната маска на Македонците",
@@ -70,6 +71,7 @@ const Columns = () => {
       ],
       orientation: "vertical"
     },
+    // HORIZONTAL
     {
       type: "image",
       title: "Бугарското китење со туѓи перја и нашиот громогласен молк",
