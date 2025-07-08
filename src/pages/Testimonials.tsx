@@ -18,12 +18,6 @@ const Testimonials = () => {
 
   const media: MediaItem[] = [
     {
-      type: "video",
-      src: "/images/memories/nade.mp4",
-      title: "Title",
-      orientation: "horizontal",
-    },
-    {
       type: "image",
       src: "/images/memories/intro.png",
       title: "Title",
@@ -31,7 +25,7 @@ const Testimonials = () => {
     },
     {
       type: "image",
-      src: "/images/memories/bilyana.jpg",
+      src: "/images/memories/chapeau.jpeg",
       title: "Title",
       orientation: "vertical",
     },
@@ -54,31 +48,49 @@ const Testimonials = () => {
       subtitle="What people had to say about Professor Proeva."
     />
 
-    <div className="animate-fade-in grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {media.map((item, index) => (
-        <div 
-          key={index}
-          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover-scale"
-          onClick={() => openLightbox(item)}
-        >
-          <div className="aspect-video overflow-hidden">
-            {item.type === "video" ? (
-              <video
-                src={item.src}
-                className="w-full h-full object-cover"
-                controls
-                controlsList="nodownload"
-              />
-            ) : (
-              <img
-                src={item.src}
-                alt={item.title}
-                className="w-full h-full object-cover"
-              />
-            )}
+    <video
+      src="/images/memories/nade.mp4"
+      className="w-full h-full object-cover mb-6"
+      controls muted
+      controlsList="nodownload"
+    >
+      Your browser does not support the video tag.
+    </video>
+    <div className="animate-fade-in grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid gap-6">
+        {media
+        .filter((_, index) => index % 2 === 0)
+        .map((item, index) => (
+          <div 
+            key={index}
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-min"
+            onClick={() => openLightbox(item)}
+          >
+            <img
+              src={item.src}
+              alt={item.title}
+              className="w-auto h-auto object-cover"
+            />
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <div className="grid gap-6">
+        {media
+        .filter((_, index) => index % 2 === 1)
+        .map((item, index) => (
+          <div 
+            key={index}
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-min"
+            onClick={() => openLightbox(item)}
+          >
+            <img
+              src={item.src}
+              alt={item.title}
+              className="w-auto h-auto object-cover"
+            />
+          </div>
+        ))}
+      </div>
     </div>
 
     {/* Lightbox */}
