@@ -6,14 +6,12 @@ const Home = () => {
 
   const medals = [
     {
-      medal: "/images/chevalier.jpg",
-      certificate: "/images/palmes-academiques.jpg",
+      src: "/images/chevalier.png",
       alt: "Chevalier des Palmes Académiques Medal",
       title: "Chevalier des Palmes Académiques"
     },
     {
-      medal: "/images/award-unknown.jpg",
-      certificate: "/images/sertifikat.jpg",
+      src: "/images/award-unknown.jpg",
       alt: "Filozovski Fakultet",
       title: "Filozovski Fakultet"
     },
@@ -28,7 +26,7 @@ const Home = () => {
             src="/images/nade.jpg"
             alt="Professor Dr. Nade Proeva"
             className="w-2/5 lg:w-1/2 h-auto object-cover rounded-lg block"
-          ></img>
+          />
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
               <div className="flex flex-col justify-center text-justify sm:text-lg md:text-xl lg:text-2xl xl:text-3xl italic">
@@ -85,29 +83,20 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between gap-4 bg-yellow-500 p-5 rounded-lg">
           <div className="flex items-center gap-3 order-1 xl:order-0">
             <img
-              src={medals[0].certificate}
+              src={medals[0].src}
               alt={medals[0].title}
               className="rounded-lg max-h-[100px] md:max-h-[200px] max-w-[200px] md:max-w-[400px]"
-            />
-            <img
-              src={medals[0].medal}
-              alt={medals[0].title}
-              className="rounded-lg max-h-[200px] md:max-h-[400px] max-w-[75px] md:max-w-[150px]"
             />
           </div>
           <h1 className="text-2xl lg:text-3xl font-vollkornsc text-burgundy-800 font-bold order-0 xl:order-1 self-center xl:self-start">
             HONORS
           </h1>
           <div className="flex items-center gap-3 order-2 xl:order-2">
+            {/* TODO: replace with real medal/cert combo */}
             <img
-              src={medals[1].certificate}
-              alt={medals[1].title}
+              src={medals[0].src}
+              alt={medals[0].title}
               className="rounded-lg max-h-[100px] md:max-h-[200px] max-w-[200px] md:max-w-[400px]"
-            />
-            <img
-              src={medals[1].medal}
-              alt={medals[1].title}
-              className="rounded-lg max-h-[200px] md:max-h-[400px] max-w-[75px] md:max-w-[150px]"
             />
           </div>
         </div>
