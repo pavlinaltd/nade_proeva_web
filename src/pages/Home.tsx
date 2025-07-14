@@ -7,15 +7,17 @@ const Home = () => {
   const medals = [
     {
       src: "/images/chevalier.png",
-      alt: "Chevalier des Palmes Académiques Medal",
-      title: "Chevalier des Palmes Académiques"
+      title: "Chevalier des Palmes Académiques",
     },
     {
-      src: "/images/award-unknown.jpg",
-      alt: "Filozovski Fakultet",
-      title: "Filozovski Fakultet"
+      src: "/images/chevalier.png",
+      title: "Filozovski Fakultet",
     },
-  ];  
+    {
+      src: "/images/chevalier.png",
+      title: "TBD",
+    },
+  ];
 
   return (
     <div className="animate-fade-in space-y-16">
@@ -80,25 +82,16 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col xl:flex-row items-center justify-between gap-4 bg-yellow-500 p-5 rounded-lg">
-          <div className="flex items-center gap-3 order-1 xl:order-0">
+        <div className="flex flex-col xl:flex-row items-center justify-between gap-4 rounded-lg">
+          {medals.map((medal, index) => (
             <img
-              src={medals[0].src}
-              alt={medals[0].title}
-              className="rounded-lg max-h-[100px] md:max-h-[200px] max-w-[200px] md:max-w-[400px]"
+              key={index}
+              src={medal.src}
+              alt={`${medal.title} Certificate and Medal`}
+              title={medal.title}
+              className="rounded-lg max-h-[100px] md:max-h-[200px] max-w-[200px] md:max-w-[400px] bg-gradient-to-b to-yellow-600 from-yellow-300 p-3"
             />
-          </div>
-          <h1 className="text-2xl lg:text-3xl font-vollkornsc text-burgundy-800 font-bold order-0 xl:order-1 self-center xl:self-start">
-            HONORS
-          </h1>
-          <div className="flex items-center gap-3 order-2 xl:order-2">
-            {/* TODO: replace with real medal/cert combo */}
-            <img
-              src={medals[0].src}
-              alt={medals[0].title}
-              className="rounded-lg max-h-[100px] md:max-h-[200px] max-w-[200px] md:max-w-[400px]"
-            />
-          </div>
+          ))}
         </div>
       </section>
 
