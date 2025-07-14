@@ -1,16 +1,7 @@
 
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
-} from "@/components/ui/table";
 import SectionHeader from "@/components/SectionHeader";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface PaperProps {
   title: string;
@@ -31,36 +22,13 @@ const Papers = () => {
       name: "Ethnogenesis",
       papers: [
         {
-          title: "On the Ethnogenesis of the Ancient Macedonians",
-          journal: "Journal of Ancient History",
-          year: "1995",
-          url: "#",
-          abstract: "This paper examines the ethnic origins of the ancient Macedonians through an analysis of archaeological evidence, linguistic data, and historical texts. It challenges prevailing narratives and offers new perspectives on Macedonian identity formation."
-        },
-        {
           title: "The legend of Philemon and Baucis and the reminiscence of afterlife beliefs on Roman tombstones in Macedonia",
-          journal: "Macedonian Archaeology",
-          year: "XXXX",
+          year: "2024",
           url: "https://www.academia.edu/91218402/The_legend_of_Philemon_and_Baucis_and_the_reminiscence_of_afterlife_beliefs_on_Roman_tombstones_in_Macedonia_Epic_Society_and_Religion_in_the_Ancient_Near_Eastern_and_Mediterranean_cultures_Tartu_July_16_18_2021",
-          abstract: "This article investigates the authorship of the Trebenište culture and the gold funeral masks, analyzing archaeological finds and their implications for understanding ancient Macedonian society."
-        },
-        {
-          title: "Macedonian Onomastics as Evidence of Ethnic Identity",
-          journal: "Balkan Studies",
-          year: "1998",
-          url: "#",
-          abstract: "An analysis of personal and place names from ancient Macedonia, demonstrating distinctive patterns that support the thesis of a separate Macedonian ethnic identity."
-        },
-        {
-          title: "The Question of Ancient Macedonian Language",
-          journal: "Historical Linguistics",
-          year: "2001",
-          url: "#",
-          abstract: "This study evaluates the linguistic evidence for ancient Macedonian as a distinct language rather than a dialect of Greek, based on preserved glosses and onomastic material."
+          abstract: "This paper explores the connection between the ancient belief in eternal life, as depicted in the myth of Philemon and Baucis, and its reflection in Roman-era funerary practices in Upper Macedonia."
         },
         {
           title: "Who Were the Authors of the Trebenište Culture and the Gold Funeral Masks?",
-          journal: "Macedonian Archaeology",
           year: "XXXX",
           url: "https://www.academia.edu/1439976/Nade_Proeva_WHO_WERE_THE_AUTHORS_OF_THE_TREBENIŠTE_CULTURE_AND_THE_GOLD_FUNERAL_MASKS",
           abstract: "This article investigates the authorship of the Trebenište culture and the gold funeral masks, analyzing archaeological finds and their implications for understanding ancient Macedonian society."
@@ -68,57 +36,58 @@ const Papers = () => {
       ]
     },
     {
-      name: "Archaeology",
-      papers: [
-        {
-          title: "Burial Practices in Ancient Macedonia",
-          journal: "Archaeological Review",
-          year: "2003",
-          url: "#",
-          abstract: "An examination of burial customs and grave goods from ancient Macedonian sites, revealing distinctive cultural practices and beliefs about the afterlife."
-        },
-        {
-          title: "The Royal Palace at Aegae: New Interpretations",
-          journal: "Mediterranean Archaeology",
-          year: "2007",
-          url: "#",
-          abstract: "A reassessment of the archaeological evidence from the royal palace at Aegae (Vergina), with new interpretations of its function and symbolic significance."
-        },
-        {
-          title: "Material Culture of the Ancient Macedonians",
-          journal: "Journal of Archaeological Studies",
-          year: "2012",
-          url: "#",
-          abstract: "This comprehensive study catalogs and analyzes distinctive elements of ancient Macedonian material culture, from pottery and metalwork to architectural styles."
-        }
-      ]
-    },
-    {
       name: "Historiography",
       papers: [
-        {
-          title: "Ancient Greek Authors on Macedonia: A Critical Evaluation",
-          journal: "Classical Quarterly",
-          year: "2005",
-          url: "#",
-          abstract: "This paper critically examines how ancient Greek authors portrayed Macedonia and Macedonians, analyzing biases and political motivations in these accounts."
-        },
         {
           title: "A Brief Chronology of Historical Events",
           journal: "Journal of Historical Studies",
           year: "2009",
           url: "https://www.academia.edu/6808303/MACEDONIA_A_BRIEF_CHRONOLOGY_OF_HISTORICAL_EVENTS",
-          abstract: "A survey and critique of modern scholarly approaches to ancient Macedonian history, identifying trends, biases, and methodological issues."
+          abstract: "A list of events in chronological order regarding Macedonian history between the Iron Age and April 8th, 1993."
+        },
+      ]
+    },
+    {
+      name: "Uncategorized (temporary)",
+      papers: [
+        {
+          title: "SUR L'ICONOGRAPHIE DES STÈLES FUNÉRAIRES DU »TYPE TIKVEŠ« EN MACÉDOINE À L'ÉPOQUE ROMAINE",
+          year: "2013",
+          url: "https://www.academia.edu/3750406/SUR_L_ICONOGRAPHIE_DES_ST%C3%88LES_FUN%C3%89RAIRES_DU_TYPE_TIKVE%C5%A0_EN_MAC%C3%89DOINE_%C3%80_L_%C3%89POQUE_ROMAINE",
+          abstract: "..."
         },
         {
-          title: "Reinterpreting Alexander: Beyond the Greco-Roman Narrative",
-          journal: "Alexander Studies",
-          year: "2015",
-          url: "#",
-          abstract: "This article challenges the predominantly Hellenocentric interpretations of Alexander the Great, examining his policies and actions from a Macedonian perspective."
-        }
+          title: "",
+          year: "",
+          url: "https://www.academia.edu/42127116/100_years_of_Trebenishte",
+          abstract: ""
+        },
+        {
+          title: "",
+          year: "",
+          url: "https://www.academia.edu/23385214/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D0%BD%D0%B8%D1%82%D0%B5_%D0%BC%D0%B8%D1%82%D0%BE%D0%B2%D0%B8_%D0%B2%D0%BE_%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B0_%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D0%B0_%D0%B8_%D0%BD%D0%B5%D0%B3%D0%B8%D1%80%D0%B0%D1%9A%D0%B5%D1%82%D0%BE_%D0%BD%D0%B0_%D0%BC%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%BE%D1%82_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%82%D0%B5%D1%82",
+          abstract: ""
+        },
+        {
+          title: "",
+          year: "",
+          url: "https://www.academia.edu/34673739/On_the_Names_of_Thracia_and_Eastern_Macedonia_%CE%9A%CE%A1%CE%91%CE%A4%CE%99%CE%A3%CE%A4%CE%9F%CE%A3_%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA_%D0%B2_%D1%87%D0%B5%D1%81%D1%82_%D0%BD%D0%B0_%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D0%BE%D1%80_%D0%9F%D0%B5%D1%82%D1%8A%D1%80_%D0%94%D0%B5%D0%BB%D0%B5%D0%B2_%D0%A1%D0%BE%D1%84%D0%B8%D1%8F_2017_%D1%81%D1%82%D1%80_75_82Proeva_2017_PD_body_color",
+          abstract: ""
+        },
+        {
+          title: "",
+          year: "",
+          url: "https://www.academia.edu/3085496/THE_ENGELANES_ENCHELEIS_AND_THE_GOLDEN_MASK_FROM_THE_TREBENI%C5%A0TE_CULTURE",
+          abstract: ""
+        },
+        {
+          title: "",
+          year: "2013",
+          url: "https://www.academia.edu/3750406/SUR_L_ICONOGRAPHIE_DES_ST%C3%88LES_FUN%C3%89RAIRES_DU_TYPE_TIKVE%C5%A0_EN_MAC%C3%89DOINE_%C3%80_L_%C3%89POQUE_ROMAINE",
+          abstract: ""
+        },
       ]
-    }
+    },
   ];
 
   return (
@@ -130,7 +99,8 @@ const Papers = () => {
           including articles, book reviews, conference papers, and encyclopedia entries.
           Her work involved meticulous research, innovative methodology, and insightful analysis.
           Many of her works are accessible through academic databases such as academia.edu or by
-          contacting the Department of History at Ss. Cyril and Methodius University in Skopje, Macedonia."
+          contacting the Department of History at Ss. Cyril and Methodius University in Skopje, Macedonia.
+          A list of her most popular papers are here."
       />
       <div className="animate-fade-in">
         <div className="space-y-12">
