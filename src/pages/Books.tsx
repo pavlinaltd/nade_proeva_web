@@ -47,7 +47,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
           className="flex flex-col justify-between"
         >
           <div>
-            <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-2">{book.title}</h3>
+            <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-2">{book.title.toUpperCase()}</h3>
             {book.originalTitle && (
               <p className="text-xs md:text-sm lg:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
             )}
