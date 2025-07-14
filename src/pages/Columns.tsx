@@ -157,14 +157,14 @@ const Columns = () => {
         {columns.map((col, index) => (
           <div
             key={index}
-            className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 ${col.orientation === "horizontal" && "mx-auto"}`}
+            className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 mx-auto`}
             onClick={() => openLightbox(col)}
           >
-            <div className={`${col.orientation === "vertical" ? "w-[380px] h-[600px]" : "w-[300px] h-[200px] mx-auto"}`}>
+            <div className={`${col.orientation === "vertical" ? "h-[600px]" : "h-[300px]"} mx-auto`}>
               <img
               src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
-              className={`${col.orientation === "vertical" ? "w-[380px] h-[600px]" : "w-[300px] h-[200px] mx-auto"} object-left-top object-cover`}
+              className={`${col.orientation === "vertical" ? "h-[600px]" : "aspect-square h-[300px]"} object-cover object-left-top`}
               />
               <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
               <Expand
