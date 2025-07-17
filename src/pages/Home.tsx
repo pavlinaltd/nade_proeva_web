@@ -10,12 +10,8 @@ const Home = () => {
       title: "Chevalier des Palmes Académiques",
     },
     {
-      src: "/images/chevalier.png",
+      src: "/images/certifikat.jpg",
       title: "Filozovski Fakultet",
-    },
-    {
-      src: "/images/chevalier.png",
-      title: "TBD",
     },
   ];
 
@@ -82,7 +78,7 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col xl:flex-row items-center justify-between gap-4 rounded-lg">
+        <div className="flex flex-col xl:flex-row items-center justify-around gap-4 rounded-lg">
           {medals.map((medal, index) => (
             <img
               key={index}
@@ -96,7 +92,7 @@ const Home = () => {
       </section>
 
       {/* Video Section */}
-      <section className="container mx-auto px-4 w-full lg:w-4/5 ">
+      <section className="container mx-auto px-4 w-full lg:w-3/5 ">
         <div className="flex justify-center overflow-hidden">
           <video
             controls
