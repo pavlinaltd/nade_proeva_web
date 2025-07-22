@@ -15,43 +15,66 @@ const Media = () => {
   const audios = [
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+      src: "/audio/",
+      english: "Historical Focus",
+      original: "Историски Фокус",
+      date: "July 19, 2024",
     },
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+      src: "/audio/TRAGI-VO-VREMETO-06-05-2018.wav",
+      english: "Footprints in Time",
+      original: "Траги во Времето",
+      date: "May 6, 2018",
     },
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+      src: "/audio/STUDII-ZA-ANTICKITE-MAKEDONCI.wav",
+      english: "Studies of the Ancient Macedonians",
+      original: "Студии за Античките Македонци",
+      date: "2011",
     },
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+      src: "/audio/OD-NASHIOT-NEZABORAV.wav",
+      english: "From Our Unforgettable Past",
+      original: "Од Нашиот Незаборав",
+      date: "March 3, 2001",
     },
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+      src: "/audio/",
+      english: "Historical Focus",
+      original: "Историски Фокус",
+      date: "December 26, 1998",
     },
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+      src: "/audio/",
+      english: "The Ylirians From Bardilis to Gentij",
+      original: "Илирите Од Бардилис до Гентиј",
+      date: "June 12, 1997",
     },
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "ISTORISKI FOKUS-STUDII NA ANTICHKITE MAKEDONCI",
+      src: "/audio/",
+      english: "Historical Focus",
+      original: "Историски Фокус",
+      date: "March 23, 1996",
     },
     {
       type: "audio",
-      src: "/audio/interview.mp3",
-      title: "TRADICII I TEKOVI - ANTICHKI MAKEDONCI",
+      src: "/audio/",
+      english: "Historical Focus",
+      original: "Историски Фокус",
+      date: "March 23, 1996",
+    },
+    {
+      type: "audio",
+      src: "/audio/",
+      english: "Traditions and Currents",
+      original: "Традиции и Текови",
+      date: "March 12, 1991",
     },
   ];
 
@@ -101,7 +124,7 @@ const Media = () => {
           {videos.map((video, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-md"
+              className="bg-gray-200 rounded-lg overflow-hidden shadow-md"
             >
               <div className="aspect-video relative">
                 {video.type === "youtube" ? (
@@ -126,7 +149,7 @@ const Media = () => {
                 )}
               </div>
               <div className="p-4">
-                <h3 className="font-droidsans text-black mb-1">{video.caption}</h3>
+                <p className="font-droidsans text-black mb-1">{video.caption}</p>
               </div>
             </div>
           ))}
@@ -142,19 +165,27 @@ const Media = () => {
           />
           {/* Items */}
           {audios.map((audio, index) => (
-            <div 
+            <div
               key={index} 
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer h-min"
+              className="bg-burgundy-600 hover:bg-burgundy-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
               // onClick={() => openLightbox(photo)}
               // Don't need lightbox for audio
             >
               <div className="p-4">
                 <a
-                  href="/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
+                  href='' //{audio.src}
+                  target="_blank"
                   title=""
-                  className="flex gap-4 justify-start items-center hover:underline"
-                ><Headphones />
-                  {audio.title && <p className="text-sm text-gray-700">{audio.title}</p>}
+                  className="flex gap-4 items-center"
+                >
+                  <Headphones className="text-white" />
+                  <div className="text-sm flex flex-row text-white w-full justify-between">
+                    <div className="flex-col">
+                      <p /*className="font-bold"*/>{audio.english}</p>
+                      <p>{audio.original}</p>
+                    </div>
+                    <p className="text-burgundy-200 self-center">{audio.date}</p>
+                  </div>
                 </a>
               </div>
             </div>
