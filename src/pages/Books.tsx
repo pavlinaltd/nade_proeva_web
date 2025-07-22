@@ -32,7 +32,7 @@ interface BookProps {
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
     // Original
-    <div className="bg-amber-50 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap lg:flex-nowrap ">
+    <div className="bg-gray-100 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap lg:flex-nowrap ">
       {/* Book image */}
       <div className="w-full md:w-1/2 lg:w-1/3 flex order-0">
         <img
