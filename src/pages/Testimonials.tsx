@@ -5,11 +5,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 interface MediaItem {
-  type: "image" | "video";
+  type: "image" | "video" | "link";
   src: string;
   thumbnail?: string;
   title: string;
-  orientation: "horizontal" | "vertical";
+  orientation?: "horizontal" | "vertical";
 }
 
 const Testimonials = () => {
@@ -29,6 +29,11 @@ const Testimonials = () => {
       title: "Title",
       orientation: "vertical",
     },
+    {
+      type: "link",
+      src: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
+      title: "From the President's Cabinet"
+    }
   ];
 
   const openLightbox = (image: MediaItem) => {
