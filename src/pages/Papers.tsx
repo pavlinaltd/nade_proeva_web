@@ -85,6 +85,13 @@ const Papers = () => {
           url: "https://www.academia.edu/3085496/THE_ENGELANES_ENCHELEIS_AND_THE_GOLDEN_MASK_FROM_THE_TREBENI%C5%A0TE_CULTURE",
           abstract: "This passage discusses Professor M. Garašanin's analysis of the golden funerary masks from the Trebenište culture, which he attributed to the Engelanes/Encheleis tribe."
         },
+        {
+          title: "EXEGI MONUMENTUM AERE PERENNIUS",
+          year: "2010",
+          journal: "Review of the Institute of History and Archaeology RIHA",
+          url: "https://js.ugd.edu.mk/index.php/riha/article/view/5525",
+          abstract: "The paper is written in honor of and in tribute to Nade Proeva's former student, the late Aleksandar Stojcev, a History Ph.D. specializing in military history."
+        },
       ]
     },
   ];
