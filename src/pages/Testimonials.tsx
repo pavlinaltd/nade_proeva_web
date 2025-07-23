@@ -1,6 +1,6 @@
 import SectionHeader from "@/components/SectionHeader";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { X } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +11,40 @@ interface MediaItem {
   title: string;
   orientation?: "horizontal" | "vertical";
 }
+
+const LinkItem = ({ item }: { item: MediaItem }) => (
+  <div
+    className="bg-burgundy-600 hover:bg-burgundy-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
+    // Don't need lightbox for link
+  >
+    <div className="p-4">
+      <a
+        href={item.src}
+        target="_blank"
+        title={item.title}
+        className="no-underline text-white"
+      >
+        <div className="flex items-center gap-4 text-sm w-full">
+          <ExternalLink />
+          <p>{item.title}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+);
+
+const ImageItem = ({ item, openLightbox }: { item: MediaItem; openLightbox: (image: MediaItem) => void }) => (
+  <div
+    className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-min"
+    onClick={() => openLightbox(item)}
+  >
+    <img
+      src={item.src}
+      alt={item.title}
+      className="w-auto h-auto object-cover"
+    />
+  </div>
+);
 
 const Testimonials = () => {
 
@@ -55,7 +89,7 @@ const Testimonials = () => {
 
     <video
       src="/images/memories/nade.mp4"
-      className="w-full h-full object-cover mb-6"
+      className="w-3/4 h-full object-cover mb-6 mx-auto"
       controls muted
       controlsList="nodownload"
     >
@@ -65,35 +99,21 @@ const Testimonials = () => {
       <div className="grid gap-6">
         {media
         .filter((_, index) => index % 2 === 0)
-        .map((item, index) => (
-          <div 
-            key={index}
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-min"
-            onClick={() => openLightbox(item)}
-          >
-            <img
-              src={item.src}
-              alt={item.title}
-              className="w-auto h-auto object-cover"
-            />
-          </div>
+        .map((item, index) =>
+          item.type !== "link" ? (
+          <ImageItem key={index} item={item} openLightbox={openLightbox} />
+        ) : (
+          <LinkItem key={index} item={item} />
         ))}
       </div>
       <div className="grid gap-6">
         {media
         .filter((_, index) => index % 2 === 1)
-        .map((item, index) => (
-          <div 
-            key={index}
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-min"
-            onClick={() => openLightbox(item)}
-          >
-            <img
-              src={item.src}
-              alt={item.title}
-              className="w-auto h-auto object-cover"
-            />
-          </div>
+        .map((item, index) =>
+          item.type !== "link" ? (
+          <ImageItem key={index} item={item} openLightbox={openLightbox} />
+        ) : (
+          <LinkItem key={index} item={item} />
         ))}
       </div>
     </div>
