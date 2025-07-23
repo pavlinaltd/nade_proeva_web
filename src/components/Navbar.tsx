@@ -71,23 +71,38 @@ const Navbar = () => {
             aria-label="Menu"
             className="block lg:hidden"
           >
-            {isOpen ? <X /> : <Menu />}
+            <Menu /> {/* Used to switch between X and Menu icons but slide out removes need */}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <nav className="pt-4 pb-2 space-y-2 flex flex-col items-end gap-2">
-            <Link to="/">HOME</Link>
-            <Link to="/about">ABOUT</Link>
-            <Link to="/books">BOOKS</Link>
-            <Link to="/papers">PAPERS</Link>
-            <Link to="/columns">COLUMNS</Link>
-            <Link to="/media">MEDIA</Link>
-            <Link to="/on-location">ON SITE</Link>
-            <Link to="/testimonials">REMEMBERING NADE</Link>
+        <div
+          className={`fixed inset-0 z-50 bg-yellow-400 transform transition-transform duration-300 ease-in-out
+            ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <nav className="flex flex-col items-end gap-6 pt-16 pr-8 h-full">
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-2xl font-bold font-vollkornsc ${location.pathname === link.to ? "text-burgundy-700" : "text-black"} transition-colors duration-200`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
-        )}
+          {/* Close button in top right */}
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Close"
+            className="absolute top-4 right-4"
+            onClick={() => setIsOpen(false)}
+          >
+            <X />
+          </Button>
+        </div>
       </div>
     </header>
   );
