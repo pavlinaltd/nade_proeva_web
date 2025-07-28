@@ -112,9 +112,9 @@ const Home = () => {
             Support the Nade Proeva Scholarship Endowment
           </h2>
             <p className="text-gray-800 text-center max-w-2xl mx-auto xl:text-lg">
-            Your contribution to the endowment will help support the next generation
-            of historians dedicated to studying Macedonian history and culture. To grow the endowment, contact
-            <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>.
+            Your patronage to the Endowment Fund will help empower the next generation
+            of historians committed to exploring and preserving Macedonian history and culture. To grow the Endowment, contact
+            <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>
             </p>
         </div>
       </section>
