@@ -17,11 +17,11 @@ interface BookProps {
   editor: string;
   translator?: string;
   year: string;
-  publisher: string;
-  series: string;
+  publisher?: string;
+  series?: string;
   volume?: string;
-  description: string;
-  imageUrl: string;
+  description?: string;
+  imageUrl?: string;
   isbn?: string;
   amazonUrl?: string;
   promoImage?: string;
@@ -146,6 +146,46 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
 const Books = () => {
   const books: BookProps[] = [
     {
+      title: "Demosten",
+      originalTitle: "Демостен",
+      author: "Pierre Carlier",
+      editor: "Nade Proeva",
+      year: "1994",
+      publisher: "Fond \"Ljuben Lape\", Institut za Istorija, Filozofski Fakultet",
+      series: "HISTORIA ANTIQUA MACEDONICA",
+      volume: "5",
+      imageUrl: "/images/books/studii.jpg",
+      isbn: "9989-693-00-5",
+    },
+    {//TODO: resolve missing information: https://www.amazon.com/Alexandre-Grand-PIERRE-BRIANT/dp/2715401841
+      title: "Alexander the Great",
+      originalTitle: "Александар Велики",
+      author: "Pierre Briant",
+      editor: "Nade Proeva",
+      year: "1997",
+      publisher: "QUE SAIS JE",
+      isbn: "2715401841",
+    },
+    {//TODO: isbn with X?
+      title: "History of the Hellenistic Period",
+      originalTitle: "История на Хеленистичкиот Период",
+      author: "Fanula Papazoglu",
+      editor: "Nade Proeva",
+      year: "1995",
+      publisher: "Fond \"Ljuben Lape\", Institut za Istorija, Filozofski Fakultet",
+      series: "HISTORIA ANTIQUA MACEDONICA",
+      volume: "3",
+      isbn: "9989-693-03-X",
+    },
+    {//TODO: reslove missing information https://books.google.com/books?id=0D6TJAAACAAJ&source=gbs_navlinks_s
+      title: "For the Illyrians from Bardilis to Ghenti IV - 2nd Century B.C.",
+      originalTitle: "За Иилирите од Бардилис до Гентиј",
+      author: "Pierre Cabannes",
+      editor: "Nade Proeva",
+      year: "1994",
+      isbn: "9989-677-12-3",
+    },
+    {// need proofread
       title: "Studies of the Ancient Macedonians",
       originalTitle: "Студии за Античките Македонци",
       author: "Nade Proeva",
@@ -160,7 +200,7 @@ const Books = () => {
       amazonUrl: "",
       promoVideo: "/images/books/studies-promo.mp4"
     },
-    {
+    {// need proofread
       title: "Cradle of Macedonian Statehood",
       originalTitle: "Лулката на Македонската Државност",
       author: "Alfred Delakoulonša",
@@ -174,7 +214,7 @@ const Books = () => {
       imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "9989-619-40-9",
     },
-    {
+    {// need proofread
       title: "History of the Argeadites",
       originalTitle: "Историја на Аргеадите",
       author: "Nade Proeva",
@@ -189,7 +229,18 @@ const Books = () => {
       amazonUrl: "",
       promoImage: "/images/books/istorija-promo.jpg",
     },
-    {
+    {//TODO: resolve missing information https://www.google.com/search?client=firefox-b-1-d&q=%D0%9D%D0%B0%D0%BF%D0%BE%D1%80%D0%B5%D0%B4%D0%BD%D0%B8+%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BE%D0%BF%D0%B8%D1%81%D0%B8
+      title: "Parallel Hagiographies",
+      originalTitle: "Напоредни Животописи",
+      author: "Ploutarchos",
+      editor: "Nade Proeva",
+      year: "2008",
+      publisher: "Evro-Balkan Pres, Skopje",
+      series: "HISTORIA ANTIQUA MACEDONICA",
+      volume: "7",
+      isbn: "",
+    },
+    {// need proofread
       title: "History of Epigonites",
       originalTitle: "Историја на Епигоните",
       author: "Fanula Papazoglu",
@@ -203,7 +254,7 @@ const Books = () => {
       imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
       isbn: "",
     },
-    {
+    {// need proofread
       title: "Alexander of Macedon",
       originalTitle: "Александар Македонски",
       editor: "Nade Proeva",
@@ -216,7 +267,7 @@ const Books = () => {
       imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "978-9989-2978-2-3",
     },
-    {
+    {// need proofread
       title: "Religion of the Ancient Macedonians",
       originalTitle: "Религијата на Античките Македонци",
       author: "Nade Proeva",
@@ -232,7 +283,7 @@ const Books = () => {
       promoImage: "/images/books/launch-of-religion.jpg",
       promoAudio: "/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
     },
-    {
+    {// need proofread
       title: "Macedonia: A Nation on the Betting Table",
       originalTitle: "Триптих за Македонскиот Идентитет",
       author: "Nade Proeva",
@@ -247,7 +298,7 @@ const Books = () => {
       amazonUrl: "",
       promoImage: "/images/books/triptych-promo.png",
     },
-    {
+    {// need proofread
       title: "National Awareness of the Macedonian Slavs",
       originalTitle: "Народносната Свест на Македонските Словени",
       author: "Angel Dinev",
