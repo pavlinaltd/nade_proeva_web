@@ -16,7 +16,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="animate-fade-in space-y-16">
+    <div className="animate-fade-in space-y-24">
       {/* Hero Section */}
       <section className="relative p-5 md:p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-400 to-yellow-500 text-white">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
@@ -78,14 +78,14 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col xl:flex-row items-center justify-around gap-4 rounded-lg">
+        <div className="flex flex-col sm:flex-row items-center justify-between md:justify-around gap-4 rounded-lg">
           {medals.map((medal, index) => (
             <img
               key={index}
               src={medal.src}
               alt={`${medal.title} Certificate and Medal`}
               title={medal.title}
-              className="rounded-lg max-h-[100px] md:max-h-[200px] max-w-[200px] md:max-w-[400px] bg-gradient-to-b to-yellow-600 from-yellow-300 p-3"
+              className="rounded-lg max-h-[200px] max-w-[400px] bg-gradient-to-b to-yellow-600 from-yellow-300 p-3"
             />
           ))}
         </div>
