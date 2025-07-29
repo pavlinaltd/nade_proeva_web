@@ -118,7 +118,8 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
           <TableRow>
             <TableHead className="rounded-tl-md">Title</TableHead>
             <TableHead>Original Title</TableHead>
-            <TableHead>Author/Editor</TableHead>
+            <TableHead>Author</TableHead>
+            <TableHead>Editor</TableHead>
             <TableHead>Series</TableHead>
             <TableHead>Year</TableHead>
             <TableHead>Publisher</TableHead>
@@ -129,12 +130,13 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
           {books.map((book, index) => (
             <TableRow className={index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"} key={index}>
               <TableCell className={index === books.length - 1 && "rounded-bl-md"}>{book.title}</TableCell>
-              <TableCell>{book.originalTitle || "-"}</TableCell>
-              <TableCell>{book.author || book.editor}</TableCell>
+              <TableCell>{book.originalTitle}</TableCell>
+              <TableCell>{book.author}</TableCell>
+              <TableCell>{book.editor}</TableCell>
               <TableCell>{book.series} {book.volume && `Vol. ${book.volume}`}</TableCell>
               <TableCell>{book.year}</TableCell>
               <TableCell>{book.publisher}</TableCell>
-              <TableCell className={index === books.length - 1 ? "rounded-br-md border-r-0" : "border-r-0"}>{book.isbn || "-"}</TableCell>
+              <TableCell className={index === books.length - 1 ? "rounded-br-md border-r-0" : "border-r-0"}>{book.isbn}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -251,7 +253,6 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "9",
       description: "A scholarly analysis of the period following Alexander the Great's death, examining the complex power dynamics and conflicts among his successors known as the Epigoni.",
-      imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
       isbn: "",
     },
     {// need proofread
@@ -264,7 +265,6 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "10",
       description: "A detailed biographical work on Alexander the Great, examining his conquests, policies, and lasting impact on world history through a critical historical lens.",
-      imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "978-9989-2978-2-3",
     },
     {// need proofread
@@ -329,12 +329,12 @@ const Books = () => {
         </div>
 
         <div className="my-12">
-          <h3 className="font-semibold text-burgundy-900 mb-4">Complete Bibliography</h3>
+          <h3 className="font-semibold text-burgundy-900 mb-4">Extended Bibliography</h3>
           <p className="text-gray-700 mb-6">
-            Below is a comprehensive listing of books authored, edited, or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
+            Below is an extended listing of books edited or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
           </p>
           
-          <BookTable books={books} />
+          <BookTable books={books.filter((book) => book.author !== "Nade Proeva")} />
         </div>
 
         <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900">
@@ -343,7 +343,7 @@ const Books = () => {
             Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
           </p>
           <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-6">
-            For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>.
+            For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>
           </p>
           
           <Button
