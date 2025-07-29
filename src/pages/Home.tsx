@@ -105,24 +105,28 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Book Feature Section */}
+      <section className="container mx-auto px-4 w-full lg:w-4/5">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-10 sm:gap-24 md:gap-48">
+            <img 
+              className="max-w-[50%] sm:max-w-[25%] rounded-lg"
+              src="/images/from-her-lessons.png"
+              alt=""
+            />
+          </div>
+      </section>
+
       {/* Fund Call-to-Action */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-10 sm:gap-24 md:gap-48">
-          <div className="bg-amber-50 border border-burgundy-900 rounded-lg p-8">
-            <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 text-center mb-4">
-              Support the Nade Proeva Scholarship Endowment
-            </h2>
-              <p className="text-gray-800 text-center max-w-2xl mx-auto xl:text-lg">
-              Your patronage to the Endowment Fund will help empower the next generation
-              of historians committed to exploring and preserving Macedonian history and culture. To grow the Endowment, contact
-              <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>
-              </p>
-          </div>
-          <img 
-            className="max-w-[50%] sm:max-w-[25%] rounded-lg"
-            src="/images/from-her-lessons.png"
-            alt=""
-          />
+        <div className="bg-amber-50 border border-burgundy-900 rounded-lg p-8">
+          <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 text-center mb-4">
+            Support the Nade Proeva Scholarship Endowment
+          </h2>
+            <p className="text-gray-800 text-center max-w-2xl mx-auto xl:text-lg">
+            Your patronage to the Endowment Fund will help empower the next generation
+            of historians committed to exploring and preserving Macedonian history and culture. To grow the Endowment, contact
+            <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>
+            </p>
         </div>
       </section>
     </div>
