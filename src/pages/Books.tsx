@@ -296,7 +296,7 @@ const Books = () => {
       imageUrl: "/images/books/triptych.jpg",
       isbn: "978-608-245-363-7",
       amazonUrl: "",
-      promoImage: "/images/books/triptych-promo.png",
+      promoImage: "/images/books/triptych-promo.jpg",
     },
     {// need proofread
       title: "National Awareness of the Macedonian Slavs",
