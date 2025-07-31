@@ -107,10 +107,15 @@ const Home = () => {
 
       {/* Book Feature Section */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-10 sm:gap-24 md:gap-48">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 md:gap-24">
             <img 
-              className="max-w-[50%] sm:max-w-[25%] rounded-lg"
+              className="max-w-[50%] md:max-w-[25%] rounded-lg"
               src="/images/from-her-lessons.png"
+              alt=""
+            />
+            <img 
+              className="max-w-[50%] md:max-w-[25%] rounded-lg"
+              src="/images/book-promo.jpg"
               alt=""
             />
           </div>
