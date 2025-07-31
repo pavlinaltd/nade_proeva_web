@@ -345,16 +345,6 @@ const Books = () => {
           <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-6">
             For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>
           </p>
-          
-          <Button
-            className="flex items-center gap-2 text-white bg-burgundy-600 hover:bg-burgundy-700"
-            variant="ghost" asChild
-          >
-            <a href="https://www.amazon.com/s?k=Nade+Proeva" target="_blank" rel="noopener noreferrer">
-              <ExternalLink size={16} />
-              Browse Professor Proeva's Books on Amazon
-            </a>
-          </Button>
         </div>
       </div>
     </div>
