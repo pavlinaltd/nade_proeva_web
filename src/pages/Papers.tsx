@@ -97,20 +97,22 @@ const Papers = () => {
           A list of her most popular papers are here."
       />
       <div className="animate-fade-in">
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
           {papers.map((paper, index) => (
-            <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-              <h4 className="text-lg font-semibold text-burgundy-800 mb-2">
-                {paper.title}
-              </h4>
-              <div className="text-sm text-gray-500 mb-3">
-                {paper.year}
-                {paper.journal && ` • ${paper.journal}`}
+            <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm flex flex-col justify-between">
+              <div>
+                <h4 className="text-lg font-semibold text-burgundy-800 mb-2">
+                  {paper.title}
+                </h4>
+                <div className="text-sm text-gray-500 mb-3">
+                  {paper.year}
+                  {paper.journal && ` • ${paper.journal}`}
+                </div>
+                {paper.abstract && (
+                  <p className="text-gray-700 mb-4">{paper.abstract}</p>
+                )}
               </div>
-              {paper.abstract && (
-                <p className="text-gray-700 mb-4">{paper.abstract}</p>
-              )}
-              <Button asChild variant="ghost" size="sm" className="flex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white">
+              <Button asChild variant="ghost" size="sm" className="self-endflex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white">
                 <a href={paper.url} target="_blank" rel="noopener noreferrer">
                   <span>Read on Academia.edu</span>
                   <ExternalLink size={16} />
