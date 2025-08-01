@@ -156,12 +156,6 @@ const Media = () => {
 
         {/* Audio */}
         <div className="flex flex-col w-1/2 gap-10 rounded-md">
-          {/* Podium */}
-          <img
-            src="/images/nade-podium.jpg" 
-            alt="Podium"
-            className="object-cover rounded-lg shadow-md"
-          />
           {/* Items */}
           {audios.map((audio, index) => (
             <div
