@@ -99,7 +99,7 @@ const Papers = () => {
       <div className="animate-fade-in">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
           {papers.map((paper, index) => (
-            <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm flex flex-col justify-between">
+            <div key={index} className="bg-gray-100 rounded-lg border border-gray-200 p-6 shadow-lg flex flex-col justify-between">
               <div>
                 <h4 className="text-lg font-semibold text-burgundy-800 mb-2">
                   {paper.title}
