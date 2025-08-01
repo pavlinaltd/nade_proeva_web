@@ -284,7 +284,7 @@ const Books = () => {
       promoAudio: "/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
     },
     {// need proofread
-      title: "Macedonia: A Nation on the Betting Table",
+      title: "Gambling for Macedonia: A Triptych of Fractured Truths",
       originalTitle: "Триптих за Македонскиот Идентитет",
       author: "Nade Proeva",
       editor: "Nikola Minov",
