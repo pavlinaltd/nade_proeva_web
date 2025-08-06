@@ -1,82 +1,97 @@
 import SectionHeader from "@/components/SectionHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Headphones, Mic, MicVocal } from "lucide-react";
+import {
+  VideoPlayer,
+  VideoPlayerContent,
+  VideoPlayerControlBar,
+  VideoPlayerMuteButton,
+  VideoPlayerPlayButton,
+  VideoPlayerSeekBackwardButton,
+  VideoPlayerSeekForwardButton,
+  VideoPlayerTimeDisplay,
+  VideoPlayerTimeRange,
+  VideoPlayerVolumeRange,
+} from "@/components/ui/shadcn-io/video-player";
 
 interface VideoItem {
   type: "localVideo" | "youtube";
-  format: string;
+  format?: string;
   src: string;
   title: string;
   caption?: string;
 }
 
+const VideoPlayerItem = ({ item }: { item: VideoItem }) => (
+  <VideoPlayer className="overflow-hidden rounded-lg border shadow-md">
+    <VideoPlayerContent
+      crossOrigin=""
+      muted
+      preload="auto"
+      slot="media"
+      src={item.src}
+    />
+    <VideoPlayerControlBar>
+      <VideoPlayerPlayButton />
+      <VideoPlayerSeekBackwardButton />
+      <VideoPlayerSeekForwardButton />
+      <VideoPlayerTimeRange />
+      <VideoPlayerTimeDisplay showDuration />
+      <VideoPlayerMuteButton />
+      <VideoPlayerVolumeRange />
+    </VideoPlayerControlBar>
+  </VideoPlayer>
+);
+
 const Media = () => {
 
-  const mainAudio =
+  const mainAudio: VideoItem =
   {
-    type: "audio",
+    type: "youtube",
     src: "https://www.youtube.com/embed/PABGFsmHnhk",
-    english: "Historical Focus",
-    original: "Историски Фокус",
-    date: "July 19, 2024",
+    title: "Historical Focus - Историски Фокус, July 19, 2024",
   }
 
-  const audios = [
+  const audios: VideoItem[] = [
     {
-      type: "audio",
+      type: "youtube",
       src: "https://www.youtube.com/embed/oKxR2oMCB9g",
-      english: "Footprints in Time",
-      original: "Траги во Времето",
-      date: "May 6, 2018",
+      title: "Footprints in Time - Траги во Времето, May 6, 2018",
     },
     {
-      type: "audio",
+      type: "youtube",
       src: "https://www.youtube.com/embed/eQgpEdjkIXg",
-      english: "From Our Unforgettable Past",
-      original: "Од Нашиот Незаборав",
-      date: "March 3, 2001",
+      title: "From Our Unforgettable Past - Од Нашиот Незаборав, March 3, 2001",
     },
     {
-      type: "audio",
+      type: "youtube",
       src: "https://www.youtube.com/embed/ipM0NKh6434",
-      english: "Historical Focus",
-      original: "Историски Фокус",
-      date: "December 26, 1998",
+      title: "Historical Focus - Историски Фокус, December 26, 1998",
     },
     {
-      type: "audio",
+      type: "youtube",
       src: "",
-      english: "The Ylirians From Bardilis to Gentij",
-      original: "Илирите Од Бардилис до Гентиј",
-      date: "June 12, 1997",
+      title: "The Ylirians From Bardilis to Gentij - Илирите Од Бардилис до Гентиј, June 12, 1997",
     },
     {
-      type: "audio",
-      src: "https://www.youtube.com/embed/vt61kJYEQog",
-      english: "Studies of the Ancient Macedonians",
-      original: "Студии за Античките Македонци",
-      date: "1997",
+      type: "youtube",
+      src: "https://www.youtube.com/watch?v=vt61kJYEQog",
+      title: "Studies of the Ancient Macedonians - Студии за Античките Македонци, 1997",
     },
     {
-      type: "audio",
-      src: "https://www.youtube.com/embed/lM6Ebzbn2q8",
-      english: "Historical Focus",
-      original: "Историски Фокус",
-      date: "March 23, 1996",
+      type: "youtube",
+      src: "https://www.youtube.com/watch?v=lM6Ebzbn2q8",
+      title: "Historical Focus - Историски Фокус, March 23, 1996",
     },
     {
-      type: "audio",
+      type: "youtube",
       src: "",
-      english: "Historical Focus",
-      original: "Историски Фокус",
-      date: "March 23, 1996",
+      title: "Historical Focus - Историски Фокус, March 23, 1996",
     },
     {
-      type: "audio",
+      type: "youtube",
       src: "https://www.youtube.com/embed/a4KN2nO9czc",
-      english: "Traditions and Currents",
-      original: "Традиции и Текови",
-      date: "March 12, 1991",
+      title: "Traditions and Currents - Традиции и Текови, March 12, 1991",
     },
   ];
 
@@ -164,7 +179,7 @@ const Media = () => {
                 <iframe
                   className="w-full h-full object-cover"
                   src={mainAudio.src}
-                  title={`${mainAudio.english} - ${mainAudio.original}, ${mainAudio.date}`}
+                  title={mainAudio.title}
                 >
                 </iframe>
             </div>
