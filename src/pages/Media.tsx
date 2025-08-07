@@ -1,6 +1,4 @@
 import SectionHeader from "@/components/SectionHeader";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Headphones, Mic, MicVocal } from "lucide-react";
 import {
   VideoPlayer,
   VideoPlayerContent,
@@ -15,7 +13,6 @@ import {
 } from "@/components/ui/shadcn-io/video-player";
 
 interface VideoItem {
-  type: "localVideo" | "youtube";
   format?: string;
   src: string;
   title: string;
@@ -23,10 +20,9 @@ interface VideoItem {
 }
 
 const VideoPlayerItem = ({ item }: { item: VideoItem }) => (
-  <VideoPlayer className="overflow-hidden rounded-lg border shadow-md">
+  <VideoPlayer className="overflow-hidden rounded-lg border border-burgundy-700 shadow-lg">
     <VideoPlayerContent
       crossOrigin=""
-      muted
       preload="auto"
       slot="media"
       src={item.src}
@@ -47,71 +43,55 @@ const Media = () => {
 
   const mainAudio: VideoItem =
   {
-    type: "youtube",
     src: "https://www.youtube.com/embed/PABGFsmHnhk",
     title: "Historical Focus - Историски Фокус, July 19, 2024",
   }
 
   const audios: VideoItem[] = [
     {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/oKxR2oMCB9g",
+      src: "/videos/audio/footprints-in-time.mp4",
       title: "Footprints in Time - Траги во Времето, May 6, 2018",
     },
     {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/eQgpEdjkIXg",
+      src: "/videos/audio/from-our-unforgettable-past.mp4",
       title: "From Our Unforgettable Past - Од Нашиот Незаборав, March 3, 2001",
     },
     {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/ipM0NKh6434",
+      src: "/videos/audio/historical-focus-dec-26.mp4",
       title: "Historical Focus - Историски Фокус, December 26, 1998",
     },
     {
-      type: "youtube",
       src: "",
       title: "The Ylirians From Bardilis to Gentij - Илирите Од Бардилис до Гентиј, June 12, 1997",
     },
     {
-      type: "youtube",
-      src: "https://www.youtube.com/watch?v=vt61kJYEQog",
+      src: "/videos/audio/studies-of-the-ancient-macedonians.mp4",
       title: "Studies of the Ancient Macedonians - Студии за Античките Македонци, 1997",
     },
     {
-      type: "youtube",
-      src: "https://www.youtube.com/watch?v=lM6Ebzbn2q8",
+      src: "/videos/audio/historical-focus-march-23.mp4",
       title: "Historical Focus - Историски Фокус, March 23, 1996",
     },
     {
-      type: "youtube",
-      src: "",
-      title: "Historical Focus - Историски Фокус, March 23, 1996",
-    },
-    {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/a4KN2nO9czc",
+      src: "/videos/audio/traditions-and-currents.mp4",
       title: "Traditions and Currents - Традиции и Текови, March 12, 1991",
     },
   ];
 
   const videos: VideoItem[] = [
     {
-      type: "localVideo",
       format: "mp4",
       src: "/videos/Speech-2004-Prilep.mp4",
       title: "Interview on Ancient Macedonian Identity",
       caption: "The unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
     },
     {
-      type: "youtube",
       format: "",
       src: "https://www.youtube.com/embed/XQ4uFrdFAUM",
       title: "Interview on Ancient Macedonian Identity",
       caption: "Strumica, Macedonia - 2005",
     },
     {
-      type: "localVideo",
       format: "mpg",
       src: "/videos/ON-TV-NOVA-2005.mp4",
       title: "Interview on Ancient Macedonian Identity",
@@ -143,26 +123,7 @@ const Media = () => {
               className="bg-gray-200 rounded-lg overflow-hidden shadow-md"
             >
               <div className="aspect-video relative">
-                {video.type === "youtube" ? (
-                  <iframe
-                    className="w-full h-full object-cover"
-                    src={video.src}
-                    title={video.title}
-                  >
-                  </iframe>
-                ) : (
-                <video
-                  className="w-full h-full object-cover"
-                  controls
-                  controlsList="nodownload"
-                >
-                  <source
-                    src={video.src}
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-                )}
+                <VideoPlayerItem item={video} />
               </div>
               <div className="p-4">
                 <p className="font-droidsans text-black mb-1">{video.caption}</p>
@@ -172,7 +133,7 @@ const Media = () => {
         </div>
 
         {/* Audio */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 w-1/2">
           <div className="bg-gray-200 rounded-lg overflow-hidden shadow-md">
             <div
               className="aspect-video relative">
@@ -184,24 +145,10 @@ const Media = () => {
                 </iframe>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 rounded-md">
+          <div className="grid grid-cols-1 gap-10 rounded-md">
             {/* Items */}
             {audios.map((audio, index) => (
-              <div
-                key={index}
-                className="bg-gray-200 rounded-lg overflow-hidden shadow-md"
-              >
-                <div
-                  key={index}
-                  className="aspect-video relative">
-                    <iframe
-                      className="w-full h-full object-cover"
-                      src={audio.src}
-                      title={`${audio.english} - ${audio.original}, ${audio.date}`}
-                    >
-                    </iframe>
-                </div>
-              </div>
+              <VideoPlayerItem item={audio} />
               // <div
               //   key={index} 
               //   className="bg-burgundy-600 hover:bg-burgundy-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
