@@ -10,6 +10,7 @@ import {
   VideoPlayerTimeDisplay,
   VideoPlayerTimeRange,
   VideoPlayerVolumeRange,
+  VideoPlayerFullscreenButton
 } from "@/components/ui/shadcn-io/video-player";
 
 interface VideoItem {
@@ -20,7 +21,7 @@ interface VideoItem {
 }
 
 const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: string }) => (
-  <VideoPlayer className={`overflow-hidden ${className ?? ""}`}>
+  <VideoPlayer className={`video-player overflow-hidden shadow-lg outline-none ${className ?? ""}`}>
     <VideoPlayerContent
       crossOrigin=""
       preload="auto"
@@ -35,6 +36,7 @@ const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: str
       <VideoPlayerTimeDisplay showDuration />
       <VideoPlayerMuteButton />
       <VideoPlayerVolumeRange />
+      <VideoPlayerFullscreenButton />
     </VideoPlayerControlBar>
   </VideoPlayer>
 );
@@ -114,12 +116,12 @@ const Media = () => {
           {videos.map((video, index) => (
             <div
               key={index}
-              className="bg-burgundy-700 rounded-lg overflow-hidden shadow-lg"
             >
-              <div className="p-4">
+              <div className="rounded-t-lg p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950">
                 <p className="font-droidsans text-white mb-1">{video.caption}</p>
               </div>
               <VideoPlayerItem
+                className="rounded-b-lg border-l border-r border-burgundy-700"
                 item={video}
               />
             </div>
@@ -145,7 +147,7 @@ const Media = () => {
               <VideoPlayerItem
                 key={index}
                 item={audio}
-                className="border border-burgundy-700 rounded-lg shadow-lg"
+                className="border border-burgundy-700 rounded-lg"
               />
               // <div
               //   key={index} 
