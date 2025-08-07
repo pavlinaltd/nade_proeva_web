@@ -21,7 +21,7 @@ interface VideoItem {
 }
 
 const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: string }) => (
-  <VideoPlayer className={`video-player overflow-hidden shadow-lg outline-none ${className ?? ""}`}>
+  <VideoPlayer className={`video-player overflow-hidden shadow-lg ${className ?? ""}`}>
     <VideoPlayerContent
       crossOrigin=""
       preload="auto"
