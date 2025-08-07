@@ -87,6 +87,10 @@
   .video-player:fullscreen {
     border: none !important;
   }
+
+  .video-player:fullscreen * {
+    display: inline-flex !important;
+  }
 }
 
 @layer base {
