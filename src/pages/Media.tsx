@@ -19,8 +19,8 @@ interface VideoItem {
   caption?: string;
 }
 
-const VideoPlayerItem = ({ item }: { item: VideoItem }) => (
-  <VideoPlayer className="overflow-hidden rounded-lg border border-burgundy-700 shadow-lg">
+const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: string }) => (
+  <VideoPlayer className={`overflow-hidden ${className ?? ""}`}>
     <VideoPlayerContent
       crossOrigin=""
       preload="auto"
@@ -109,17 +109,19 @@ const Media = () => {
       </div>
       <div className="flex justify-center mt-4 items-start gap-10">
         {/* Video */}
-        <div className="flex flex-col gap-10 w-1/2 rounded-md">
+        <div className="flex flex-col gap-10 w-1/2">
           {/* Items */}
           {videos.map((video, index) => (
             <div
               key={index}
-              className="bg-gray-200 rounded-lg overflow-hidden shadow-md"
+              className="bg-burgundy-700 rounded-lg overflow-hidden shadow-lg"
             >
               <div className="p-4">
-                <p className="font-droidsans text-black mb-1">{video.caption}</p>
+                <p className="font-droidsans text-white mb-1">{video.caption}</p>
               </div>
-              <VideoPlayerItem item={video} />
+              <VideoPlayerItem
+                item={video}
+              />
             </div>
           ))}
         </div>
@@ -137,10 +139,14 @@ const Media = () => {
                 </iframe>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-10 rounded-md">
+          <div className="flex flex-col gap-10 rounded-md">
             {/* Items */}
             {audios.map((audio, index) => (
-              <VideoPlayerItem item={audio} />
+              <VideoPlayerItem
+                key={index}
+                item={audio}
+                className="border border-burgundy-700 rounded-lg shadow-lg"
+              />
               // <div
               //   key={index} 
               //   className="bg-burgundy-600 hover:bg-burgundy-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
