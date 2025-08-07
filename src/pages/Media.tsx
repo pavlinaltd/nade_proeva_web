@@ -30,12 +30,12 @@ const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: str
     />
     <VideoPlayerControlBar>
       <VideoPlayerPlayButton />
-      <VideoPlayerSeekBackwardButton className="hidden md:block" />
-      <VideoPlayerSeekForwardButton className="hidden md:block" />
+      <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
+      <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
       <VideoPlayerTimeRange />
       <VideoPlayerTimeDisplay showDuration />
       <VideoPlayerMuteButton />
-      <VideoPlayerVolumeRange className="hidden md:block" />
+      <VideoPlayerVolumeRange className="hidden md:inline-flex" />
       <VideoPlayerFullscreenButton />
     </VideoPlayerControlBar>
   </VideoPlayer>
