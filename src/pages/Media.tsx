@@ -86,12 +86,6 @@ const Media = () => {
       caption: "The unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
     },
     {
-      format: "",
-      src: "https://www.youtube.com/embed/XQ4uFrdFAUM",
-      title: "Interview on Ancient Macedonian Identity",
-      caption: "Strumica, Macedonia - 2005",
-    },
-    {
       format: "mpg",
       src: "/videos/ON-TV-NOVA-2005.mp4",
       title: "Interview on Ancient Macedonian Identity",
@@ -122,12 +116,10 @@ const Media = () => {
               key={index}
               className="bg-gray-200 rounded-lg overflow-hidden shadow-md"
             >
-              <div className="aspect-video relative">
-                <VideoPlayerItem item={video} />
-              </div>
               <div className="p-4">
                 <p className="font-droidsans text-black mb-1">{video.caption}</p>
               </div>
+              <VideoPlayerItem item={video} />
             </div>
           ))}
         </div>
