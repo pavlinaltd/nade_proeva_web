@@ -30,12 +30,12 @@ const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: str
     />
     <VideoPlayerControlBar>
       <VideoPlayerPlayButton />
-      <VideoPlayerSeekBackwardButton />
-      <VideoPlayerSeekForwardButton />
+      <VideoPlayerSeekBackwardButton className="hidden md:block" />
+      <VideoPlayerSeekForwardButton className="hidden md:block" />
       <VideoPlayerTimeRange />
       <VideoPlayerTimeDisplay showDuration />
       <VideoPlayerMuteButton />
-      <VideoPlayerVolumeRange />
+      <VideoPlayerVolumeRange className="hidden md:block" />
       <VideoPlayerFullscreenButton />
     </VideoPlayerControlBar>
   </VideoPlayer>
@@ -104,14 +104,10 @@ const Media = () => {
 
     {/* Content Wrapper */}
     <div className="animate-fade-in">
-      {/* Header */}
-      <div className="flex justify-around mt-10 mb-8">
-        <h3 className="text-2xl font-bold text-center text-burgundy-900">VIDEO</h3>
-        <h3 className="text-2xl font-bold text-center text-burgundy-900">AUDIO</h3>
-      </div>
-      <div className="flex justify-center mt-4 items-start gap-10">
+      <div className="flex flex-col lg:flex-row justify-center mt-4 items-start gap-20 lg:gap-10">
         {/* Video */}
-        <div className="flex flex-col gap-10 w-1/2">
+        <div className="flex flex-col gap-10 mx-auto w-full md:w-4/5 lg:w-1/2">
+          <h3 className="text-2xl font-bold text-center text-burgundy-900">VIDEO</h3>
           {/* Items */}
           {videos.map((video, index) => (
             <div
@@ -129,7 +125,8 @@ const Media = () => {
         </div>
 
         {/* Audio */}
-        <div className="flex flex-col gap-10 w-1/2">
+        <div className="flex flex-col gap-10 mx-auto w-full md:w-4/5 lg:w-1/2">
+          <h3 className="text-2xl font-bold text-center text-burgundy-900">AUDIO</h3>
           <div className="bg-gray-200 rounded-lg overflow-hidden shadow-md">
             <div
               className="aspect-video relative">
