@@ -33,7 +33,7 @@ interface BookProps {
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
     // Original
-    <div className="bg-gray-100 border border-burgundy-900 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap xl:flex-nowrap">
+    <div className="bg-gray-100 border border-gray-300 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap xl:flex-nowrap">
       {/* Book image */}
       <div className="mx-auto object-scale-down w-full sm:w-1/2 xl:w-1/3 flex order-0">
         <img
@@ -76,7 +76,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
       </div>
       {/* Promo section */}
       {(book.promoImage || book.promoAudio || book.promoVideo) && (
-        <div className="flex flex-col order-2 sm:order-1 xl:order-2 justify-center items-center gap-10 w-full sm:w-1/2 xl:w-1/3 bg-burgundy-900 p-6">
+        <div className="flex flex-col order-2 sm:order-1 xl:order-2 justify-center items-center gap-10 w-full sm:w-1/2 xl:w-1/3 bg-gray-300 p-6">
           {book.promoImage && (
             <img
               src={book.promoImage}
