@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table";
+import { VideoPlayer, VideoPlayerContent, VideoPlayerControlBar, VideoPlayerFullscreenButton, VideoPlayerMuteButton, VideoPlayerPlayButton, VideoPlayerSeekBackwardButton, VideoPlayerSeekForwardButton, VideoPlayerTimeDisplay, VideoPlayerTimeRange, VideoPlayerVolumeRange } from "@/components/ui/shadcn-io/video-player";
 
 interface BookProps {
   title: string;
@@ -32,9 +33,9 @@ interface BookProps {
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
     // Original
-    <div className="bg-gray-100 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap lg:flex-nowrap ">
+    <div className="bg-gray-100 border border-burgundy-900 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap xl:flex-nowrap">
       {/* Book image */}
-      <div className="w-full md:w-1/2 lg:w-1/3 flex order-0">
+      <div className="mx-auto object-scale-down w-full sm:w-1/2 xl:w-1/3 flex order-0">
         <img
           src={book.imageUrl}
           alt={book.title}
@@ -42,23 +43,23 @@ const BookCard = ({ book }: { book: BookProps }) => {
         />
       </div>
       {/* Text content */}
-      <div className="flex gap-16 w-full lg:w-1/2 p-6 order-1 sm:order-2 lg:order-1">
+      <div className="flex gap-16 w-full xl:w-1/2 p-6 order-1 sm:order-2 xl:order-1">
         <div
           className="flex flex-col justify-between"
         >
           <div>
-            <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-2">{book.title.toUpperCase()}</h3>
+            <h3 className="md:text-lg xl:text-xl font-semibold text-burgundy-800 mb-2">{book.title.toUpperCase()}</h3>
             {book.originalTitle && (
-              <p className="text-xs md:text-sm lg:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
+              <p className="text-xs md:text-sm xl:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
             )}
-            <div className="text-xs md:text-sm lg:text-base text-gray-500 mb-4">
+            <div className="text-xs md:text-sm xl:text-base text-gray-500 mb-4">
               {book.author && <p>Author: {book.author}</p>}
               <p>Editor: {book.editor}</p>
               {book.translator && <p>Translator: {book.translator}</p>}
               <p>{book.year} • {book.publisher}</p>
               <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
             </div>
-            <p className="text-xs md:text-sm lg:text-base text-gray-700 text-justify mb-4">{book.description}</p>
+            <p className="text-xs md:text-sm xl:text-base text-gray-700 text-justify mb-4">{book.description}</p>
           </div>
           {book.amazonUrl ? (
             <Button className="flex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white" asChild>
@@ -75,7 +76,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
       </div>
       {/* Promo section */}
       {(book.promoImage || book.promoAudio || book.promoVideo) && (
-        <div className="flex flex-col order-2 md:order-1 lg:order-2 justify-center items-center gap-10 w-full md:w-1/2 lg:w-1/3 bg-burgundy-900 p-6">
+        <div className="flex flex-col order-2 sm:order-1 xl:order-2 justify-center items-center gap-10 w-full sm:w-1/2 xl:w-1/3 bg-burgundy-900 p-6">
           {book.promoImage && (
             <img
               src={book.promoImage}
@@ -85,14 +86,24 @@ const BookCard = ({ book }: { book: BookProps }) => {
           )}
 
           {book.promoVideo && (
-            <video
-              controls
-              controlsList="nodownload"
-              className="w-full h-full rounded-lg shadow-lg bg-black"
-            >
-              <source src={book.promoVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <VideoPlayer className={`video-player overflow-hidden w-full h-min rounded-lg shadow-lg bg-black`}>
+              <VideoPlayerContent
+                crossOrigin=""
+                preload="auto"
+                slot="media"
+                src={book.promoVideo}
+              />
+              <VideoPlayerControlBar className="">
+                <VideoPlayerPlayButton />
+                <VideoPlayerSeekBackwardButton className="hidden sm:hidden xl:hidden" />
+                <VideoPlayerSeekForwardButton className="hidden sm:hidden xl:hidden" />
+                <VideoPlayerTimeRange />
+                <VideoPlayerTimeDisplay showDuration className="sm:hidden"/>
+                <VideoPlayerMuteButton className="sm:hidden"/>
+                <VideoPlayerVolumeRange className="hidden sm:hidden xl:hidden" />
+                <VideoPlayerFullscreenButton />
+              </VideoPlayerControlBar>
+            </VideoPlayer>
           )}
 
           {book.promoAudio && (
@@ -335,16 +346,6 @@ const Books = () => {
           </p>
           
           <BookTable books={books.filter((book) => book.author !== "Nade Proeva")} />
-        </div>
-
-        <div className="mt-12 bg-amber-50 rounded-lg p-6 border border-burgundy-900">
-          <h3 className="md:text-lg lg:text-xl font-semibold text-burgundy-800 mb-4">Additional Publications</h3>
-          <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-4">
-            Besides these published volumes, Professor Proeva contributed chapters to numerous edited volumes and encyclopedias on ancient history. She was the editor of two important series: <em>Bibliotheca Miscellanea Byzantino-Macedonica</em> and <em>Historia Antiqua Macedonica (HAM)</em>, for which she wrote prefaces, notes, indexes and created maps.
-          </p>
-          <p className="text-xs sm:text-sm lg:text-base text-gray-700 mb-6">
-            For a complete bibliography of her works, including articles and papers, please contact the Department of History at Ss. Cyril and Methodius University in Skopje or email <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a>
-          </p>
         </div>
       </div>
     </div>
