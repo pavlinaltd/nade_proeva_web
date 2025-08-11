@@ -63,12 +63,12 @@ const Media = () => {
       title: "Historical Focus - Историски Фокус, December 26, 1998",
     },
     {
-      src: "",
-      title: "The Ylirians From Bardilis to Gentij - Илирите Од Бардилис до Гентиј, June 12, 1997",
-    },
-    {
       src: "/videos/audio/studies-of-the-ancient-macedonians.mp4",
       title: "Studies of the Ancient Macedonians - Студии за Античките Македонци, 1997",
+    },
+    {
+      src: "/videos/audio/the-ylirians.mp4",
+      title: "The Ylirians From Bardilis to Gentij - Илирите Од Бардилис до Гентиј, June 12, 1997",
     },
     {
       src: "/videos/audio/historical-focus-march-23.mp4",
@@ -93,6 +93,12 @@ const Media = () => {
       title: "Interview on Ancient Macedonian Identity",
       caption: "Strumica, Macedonia, TV NOVA - 2005",
     },
+    {
+      format: "youtube",
+      src: "https://www.youtube.com/embed/BttNSpnJ92k",
+      title: "Промовирана книгата „Историјата на античките Македонци“",
+
+    }
   ]
 
   return (
@@ -112,14 +118,27 @@ const Media = () => {
           {videos.map((video, index) => (
             <div
               key={index}
-            >
-              <div className="rounded-t-lg p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950">
-                <p className="font-droidsans text-white mb-1">{video.caption}</p>
-              </div>
-              <VideoPlayerItem
-                className="rounded-b-lg border-l border-r border-burgundy-700"
-                item={video}
-              />
+            >{ video.format === "youtube" ? 
+              (
+                <iframe
+                  className="aspect-video w-full object-cover rounded-lg border-l border-r border-burgundy-700"
+                  src={video.src}
+                  title={video.title}
+                >
+                </iframe>
+              ) : (
+                <>
+                <div className="rounded-t-lg p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950">
+                  <p className="font-droidsans text-white mb-1">{video.caption}</p>
+                </div>
+              
+                <VideoPlayerItem
+                  className="rounded-b-lg border-l border-r border-burgundy-700"
+                  item={video}
+                />
+                </>
+              )
+            }
             </div>
           ))}
         </div>
