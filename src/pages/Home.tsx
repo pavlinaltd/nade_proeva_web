@@ -16,7 +16,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="animate-fade-in space-y-24">
+    <div className="animate-fade-in space-y-12 md:space-y-24">
       {/* Hero Section */}
       <section className="relative p-5 md:p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-400 to-yellow-500 text-white">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
