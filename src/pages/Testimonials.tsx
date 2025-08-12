@@ -53,12 +53,6 @@ const Testimonials = () => {
   const media: MediaItem[] = [
     {
       type: "image",
-      src: "/images/memories/intro.png",
-      title: "Title",
-      orientation: "vertical",
-    },
-    {
-      type: "image",
       src: "/images/memories/chapeau.jpeg",
       title: "Title",
       orientation: "vertical",
