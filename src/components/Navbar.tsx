@@ -16,7 +16,7 @@ const Navbar = () => {
     { to: "/papers", label: "PAPERS" },
     { to: "/columns", label: "PRESS" },
     { to: "/media", label: "MEDIA" },
-    { to: "/on-location", label: "ON SITE" },
+    { to: "/on-site", label: "ON SITE" },
     { to: "/testimonials", label: "REMEMBERING NADE" }
   ];
 
