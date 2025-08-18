@@ -32,11 +32,11 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              {/* <img
-                src="/logo_italic.jpg" 
-                alt="The Nade Proeva Endowment Fund" 
+              <img
+                src="/images/logo-blank.png"
+                alt="Logo" 
                 className="h-10 w-auto"
-              /> */}
+              />
               <h1 className="text-xl font-bold text-black">
                 Professor Dr. Nade Proeva
               </h1>
