@@ -78,6 +78,9 @@ const Columns = () => {
       pageImagesOriginal: [
         "images/columns/bugarskoto.jpg"
       ],
+      pageImagesEnglish: [
+        "images/columns/bugarskoto-eng.jpg"
+      ],
       orientation: "horizontal"
     },
     {
@@ -85,6 +88,9 @@ const Columns = () => {
       title: "Бугарска койија на грчкото однесување",
       pageImagesOriginal: [
         "images/columns/bugarska.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/bugarska-eng.jpg"
       ],
       orientation: "horizontal"
     },
@@ -94,6 +100,9 @@ const Columns = () => {
       pageImagesOriginal: [
         "images/columns/istoriyata.jpg"
       ],
+      pageImagesEnglish: [
+        "images/columns/istoriyata-eng.jpg"
+      ],
       orientation: "horizontal"
     },
     {
@@ -102,6 +111,9 @@ const Columns = () => {
       pageImagesOriginal: [
         "images/columns/fran.jpg"
       ],
+      pageImagesEnglish: [
+        "images/columns/fran-eng.jpg"
+      ],
       orientation: "horizontal"
     },
     {
@@ -109,6 +121,52 @@ const Columns = () => {
       title: "Институционализирање на неинституционалното",
       pageImagesOriginal: [
         "images/columns/instit.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/instit-eng.jpg"
+      ],
+      orientation: "horizontal"
+    },
+    {
+      type: "image",
+      title: "Кога политичарите решаваат научни проблеми",
+      pageImagesOriginal: [
+        "images/columns/koga.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/koga-eng.jpg"
+      ],
+      orientation: "horizontal"
+    },
+    {
+      type: "image",
+      title: "Европското лицемерие и нашите мекотели",
+      pageImagesOriginal: [
+        "images/columns/evropskoto.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/evropskoto-eng.jpg"
+      ],
+      orientation: "horizontal"
+    },
+    {
+      type: "image",
+      title: "Бушкај штреба да ја бијат йолитичарите",
+      pageImagesOriginal: [
+        "images/columns/bushkai.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/bushkai-eng.jpg"
+      ],
+      orientation: "horizontal"
+    },{
+      type: "image",
+      title: "Националните митови што оживуваат денес се лажни и штетни",
+      pageImagesOriginal: [
+        "images/columns/natsionalnite.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/natsionalnite-eng.jpg"
       ],
       orientation: "horizontal"
     },
