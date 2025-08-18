@@ -6,7 +6,6 @@ import SectionHeader from "@/components/SectionHeader";
 import { Switch } from "@/components/ui/switch";
 
 interface MediaItem {
-  type: "image";
   title: string;
   year?: string;
   pageImagesOriginal?: string[];
@@ -21,7 +20,6 @@ const Columns = () => {
   const columns: MediaItem[] = [
     // VERTICAL
     {
-      type: "image",
       title: "Златната маска на Македонците",
       pageImagesOriginal: [
         "images/columns/zlatnata-1.jpg",
@@ -38,7 +36,6 @@ const Columns = () => {
       orientation: "vertical"
     },
     {
-      type: "image",
       title: "Neglecting Well-Known Facts",
       pageImagesOriginal: [
         "images/columns/Neglecting-Facts-1.jpeg",
@@ -48,7 +45,6 @@ const Columns = () => {
       orientation: "vertical"
     },
     {
-      type: "image",
       title: "Еден човек со грчко презиме ... си ја има мувата на капата и си ја ишка",
       pageImagesOriginal: [
         "images/columns/eden.jpg"
@@ -59,7 +55,6 @@ const Columns = () => {
       orientation: "vertical"
     },
     {
-      type: "image",
       title: "Господа политичари, настрана рацете од историската наука",
       pageImagesOriginal: [
         "images/columns/gospoda-1.jpg",
@@ -73,7 +68,6 @@ const Columns = () => {
     },
     // HORIZONTAL
     {
-      type: "image",
       title: "Бугарското китење со туѓи перја и нашиот громогласен молк",
       pageImagesOriginal: [
         "images/columns/bugarskoto.jpg"
@@ -84,7 +78,6 @@ const Columns = () => {
       orientation: "horizontal"
     },
     {
-      type: "image",
       title: "Бугарска койија на грчкото однесување",
       pageImagesOriginal: [
         "images/columns/bugarska.jpg"
@@ -95,7 +88,6 @@ const Columns = () => {
       orientation: "horizontal"
     },
     {
-      type: "image",
       title: "Историјата можат да ја одбранаш само историчарите",
       pageImagesOriginal: [
         "images/columns/istoriyata.jpg"
@@ -106,7 +98,6 @@ const Columns = () => {
       orientation: "horizontal"
     },
     {
-      type: "image",
       title: "Француска цивилизациска утка на отворањето на ЛОИ",
       pageImagesOriginal: [
         "images/columns/fran.jpg"
@@ -117,7 +108,6 @@ const Columns = () => {
       orientation: "horizontal"
     },
     {
-      type: "image",
       title: "Институционализирање на неинституционалното",
       pageImagesOriginal: [
         "images/columns/instit.jpg"
@@ -128,7 +118,6 @@ const Columns = () => {
       orientation: "horizontal"
     },
     {
-      type: "image",
       title: "Кога политичарите решаваат научни проблеми",
       pageImagesOriginal: [
         "images/columns/koga.jpg"
@@ -139,7 +128,6 @@ const Columns = () => {
       orientation: "horizontal"
     },
     {
-      type: "image",
       title: "Европското лицемерие и нашите мекотели",
       pageImagesOriginal: [
         "images/columns/evropskoto.jpg"
@@ -150,7 +138,6 @@ const Columns = () => {
       orientation: "horizontal"
     },
     {
-      type: "image",
       title: "Бушкај штреба да ја бијат йолитичарите",
       pageImagesOriginal: [
         "images/columns/bushkai.jpg"
@@ -159,8 +146,8 @@ const Columns = () => {
         "images/columns/bushkai-eng.jpg"
       ],
       orientation: "horizontal"
-    },{
-      type: "image",
+    },
+    {
       title: "Националните митови што оживуваат денес се лажни и штетни",
       pageImagesOriginal: [
         "images/columns/natsionalnite.jpg"
@@ -209,7 +196,6 @@ const Columns = () => {
 
       {/* Content */}
       <div
-        // className="flex flex-col flex-wrap md:max-h-[2000px] xl:max-h-[1500px] items-center md:items-start gap-6 mx-auto"
         className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6"
       >
         {columns.map((col, index) => (
@@ -222,12 +208,13 @@ const Columns = () => {
               <img
               src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
-              className={`${col.orientation === "vertical" ? "h-min object-scale-down" : "aspect-square h-[200px] object-cover"}  object-left-top`}
+              className={`${col.orientation === "vertical" ? "h-min object-scale-down" : "aspect-square h-[200px] object-cover"} object-left-top`}
               />
               <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
               <Expand
-                className={`text-white drop-shadow-2xl w-14 h-14`}
-                  // ${col.orientation === "vertical" ? "w-14 h-14" : "w-10 h-10"}`}
+                className={`text-white drop-shadow-2xl w-14 h-14
+                  ${col.orientation === "vertical" ? "w-14 h-14" : "w-10 h-10"}
+                `}
               />
               </span>
             </div>
