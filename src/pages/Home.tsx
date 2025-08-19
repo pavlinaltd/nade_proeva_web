@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="animate-fade-in space-y-24">
       {/* Hero Section */}
-      <section className="relative p-5 md:p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-yellow-400 to-yellow-500 text-white">
+      <section className="relative p-5 md:p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
           <img
             src="/images/nade.jpg"
@@ -28,18 +28,18 @@ const Home = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
               <div className="flex flex-col justify-center text-justify sm:text-lg md:text-xl lg:text-2xl xl:text-3xl italic">
-                <h1 className=" text-black font-bold">
+                <h1 className=" text-white font-bold">
                   "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
                 </h1>
                 <span className="self-end">
                   <img
                     title="Nade Proeva"
-                    src="/images/sign-luna.png"
+                    src="/images/signature-white.png"
                     className="aspect-auto w-[150px] md:w-[200px] xl:w-[300px] mt-[-40px] mb-[-40px]"
                   />
                 </span>
                 <br />
-                <h1 className="font-bold text-burgundy-900">
+                <h1 className="font-bold text-yellow-400">
                   "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење."
                 </h1>
               </div>
@@ -123,7 +123,23 @@ const Home = () => {
 
       {/* Fund Call-to-Action */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="bg-amber-50 border border-burgundy-900 rounded-lg p-8">
+      <div className="flex justify-center gap-10 group w-1/2">
+        <img
+          src="/images/logo-text.jpg"
+          alt="The Nade Proeva Endowment Fund"
+          className="group-hover:hidden w-[300px] rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+        />
+        <div className="lg:hidden group-hover:flex flex-col text-gray-800 text-justify justify-evenly max-w-2xl mx-auto transition-opacity duration-200 opacity-0 group-hover:opacity-100">
+          <p className="xl:text-lg">
+            Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every gift strengthens this legacy.
+          </p>
+          <p className="xl:text-lg">
+            To help grow the Endowment contact info@macedonianarts.org
+          </p>
+        </div>
+      </div>
+      
+        {/* <div className="bg-amber-50 border border-burgundy-900 rounded-lg p-8">
           <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 text-center mb-4">
             Support the Nade Proeva Scholarship Endowment
           </h2>
@@ -132,7 +148,7 @@ const Home = () => {
             of historians committed to exploring and preserving Macedonian history and culture. To grow the Endowment, contact
             <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>
             </p>
-        </div>
+        </div> */}
       </section>
     </div>
   );
