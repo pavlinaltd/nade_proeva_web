@@ -235,7 +235,6 @@ const Columns = () => {
         >
           {/* Carousel */}
           <Carousel
-            // className="w-full max-w-2xl bg-white rounded-sm"
             className={
               selectedImage.orientation === "vertical" ? 'w-[700px] bg-white rounded-sm' :
               'w-[1000px] bg-white rounded-sm'

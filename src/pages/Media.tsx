@@ -165,30 +165,6 @@ const Media = () => {
                 item={audio}
                 className="border border-burgundy-700 rounded-lg"
               />
-              // <div
-              //   key={index} 
-              //   className="bg-burgundy-600 hover:bg-burgundy-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
-              //   // onClick={() => openLightbox(photo)}
-              //   // Don't need lightbox for audio
-              // >
-              //   <div className="p-4">
-              //     <a
-              //       href='' //{audio.src}
-              //       target="_blank"
-              //       title=""
-              //       className="flex gap-4 items-center"
-              //     >
-              //       <Headphones className="text-white" />
-              //       <div className="text-sm flex flex-row text-white w-full justify-between">
-              //         <div className="flex-col">
-              //           <p /*className="font-bold"*/>{audio.english}</p>
-              //           <p>{audio.original}</p>
-              //         </div>
-              //         <p className="text-burgundy-200 self-center">{audio.date}</p>
-              //       </div>
-              //     </a>
-              //   </div>
-              // </div>
             ))}
           </div>
         </div>

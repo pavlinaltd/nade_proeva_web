@@ -1,7 +1,3 @@
-import { Link } from "react-router-dom";
-import { ExternalLink, BookOpen, FileText, Image, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 const Home = () => {
 
   const medals = [
@@ -123,32 +119,21 @@ const Home = () => {
 
       {/* Fund Call-to-Action */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-      <div className="flex justify-center gap-10 group w-1/2">
-        <img
-          src="/images/logo-text.jpg"
-          alt="The Nade Proeva Endowment Fund"
-          className="group-hover:hidden w-[300px] rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0"
-        />
-        <div className="lg:hidden group-hover:flex flex-col text-gray-800 text-justify justify-evenly max-w-2xl mx-auto transition-opacity duration-200 opacity-0 group-hover:opacity-100">
-          <p className="xl:text-lg">
-            Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every gift strengthens this legacy.
-          </p>
-          <p className="xl:text-lg">
-            To help grow the Endowment contact info@macedonianarts.org
-          </p>
-        </div>
-      </div>
-      
-        {/* <div className="bg-amber-50 border border-burgundy-900 rounded-lg p-8">
-          <h2 className="sm:text-lg lg:text-2xl xl:text-3xl font-semibold text-burgundy-800 text-center mb-4">
-            Support the Nade Proeva Scholarship Endowment
-          </h2>
-            <p className="text-gray-800 text-center max-w-2xl mx-auto xl:text-lg">
-            Your patronage to the Endowment Fund will help empower the next generation
-            of historians committed to exploring and preserving Macedonian history and culture. To grow the Endowment, contact
-            <span> <a href="mailto:info@macedonianarts.org" className="text-burgundy-700 hover:underline">info@macedonianarts.org</a></span>
+        <div className="flex justify-center gap-10 group w-1/2">
+          <img
+            src="/images/logo-text.jpg"
+            alt="The Nade Proeva Endowment Fund"
+            className="group-hover:hidden w-[300px] rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+          />
+          <div className="lg:hidden group-hover:flex flex-col text-gray-800 text-justify justify-evenly max-w-2xl mx-auto transition-opacity duration-200 opacity-0 group-hover:opacity-100">
+            <p className="xl:text-lg">
+              Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every gift strengthens this legacy.
             </p>
-        </div> */}
+            <p className="xl:text-lg">
+              To help grow the Endowment contact info@macedonianarts.org
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );
