@@ -106,50 +106,6 @@ const OnSite = () => {
     },
   ];
 
-  // const videos: MediaItem[] = [
-  //   {
-  //     type: "video",
-  //     src: "#",
-  //     thumbnail: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-  //     title: "Interview on Ancient Macedonian Identity",
-  //     caption: "Professor Proeva discusses her research on ancient Macedonian ethnic identity and cultural distinctiveness.",
-  //     year: "2015"
-  //   },
-  //   {
-  //     type: "video",
-  //     src: "#",
-  //     thumbnail: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
-  //     title: "Documentary: The Macedonian Question",
-  //     caption: "A short documentary featuring Professor Proeva's insights on the historical Macedonian question.",
-  //     year: "2008"
-  //   },
-  //   {
-  //     type: "video",
-  //     src: "#",
-  //     thumbnail: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-  //     title: "Lecture on Alexander the Great",
-  //     caption: "A recorded lecture on Alexander the Great from a Macedonian historical perspective.",
-  //     year: "2016"
-  //   }
-  // ];
-
-  // const news: MediaItem[] = [
-  //   {
-  //     type: "image",
-  //     src: "/lovable-uploads/2ef56b0a-f180-4990-9f80-6f37c63e77de.png",
-  //     title: "Press Coverage",
-  //     caption: "Professor Proeva speaking to journalists about her latest research findings on ancient Macedonian civilization.",
-  //     year: "1999"
-  //   },
-  //   {
-  //     type: "image",
-  //     src: "/lovable-uploads/44b706b2-4703-46fa-bff5-f685fd5cc269.png",
-  //     title: "Award Ceremony Coverage",
-  //     caption: "Media coverage of Professor Proeva's lecture at the ceremony where she received the State Award for Academic Achievement in History.",
-  //     year: "2008"
-  //   }
-  // ];
-
   const openLightbox = (image: Photo) => {
     setSelectedImage(image);
     document.body.style.overflow = "hidden";
