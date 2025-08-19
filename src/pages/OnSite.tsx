@@ -2,7 +2,6 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Photo {
   type: "image" | "video";
@@ -159,7 +158,6 @@ const OnSite = () => {
               selectedImage.orientation === "vertical" ? 'w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl' :
               'w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl'
             }
-            // className="max-w-xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
