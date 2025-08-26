@@ -31,7 +31,7 @@ const About = () => {
       <p>
         Her book <em>History of the Argeads</em> (2004) was the first university textbook in Macedonia
         dedicated to the ancient Macedonians and became a foundational text in the field. As editor of
-        the <em>Historia Antiqua Macedonica</em> (HAM) and <em>Bibliotheca Miscellanea Byzantino-Macedonica</em>
+        the <em>Historia Antiqua Macedonica</em> (HAM) and <em>Bibliotheca Miscellanea Byzantino-Macedonica </em>
         series, she introduced vital historical works to Macedonian readers. Her editions featured translations,
         scholarly notes, indexes, prefaces, and custom maps that significantly enriched the academic landscape.
       </p>
