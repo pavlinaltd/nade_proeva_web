@@ -11,6 +11,7 @@ interface MediaItem {
   pageImagesOriginal?: string[];
   pageImagesEnglish?: string[];
   orientation: "horizontal" | "vertical";
+  titlePosition: "left" | "center" | "right";
 }
 
 const Columns = () => {
@@ -33,7 +34,8 @@ const Columns = () => {
         "images/columns/zlatnata-3-eng.jpg",
         "images/columns/zlatnata-4-eng.jpg",
       ],
-      orientation: "vertical"
+      orientation: "vertical",
+      titlePosition: "right",
     },
     {
       title: "Neglecting Well-Known Facts",
@@ -42,7 +44,8 @@ const Columns = () => {
         "images/columns/Neglecting-Facts-2.jpeg",
         "images/columns/Neglecting-Facts-3.jpeg"
       ],
-      orientation: "vertical"
+      orientation: "vertical",
+      titlePosition: "right",
     },
     {
       title: "Еден човек со грчко презиме ... си ја има мувата на капата и си ја ишка",
@@ -52,7 +55,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/eden-eng.jpg"
       ],
-      orientation: "vertical"
+      orientation: "vertical",
+      titlePosition: "left",
     },
     {
       title: "Господа политичари, настрана рацете од историската наука",
@@ -64,7 +68,8 @@ const Columns = () => {
         "images/columns/gospoda-1-eng.jpg",
         "images/columns/gospoda-2-eng.jpg",
       ],
-      orientation: "vertical"
+      orientation: "vertical",
+      titlePosition: "center",
     },
     // HORIZONTAL
     {
@@ -75,7 +80,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/bugarskoto-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "left",
     },
     {
       title: "Бугарска койија на грчкото однесување",
@@ -85,7 +91,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/bugarska-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "left",
     },
     {
       title: "Историјата можат да ја одбранаш само историчарите",
@@ -95,7 +102,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/istoriyata-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "center",
     },
     {
       title: "Француска цивилизациска утка на отворањето на ЛОИ",
@@ -105,7 +113,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/fran-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "center",
     },
     {
       title: "Институционализирање на неинституционалното",
@@ -115,7 +124,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/instit-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "left",
     },
     {
       title: "Кога политичарите решаваат научни проблеми",
@@ -125,7 +135,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/koga-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "left",
     },
     {
       title: "Европското лицемерие и нашите мекотели",
@@ -135,7 +146,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/evropskoto-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "center",
     },
     {
       title: "Бушкај штреба да ја бијат йолитичарите",
@@ -145,7 +157,19 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/bushkai-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "left",
+    },
+    {
+      title: "За сонцето не се преговара, господа политичари и историчари",
+      pageImagesOriginal: [
+        "images/columns/za-sontseto.jpg"
+      ],
+      pageImagesEnglish: [
+        "images/columns/za-sontseto-eng.jpg"
+      ],
+      orientation: "horizontal",
+      titlePosition: "left",
     },
     {
       title: "Националните митови што оживуваат денес се лажни и штетни",
@@ -155,7 +179,8 @@ const Columns = () => {
       pageImagesEnglish: [
         "images/columns/natsionalnite-eng.jpg"
       ],
-      orientation: "horizontal"
+      orientation: "horizontal",
+      titlePosition: "left",
     },
   ];
 
@@ -208,7 +233,8 @@ const Columns = () => {
               <img
               src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
-              className={`${col.orientation === "vertical" ? "object-scale-down" : "aspect-square h-[200px] object-cover"} object-left-top`}
+              className={`${col.orientation === "vertical" ? "object-scale-down" : "aspect-square h-[200px] object-cover"}
+              ${col.titlePosition === "right" ? "object-right" : "object-left"}`}
               />
               <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
               <Expand
