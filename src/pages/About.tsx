@@ -9,7 +9,7 @@ const About = () => {
     />      
     <div className="animate-fade-in space-y-6 text-justify w-full lg:w-3/4 mx-auto">
       {/* Steinbeck quote */}
-      <div className="w-full md:w-1/2 md:float-left bg-yellow-500 p-8 mr-5 mb-5 text-black">
+      <div className="w-full md:w-1/2 md:float-left bg-yellow-500 p-8 mr-5 mb-5 text-black rounded-sm">
         <blockquote className="lg:text-xl">
           "<i>
             I have come to believe that a great teacher is a great artist and that there are as a few as
