@@ -7,9 +7,9 @@ const About = () => {
       title="About Professor Dr. Nade Proeva"
       subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
     />      
-    <div className="animate-fade-in space-y-6 text-justify w-full md:w-3/4 mx-auto">
+    <div className="animate-fade-in space-y-6 text-justify w-full lg:w-3/4 mx-auto">
       {/* Steinbeck quote */}
-      <div className="w-1/2 float-left bg-gray-300 p-8 mr-5 mb-5 text-gray-800">
+      <div className="w-full md:w-1/2 md:float-left bg-yellow-500 p-8 mr-5 mb-5 text-black">
         <blockquote className="lg:text-xl">
           "<i>
             I have come to believe that a great teacher is a great artist and that there are as a few as
