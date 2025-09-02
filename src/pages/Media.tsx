@@ -21,7 +21,7 @@ interface VideoItem {
 }
 
 const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: string }) => (
-  <VideoPlayer className={`video-player overflow-hidden shadow-lg ${className ?? ""}`}>
+  <VideoPlayer className={`video-player overflow-hidden aspect-video shadow-lg ${className ?? ""}`}>
     <VideoPlayerContent
       crossOrigin=""
       preload="auto"
@@ -111,6 +111,7 @@ const Media = () => {
     {/* Content Wrapper */}
     <div className="animate-fade-in">
       <div className="flex flex-col lg:flex-row justify-center mt-4 items-start gap-20 lg:gap-10">
+
         {/* Video */}
         <div className="flex flex-col gap-10 mx-auto w-full md:w-4/5 lg:w-1/2">
           <h3 className="text-2xl font-bold text-center text-burgundy-900">VIDEO</h3>
@@ -118,6 +119,7 @@ const Media = () => {
           {videos.map((video, index) => (
             <div
               key={index}
+              className="relative w-full"
             >{ video.format === "youtube" ? 
               (
                 <iframe
@@ -128,12 +130,12 @@ const Media = () => {
                 </iframe>
               ) : (
                 <>
-                <div className="rounded-t-lg p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950">
+                <div className="rounded-t-lg p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950 absolute top-0 left-0 z-10 w-full">
                   <p className="font-droidsans text-white mb-1">{video.caption}</p>
                 </div>
               
                 <VideoPlayerItem
-                  className="rounded-b-lg border-l border-r border-burgundy-700"
+                  className="rounded-lg border-l border-r border-burgundy-700"
                   item={video}
                 />
                 </>
