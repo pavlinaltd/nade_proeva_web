@@ -1,13 +1,14 @@
 import SectionHeader from "@/components/SectionHeader";
-import { X, ExternalLink } from "lucide-react";
+import { X, ExternalLink, Expand } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 interface MediaItem {
   type: "image" | "video" | "link";
-  src: string;
-  thumbnail?: string;
   title: string;
+  srcOriginal?: string; // For language toggle
+  srcEnglish?: string;  // For language toggle
   orientation?: "horizontal" | "vertical";
 }
 
@@ -46,22 +47,31 @@ const ImageItem = ({ item, openLightbox }: { item: MediaItem; openLightbox: (ima
 );
 
 const Testimonials = () => {
-
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
+  const [isEnglish, setIsEnglish] = useState(false);
 
-  const media: MediaItem[] = [
+  const columns: MediaItem[] = [
     {
       type: "image",
-      src: "/images/memories/chapeau.jpeg",
+      srcOriginal: "/images/memories/chapeau.jpeg",
+      srcEnglish: "/images/memories/chapeau-eng.jpeg",
       title: "Title",
       orientation: "vertical",
     },
     {
-      type: "link",
-      src: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
-      title: "From the President's Cabinet"
+      type: "image",
+      srcOriginal: "/images/memories/linkedin-post.jpg",
+      srcEnglish: "/images/memories/linkedin-post-eng.jpg",
+      title: "Title",
+      orientation: "vertical",
     }
   ];
+
+  const link: MediaItem = {
+    type: "link",
+    src: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
+    title: "From the President's Cabinet"
+  };
 
   const openLightbox = (image: MediaItem) => {
     setSelectedImage(image);
@@ -80,35 +90,62 @@ const Testimonials = () => {
       subtitle="What people had to say about Professor Proeva."
     />
 
-    <video
-      src="/images/memories/nade.mp4"
-      className="w-3/4 h-full object-cover mb-6 mx-auto"
-      controls muted
-      controlsList="nodownload"
-    >
-      Your browser does not support the video tag.
-    </video>
-    <div className="animate-fade-in grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div className="grid gap-6">
-        {media
-        .filter((_, index) => index % 2 === 0)
-        .map((item, index) =>
-          item.type !== "link" ? (
-          <ImageItem key={index} item={item} openLightbox={openLightbox} />
-        ) : (
-          <LinkItem key={index} item={item} />
-        ))}
+    {/* Container */}
+    <div className="w-3/4 mx-auto flex flex-col items-center gap-10">
+      {/* Video Feature */}
+      <video
+        src="/images/memories/nade.mp4"
+        className="h-full object-cover mb-6"
+        controls muted
+        controlsList="nodownload"
+      >
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Language Switch */}
+      <div className="flex self-start gap-2 mb-6 justify-start">
+        <span
+          className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
+        >
+          Original
+        </span>
+        <Switch
+          id="language-switch"
+          aria-label="Switch to English or Original"
+          className="data-[state=unchecked]:bg-burgundy-600 data-[state=checked]:bg-burgundy-700"
+          checked={isEnglish}
+          onCheckedChange={setIsEnglish}
+        />
+        <span className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}>English</span>
       </div>
-      <div className="grid gap-6">
-        {media
-        .filter((_, index) => index % 2 === 1)
-        .map((item, index) =>
-          item.type !== "link" ? (
-          <ImageItem key={index} item={item} openLightbox={openLightbox} />
-        ) : (
-          <LinkItem key={index} item={item} />
-        ))}
+
+      {/* Column Content */}
+      <div className="animate-fade-in flex flex-col lg:flex-row justify-between w-full">
+        {columns.map((item, index) =>
+          <div
+            key={index}
+            className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 mx-auto`}
+            onClick={() => openLightbox(item)}
+          >
+            <div className={`h-[400px] mx-auto`}>
+              <img
+              src={isEnglish ? item.srcEnglish : item.srcOriginal}
+              alt={item.title}
+              className="aspect-square h-[400px] object-cover"
+              />
+              <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
+              <Expand
+                className="text-white drop-shadow-2xl w-14 h-14"
+              />
+              </span>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Link Item */}
+      <LinkItem item={link} />
+
     </div>
 
     {/* Lightbox */}
@@ -126,8 +163,8 @@ const Testimonials = () => {
         >
           <div className="relative">
             <img
-              src={selectedImage.src}
-              alt=""
+              src={isEnglish ? selectedImage.srcEnglish : selectedImage.srcOriginal}
+              alt={selectedImage.title}
               className="w-full h-auto object-fit"
             />
             <Button

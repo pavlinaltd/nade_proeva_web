@@ -211,7 +211,7 @@ const Columns = () => {
         </span>
         <Switch
           id="language-switch"
-          aria-label="Switch to English"
+          aria-label="Switch to English or Original"
           className="data-[state=unchecked]:bg-burgundy-600 data-[state=checked]:bg-burgundy-700"
           checked={isEnglish}
           onCheckedChange={setIsEnglish}
