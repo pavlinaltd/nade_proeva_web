@@ -1,13 +1,12 @@
-
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col bg-white">
       <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-8 md:py-12 animate-fade-in">
+      <main className="flex-grow max-w-[1450px] mx-auto px-4 py-8 md:py-12 animate-fade-in">
         <Outlet />
       </main>
       <Footer />
