@@ -101,62 +101,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Book Feature Section */}
-      <section className="container mx-auto px-4 w-full lg:w-4/5">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 md:gap-24">
-            <img 
-              className="max-w-[50%] md:max-w-[25%] rounded-lg"
-              src="/images/from-her-lessons.png"
-              alt=""
-            />
-            <div className="w-1/2">
-              <p className="lg:text-base xl:text-lg">
-                To honor the legacy of a great teacher, six former students of Professor Dr. Nade Proeva
-                will honor her legacy by compiling an anthology to be published in November 2025.
-
-                The volume will be a collection of texts on Macedonian history covering topics in archaeology,
-                ethnology, anthropology, mythology, and religion from antiquity to today.
-
-                In writing these papers, the students want to honor Professor Proeva's life-long unwavering
-                commitment to promoting the historical truth about her homeland, Macedonia.
-              </p>
-            </div>
-          </div>
-      </section>
-
-      {/* Fund Call-to-Action */}
-      <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col sm:flex-row justify-center items-center">
-          <div className="text-gray-800 text-justify mx-auto w-1/2 order-2 sm:order-1">
-            <p className="lg:text-base xl:text-lg">
-              Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation
-              of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every
-              gift strengthens this legacy. To help grow the Endowment contact
-              <span><a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline ml-2">
-                info@macedonianarts.org
-              </a></span>
-              .
-            </p>
-          </div>
-          <img
-            src="/images/logo-text.jpg"
-            alt="The Nade Proeva Endowment Fund"
-            className="w-[300px] object-contain max-w-[50%] md:max-w-[25%] rounded-lg order-1 sm:order-2"
-          />
-        </div>
-      </section>
-      
-
       {/* Combined */}
-      <section className="container flex md:flex-row flex-col gap-10 items-center mx-auto px-4 w-full lg:w-4/5">
+      <section className="container flex justify-between md:flex-row flex-col gap-20 items-center mx-auto px-4 w-full">
         {/* Book Feature Section */}
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 w-1/2">
+        <div className="flex flex-col xl:flex-row justify-center items-center gap-6 w-1/2">
           <img 
             className="w-[200px] rounded-lg object-contain"
             src="/images/from-her-lessons.png"
             alt=""
           />
-          <div className="">
+          <div className="text-black text-justify self-center justify-evenly mx-auto">
             <p>
               To honor the legacy of a great teacher, six former students of Professor Dr. Nade Proeva
               will honor her legacy by compiling an anthology to be published in November 2025.
@@ -171,14 +125,14 @@ const Home = () => {
         </div>
 
         {/* Fund Call-to-Action */}
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 w-1/2">
+        <div className="flex flex-col xl:flex-row justify-center items-center gap-6 w-1/2">
           <img
             src="/images/logo-text.jpg"
             alt="The Nade Proeva Endowment Fund"
-            className="w-[200px] rounded-lg object-contain"
+            className="w-[200px] h-[300px] rounded-lg object-contain"
           />
-          <div className="text-gray-800 text-justify self-center justify-evenly mx-auto">
-            <p className="">
+          <div className="text-black text-justify self-center justify-evenly mx-auto">
+            <p>
               Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation
               of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every
               gift strengthens this legacy. To help grow the Endowment contact
