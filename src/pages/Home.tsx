@@ -1,3 +1,25 @@
+import { ReactNode } from "react";
+
+interface CardPairProps {
+  img: string;
+  text: ReactNode;
+  imgClass?: string;
+}
+const CardPair = ({img, text, imgClass}: CardPairProps) => {
+  return (
+    <div className="flex flex-col sm:flex-row w-[300px] mx-auto sm:w-[600px] md:w-full justify-center items-center sm:items-start gap-6 bg-amber-300 rounded-lg p-5">
+      <img
+        className={`w-[200px] md:self-stretch rounded-lg object-contain bg-white ${imgClass}`}
+        src={img}
+        alt=""
+      />
+      <div className="text-black text-justify justify-evenly mx-auto p-2">
+        <p>{text}</p>
+      </div>
+    </div>
+  )
+}
+
 const Home = () => {
 
   const medals = [
@@ -74,7 +96,7 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col sm:flex-row items-center justify-between md:justify-around gap-4 rounded-lg">
+        <div className="flex flex-col md:flex-row items-center justify-between md:justify-around gap-4 rounded-lg">
           {medals.map((medal, index) => (
             <img
               key={index}
@@ -102,47 +124,39 @@ const Home = () => {
       </section>
 
       {/* Combined */}
-      <section className="container flex justify-between md:flex-row flex-col gap-20 items-center mx-auto px-4 w-full">
+      <section className="container grid grid-cols-1 xl:grid-cols-2 gap-5 md:gap-10 items-stretch mx-auto px-4 w-full md:w-4/5 xl:w-full">
         {/* Book Feature Section */}
-        <div className="flex flex-col xl:flex-row justify-center items-center gap-6 w-1/2">
-          <img 
-            className="w-[200px] rounded-lg object-contain"
-            src="/images/from-her-lessons.png"
-            alt=""
-          />
-          <div className="text-black text-justify self-center justify-evenly mx-auto">
-            <p>
-              To honor the legacy of a great teacher, six former students of Professor Dr. Nade Proeva
-              will honor her legacy by compiling an anthology to be published in November 2025.
+        <CardPair
+          img={"/images/from-her-lessons.png"}
+          text={
+            <>To honor the legacy of a great teacher, six former students of Professor Dr. Nade Proeva
+            will honor her legacy by compiling an anthology to be published in November 2025.
 
-              The volume will be a collection of texts on Macedonian history covering topics in archaeology,
-              ethnology, anthropology, mythology, and religion from antiquity to today.
+            The volume will be a collection of texts on Macedonian history covering topics in archaeology,
+            ethnology, anthropology, mythology, and religion from antiquity to today.
 
-              In writing these papers, the students want to honor Professor Proeva's life-long unwavering
-              commitment to promoting the historical truth about her homeland, Macedonia.
-            </p>
-          </div>
-        </div>
+            In writing these papers, the students want to honor Professor Proeva's life-long unwavering
+            commitment to promoting the historical truth about her homeland, Macedonia.
+            </>
+          }
+        />
 
         {/* Fund Call-to-Action */}
-        <div className="flex flex-col xl:flex-row justify-center items-center gap-6 w-1/2">
-          <img
-            src="/images/logo-text.jpg"
-            alt="The Nade Proeva Endowment Fund"
-            className="w-[200px] h-[300px] rounded-lg object-contain"
-          />
-          <div className="text-black text-justify self-center justify-evenly mx-auto">
-            <p>
-              Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation
-              of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every
-              gift strengthens this legacy. To help grow the Endowment contact
-              <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline ml-2">
-                info@macedonianarts.org
-              </a>
-              .
-            </p>
-          </div>
-        </div>
+        <CardPair
+          img={"/images/logo-text.jpg"}
+          text={
+            <>
+            Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation
+            of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every
+            gift strengthens this legacy. To help grow the Endowment contact
+            <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline ml-2">
+              info@macedonianarts.org
+            </a>
+            .
+            </>
+          }
+          imgClass={"py-5"}
+        />
       </section>
     </div>
   );
