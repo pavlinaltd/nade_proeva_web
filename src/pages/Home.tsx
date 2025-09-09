@@ -127,7 +127,8 @@ const Home = () => {
       <section className="container grid grid-cols-1 xl:grid-cols-2 gap-5 md:gap-10 items-stretch mx-auto px-4 w-full md:w-4/5 xl:w-full">
         {/* Book Feature Section */}
         <CardPair
-          img={"/images/from-her-lectures.jpg"}
+          // img={"images/from-her-lectures.jpg"}
+          img={"/images/from-her-lessons.png"}
           text={
             <>To honor the legacy of a great teacher, six former students of Professor Dr. Nade Proeva
             will honor her legacy by compiling an anthology to be published in November 2025.
