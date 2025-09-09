@@ -84,20 +84,31 @@ const Media = () => {
     {
       format: "mp4",
       src: "/videos/Speech-2004-Prilep.mp4",
-      title: "Interview on Ancient Macedonian Identity",
+      title: "Video of the unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
       caption: "The unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
     },
     {
       format: "mpg",
       src: "/videos/ON-TV-NOVA-2005.mp4",
-      title: "Interview on Ancient Macedonian Identity",
+      title: "TV NOVA in Strumica, Macedonia - 2005",
       caption: "Strumica, Macedonia, TV NOVA - 2005",
     },
     {
       format: "youtube",
       src: "https://www.youtube.com/embed/BttNSpnJ92k",
       title: "Промовирана книгата „Историјата на античките Македонци“",
-
+    },
+    {
+      format: "mp4",
+      src: "/videos/video0.mp4",
+      title: "",
+      caption: "TBD"
+    },
+    {
+      format: "mp4",
+      src: "/videos/AnticMacedonians.mp4",
+      title: "",
+      caption: "AnticMacedonians"
     }
   ]
 
@@ -119,7 +130,7 @@ const Media = () => {
           {videos.map((video, index) => (
             <div
               key={index}
-              className="relative w-full"
+              className="relative w-full flex flex-col"
             >{ video.format === "youtube" ? 
               (
                 <iframe
@@ -130,8 +141,8 @@ const Media = () => {
                 </iframe>
               ) : (
                 <>
-                <div className="rounded-t-lg p-3 md:p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950 absolute top-0 left-0 z-10 w-full">
-                  <p className="font-droidsans text-white mb-1">{video.caption}</p>
+                <div className="rounded-t-lg p-3 md:p-4 bg-gradient-to-b from-burgundy-700/90 from-50% via-burgundy-700/70 via-70% to-transparent to-100% absolute top-0 left-0 z-10 w-full">
+                  <p className="font-droidsans text-white xl:text-lg font-bold mb-1">{video.caption}</p>
                 </div>
               
                 <VideoPlayerItem
