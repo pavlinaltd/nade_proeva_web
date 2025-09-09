@@ -130,7 +130,7 @@ const Media = () => {
                 </iframe>
               ) : (
                 <>
-                <div className="rounded-t-lg p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950 absolute top-0 left-0 z-10 w-full">
+                <div className="rounded-t-lg p-3 md:p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950 absolute top-0 left-0 z-10 w-full">
                   <p className="font-droidsans text-white mb-1">{video.caption}</p>
                 </div>
               
