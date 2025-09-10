@@ -229,11 +229,11 @@ const Press = () => {
             className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 mx-auto`}
             onClick={() => openLightbox(col)}
           >
-            <div className={`${col.orientation === "horizontal" && "h-[200px]"} mx-auto`}>
+            <div className={`${col.orientation === "horizontal" && "h-full xl:h-[200px]"} mx-auto`}>
               <img
               src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
-              className={`${col.orientation === "vertical" ? "object-scale-down" : "aspect-square h-[200px] object-cover"}
+              className={`${col.orientation === "vertical" ? "object-scale-down" : "aspect-square w-full xl:w-[200px] object-cover"}
               ${col.titlePosition === "right" ? "object-right" : "object-left"}`}
               />
               <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
