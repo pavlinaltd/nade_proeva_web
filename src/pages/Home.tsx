@@ -7,7 +7,7 @@ interface CardPairProps {
 }
 const CardPair = ({img, text, imgClass}: CardPairProps) => {
   return (
-    <div className="flex flex-col sm:flex-row w-[300px] mx-auto sm:w-[600px] md:w-full justify-center items-center sm:items-start gap-6 bg-amber-300 rounded-lg p-5">
+    <div className="flex flex-col sm:flex-row w-[300px] mx-auto sm:w-[600px] md:w-full justify-center items-center sm:items-start gap-6 bg-gray-100 border border-gray-300 rounded-lg p-5">
       <img
         className={`w-[200px] md:self-stretch rounded-lg object-contain bg-white ${imgClass}`}
         src={img}
