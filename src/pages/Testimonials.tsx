@@ -87,7 +87,7 @@ const Testimonials = () => {
   return (
     <>
     <SectionHeader
-      title="TESTIMONIALS"
+      title="REMEMBERING NADE"
       subtitle="What people had to say about Professor Proeva."
     />
 

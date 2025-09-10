@@ -14,10 +14,10 @@ const Navbar = () => {
     { to: "/about", label: "ABOUT" },
     { to: "/books", label: "BOOKS" },
     { to: "/papers", label: "PAPERS" },
-    { to: "/columns", label: "PRESS" },
+    { to: "/press", label: "PRESS" },
     { to: "/media", label: "MEDIA" },
     { to: "/on-site", label: "ON SITE" },
-    { to: "/testimonials", label: "REMEMBERING NADE" }
+    { to: "/remembering-nade", label: "REMEMBERING NADE" }
   ];
 
   useEffect(() => {

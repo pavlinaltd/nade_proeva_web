@@ -14,7 +14,7 @@ interface MediaItem {
   titlePosition: "left" | "center" | "right";
 }
 
-const Columns = () => {
+const Press = () => {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
   const [isEnglish, setIsEnglish] = useState(false);
 
@@ -309,4 +309,4 @@ const Columns = () => {
   )
 };
 
-export default Columns;
+export default Press;
