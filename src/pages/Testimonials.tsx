@@ -92,11 +92,11 @@ const Testimonials = () => {
     />
 
     {/* Container */}
-    <div className="w-3/4 mx-auto flex flex-col items-center gap-10">
+    <div className="w-full lg:w-3/4 mx-auto flex flex-col items-center gap-10">
       {/* Video Feature */}
       <VideoPlayerItem
         src={"/images/memories/nade.mp4"}
-        className="h-full object-cover mb-6"
+        className="h-full object-cover mb-6 border border-burgundy-700 rounded-lg"
       />
 
       {/* Language Switch */}
