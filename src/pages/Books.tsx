@@ -33,7 +33,7 @@ interface BookProps {
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
     // Original
-    <div className="bg-gray-100 border border-gray-300 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap xl:flex-nowrap">
+    <div className="bg-gray-100 border border-gray-300 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap xl:flex-nowrap mx-auto max-w-[400px] sm:max-w-[450px] sm:w-[450px] md:max-w-full lg:max-w-[800px] xl:max-w-full md:w-full">
       {/* Book image */}
       <div className="mx-auto object-scale-down w-full sm:w-1/2 xl:w-1/3 flex order-0">
         <img
@@ -43,7 +43,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
         />
       </div>
       {/* Text content */}
-      <div className="flex gap-16 w-full xl:w-1/2 p-6 order-1 sm:order-2 xl:order-1">
+      <div className="flex gap-16 w-full xl:w-1/2 p-3 md:p-6 order-1 sm:order-2 xl:order-1">
         <div
           className="flex flex-col justify-between"
         >
@@ -76,7 +76,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
       </div>
       {/* Promo section */}
       {(book.promoImage || book.promoAudio || book.promoVideo) && (
-        <div className="flex flex-col order-2 sm:order-1 xl:order-2 justify-center items-center gap-10 w-full sm:w-1/2 xl:w-1/3 bg-gray-300 p-6">
+        <div className="flex flex-col order-2 sm:order-1 xl:order-2 justify-center items-center gap-10 w-full sm:w-1/2 xl:w-1/3 overflow-hidden bg-gray-300 p-3 md:p-6">
           {book.promoImage && (
             <img
               src={book.promoImage}
@@ -93,14 +93,14 @@ const BookCard = ({ book }: { book: BookProps }) => {
                 slot="media"
                 src={book.promoVideo}
               />
-              <VideoPlayerControlBar className="">
+              <VideoPlayerControlBar>
                 <VideoPlayerPlayButton />
-                <VideoPlayerSeekBackwardButton className="hidden sm:hidden xl:hidden" />
-                <VideoPlayerSeekForwardButton className="hidden sm:hidden xl:hidden" />
+                <VideoPlayerSeekBackwardButton className="hidden" />
+                <VideoPlayerSeekForwardButton className="hidden" />
                 <VideoPlayerTimeRange />
-                <VideoPlayerTimeDisplay showDuration className="sm:hidden"/>
-                <VideoPlayerMuteButton className="sm:hidden"/>
-                <VideoPlayerVolumeRange className="hidden sm:hidden xl:hidden" />
+                <VideoPlayerTimeDisplay showDuration className="sm:hidden" />
+                <VideoPlayerMuteButton className="sm:hidden" />
+                <VideoPlayerVolumeRange className="hidden" />
                 <VideoPlayerFullscreenButton />
               </VideoPlayerControlBar>
             </VideoPlayer>
