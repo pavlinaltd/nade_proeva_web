@@ -212,7 +212,7 @@ const Columns = () => {
         <Switch
           id="language-switch"
           aria-label="Switch to English or Original"
-          className="data-[state=unchecked]:bg-burgundy-600 data-[state=checked]:bg-burgundy-700"
+          className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
           checked={isEnglish}
           onCheckedChange={setIsEnglish}
         />
@@ -263,7 +263,7 @@ const Columns = () => {
           <Carousel
             className={
               selectedImage.orientation === "vertical" ? 'w-[700px] bg-white rounded-sm' :
-              'w-[1000px] bg-white rounded-sm'
+              'w-[1000px] bg-white rounded-sm relative'
             }
           >
             <CarouselContent>
@@ -294,15 +294,15 @@ const Columns = () => {
             <CarouselPrevious className="text-white bg-burgundy-700 hover:bg-burgundy-900" />
             <CarouselNext className="text-white bg-burgundy-700 hover:bg-burgundy-900"/>
           </Carousel>
-          <Button 
-              variant="secondary"
-              size="icon"
-              className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-white"
-              onClick={closeLightbox}
-            >
-              <X className="h-4 w-4" />
-            </Button>
         </div>
+        <Button 
+          variant="secondary"
+          size="icon"
+          className="absolute top-4 right-4 rounded-full border border-white text-white bg-burgundy-700 hover:bg-burgundy-900"
+          onClick={closeLightbox}
+        >
+          <X className="h-4 w-4" />
+        </Button>
       </div>
     )}
     </>

@@ -111,7 +111,7 @@ const Papers = () => {
                   <p className="text-gray-700 mb-4">{paper.abstract}</p>
                 )}
               </div>
-              <Button asChild variant="ghost" size="sm" className="self-endflex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white">
+              <Button asChild variant="ghost" size="sm" className="self-endflex items-center gap-2 bg-burgundy-700 hover:bg-burgundy-900 text-white">
                 <a href={paper.url} target="_blank" rel="noopener noreferrer">
                   <span>Read on Academia.edu</span>
                   <ExternalLink size={16} />

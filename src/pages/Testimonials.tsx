@@ -3,6 +3,7 @@ import { X, ExternalLink, Expand } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import VideoPlayerItem from "@/components/VideoPlayer";
 
 interface MediaItem {
   type: "image" | "video" | "link";
@@ -14,12 +15,12 @@ interface MediaItem {
 
 const LinkItem = ({ item }: { item: MediaItem }) => (
   <div
-    className="bg-burgundy-600 hover:bg-burgundy-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
+    className="bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
     // Don't need lightbox for link
   >
     <div className="p-4">
       <a
-        href={item.src}
+        href={item.srcOriginal}
         target="_blank"
         title={item.title}
         className="no-underline text-white"
@@ -33,13 +34,13 @@ const LinkItem = ({ item }: { item: MediaItem }) => (
   </div>
 );
 
-const ImageItem = ({ item, openLightbox }: { item: MediaItem; openLightbox: (image: MediaItem) => void }) => (
+const ImageItem = ({ item, openLightbox, isEnglish }: { item: MediaItem; openLightbox: (image: MediaItem) => void; isEnglish: boolean }) => (
   <div
     className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-min"
     onClick={() => openLightbox(item)}
   >
     <img
-      src={item.src}
+      src={isEnglish ? item.srcEnglish : item.srcOriginal}
       alt={item.title}
       className="w-auto h-auto object-cover"
     />
@@ -69,7 +70,7 @@ const Testimonials = () => {
 
   const link: MediaItem = {
     type: "link",
-    src: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
+    srcOriginal: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
     title: "From the President's Cabinet"
   };
 
@@ -93,14 +94,10 @@ const Testimonials = () => {
     {/* Container */}
     <div className="w-3/4 mx-auto flex flex-col items-center gap-10">
       {/* Video Feature */}
-      <video
-        src="/images/memories/nade.mp4"
+      <VideoPlayerItem
+        src={"/images/memories/nade.mp4"}
         className="h-full object-cover mb-6"
-        controls muted
-        controlsList="nodownload"
-      >
-        Your browser does not support the video tag.
-      </video>
+      />
 
       {/* Language Switch */}
       <div className="flex self-start gap-2 mb-6 justify-start">
@@ -112,7 +109,7 @@ const Testimonials = () => {
         <Switch
           id="language-switch"
           aria-label="Switch to English or Original"
-          className="data-[state=unchecked]:bg-burgundy-600 data-[state=checked]:bg-burgundy-700"
+          className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
           checked={isEnglish}
           onCheckedChange={setIsEnglish}
         />
@@ -167,16 +164,16 @@ const Testimonials = () => {
               alt={selectedImage.title}
               className="w-full h-auto object-fit"
             />
-            <Button
-              // variant="secondary"
-              // size="icon"
-              className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-burgundy-500 hover:text-white"
-              onClick={closeLightbox}
-            >
-              <X className="h-4 w-4" />
-            </Button>
           </div>
         </div>
+        <Button 
+          variant="secondary"
+          size="icon"
+          className="absolute top-4 right-4 rounded-full border border-white text-white bg-burgundy-700 hover:bg-burgundy-900"
+          onClick={closeLightbox}
+        >
+          <X className="h-4 w-4" />
+        </Button>
       </div>
     )}
     </>

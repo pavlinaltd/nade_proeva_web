@@ -1,17 +1,5 @@
 import SectionHeader from "@/components/SectionHeader";
-import {
-  VideoPlayer,
-  VideoPlayerContent,
-  VideoPlayerControlBar,
-  VideoPlayerMuteButton,
-  VideoPlayerPlayButton,
-  VideoPlayerSeekBackwardButton,
-  VideoPlayerSeekForwardButton,
-  VideoPlayerTimeDisplay,
-  VideoPlayerTimeRange,
-  VideoPlayerVolumeRange,
-  VideoPlayerFullscreenButton
-} from "@/components/ui/shadcn-io/video-player";
+import VideoPlayerItem from "../components/VideoPlayer";
 
 interface VideoItem {
   format?: string;
@@ -20,26 +8,26 @@ interface VideoItem {
   caption?: string;
 }
 
-const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: string }) => (
-  <VideoPlayer className={`video-player overflow-hidden aspect-video shadow-lg ${className ?? ""}`}>
-    <VideoPlayerContent
-      crossOrigin=""
-      preload="auto"
-      slot="media"
-      src={item.src}
-    />
-    <VideoPlayerControlBar>
-      <VideoPlayerPlayButton />
-      <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
-      <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
-      <VideoPlayerTimeRange />
-      <VideoPlayerTimeDisplay showDuration />
-      <VideoPlayerMuteButton />
-      <VideoPlayerVolumeRange className="hidden md:inline-flex" />
-      <VideoPlayerFullscreenButton />
-    </VideoPlayerControlBar>
-  </VideoPlayer>
-);
+// const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: string }) => (
+//   <VideoPlayer className={`video-player overflow-hidden aspect-video shadow-lg ${className ?? ""}`}>
+//     <VideoPlayerContent
+//       crossOrigin=""
+//       preload="auto"
+//       slot="media"
+//       src={item.src}
+//     />
+//     <VideoPlayerControlBar>
+//       <VideoPlayerPlayButton />
+//       <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
+//       <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
+//       <VideoPlayerTimeRange />
+//       <VideoPlayerTimeDisplay showDuration />
+//       <VideoPlayerMuteButton />
+//       <VideoPlayerVolumeRange className="hidden md:inline-flex" />
+//       <VideoPlayerFullscreenButton />
+//     </VideoPlayerControlBar>
+//   </VideoPlayer>
+// );
 
 const Media = () => {
 
@@ -146,8 +134,8 @@ const Media = () => {
                 </div>
               
                 <VideoPlayerItem
+                  src={video.src}
                   className="rounded-lg border-l border-r border-burgundy-700"
-                  item={video}
                 />
                 </>
               )
@@ -175,7 +163,7 @@ const Media = () => {
             {audios.map((audio, index) => (
               <VideoPlayerItem
                 key={index}
-                item={audio}
+                src={audio.src}
                 className="border border-burgundy-700 rounded-lg"
               />
             ))}

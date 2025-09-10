@@ -62,7 +62,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
             <p className="text-xs md:text-sm xl:text-base text-gray-700 text-justify mb-4">{book.description}</p>
           </div>
           {book.amazonUrl ? (
-            <Button className="flex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white" asChild>
+            <Button className="flex items-center gap-2 bg-burgundy-700 hover:bg-burgundy-900 text-white" asChild>
               <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={16} />
                 Find on Amazon Books

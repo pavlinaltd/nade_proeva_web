@@ -156,25 +156,23 @@ const OnSite = () => {
           <div
             className={
               selectedImage.orientation === "vertical" ? 'w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl' :
-              'w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl'
+              'w-[1000px] bg-white overflow-hidden shadow-2xl'
             }
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative">
-              <img
-                src={selectedImage.src}
-                alt=""
-                className="w-full h-auto object-fit"
-              />
-              <Button
-                variant="secondary"
-                size="icon"
-                className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-burgundy-500 hover:text-white"
-                onClick={closeLightbox}
-              >
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
+            <img
+              src={selectedImage.src}
+              alt=""
+              className="w-full h-auto object-fit"
+            />
+            <Button
+              variant="secondary"
+              size="icon"
+              className="absolute top-4 right-4 rounded-full border border-white text-white bg-burgundy-700 hover:bg-burgundy-900"
+              onClick={closeLightbox}
+            >
+              <X className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       )}
