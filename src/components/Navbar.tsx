@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <header className="bg-yellow-400 border-b border-burgundy-200">
       <div className="max-w-[1450px] mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-5">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
