@@ -201,7 +201,7 @@ const Press = () => {
       subtitle="Use the switch to toggle between the original publications and their English translations by Google Translate."
     />
 
-    <div className="animate-fade-in">
+    <div className="animate-fade-in sm:mx-20">
       {/* Language Switch */}
       <div className="flex items-center gap-2 mb-6 justify-start">
         <span

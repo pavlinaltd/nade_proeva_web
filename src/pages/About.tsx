@@ -7,7 +7,7 @@ const About = () => {
       title="About Professor Dr. Nade Proeva"
       subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
     />      
-    <div className="animate-fade-in space-y-6 text-justify w-full lg:w-3/4 mx-auto">
+    <div className="animate-fade-in space-y-6 text-justify sm:mx-20">
       {/* Steinbeck quote */}
       <div className="w-full md:w-1/2 md:float-left bg-yellow-500 p-8 mr-5 mb-5 text-black rounded-sm">
         <blockquote className="lg:text-xl">

@@ -95,7 +95,7 @@ const Papers = () => {
           contacting the Department of History at Ss. Cyril and Methodius University in Skopje, Macedonia.
           A list of her most popular papers are here."
       />
-      <div className="animate-fade-in">
+      <div className="animate-fade-in sm:mx-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
           {papers.map((paper, index) => (
             <div key={index} className="bg-gray-100 rounded-lg border border-gray-300 p-6 shadow-lg flex flex-col justify-between">
