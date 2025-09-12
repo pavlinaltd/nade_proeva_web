@@ -70,7 +70,7 @@ const Testimonials = () => {
 
   const link: MediaItem = {
     type: "link",
-    srcOriginal: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
+    srcOriginal: "https://pretsedatel.mk/socuvstvo-nade-proeva/",
     title: "From the President's Cabinet"
   };
 
