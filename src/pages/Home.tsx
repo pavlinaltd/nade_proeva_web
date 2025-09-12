@@ -95,8 +95,8 @@ const Home = () => {
       </section>
 
       {/* Awards Section */}
-      <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col md:flex-row items-center justify-between md:justify-around gap-4 rounded-lg">
+      <section className="container mx-auto px-4 w-full lg:w-3/5">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-lg">
           {medals.map((medal, index) => (
             <img
               key={index}
