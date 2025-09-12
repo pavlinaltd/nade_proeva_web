@@ -92,7 +92,7 @@ const Testimonials = () => {
     />
 
     {/* Container */}
-    <div className="w-full lg:w-3/4 mx-auto flex flex-col items-center gap-10">
+    <div className="sm:mx-20 flex flex-col items-center gap-10">
       {/* Video Feature */}
       <VideoPlayerItem
         src={"/images/memories/nade.mp4"}
@@ -100,7 +100,7 @@ const Testimonials = () => {
       />
 
       {/* Column Items */}
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         {/* Language Switch */}
         <div className="flex self-start gap-2 mb-6 justify-start">
           <span
@@ -119,18 +119,18 @@ const Testimonials = () => {
         </div>
 
         {/* Content */}
-        <div className="animate-fade-in flex flex-col md:flex-row justify-between gap-5 w-full">
+        <div className="animate-fade-in flex flex-col md:flex-row justify-between gap-5">
           {columns.map((item, index) =>
             <div
               key={index}
-              className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 mx-auto`}
+              className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300`}
               onClick={() => openLightbox(item)}
             >
-              <div className={`h-[400px] mx-auto`}>
+              <div className={``}>
                 <img
                 src={isEnglish ? item.srcEnglish : item.srcOriginal}
                 alt={item.title}
-                className="aspect-square h-[400px] object-cover"
+                className="object-cover"
                 />
                 <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
                 <Expand
