@@ -111,7 +111,7 @@
   }
 
   p {
-    @apply text-xs sm:text-sm lg:text-base;
+    @apply text-sm sm:text-base;
   }
 }
 
