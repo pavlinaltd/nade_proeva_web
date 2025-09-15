@@ -7,13 +7,13 @@ interface CardPairProps {
 }
 const CardPair = ({img, text, imgClass}: CardPairProps) => {
   return (
-    <div className="flex flex-col sm:flex-row w-[300px] mx-auto sm:w-[600px] md:w-full justify-center items-center sm:items-start gap-6 bg-gray-100 border border-gray-300 rounded-lg p-5">
+    <div className="w-[275px] lg:w-[400px] flex flex-col mx-auto justify-start items-center gap-2 bg-gray-100 border border-gray-300 rounded-lg">
       <img
-        className={`w-[200px] md:self-stretch rounded-lg object-contain bg-white ${imgClass}`}
+        className={`w-[275px] lg:w-[400px] h-[275px] lg:h-[400px] rounded-t-lg object-contain bg-white ${imgClass}`}
         src={img}
         alt=""
       />
-      <div className="text-black text-justify justify-evenly mx-auto p-2">
+      <div className="text-black text-justify justify-evenly mx-auto p-5">
         <p>{text}</p>
       </div>
     </div>
@@ -34,9 +34,9 @@ const Home = () => {
   ];
 
   return (
-    <div className="animate-fade-in space-y-24">
-      {/* Hero Section */}
-      <section className="relative p-5 md:p-10 lg:p-20 rounded-lg overflow-hidden bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white">
+    <div className="animate-fade-in space-y-12 md:space-y-24">
+      {/* Hero Section */}        
+      <section className="relative p-5 md:p-10 lg:p-20 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
           <img
             src="/images/nade.jpg"
@@ -96,7 +96,7 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-auto px-4 w-full lg:w-3/5">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-lg">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg">
           {medals.map((medal, index) => (
             <img
               key={index}
@@ -124,7 +124,7 @@ const Home = () => {
       </section>
 
       {/* Combined */}
-      <section className="container grid grid-cols-1 xl:grid-cols-2 gap-5 md:gap-10 items-stretch mx-auto px-4 w-full md:w-4/5 xl:w-full">
+      <section className="container flex flex-col sm:flex-row justify-between gap-5 md:gap-10 mx-auto px-4 w-full lg:w-4/5">
         {/* Book Feature Section */}
         <CardPair
           // img={"images/from-her-lectures.jpg"}
@@ -149,8 +149,8 @@ const Home = () => {
             <>
             Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation
             of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every
-            gift strengthens this legacy. To help grow the Endowment contact
-            <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline ml-2">
+            gift strengthens this legacy. To help grow the Endowment contact{' '}
+            <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline">
               info@macedonianarts.org
             </a>
             .
