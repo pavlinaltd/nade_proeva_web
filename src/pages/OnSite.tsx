@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X } from "lucide-react";
+import { Expand, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
 
@@ -119,7 +119,7 @@ const OnSite = () => {
     <div>
       <SectionHeader
         title="ON SITE"
-        subtitle="Professor Proeva sharing history with her students and foreign visitors interested in Macedonia's archeological past."//TODO: reword
+        subtitle="Professor Proeva sharing history with her students and foreign visitors interested in Macedonia's archeological past."
       />
 
       <div className="animate-fade-in sm:mx-20">
@@ -130,7 +130,7 @@ const OnSite = () => {
           {photos.map((photo, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-auto"//TODO: fix widths to fit max margins
+              className="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer transform h-auto"
               onClick={() => openLightbox(photo)}
             >
               <div className="overflow-hidden">
@@ -141,6 +141,13 @@ const OnSite = () => {
                     'object-cover w-full h-[300px]'
                   }
                 />
+                <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
+                <Expand
+                  className={`text-white drop-shadow-2xl w-14 h-14
+                    ${photo.orientation === "vertical" ? "w-14 h-14" : "w-10 h-10"}
+                  `}
+                />
+                </span>
               </div>
             </div>
           ))}
