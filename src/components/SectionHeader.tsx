@@ -8,9 +8,9 @@ interface SectionHeaderProps {
   center?: boolean;
 }
 
-const SectionHeader = ({ title, subtitle, children, center = false }: SectionHeaderProps) => {
+const SectionHeader = ({ title, subtitle, children }: SectionHeaderProps) => {
   return (
-    <div className={`mb-8 ${center ? "text-center" : ""}`}>
+    <div className="mb-8">
       <h2 className="text-2xl lg:text-3xl font-bold font-vollkornsc text-burgundy-900 mb-3">
         {title}
       </h2>

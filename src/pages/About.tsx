@@ -4,7 +4,7 @@ const About = () => {
   return (
     <>
     <SectionHeader
-      title="About Professor Dr. Nade Proeva"
+      title="ABOUT"
       subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
     />      
     <div className="animate-fade-in space-y-6 text-justify sm:mx-20">
