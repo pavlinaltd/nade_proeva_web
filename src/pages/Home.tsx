@@ -7,9 +7,9 @@ interface CardPairProps {
 }
 const CardPair = ({img, text, imgClass}: CardPairProps) => {
   return (
-    <div className="w-[275px] lg:w-[400px] flex flex-col mx-auto justify-start items-center gap-2 bg-gray-100 border border-gray-300 rounded-lg">
+    <div className="w-full lg:w-[400px] flex flex-col mx-auto justify-start items-center gap-2 bg-gray-100 border border-gray-300 rounded-lg">
       <img
-        className={`w-[275px] lg:w-[400px] h-[275px] lg:h-[400px] rounded-t-lg object-contain bg-white ${imgClass}`}
+        className={`w-full lg:w-[400px] h-[275px] lg:h-[400px] rounded-t-lg object-contain bg-white ${imgClass}`}
         src={img}
         alt=""
       />
