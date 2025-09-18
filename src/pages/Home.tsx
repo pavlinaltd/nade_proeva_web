@@ -45,8 +45,8 @@ const Home = () => {
           />
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex gap-10 max-w-3xl mx-auto text-left">
-              <div className="flex flex-col justify-center text-justify sm:text-lg md:text-xl lg:text-2xl xl:text-3xl italic">
-                <h1 className=" text-white font-bold">
+              <div className="flex flex-col justify-center text-justify text-lg sm:text-xl lg:text-2xl xl:text-3xl italic">
+                <h1 className=" text-white sm:font-bold">
                   "The study of history is not just about uncovering the past, but understanding the complex tapestry of human experience that shapes our present and future."
                 </h1>
                 <span className="self-end">
@@ -57,7 +57,7 @@ const Home = () => {
                   />
                 </span>
                 <br />
-                <h1 className="font-bold text-yellow-400">
+                <h1 className="sm:font-bold text-yellow-400">
                   "Проучувањето на историјата не е само откривање на минатото, туку и разбирање на сложената и богата ткаенина на човечкото искуство што го обликува нашето сегашно и идно постоење."
                 </h1>
               </div>

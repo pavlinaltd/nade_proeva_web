@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-semibold font-vollkornsc lg:block lg:text-xs xl:text-base">
+          <NavigationMenu className="flex-row space-x-1 font-semibold font-vollkornsc hidden lg:block lg:text-sm xl:text-base">
             <NavigationMenuList>
               {links.map((link) => (
                 <NavigationMenuItem key={link.to}>

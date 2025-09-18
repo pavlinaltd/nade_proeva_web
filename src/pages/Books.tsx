@@ -50,16 +50,16 @@ const BookCard = ({ book }: { book: BookProps }) => {
           <div>
             <h3 className="md:text-lg xl:text-xl font-semibold text-burgundy-800 mb-2">{book.title.toUpperCase()}</h3>
             {book.originalTitle && (
-              <p className="text-xs md:text-sm xl:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
+              <p className="text-sm xl:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
             )}
-            <div className="text-xs md:text-sm xl:text-base text-gray-500 mb-4">
+            <div className="text-sm xl:text-base text-gray-500 mb-4">
               {book.author && <p>Author: {book.author}</p>}
               <p>Editor: {book.editor}</p>
               {book.translator && <p>Translator: {book.translator}</p>}
               <p>{book.year} • {book.publisher}</p>
               <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
             </div>
-            <p className="text-xs md:text-sm xl:text-base text-gray-700 text-justify mb-4">{book.description}</p>
+            <p className="text-sm xl:text-base text-gray-700 text-justify mb-4">{book.description}</p>
           </div>
           {book.amazonUrl ? (
             <Button className="flex items-center gap-2 bg-burgundy-700 hover:bg-burgundy-900 text-white" asChild>
@@ -326,7 +326,7 @@ const Books = () => {
   ];
 
   return (
-    <div>
+    <>
       <SectionHeader
         title="BOOKS"
         subtitle="Professor Dr. Nade Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
@@ -339,8 +339,8 @@ const Books = () => {
           ))}
         </div>
 
-        <div className="my-12">
-          <h3 className="font-semibold text-burgundy-900 mb-4">Extended Bibliography</h3>
+        <div className="my-12 md:mx-20">
+          <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">Extended Bibliography</h3>
           <p className="text-gray-700 mb-6">
             Below is an extended listing of books edited or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
           </p>
@@ -348,7 +348,7 @@ const Books = () => {
           <BookTable books={books.filter((book) => book.author !== "Nade Proeva")} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
