@@ -122,8 +122,13 @@ const BookCard = ({ book }: { book: BookProps }) => {
 };
 
 const BookTable = ({ books }: { books: BookProps[] }) => {
+
+  const checkData = (data: string) => {
+    return data && data.trim() !== "" ? data : "-";
+  }
+
   return (
-    <div className="rounded-md border border-burgundy-900 my-8 overflow-x-auto">
+    <div className="rounded-md border border-burgundy-900 my-8">
       <Table>
         <TableHeader>
           <TableRow>
@@ -140,14 +145,14 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
         <TableBody>
           {books.map((book, index) => (
             <TableRow className={index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"} key={index}>
-              <TableCell className={index === books.length - 1 && "rounded-bl-md"}>{book.title}</TableCell>
-              <TableCell>{book.originalTitle}</TableCell>
-              <TableCell>{book.author}</TableCell>
-              <TableCell>{book.editor}</TableCell>
-              <TableCell>{book.series} {book.volume && `Vol. ${book.volume}`}</TableCell>
-              <TableCell>{book.year}</TableCell>
-              <TableCell>{book.publisher}</TableCell>
-              <TableCell className={index === books.length - 1 ? "rounded-br-md border-r-0" : "border-r-0"}>{book.isbn}</TableCell>
+              <TableCell className={index === books.length - 1 && "rounded-bl-md"}>{checkData(book.title)}</TableCell>
+              <TableCell>{checkData(book.originalTitle)}</TableCell>
+              <TableCell>{checkData(book.author)}</TableCell>
+              <TableCell>{checkData(book.editor)}</TableCell>
+              <TableCell>{checkData(book.series)} {book.volume && `Vol. ${book.volume}`}</TableCell>
+              <TableCell>{checkData(book.year)}</TableCell>
+              <TableCell>{checkData(book.publisher)}</TableCell>
+              <TableCell className={index === books.length - 1 ? "rounded-br-md border-r-0" : "border-r-0"}>{checkData(book.isbn)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -333,13 +338,13 @@ const Books = () => {
       />
 
       <div className="animate-fade-in">
-        <div className="space-y-8 sm:mx-20">
+        <div className="space-y-8 lg:mx-20">
           {books.filter((book) => book.author === "Nade Proeva").map((book, index) => (
             <BookCard key={index} book={book} />
           ))}
         </div>
 
-        <div className="my-12 md:mx-20">
+        <div className="my-12 lg:mx-20">
           <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">Extended Bibliography</h3>
           <p className="text-gray-700 mb-6">
             Below is an extended listing of books edited or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.

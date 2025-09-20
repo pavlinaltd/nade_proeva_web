@@ -122,7 +122,7 @@ const OnSite = () => {
         subtitle="Professor Proeva sharing history with her students and foreign visitors interested in Macedonia's archeological past."
       />
 
-      <div className="animate-fade-in sm:mx-20">
+      <div className="animate-fade-in lg:mx-20">
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           // className="flex flex-wrap gap-6 items-start justify-between align-left"

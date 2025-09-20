@@ -7,7 +7,7 @@ const About = () => {
       title="ABOUT"
       subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
     />      
-    <div className="animate-fade-in space-y-6 text-justify sm:mx-20">
+    <div className="animate-fade-in space-y-6 text-justify lg:mx-20">
       {/* Steinbeck quote */}
       <div className="w-full md:w-1/2 md:float-left bg-yellow-500 p-6 md:p-8 mr-0 md:mr-5 text-black rounded-sm">
         <blockquote className="lg:text-xl">

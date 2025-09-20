@@ -92,7 +92,7 @@ const Testimonials = () => {
     />
 
     {/* Container */}
-    <div className="sm:mx-20 flex flex-col items-center gap-10">
+    <div className="lg:mx-20 flex flex-col items-center gap-10">
       {/* Video Feature */}
       <VideoPlayerItem
         src={"/images/memories/nade.mp4"}

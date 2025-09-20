@@ -120,7 +120,7 @@ const Media = () => {
     />
 
     {/* Content Wrapper */}
-    <div className="animate-fade-in sm:mx-20">
+    <div className="animate-fade-in lg:mx-20">
       <div className="flex flex-col lg:flex-row justify-center mt-4 items-start gap-20 lg:gap-10">
 
         {/* Video */}
