@@ -10,12 +10,12 @@ interface SectionHeaderProps {
 
 const SectionHeader = ({ title, subtitle, children }: SectionHeaderProps) => {
   return (
-    <div className="mb-8">
+    <div className="mb-8 text-center lg:mx-20">
       <h2 className="text-2xl lg:text-3xl font-bold font-vollkornsc text-burgundy-900 mb-3">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-justify italic text-gray-600 w-full text-base md:text-lg lg:text-xl">
+        <p className="text-center italic text-gray-600 mx-auto w-full text-base md:text-lg lg:text-xl">
           {subtitle}
         </p>
       )}
