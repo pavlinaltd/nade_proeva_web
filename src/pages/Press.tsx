@@ -198,12 +198,12 @@ const Press = () => {
     <>
     <SectionHeader
       title="PRESS"
-      subtitle="Use the switch to toggle between the original publications and their English translations by Google Translate."
+      subtitle="Interviews and opinions."
     />
 
     <div className="animate-fade-in lg:mx-20">
       {/* Language Switch */}
-      <div className="flex items-center gap-2 mb-6 justify-start">
+      <div className="flex items-center gap-2 mb-6 justify-start text-lg">
         <span
           className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
         >

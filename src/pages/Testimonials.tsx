@@ -102,7 +102,6 @@ const Testimonials = () => {
       {/* Column Items */}
       <div className="flex flex-col w-full">
         {/* Language Switch */}
-        <div className="flex self-start gap-2 mb-6 justify-start">
         <div className="flex self-start gap-2 mb-6 justify-start text-lg">
           <span
             className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
