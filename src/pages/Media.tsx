@@ -102,7 +102,7 @@ const Media = () => {
       format: "mp4",
       src: "/videos/video0.mp4",
       title: "",
-      caption: "TBD"
+      caption: "The Book Launch"
     },
     {
       format: "mp4",
@@ -116,7 +116,7 @@ const Media = () => {
     <>
     <SectionHeader
       title="MEDIA"
-      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations."
+      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations"
     />
 
     {/* Content Wrapper */}
