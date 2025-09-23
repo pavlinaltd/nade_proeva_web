@@ -61,8 +61,8 @@ const Testimonials = () => {
     },
     {
       type: "image",
-      srcOriginal: "/images/memories/linkedin-post.jpg",
-      srcEnglish: "/images/memories/linkedin-post-eng.jpg",
+      srcOriginal: "/images/memories/fb-post.jpg",
+      srcEnglish: "/images/memories/fb-post-eng.jpg",
       title: "Title",
       orientation: "vertical",
     }
@@ -88,7 +88,7 @@ const Testimonials = () => {
     <>
     <SectionHeader
       title="REMEMBERING NADE"
-      subtitle="See what people had to say about Professor Proeva."
+      subtitle="Through the voices of those who knew her best"
     />
 
     {/* Container */}
@@ -103,6 +103,7 @@ const Testimonials = () => {
       <div className="flex flex-col w-full">
         {/* Language Switch */}
         <div className="flex self-start gap-2 mb-6 justify-start">
+        <div className="flex self-start gap-2 mb-6 justify-start text-lg">
           <span
             className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
           >
@@ -143,10 +144,8 @@ const Testimonials = () => {
         </div>
       </div>
 
-
       {/* Link Item */}
       <LinkItem item={link} />
-
     </div>
 
     {/* Lightbox */}
