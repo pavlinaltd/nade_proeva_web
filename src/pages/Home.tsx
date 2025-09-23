@@ -7,16 +7,28 @@ interface CardPairProps {
 }
 const CardPair = ({img, text, imgClass}: CardPairProps) => {
   return (
-    <div className="w-full lg:w-[400px] flex flex-col mx-auto justify-start items-center gap-2 bg-gray-100 border border-gray-300 rounded-lg">
+    <div className="flex flex-col sm:flex-row mx-auto w-full justify-center items-center sm:items-start gap-6 bg-gray-100 border border-gray-300 rounded-lg p-5">
       <img
-        className={`w-full lg:w-[400px] h-[275px] lg:h-[400px] rounded-t-lg object-contain bg-white ${imgClass}`}
+        className={`w-[200px] md:self-stretch rounded-lg object-contain bg-white ${imgClass}`}
         src={img}
         alt=""
       />
-      <div className="text-black text-justify justify-evenly mx-auto p-5">
+
+      <div className="text-black text-justify justify-evenly mx-auto p-2">
         <p>{text}</p>
       </div>
     </div>
+
+    // <div className="w-full lg:w-[400px] flex flex-col mx-auto justify-start items-center gap-2 bg-gray-100 border border-gray-300 rounded-lg">
+    //   <img
+    //     className={`w-full lg:w-[400px] h-[275px] lg:h-[400px] rounded-t-lg object-contain bg-white ${imgClass}`}
+    //     src={img}
+    //     alt=""
+    //   />
+    //   <div className="text-black text-justify justify-evenly mx-auto p-5">
+    //     <p>{text}</p>
+    //   </div>
+    // </div>
   )
 }
 
@@ -124,19 +136,14 @@ const Home = () => {
       </section>
 
       {/* Combined */}
-      <section className="container flex flex-col sm:flex-row justify-between gap-5 md:gap-10 mx-auto px-4 w-full lg:w-4/5">
+      <section className="container flex flex-col justify-between gap-5 md:gap-10 mx-auto px-4 w-full lg:w-4/5 xl:w-3/5">
         {/* Book Feature Section */}
         <CardPair
           img={"/images/from-her-lessons.png"}
           text={
-            <>To honor the legacy of a great teacher, six former students of Professor Dr. Nade Proeva
-            will honor her legacy by compiling an anthology to be published in November 2025.
-
-            The volume will be a collection of texts on Macedonian history covering topics in archaeology,
-            ethnology, anthropology, mythology, and religion from antiquity to today.
-
-            In writing these papers, the students want to honor Professor Proeva's life-long unwavering
-            commitment to promoting the historical truth about her homeland, Macedonia.
+            <>This volume is a tribute by six former students of Professor Dr. Nade Proeva, who came together to honor her legacy.
+            It brings together their writings on Macedonian history, spanning archaeology, ethnology, anthropology, mythology, and religion from antiquity to the present.
+            Through these pages, they celebrate their teacher's lasting influence and honor her lifelong devotion to truth, scholarship, and her beloved homeland, Macedonia.
             </>
           }
         />
@@ -146,9 +153,8 @@ const Home = () => {
           img={"/images/logo-text.jpg"}
           text={
             <>
-            Your support of the Nade Proeva Endowment Fund will help inspire and empower the next generation
-            of historians dedicated to researching, preserving, and sharing Macedonian historical past. Every
-            gift strengthens this legacy. To help grow the Endowment contact{' '}
+            Your support of the <i>Nade Proeva Endowment Fund</i> will help inspire and empower the next generation
+            of historians dedicated to researching, preserving, and sharing Macedonian historical past. To help grow the Endowment contact{' '}
             <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline">
               info@macedonianarts.org
             </a>
