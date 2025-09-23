@@ -11,12 +11,12 @@ const Navbar = () => {
 
   const links = [
     { to: "/", label: "HOME" },
-    { to: "/about", label: "ABOUT" },
+    { to: "/bio", label: "BIO" },
     { to: "/books", label: "BOOKS" },
     { to: "/papers", label: "PAPERS" },
     { to: "/press", label: "PRESS" },
     { to: "/media", label: "MEDIA" },
-    { to: "/on-site", label: "ON SITE" },
+    { to: "/field-work", label: "FIELD WORK" },
     { to: "/remembering-nade", label: "REMEMBERING NADE" }
   ];
 

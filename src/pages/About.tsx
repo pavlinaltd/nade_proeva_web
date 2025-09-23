@@ -4,8 +4,8 @@ const About = () => {
   return (
     <>
     <SectionHeader
-      title="ABOUT"
-      subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
+      title="BIOGRAPHY"
+      subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history"
     />      
     <div className="animate-fade-in space-y-6 text-justify lg:mx-20">
       {/* Steinbeck quote */}

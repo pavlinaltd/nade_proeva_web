@@ -26,10 +26,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
+            <Route path="bio" element={<About />} />
             <Route path="books" element={<Books />} />
             <Route path="papers" element={<Papers />} />
-            <Route path="on-site" element={<OnSite />} />
+            <Route path="field-work" element={<OnSite />} />
             <Route path="press" element={<Press />} />
             <Route path="media" element={<Media />} />
             <Route path="remembering-nade" element={<Testimonials />} />

@@ -24,7 +24,7 @@ const Footer = () => {
                   <Link to="/" className="hover:underline">Home</Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline">About</Link>
+                  <Link to="/bio" className="hover:underline">Biography</Link>
                 </li>
               </ul>
               <ul className="space-y-2">
@@ -45,7 +45,7 @@ const Footer = () => {
               </ul>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/on-site" className="hover:underline">On Site</Link>
+                  <Link to="/field-work" className="hover:underline">Field Work</Link>
                 </li>
                 <li>
                   <Link to="/remembering-nade" className="hover:underline">Remembering Nade</Link>
