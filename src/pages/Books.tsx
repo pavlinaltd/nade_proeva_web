@@ -39,7 +39,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
         <img
           src={book.imageUrl}
           alt={book.title}
-          className="object-cover"
+          className="object-cover sm:border-r-4 md:border-r-8 xl:border-0 sm:border-r-gray-100"
         />
       </div>
       {/* Text content */}
