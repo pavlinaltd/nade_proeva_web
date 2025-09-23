@@ -34,8 +34,8 @@ const Home = () => {
   ];
 
   return (
-    <div className="animate-fade-in space-y-12 md:space-y-24">
-      {/* Hero Section */}        
+    <div className="animate-fade-in space-y-5 md:space-y-10">
+      {/* Hero Section */}
       <section className="relative p-5 md:p-10 lg:p-20 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
           <img
@@ -95,7 +95,7 @@ const Home = () => {
       </section>
 
       {/* Awards Section */}
-      <section className="container mx-auto px-4 w-full lg:w-3/5">
+      <section className="container mx-auto px-4 py-4 w-full lg:w-3/5">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg">
           {medals.map((medal, index) => (
             <img
@@ -110,7 +110,7 @@ const Home = () => {
       </section>
 
       {/* Video Section */}
-      <section className="container mx-auto px-4 w-full lg:w-3/5">
+      <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
         <div className="flex justify-center overflow-hidden">
           <video
             controls
@@ -127,7 +127,6 @@ const Home = () => {
       <section className="container flex flex-col sm:flex-row justify-between gap-5 md:gap-10 mx-auto px-4 w-full lg:w-4/5">
         {/* Book Feature Section */}
         <CardPair
-          // img={"images/from-her-lectures.jpg"}
           img={"/images/from-her-lessons.png"}
           text={
             <>To honor the legacy of a great teacher, six former students of Professor Dr. Nade Proeva
