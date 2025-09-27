@@ -119,7 +119,7 @@ const OnSite = () => {
     <div>
       <SectionHeader
         title="FIELD WORK"
-        subtitle="Sharing history with her students and foreign visitors interested in Macedonia's archeological past"
+        subtitle="Sharing Macedonia's archaeological past with her students and foreign visitors"
       />
 
       <div className="animate-fade-in lg:mx-20">
