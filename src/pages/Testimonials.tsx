@@ -109,20 +109,23 @@ const Testimonials = () => {
       {/* Column Items */}
       <div className="flex flex-col w-full">
         {/* Language Switch */}
-        <div className="flex self-start gap-2 mb-6 justify-start text-lg">
-          <span
-            className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
-          >
-            Original
-          </span>
-          <Switch
-            id="language-switch"
-            aria-label="Switch to English or Original"
-            className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
-            checked={isEnglish}
-            onCheckedChange={setIsEnglish}
-          />
-          <span className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}>English</span>
+        <div className="flex flex-col md:flex-row items-center gap-2 mb-6">
+          <div className="flex items-center gap-2 justify-start text-lg">
+            <p
+              className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
+            >
+              Original
+            </p>
+            <Switch
+              id="language-switch"
+              aria-label="Switch to English or Original"
+              className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
+              checked={isEnglish}
+              onCheckedChange={setIsEnglish}
+            />
+            <p className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}>English</p>
+          </div>
+          <p className="text-center md:text-left italic text-gray-500">* Translations are done by Google Translate and may have errors.</p>
         </div>
 
         {/* Content */}
