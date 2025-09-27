@@ -15,7 +15,7 @@ interface MediaItem {
 
 const LinkItem = ({ item }: { item: MediaItem }) => (
   <div
-    className="bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
+    className="bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min w-full"
     // Don't need lightbox for link
   >
     <div className="p-4">
@@ -68,11 +68,18 @@ const Testimonials = () => {
     }
   ];
 
-  const link: MediaItem = {
-    type: "link",
-    srcOriginal: "https://pretsedatel.mk/socuvstvo-nade-proeva/",
-    title: "From the President's Cabinet"
-  };
+  const links: MediaItem[] = [
+    {
+      type: "link",
+      srcOriginal: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
+      title: "From the President's Cabinet"
+    },
+    {
+      type: "link",
+      srcOriginal: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
+      title: "From the President's Cabinet"
+    }
+  ];
 
   const openLightbox = (image: MediaItem) => {
     setSelectedImage(image);
@@ -144,7 +151,11 @@ const Testimonials = () => {
       </div>
 
       {/* Link Item */}
-      <LinkItem item={link} />
+      <div className="w-full flex flex-col md:flex-row justify-start gap-10">
+        {links.map((link, index) => 
+          <LinkItem key={index} item={link} />
+        )}
+      </div>
     </div>
 
     {/* Lightbox */}
