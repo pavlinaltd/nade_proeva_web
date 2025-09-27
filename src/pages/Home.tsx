@@ -2,16 +2,17 @@ import { ReactNode } from "react";
 
 interface CardPairProps {
   img: string;
+  alt: string;
   text: ReactNode;
   imgClass?: string;
 }
-const CardPair = ({img, text, imgClass}: CardPairProps) => {
+const CardPair = ({img, alt, text, imgClass}: CardPairProps) => {
   return (
     <div className="flex flex-col sm:flex-row mx-auto w-full justify-center items-center sm:items-start gap-6 bg-gray-100 border border-gray-300 rounded-lg p-5">
       <img
         className={`w-[200px] md:self-stretch rounded-lg object-contain bg-white ${imgClass}`}
         src={img}
-        alt=""
+        alt={alt}
       />
 
       <div className="text-black text-justify justify-evenly mx-auto p-2">
@@ -128,7 +129,8 @@ const Home = () => {
       <section className="container flex flex-col justify-between gap-5 md:gap-10 mx-auto px-4 w-full lg:w-4/5 xl:w-3/5">
         {/* Book Feature Section */}
         <CardPair
-          img={"/images/from-her-lessons.png"}
+          img={"/images/from-her-lectures.jpg"}
+          alt={"From Her Lectures: Our Words Book Cover"}
           text={
             <>This volume is a tribute by six former students of Professor Dr. Nade Proeva, who came together to honor her legacy.
             It brings together their writings on Macedonian history, spanning archaeology, ethnology, anthropology, mythology, and religion from antiquity to the present.
@@ -140,6 +142,7 @@ const Home = () => {
         {/* Fund Call-to-Action */}
         <CardPair
           img={"/images/logo-text.jpg"}
+          alt={"Nade Proeva Endowment Fund Logo"}
           text={
             <>
             Your support of the <i>Nade Proeva Endowment Fund</i> will help inspire and empower the next generation
