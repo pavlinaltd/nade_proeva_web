@@ -233,7 +233,7 @@ const Press = () => {
               <img
               src={isEnglish ? col.pageImagesEnglish?.[0] || col.pageImagesOriginal?.[0] : col.pageImagesOriginal?.[0]}
               alt={col.title}
-              className={col.orientation === "vertical" ? "object-scale-down" : "w-full object-scale-down object-top h-min"}
+              className={col.orientation === "vertical" ? "object-scale-down" : "w-full object-scale-down object-top"}
               />
               <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
               <Expand
