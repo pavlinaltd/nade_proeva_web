@@ -18,17 +18,6 @@ const CardPair = ({img, text, imgClass}: CardPairProps) => {
         <p>{text}</p>
       </div>
     </div>
-
-    // <div className="w-full lg:w-[400px] flex flex-col mx-auto justify-start items-center gap-2 bg-gray-100 border border-gray-300 rounded-lg">
-    //   <img
-    //     className={`w-full lg:w-[400px] h-[275px] lg:h-[400px] rounded-t-lg object-contain bg-white ${imgClass}`}
-    //     src={img}
-    //     alt=""
-    //   />
-    //   <div className="text-black text-justify justify-evenly mx-auto p-5">
-    //     <p>{text}</p>
-    //   </div>
-    // </div>
   )
 }
 
