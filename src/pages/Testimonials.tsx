@@ -103,7 +103,7 @@ const Testimonials = () => {
       {/* Video Feature */}
       <VideoPlayerItem
         src={"/images/memories/nade.mp4"}
-        className="h-full object-cover mb-6 border border-burgundy-700 rounded-lg"
+        className="w-full lg:w-4/5 h-full object-cover mb-6 border border-burgundy-700 rounded-lg"
       />
 
       {/* Column Items */}
