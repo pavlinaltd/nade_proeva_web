@@ -12,6 +12,7 @@ import {
 import { VideoPlayer, VideoPlayerContent, VideoPlayerControlBar, VideoPlayerFullscreenButton, VideoPlayerMuteButton, VideoPlayerPlayButton, VideoPlayerSeekBackwardButton, VideoPlayerSeekForwardButton, VideoPlayerTimeDisplay, VideoPlayerTimeRange, VideoPlayerVolumeRange } from "@/components/ui/shadcn-io/video-player";
 
 interface BookProps {
+  makeCard: boolean;
   title: string;
   originalTitle?: string;
   author?: string;
@@ -164,6 +165,7 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
 const Books = () => {
   const books: BookProps[] = [
     {
+      makeCard: false,
       title: "Demosten",
       originalTitle: "Демостен",
       author: "Pierre Carlier",
@@ -176,6 +178,7 @@ const Books = () => {
       isbn: "9989-693-00-5",
     },
     {
+      makeCard: false,
       title: "Alexander the Great",
       originalTitle: "Александар Велики",
       author: "Pierre Briant",
@@ -185,6 +188,7 @@ const Books = () => {
       isbn: "2715401841",
     },
     {
+      makeCard: false,
       title: "History of the Hellenistic Period",
       originalTitle: "История на Хеленистичкиот Период",
       author: "Fanula Papazoglu",
@@ -196,6 +200,7 @@ const Books = () => {
       isbn: "9989-693-03-X",
     },
     {
+      makeCard: false,
       title: "For the Illyrians from Bardilis to Ghenti IV - 2nd Century B.C.",
       originalTitle: "За Иилирите од Бардилис до Гентиј",
       author: "Pierre Cabannes",
@@ -204,6 +209,7 @@ const Books = () => {
       isbn: "9989-677-12-3",
     },
     {
+      makeCard: true,
       title: "Studies of the Ancient Macedonians",
       originalTitle: "Студии за Античките Македонци",
       author: "Nade Proeva",
@@ -219,6 +225,7 @@ const Books = () => {
       promoVideo: "/images/books/studies-promo.mp4"
     },
     {
+      makeCard: false,
       title: "Cradle of Macedonian Statehood",
       originalTitle: "Лулката на Македонската Државност",
       author: "Alfred Delakoulonša",
@@ -233,6 +240,7 @@ const Books = () => {
       isbn: "9989-619-40-9",
     },
     {
+      makeCard: true,
       title: "History of the Argeadites",
       originalTitle: "Историја на Аргеадите",
       author: "Nade Proeva",
@@ -248,6 +256,7 @@ const Books = () => {
       promoImage: "/images/books/istorija-promo.jpg",
     },
     {
+      makeCard: false,
       title: "Parallel Hagiographies",
       originalTitle: "Напоредни Животописи",
       author: "Ploutarchos",
@@ -256,9 +265,10 @@ const Books = () => {
       publisher: "Evro-Balkan Pres, Skopje",
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "7",
-      isbn: "",
+      isbn: "978-9989-136-63-4",
     },
     {
+      makeCard: false,
       title: "History of Epigonites",
       originalTitle: "Историја на Епигоните",
       author: "Fanula Papazoglu",
@@ -269,12 +279,14 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "9",
       description: "A scholarly analysis of the period following Alexander the Great's death, examining the complex power dynamics and conflicts among his successors known as the Epigoni.",
-      isbn: "",
+      isbn: "978 N-9989-297 9788 78-0-9",
     },
     {
+      makeCard: false,
       title: "Alexander of Macedon",
       originalTitle: "Александар Македонски",
-      editor: "Nade Proeva",
+      author: "Nade Proeva",
+      editor: "Introductory Study & Lexicographic Dictionary",
       translator: "Vojislav Sarakinski",
       year: "2012",
       publisher: "Grafotisok, Skopje, Macedonia",
@@ -284,6 +296,7 @@ const Books = () => {
       isbn: "978-9989-2978-2-3",
     },
     {
+      makeCard: true,
       title: "Religion of the Ancient Macedonians",
       originalTitle: "Религијата на Античките Македонци",
       author: "Nade Proeva",
@@ -300,6 +313,7 @@ const Books = () => {
       promoAudio: "/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
     },
     {
+      makeCard: true,
       title: "Gambling for Macedonia: A Triptych of Fractured Truths",
       originalTitle: "Триптих за Македонскиот Идентитет",
       author: "Nade Proeva",
@@ -315,6 +329,7 @@ const Books = () => {
       promoImage: "/images/books/triptych-promo.jpg",
     },
     {
+      makeCard: false,
       title: "National Awareness of the Macedonian Slavs",
       originalTitle: "Народносната Свест на Македонските Словени",
       author: "Angel Dinev",
@@ -339,7 +354,7 @@ const Books = () => {
 
       <div className="animate-fade-in">
         <div className="space-y-8 lg:mx-20">
-          {books.filter((book) => book.author === "Nade Proeva").map((book, index) => (
+          {books.filter((book) => book.makeCard === true).map((book, index) => (
             <BookCard key={index} book={book} />
           ))}
         </div>
