@@ -30,13 +30,17 @@ const Home = () => {
       title: "Chevalier des Palmes Académiques",
     },
     {
+      src: "/images/faculty-skopje.jpg",
+      title: "Faculty of Philosophy in Skopje",
+    },
+    {
       src: "/images/certifikat.jpg",
       title: "Filozovski Fakultet",
     },
   ];
 
   return (
-    <div className="animate-fade-in space-y-5 md:space-y-10">
+    <div className="animate-fade-in space-y-10">
       {/* Hero Section */}
       <section className="relative p-5 md:p-10 lg:p-20 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
@@ -97,15 +101,15 @@ const Home = () => {
       </section>
 
       {/* Awards Section */}
-      <section className="container mx-auto px-4 py-4 w-full lg:w-3/5">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg">
+      <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-lg">
           {medals.map((medal, index) => (
             <img
               key={index}
               src={medal.src}
               alt={`${medal.title} Certificate and Medal`}
               title={medal.title}
-              className="rounded-lg max-h-[200px] max-w-[400px] bg-gradient-to-b to-yellow-600 from-yellow-300 p-3"
+              className="rounded-lg w-full sm:w-2/3 lg:w-full bg-gradient-to-b to-yellow-600 from-yellow-300 p-3"
             />
           ))}
         </div>
