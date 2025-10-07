@@ -47,7 +47,7 @@ const Media = () => {
   {
     src: "https://www.youtube.com/embed/PABGFsmHnhk",
     title: "Historical Focus - Историски Фокус, July 19, 2024",
-  }
+  };
 
   const audios: VideoItem[] = [
     {
@@ -102,15 +102,15 @@ const Media = () => {
       format: "mp4",
       src: "/videos/video0.mp4",
       title: "",
-      caption: "The Book Launch"
+      caption: "The Book Launch of \"Religion of the Ancient Macedonians\"",
     },
     {
       format: "mp4",
       src: "/videos/AnticMacedonians.mp4",
       title: "",
-      caption: "AnticMacedonians"
+      caption: "TBD"
     }
-  ]
+  ];
 
   return (
     <>
