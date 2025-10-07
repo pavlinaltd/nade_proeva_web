@@ -101,9 +101,10 @@ const Testimonials = () => {
     {/* Container */}
     <div className="lg:mx-20 flex flex-col items-center gap-10">
       {/* Video Feature */}
-      <VideoPlayerItem
-        src={"/images/memories/nade.mp4"}
-        className="w-full lg:w-4/5 h-full object-cover mb-6 border border-burgundy-700 rounded-lg"
+      <img
+        src="/public/images/handwritten-by-students.png"
+        alt="Notes handwritten by her students"
+        className="w-full lg:w-4/5 h-full object-cover mb-6"
       />
 
       {/* Column Items */}
