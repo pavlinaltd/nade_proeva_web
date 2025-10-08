@@ -99,16 +99,20 @@ const Media = () => {
       title: "Промовирана книгата „Историјата на античките Македонци“",
     },
     {
-      format: "mp4",
-      src: "/videos/video0.mp4",
-      title: "",
-      caption: "The Book Launch of \"Religion of the Ancient Macedonians\"",
+      format: "youtube",
+      src: "https://www.youtube.com/embed/ZihWB1FxgqI",
+      title: "ЗАСПИЈ АКО МОЖЕШ (08.02.2023) ГОСТИН: НАДЕ ПРОЕВА",
+    },
+    {
+      format: "youtube",
+      src: "https://www.youtube.com/embed/xH2QAYmX9YM",
+      title: "Н ПРОЕВА,КОРЕНИТЕ НИ СЕ СЛОВЕНСКИ 23 04 2015",
     },
     {
       format: "mp4",
       src: "/videos/AnticMacedonians.mp4",
       title: "",
-      caption: "TBD"
+      caption: "Interview - Macedonian National TV"
     }
   ];
 
