@@ -76,8 +76,18 @@ const Testimonials = () => {
     },
     {
       type: "link",
-      srcOriginal: "https://www.facebook.com/share/v/1CK234Kdvz/",
-      title: "Facebook Link (Needs name)"
+      srcOriginal: "https://www.slobodenpecat.mk/hr/pochina-renomiranata-istoricharka-nade-proeva-beshe-ekspert-za-stariot-vek-i-antichkite-makedonci/",
+      title: "Sloboden Pecat"
+    },
+    {
+      type: "link",
+      srcOriginal: "https://meta.mk/na-75-godishna-vozrast-pochina-profesorkata-nade-proeva/",
+      title: "Meta"
+    },
+    {
+      type: "link",
+      srcOriginal: "https://lider.mk/pochina-najgolemata-ekspertka-za-antichka-makedonija-profesorkata-proeva-kje-bide-zakopana-na-grobishtata-vo-butel/",
+      title: "Lider"
     }
   ];
 
