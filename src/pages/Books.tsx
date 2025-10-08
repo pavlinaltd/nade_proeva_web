@@ -184,7 +184,8 @@ const Books = () => {
       author: "Pierre Briant",
       editor: "Nade Proeva",
       year: "1997",
-      publisher: "QUE SAIS JE",
+      publisher: "Biblioteka HISTORIA ANTIQUA MACEDONICA",
+      series: "HISTORIA ANTIQUA MACEDONICA",
       isbn: "2715401841",
     },
     {
@@ -206,6 +207,8 @@ const Books = () => {
       author: "Pierre Cabannes",
       editor: "Nade Proeva",
       year: "1994",
+      publisher: "Biblioteka HISTORIA ANTIQUA MACEDONICA",
+      series: "HISTORIA ANTIQUA MACEDONICA",
       isbn: "9989-677-12-3",
     },
     {
