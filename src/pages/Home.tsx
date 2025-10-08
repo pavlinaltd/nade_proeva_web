@@ -50,7 +50,7 @@ const Home = () => {
 
       {/* Introduction Section */}
       <section className="container mx-auto px-4 w-full lg:w-4/5">
-        <div className="flex flex-col gap-8 justify-center items-center text-justify text-gray-700">
+        <div className="flex flex-col gap-8 justify-center items-center text-justify text-black">
           <p className="leading-relaxed lg:text-xl">
             <strong>Professor Dr. Nade Proeva</strong> was a distinguished Macedonian historian and classicist who
             served as a full professor at the Faculty of Philosophy, Department of History, at Ss.
@@ -78,7 +78,7 @@ const Home = () => {
 
       {/* Awards Section */}
       <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-lg">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10 rounded-lg">
           {medals.map((medal, index) => (
             <img
               key={index}
@@ -108,18 +108,18 @@ const Home = () => {
       {/* Combined */}
       <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5">
         {/* Book Feature Section */}
-        <div className="flex flex-col sm:flex-row mx-auto w-full xl:w-2/3 justify-center items-center sm:items-start gap-6 rounded-lg">
+        <div className="flex flex-col sm:flex-row mx-auto w-full xl:w-2/3 justify-center items-center gap-6 rounded-lg">
           <img
             className={`w-[250px] md:self-stretch rounded-lg object-contain bg-white`}
             src="/images/from-her-lectures.jpg"
             alt="From Her Lectures: Our Words Book Cover"
           />
 
-          <div className="text-black text-justify justify-evenly mx-auto p-2">
+          <div className="text-black text-justify mx-auto p-2">
             <p className="lg:text-xl">
               This volume is a tribute by six former students of Professor Dr. Nade Proeva, who came together to honor her legacy.
               It brings together their writings on Macedonian history, spanning archaeology, ethnology, anthropology, mythology, and religion from antiquity to the present.
-              Through these pages, they celebrate their teacher's lasting influence and honor her lifelong devotion to truth, scholarship, and her beloved homeland, <strong>Macedonia</strong>.
+              Through these pages, they celebrate their teacher's lasting influence and honor her lifelong devotion to truth, scholarship, and her beloved homeland, Macedonia.
             </p>
           </div>
         </div>
