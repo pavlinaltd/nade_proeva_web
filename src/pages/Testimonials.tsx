@@ -76,8 +76,8 @@ const Testimonials = () => {
     },
     {
       type: "link",
-      srcOriginal: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
-      title: "From the President's Cabinet"
+      srcOriginal: "https://www.facebook.com/share/v/1CK234Kdvz/",
+      title: "Facebook Link (Needs name)"
     }
   ];
 
