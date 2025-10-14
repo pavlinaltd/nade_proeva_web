@@ -11,13 +11,13 @@ const Navbar = () => {
 
   const links = [
     { to: "/", label: "HOME" },
-    { to: "/about", label: "ABOUT" },
+    { to: "/bio", label: "BIO" },
     { to: "/books", label: "BOOKS" },
     { to: "/papers", label: "PAPERS" },
-    { to: "/columns", label: "PRESS" },
+    { to: "/press", label: "PRESS" },
     { to: "/media", label: "MEDIA" },
-    { to: "/on-site", label: "ON SITE" },
-    { to: "/testimonials", label: "REMEMBERING NADE" }
+    { to: "/field-work", label: "FIELD WORK" },
+    { to: "/remembering-nade", label: "REMEMBERING NADE" }
   ];
 
   useEffect(() => {
@@ -27,16 +27,16 @@ const Navbar = () => {
 
   return (
     <header className="bg-yellow-400 border-b border-burgundy-200">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-[1450px] mx-auto px-4 py-4">
+        <div className="flex items-center justify-between gap-5">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              {/* <img
-                src="/logo_italic.jpg" 
-                alt="The Nade Proeva Endowment Fund" 
+              <img
+                src="/images/logo-blank.png"
+                alt="Logo" 
                 className="h-10 w-auto"
-              /> */}
+              />
               <h1 className="text-xl font-bold text-black">
                 Professor Dr. Nade Proeva
               </h1>
@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="flex flex-row gap-8 items-center space-x-1 hidden font-semibold font-vollkornsc lg:block lg:text-xs xl:text-base">
+          <NavigationMenu className="flex-row space-x-1 font-semibold font-vollkornsc hidden lg:block lg:text-sm xl:text-base">
             <NavigationMenuList>
               {links.map((link) => (
                 <NavigationMenuItem key={link.to}>

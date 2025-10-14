@@ -20,18 +20,18 @@ interface VideoItem {
   caption?: string;
 }
 
-const VideoPlayerItem = ({ item, className }: { item: VideoItem, className?: string }) => (
-  <VideoPlayer className={`video-player overflow-hidden shadow-lg ${className ?? ""}`}>
+const VideoPlayerItem = ({ src, className }: { src: string, className?: string }) => (
+  <VideoPlayer className={`video-player overflow-hidden aspect-video shadow-lg ${className ?? ""}`}>
     <VideoPlayerContent
       crossOrigin=""
       preload="auto"
       slot="media"
-      src={item.src}
+      src={src}
     />
     <VideoPlayerControlBar>
       <VideoPlayerPlayButton />
-      <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
-      <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
+      <VideoPlayerSeekBackwardButton className="hidden xl:inline-flex" />
+      <VideoPlayerSeekForwardButton className="hidden xl:inline-flex" />
       <VideoPlayerTimeRange />
       <VideoPlayerTimeDisplay showDuration />
       <VideoPlayerMuteButton />
@@ -47,7 +47,7 @@ const Media = () => {
   {
     src: "https://www.youtube.com/embed/PABGFsmHnhk",
     title: "Historical Focus - Историски Фокус, July 19, 2024",
-  }
+  };
 
   const audios: VideoItem[] = [
     {
@@ -84,33 +84,49 @@ const Media = () => {
     {
       format: "mp4",
       src: "/videos/Speech-2004-Prilep.mp4",
-      title: "Interview on Ancient Macedonian Identity",
+      title: "Video of the unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
       caption: "The unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
     },
     {
       format: "mpg",
       src: "/videos/ON-TV-NOVA-2005.mp4",
-      title: "Interview on Ancient Macedonian Identity",
+      title: "TV NOVA in Strumica, Macedonia - 2005",
       caption: "Strumica, Macedonia, TV NOVA - 2005",
     },
     {
       format: "youtube",
       src: "https://www.youtube.com/embed/BttNSpnJ92k",
       title: "Промовирана книгата „Историјата на античките Македонци“",
-
+    },
+    {
+      format: "youtube",
+      src: "https://www.youtube.com/embed/ZihWB1FxgqI",
+      title: "ЗАСПИЈ АКО МОЖЕШ (08.02.2023) ГОСТИН: НАДЕ ПРОЕВА",
+    },
+    {
+      format: "youtube",
+      src: "https://www.youtube.com/embed/xH2QAYmX9YM",
+      title: "Н ПРОЕВА,КОРЕНИТЕ НИ СЕ СЛОВЕНСКИ 23 04 2015",
+    },
+    {
+      format: "mp4",
+      src: "/videos/AnticMacedonians.mp4",
+      title: "",
+      caption: "Interview - Macedonian National TV"
     }
-  ]
+  ];
 
   return (
     <>
     <SectionHeader
       title="MEDIA"
-      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations."
+      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations"
     />
 
     {/* Content Wrapper */}
-    <div className="animate-fade-in">
+    <div className="animate-fade-in lg:mx-20">
       <div className="flex flex-col lg:flex-row justify-center mt-4 items-start gap-20 lg:gap-10">
+
         {/* Video */}
         <div className="flex flex-col gap-10 mx-auto w-full md:w-4/5 lg:w-1/2">
           <h3 className="text-2xl font-bold text-center text-burgundy-900">VIDEO</h3>
@@ -118,6 +134,7 @@ const Media = () => {
           {videos.map((video, index) => (
             <div
               key={index}
+              className="relative w-full flex flex-col"
             >{ video.format === "youtube" ? 
               (
                 <iframe
@@ -128,13 +145,13 @@ const Media = () => {
                 </iframe>
               ) : (
                 <>
-                <div className="rounded-t-lg p-4 bg-gradient-to-b from-burgundy-700 via-burgundy-700 to-burgundy-950">
-                  <p className="font-droidsans text-white mb-1">{video.caption}</p>
+                <div className="rounded-t-lg p-3 md:p-4 bg-gradient-to-b from-burgundy-700/90 from-50% via-burgundy-700/70 via-70% to-transparent to-100% absolute top-0 left-0 z-10 w-full">
+                  <p className="font-droidsans text-white xl:text-lg font-bold mb-1">{video.caption}</p>
                 </div>
               
                 <VideoPlayerItem
-                  className="rounded-b-lg border-l border-r border-burgundy-700"
-                  item={video}
+                  src={video.src}
+                  className="rounded-lg border-l border-r border-burgundy-700"
                 />
                 </>
               )
@@ -162,33 +179,9 @@ const Media = () => {
             {audios.map((audio, index) => (
               <VideoPlayerItem
                 key={index}
-                item={audio}
+                src={audio.src}
                 className="border border-burgundy-700 rounded-lg"
               />
-              // <div
-              //   key={index} 
-              //   className="bg-burgundy-600 hover:bg-burgundy-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min"
-              //   // onClick={() => openLightbox(photo)}
-              //   // Don't need lightbox for audio
-              // >
-              //   <div className="p-4">
-              //     <a
-              //       href='' //{audio.src}
-              //       target="_blank"
-              //       title=""
-              //       className="flex gap-4 items-center"
-              //     >
-              //       <Headphones className="text-white" />
-              //       <div className="text-sm flex flex-row text-white w-full justify-between">
-              //         <div className="flex-col">
-              //           <p /*className="font-bold"*/>{audio.english}</p>
-              //           <p>{audio.original}</p>
-              //         </div>
-              //         <p className="text-burgundy-200 self-center">{audio.date}</p>
-              //       </div>
-              //     </a>
-              //   </div>
-              // </div>
             ))}
           </div>
         </div>

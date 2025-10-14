@@ -1,4 +1,3 @@
-
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
@@ -96,7 +95,7 @@ const Papers = () => {
           contacting the Department of History at Ss. Cyril and Methodius University in Skopje, Macedonia.
           A list of her most popular papers are here."
       />
-      <div className="animate-fade-in">
+      <div className="animate-fade-in lg:mx-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
           {papers.map((paper, index) => (
             <div key={index} className="bg-gray-100 rounded-lg border border-gray-300 p-6 shadow-lg flex flex-col justify-between">
@@ -112,7 +111,7 @@ const Papers = () => {
                   <p className="text-gray-700 mb-4">{paper.abstract}</p>
                 )}
               </div>
-              <Button asChild variant="ghost" size="sm" className="self-endflex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white">
+              <Button asChild variant="ghost" size="sm" className="self-endflex items-center gap-2 bg-burgundy-700 hover:bg-burgundy-900 text-white">
                 <a href={paper.url} target="_blank" rel="noopener noreferrer">
                   <span>Read on Academia.edu</span>
                   <ExternalLink size={16} />

@@ -25,3 +25,9 @@ dist-ssr
 
 # Media
 public/audio
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

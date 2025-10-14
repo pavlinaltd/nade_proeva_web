@@ -4,12 +4,12 @@ const About = () => {
   return (
     <>
     <SectionHeader
-      title="About Professor Dr. Nade Proeva"
-      subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history."
+      title="BIOGRAPHY"
+      subtitle="A distinguished historian, classicist, and dedicated educator whose work has left an indelible mark on the study of Macedonian history"
     />      
-    <div className="animate-fade-in space-y-6 text-justify w-full md:w-3/4 mx-auto">
+    <div className="animate-fade-in space-y-6 text-justify lg:mx-20">
       {/* Steinbeck quote */}
-      <div className="w-full md:w-1/2 md:float-left bg-gray-300 p-8 mr-5 mb-5 text-gray-800">
+      <div className="w-full md:w-1/2 md:float-left bg-yellow-500 p-6 md:p-8 mr-0 md:mr-5 text-black rounded-sm">
         <blockquote className="lg:text-xl">
           "<i>
             I have come to believe that a great teacher is a great artist and that there are as a few as
@@ -31,7 +31,7 @@ const About = () => {
       <p>
         Her book <em>History of the Argeads</em> (2004) was the first university textbook in Macedonia
         dedicated to the ancient Macedonians and became a foundational text in the field. As editor of
-        the <em>Historia Antiqua Macedonica</em> (HAM) and <em>Bibliotheca Miscellanea Byzantino-Macedonica</em>
+        the <em>Historia Antiqua Macedonica</em> (HAM) and <em>Bibliotheca Miscellanea Byzantino-Macedonica </em>
         series, she introduced vital historical works to Macedonian readers. Her editions featured translations,
         scholarly notes, indexes, prefaces, and custom maps that significantly enriched the academic landscape.
       </p>

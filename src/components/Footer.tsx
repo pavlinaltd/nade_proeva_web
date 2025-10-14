@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-b from-amber-500 to-yellow-100 text-white py-8">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1450px] mx-auto px-4">
         <div
           // className="grid grid-cols-3 gap-8"
           className="flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-0"
@@ -24,7 +24,7 @@ const Footer = () => {
                   <Link to="/" className="hover:underline">Home</Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline">About</Link>
+                  <Link to="/bio" className="hover:underline">Biography</Link>
                 </li>
               </ul>
               <ul className="space-y-2">
@@ -37,7 +37,7 @@ const Footer = () => {
               </ul>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/columns" className="hover:underline">Columns</Link>
+                  <Link to="/press" className="hover:underline">Press</Link>
                 </li>
                 <li>
                   <Link to="/media" className="hover:underline">Media</Link>
@@ -45,10 +45,10 @@ const Footer = () => {
               </ul>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/on-site" className="hover:underline">On Site</Link>
+                  <Link to="/field-work" className="hover:underline">Field Work</Link>
                 </li>
                 <li>
-                  <Link to="/testimonials" className="hover:underline">Remembering Nade</Link>
+                  <Link to="/remembering-nade" className="hover:underline">Remembering Nade</Link>
                 </li>
               </ul>
             </div>

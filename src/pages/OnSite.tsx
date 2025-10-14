@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { X } from "lucide-react";
+import { Expand, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Photo {
   type: "image" | "video";
@@ -106,50 +105,6 @@ const OnSite = () => {
     },
   ];
 
-  // const videos: MediaItem[] = [
-  //   {
-  //     type: "video",
-  //     src: "#",
-  //     thumbnail: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-  //     title: "Interview on Ancient Macedonian Identity",
-  //     caption: "Professor Proeva discusses her research on ancient Macedonian ethnic identity and cultural distinctiveness.",
-  //     year: "2015"
-  //   },
-  //   {
-  //     type: "video",
-  //     src: "#",
-  //     thumbnail: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
-  //     title: "Documentary: The Macedonian Question",
-  //     caption: "A short documentary featuring Professor Proeva's insights on the historical Macedonian question.",
-  //     year: "2008"
-  //   },
-  //   {
-  //     type: "video",
-  //     src: "#",
-  //     thumbnail: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-  //     title: "Lecture on Alexander the Great",
-  //     caption: "A recorded lecture on Alexander the Great from a Macedonian historical perspective.",
-  //     year: "2016"
-  //   }
-  // ];
-
-  // const news: MediaItem[] = [
-  //   {
-  //     type: "image",
-  //     src: "/lovable-uploads/2ef56b0a-f180-4990-9f80-6f37c63e77de.png",
-  //     title: "Press Coverage",
-  //     caption: "Professor Proeva speaking to journalists about her latest research findings on ancient Macedonian civilization.",
-  //     year: "1999"
-  //   },
-  //   {
-  //     type: "image",
-  //     src: "/lovable-uploads/44b706b2-4703-46fa-bff5-f685fd5cc269.png",
-  //     title: "Award Ceremony Coverage",
-  //     caption: "Media coverage of Professor Proeva's lecture at the ceremony where she received the State Award for Academic Achievement in History.",
-  //     year: "2008"
-  //   }
-  // ];
-
   const openLightbox = (image: Photo) => {
     setSelectedImage(image);
     document.body.style.overflow = "hidden";
@@ -163,11 +118,11 @@ const OnSite = () => {
   return (
     <div>
       <SectionHeader
-        title="SHARING HISTORY"
-        subtitle="...with her students and foreign visitors interested in Macedonia's archeological past."//TODO: reword
+        title="FIELD WORK"
+        subtitle="Sharing Macedonia's archaeological past with her students and foreign visitors"
       />
 
-      <div className="animate-fade-in">
+      <div className="animate-fade-in lg:mx-20">
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           // className="flex flex-wrap gap-6 items-start justify-between align-left"
@@ -175,7 +130,7 @@ const OnSite = () => {
           {photos.map((photo, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-auto"//TODO: fix widths to fit max margins
+              className="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer transform h-auto"
               onClick={() => openLightbox(photo)}
             >
               <div className="overflow-hidden">
@@ -186,6 +141,13 @@ const OnSite = () => {
                     'object-cover w-full h-[300px]'
                   }
                 />
+                <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
+                <Expand
+                  className={`text-white drop-shadow-2xl w-14 h-14
+                    ${photo.orientation === "vertical" ? "w-14 h-14" : "w-10 h-10"}
+                  `}
+                />
+                </span>
               </div>
             </div>
           ))}
@@ -201,26 +163,23 @@ const OnSite = () => {
           <div
             className={
               selectedImage.orientation === "vertical" ? 'w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl' :
-              'w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl'
+              'w-[1000px] bg-white overflow-hidden shadow-2xl'
             }
-            // className="max-w-xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative">
-              <img
-                src={selectedImage.src}
-                alt=""
-                className="w-full h-auto object-fit"
-              />
-              <Button
-                variant="secondary"
-                size="icon"
-                className="absolute top-4 right-4 rounded-full bg-white/80 hover:bg-burgundy-500 hover:text-white"
-                onClick={closeLightbox}
-              >
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
+            <img
+              src={selectedImage.src}
+              alt=""
+              className="w-full h-auto object-fit"
+            />
+            <Button
+              variant="secondary"
+              size="icon"
+              className="absolute top-4 right-4 rounded-full border border-white text-white bg-burgundy-700 hover:bg-burgundy-900"
+              onClick={closeLightbox}
+            >
+              <X className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       )}

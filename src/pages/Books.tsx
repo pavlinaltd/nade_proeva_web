@@ -12,6 +12,7 @@ import {
 import { VideoPlayer, VideoPlayerContent, VideoPlayerControlBar, VideoPlayerFullscreenButton, VideoPlayerMuteButton, VideoPlayerPlayButton, VideoPlayerSeekBackwardButton, VideoPlayerSeekForwardButton, VideoPlayerTimeDisplay, VideoPlayerTimeRange, VideoPlayerVolumeRange } from "@/components/ui/shadcn-io/video-player";
 
 interface BookProps {
+  makeCard: boolean;
   title: string;
   originalTitle?: string;
   author?: string;
@@ -33,36 +34,36 @@ interface BookProps {
 const BookCard = ({ book }: { book: BookProps }) => {
   return (
     // Original
-    <div className="bg-gray-100 border border-gray-300 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap xl:flex-nowrap">
+    <div className="bg-gray-100 border border-gray-300 rounded-md shadow-lg overflow-hidden flex flex-col sm:flex-row flex-wrap xl:flex-nowrap mx-auto max-w-[400px] sm:max-w-[450px] sm:w-[450px] md:max-w-full lg:max-w-[800px] xl:max-w-full md:w-full">
       {/* Book image */}
       <div className="mx-auto object-scale-down w-full sm:w-1/2 xl:w-1/3 flex order-0">
         <img
           src={book.imageUrl}
           alt={book.title}
-          className="object-cover"
+          className="object-cover sm:border-r-4 md:border-r-8 xl:border-0 sm:border-r-gray-100"
         />
       </div>
       {/* Text content */}
-      <div className="flex gap-16 w-full xl:w-1/2 p-6 order-1 sm:order-2 xl:order-1">
+      <div className="flex gap-16 w-full xl:w-1/2 p-3 md:p-6 order-1 sm:order-2 xl:order-1">
         <div
           className="flex flex-col justify-between"
         >
           <div>
             <h3 className="md:text-lg xl:text-xl font-semibold text-burgundy-800 mb-2">{book.title.toUpperCase()}</h3>
             {book.originalTitle && (
-              <p className="text-xs md:text-sm xl:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
+              <p className="text-sm xl:text-base text-gray-600 mb-2">Original title: {book.originalTitle}</p>
             )}
-            <div className="text-xs md:text-sm xl:text-base text-gray-500 mb-4">
+            <div className="text-sm xl:text-base text-gray-500 mb-4">
               {book.author && <p>Author: {book.author}</p>}
               <p>Editor: {book.editor}</p>
               {book.translator && <p>Translator: {book.translator}</p>}
               <p>{book.year} • {book.publisher}</p>
               <p>Series: {book.series} {book.volume && `• Volume ${book.volume}`}</p>
             </div>
-            <p className="text-xs md:text-sm xl:text-base text-gray-700 text-justify mb-4">{book.description}</p>
+            <p className="text-sm xl:text-base text-gray-700 text-justify mb-4">{book.description}</p>
           </div>
           {book.amazonUrl ? (
-            <Button className="flex items-center gap-2 bg-burgundy-600 hover:bg-burgundy-700 text-white" asChild>
+            <Button className="flex items-center gap-2 bg-burgundy-700 hover:bg-burgundy-900 text-white" asChild>
               <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={16} />
                 Find on Amazon Books
@@ -76,7 +77,7 @@ const BookCard = ({ book }: { book: BookProps }) => {
       </div>
       {/* Promo section */}
       {(book.promoImage || book.promoAudio || book.promoVideo) && (
-        <div className="flex flex-col order-2 sm:order-1 xl:order-2 justify-center items-center gap-10 w-full sm:w-1/2 xl:w-1/3 bg-gray-300 p-6">
+        <div className="flex flex-col order-2 sm:order-1 xl:order-2 justify-center items-center gap-10 w-full sm:w-1/2 xl:w-1/3 overflow-hidden bg-gray-300 p-3 md:p-6">
           {book.promoImage && (
             <img
               src={book.promoImage}
@@ -93,14 +94,14 @@ const BookCard = ({ book }: { book: BookProps }) => {
                 slot="media"
                 src={book.promoVideo}
               />
-              <VideoPlayerControlBar className="">
+              <VideoPlayerControlBar>
                 <VideoPlayerPlayButton />
-                <VideoPlayerSeekBackwardButton className="hidden sm:hidden xl:hidden" />
-                <VideoPlayerSeekForwardButton className="hidden sm:hidden xl:hidden" />
+                <VideoPlayerSeekBackwardButton className="hidden" />
+                <VideoPlayerSeekForwardButton className="hidden" />
                 <VideoPlayerTimeRange />
-                <VideoPlayerTimeDisplay showDuration className="sm:hidden"/>
-                <VideoPlayerMuteButton className="sm:hidden"/>
-                <VideoPlayerVolumeRange className="hidden sm:hidden xl:hidden" />
+                <VideoPlayerTimeDisplay showDuration className="sm:hidden" />
+                <VideoPlayerMuteButton className="sm:hidden" />
+                <VideoPlayerVolumeRange className="hidden" />
                 <VideoPlayerFullscreenButton />
               </VideoPlayerControlBar>
             </VideoPlayer>
@@ -122,8 +123,13 @@ const BookCard = ({ book }: { book: BookProps }) => {
 };
 
 const BookTable = ({ books }: { books: BookProps[] }) => {
+
+  const checkData = (data: string) => {
+    return data && data.trim() !== "" ? data : "-";
+  }
+
   return (
-    <div className="rounded-md border border-burgundy-900 my-8 overflow-x-auto">
+    <div className="rounded-md border border-burgundy-900 my-8">
       <Table>
         <TableHeader>
           <TableRow>
@@ -140,14 +146,14 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
         <TableBody>
           {books.map((book, index) => (
             <TableRow className={index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"} key={index}>
-              <TableCell className={index === books.length - 1 && "rounded-bl-md"}>{book.title}</TableCell>
-              <TableCell>{book.originalTitle}</TableCell>
-              <TableCell>{book.author}</TableCell>
-              <TableCell>{book.editor}</TableCell>
-              <TableCell>{book.series} {book.volume && `Vol. ${book.volume}`}</TableCell>
-              <TableCell>{book.year}</TableCell>
-              <TableCell>{book.publisher}</TableCell>
-              <TableCell className={index === books.length - 1 ? "rounded-br-md border-r-0" : "border-r-0"}>{book.isbn}</TableCell>
+              <TableCell className={index === books.length - 1 && "rounded-bl-md"}>{checkData(book.title)}</TableCell>
+              <TableCell>{checkData(book.originalTitle)}</TableCell>
+              <TableCell>{checkData(book.author)}</TableCell>
+              <TableCell>{checkData(book.editor)}</TableCell>
+              <TableCell>{checkData(book.series)} {book.volume && `Vol. ${book.volume}`}</TableCell>
+              <TableCell>{checkData(book.year)}</TableCell>
+              <TableCell>{checkData(book.publisher)}</TableCell>
+              <TableCell className={index === books.length - 1 ? "rounded-br-md border-r-0" : "border-r-0"}>{checkData(book.isbn)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -159,6 +165,7 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
 const Books = () => {
   const books: BookProps[] = [
     {
+      makeCard: false,
       title: "Demosten",
       originalTitle: "Демостен",
       author: "Pierre Carlier",
@@ -170,16 +177,19 @@ const Books = () => {
       imageUrl: "/images/books/studii.jpg",
       isbn: "9989-693-00-5",
     },
-    {//TODO: resolve missing information: https://www.amazon.com/Alexandre-Grand-PIERRE-BRIANT/dp/2715401841
+    {
+      makeCard: false,
       title: "Alexander the Great",
       originalTitle: "Александар Велики",
       author: "Pierre Briant",
       editor: "Nade Proeva",
       year: "1997",
-      publisher: "QUE SAIS JE",
+      publisher: "Biblioteka HISTORIA ANTIQUA MACEDONICA",
+      series: "HISTORIA ANTIQUA MACEDONICA",
       isbn: "2715401841",
     },
-    {//TODO: isbn with X?
+    {
+      makeCard: false,
       title: "History of the Hellenistic Period",
       originalTitle: "История на Хеленистичкиот Период",
       author: "Fanula Papazoglu",
@@ -190,15 +200,19 @@ const Books = () => {
       volume: "3",
       isbn: "9989-693-03-X",
     },
-    {//TODO: reslove missing information https://books.google.com/books?id=0D6TJAAACAAJ&source=gbs_navlinks_s
+    {
+      makeCard: false,
       title: "For the Illyrians from Bardilis to Ghenti IV - 2nd Century B.C.",
       originalTitle: "За Иилирите од Бардилис до Гентиј",
       author: "Pierre Cabannes",
       editor: "Nade Proeva",
       year: "1994",
+      publisher: "Biblioteka HISTORIA ANTIQUA MACEDONICA",
+      series: "HISTORIA ANTIQUA MACEDONICA",
       isbn: "9989-677-12-3",
     },
-    {// need proofread
+    {
+      makeCard: true,
       title: "Studies of the Ancient Macedonians",
       originalTitle: "Студии за Античките Македонци",
       author: "Nade Proeva",
@@ -213,7 +227,8 @@ const Books = () => {
       amazonUrl: "",
       promoVideo: "/images/books/studies-promo.mp4"
     },
-    {// need proofread
+    {
+      makeCard: false,
       title: "Cradle of Macedonian Statehood",
       originalTitle: "Лулката на Македонската Државност",
       author: "Alfred Delakoulonša",
@@ -227,7 +242,8 @@ const Books = () => {
       imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       isbn: "9989-619-40-9",
     },
-    {// need proofread
+    {
+      makeCard: true,
       title: "History of the Argeadites",
       originalTitle: "Историја на Аргеадите",
       author: "Nade Proeva",
@@ -242,7 +258,8 @@ const Books = () => {
       amazonUrl: "",
       promoImage: "/images/books/istorija-promo.jpg",
     },
-    {//TODO: resolve missing information https://www.google.com/search?client=firefox-b-1-d&q=%D0%9D%D0%B0%D0%BF%D0%BE%D1%80%D0%B5%D0%B4%D0%BD%D0%B8+%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BE%D0%BF%D0%B8%D1%81%D0%B8
+    {
+      makeCard: false,
       title: "Parallel Hagiographies",
       originalTitle: "Напоредни Животописи",
       author: "Ploutarchos",
@@ -251,9 +268,10 @@ const Books = () => {
       publisher: "Evro-Balkan Pres, Skopje",
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "7",
-      isbn: "",
+      isbn: "978-9989-136-63-4",
     },
-    {// need proofread
+    {
+      makeCard: false,
       title: "History of Epigonites",
       originalTitle: "Историја на Епигоните",
       author: "Fanula Papazoglu",
@@ -264,12 +282,14 @@ const Books = () => {
       series: "HISTORIA ANTIQUA MACEDONICA",
       volume: "9",
       description: "A scholarly analysis of the period following Alexander the Great's death, examining the complex power dynamics and conflicts among his successors known as the Epigoni.",
-      isbn: "",
+      isbn: "978 N-9989-297 9788 78-0-9",
     },
-    {// need proofread
+    {
+      makeCard: false,
       title: "Alexander of Macedon",
       originalTitle: "Александар Македонски",
-      editor: "Nade Proeva",
+      author: "Nade Proeva",
+      editor: "Introductory Study & Lexicographic Dictionary",
       translator: "Vojislav Sarakinski",
       year: "2012",
       publisher: "Grafotisok, Skopje, Macedonia",
@@ -278,7 +298,8 @@ const Books = () => {
       description: "A detailed biographical work on Alexander the Great, examining his conquests, policies, and lasting impact on world history through a critical historical lens.",
       isbn: "978-9989-2978-2-3",
     },
-    {// need proofread
+    {
+      makeCard: true,
       title: "Religion of the Ancient Macedonians",
       originalTitle: "Религијата на Античките Македонци",
       author: "Nade Proeva",
@@ -294,7 +315,8 @@ const Books = () => {
       promoImage: "/images/books/launch-of-religion.jpg",
       promoAudio: "/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
     },
-    {// need proofread
+    {
+      makeCard: true,
       title: "Gambling for Macedonia: A Triptych of Fractured Truths",
       originalTitle: "Триптих за Македонскиот Идентитет",
       author: "Nade Proeva",
@@ -309,7 +331,8 @@ const Books = () => {
       amazonUrl: "",
       promoImage: "/images/books/triptych-promo.jpg",
     },
-    {// need proofread
+    {
+      makeCard: false,
       title: "National Awareness of the Macedonian Slavs",
       originalTitle: "Народносната Свест на Македонските Словени",
       author: "Angel Dinev",
@@ -326,21 +349,21 @@ const Books = () => {
   ];
 
   return (
-    <div>
+    <>
       <SectionHeader
         title="BOOKS"
         subtitle="Professor Dr. Nade Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
       />
 
       <div className="animate-fade-in">
-        <div className="space-y-8 sm:mx-20">
-          {books.filter((book) => book.author === "Nade Proeva").map((book, index) => (
+        <div className="space-y-8 lg:mx-20">
+          {books.filter((book) => book.makeCard === true).map((book, index) => (
             <BookCard key={index} book={book} />
           ))}
         </div>
 
-        <div className="my-12">
-          <h3 className="font-semibold text-burgundy-900 mb-4">Extended Bibliography</h3>
+        <div className="my-12 lg:mx-20">
+          <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">Extended Bibliography</h3>
           <p className="text-gray-700 mb-6">
             Below is an extended listing of books edited or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
           </p>
@@ -348,7 +371,7 @@ const Books = () => {
           <BookTable books={books.filter((book) => book.author !== "Nade Proeva")} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
