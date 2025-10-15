@@ -112,8 +112,15 @@ const Media = () => {
       format: "mp4",
       src: "/videos/AnticMacedonians.mp4",
       title: "",
-      caption: "Interview - Macedonian National TV"
-    }
+      caption: "Interview - Macedonian National TV (Part 1 of 2)"
+    },
+    //TODO: add in final upload
+    // {
+    //   format: "mp4",
+    //   src: "/videos/AnticMacedonians2.mp4",
+    //   title: "",
+    //   caption: "Interview - Macedonian National TV (Part 2 of 2)"
+    // }
   ];
 
   return (
