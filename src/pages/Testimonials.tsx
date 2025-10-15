@@ -15,22 +15,20 @@ interface MediaItem {
 
 const LinkItem = ({ item }: { item: MediaItem }) => (
   <div
-    className="bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer h-min w-full"
+    className="bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
     // Don't need lightbox for link
   >
-    <div className="p-4">
-      <a
-        href={item.srcOriginal}
-        target="_blank"
-        title={item.title}
-        className="no-underline text-white"
-      >
-        <div className="flex items-center gap-4 text-sm w-full">
-          <ExternalLink />
-          <p>{item.title}</p>
-        </div>
-      </a>
-    </div>
+    <a
+      href={item.srcOriginal}
+      target="_blank"
+      title={item.title}
+      className="no-underline text-white"
+    >
+      <div className="flex items-center gap-4 text-sm w-full">
+        <ExternalLink />
+        <p>{item.title}</p>
+      </div>
+    </a>
   </div>
 );
 
@@ -165,8 +163,8 @@ const Testimonials = () => {
       </div>
 
       {/* Link Item */}
-      <div className="w-full flex flex-col md:flex-row justify-start gap-10">
-        {links.map((link, index) => 
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 content-stretch gap-10">
+        {links.map((link, index) =>
           <LinkItem key={index} item={link} />
         )}
       </div>
