@@ -85,7 +85,7 @@ const Home = () => {
               src={medal.src}
               alt={`${medal.title} Certificate and Medal`}
               title={medal.title}
-              className="rounded-lg w-full sm:w-2/3 lg:w-full"
+              className="rounded-lg w-2/3 lg:w-1/3 min-w-0"
             />
           ))}
         </div>
