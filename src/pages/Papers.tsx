@@ -92,7 +92,7 @@ const Papers = () => {
           including articles, book reviews, conference papers, and encyclopedia entries.
           Many of her works are accessible through academic databases such as academia.edu or by
           contacting the Department of History at <i>Ss. Cyril and Methodius University</i> in Skopje, Macedonia.
-          A list of her most popular papers are here."
+          A list of her most popular papers are here.
         </>}
       />
       <div className="animate-fade-in lg:mx-20">

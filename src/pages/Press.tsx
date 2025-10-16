@@ -198,7 +198,7 @@ const Press = () => {
     <>
     <SectionHeader
       title="PRESS"
-      subtitle="Interviews and opinions."
+      subtitle="Interviews and opinions"
     />
 
     <div className="animate-fade-in lg:mx-20">
