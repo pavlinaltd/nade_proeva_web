@@ -87,13 +87,13 @@ const Papers = () => {
     <div>
       <SectionHeader
         title="ACADEMIC PAPERS"
-        subtitle="
+        subtitle={<>
           Professor Proeva's scholarly legacy encompasses over fifty academic publications,
           including articles, book reviews, conference papers, and encyclopedia entries.
-          Her work involved meticulous research, innovative methodology, and insightful analysis.
           Many of her works are accessible through academic databases such as academia.edu or by
-          contacting the Department of History at Ss. Cyril and Methodius University in Skopje, Macedonia.
+          contacting the Department of History at <i>Ss. Cyril and Methodius University</i> in Skopje, Macedonia.
           A list of her most popular papers are here."
+        </>}
       />
       <div className="animate-fade-in lg:mx-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
