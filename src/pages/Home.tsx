@@ -140,7 +140,6 @@ const Home = () => {
               <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline">
                 info@macedonianarts.org
               </a>
-              .
             </p>
           </div>
         </div>
