@@ -99,7 +99,7 @@ const Home = () => {
             controlsList="nodownload"
             className="aspect-video rounded-lg"
           >
-            <source src="/videos/NADE.mp4" type="video/mp4" />
+            <source src="/videos/nade.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
