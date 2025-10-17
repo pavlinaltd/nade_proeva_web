@@ -120,7 +120,7 @@ const Media = () => {
     <>
     <SectionHeader
       title="MEDIA"
-      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations"
+      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations."
     />
 
     {/* Content Wrapper */}

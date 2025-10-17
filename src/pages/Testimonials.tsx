@@ -103,7 +103,7 @@ const Testimonials = () => {
     <>
     <SectionHeader
       title="REMEMBERING NADE"
-      subtitle="Through the voices of those who knew her best"
+      subtitle="Through the voices of those who knew her best."
     />
 
     {/* Container */}
