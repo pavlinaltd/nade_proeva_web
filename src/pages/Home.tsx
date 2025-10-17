@@ -107,26 +107,24 @@ const Home = () => {
 
       {/* Video Section */}
       <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
-        <div className="flex justify-center overflow-hidden">
-          <VideoPlayer className={'video-player overflow-hidden aspect-video shadow-lg rounded-lg'}>
-              <VideoPlayerContent
-                crossOrigin=""
-                preload="auto"
-                slot="media"
-                src="/videos/nade.mp4"
-              />
-              <VideoPlayerControlBar>
-                <VideoPlayerPlayButton />
-                <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
-                <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
-                <VideoPlayerTimeRange />
-                <VideoPlayerTimeDisplay showDuration className="hidden md:inline-flex" />
-                <VideoPlayerMuteButton />
-                <VideoPlayerVolumeRange className="hidden md:inline-flex" />
-                <VideoPlayerFullscreenButton />
-              </VideoPlayerControlBar>
-            </VideoPlayer>
-        </div>
+        <VideoPlayer className={'video-player overflow-hidden aspect-video shadow-lg rounded-lg'}>
+            <VideoPlayerContent
+              crossOrigin=""
+              preload="auto"
+              slot="media"
+              src="/videos/nade.mp4"
+            />
+            <VideoPlayerControlBar>
+              <VideoPlayerPlayButton />
+              <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
+              <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
+              <VideoPlayerTimeRange />
+              <VideoPlayerTimeDisplay showDuration className="hidden md:inline-flex" />
+              <VideoPlayerMuteButton />
+              <VideoPlayerVolumeRange className="hidden md:inline-flex" />
+              <VideoPlayerFullscreenButton />
+            </VideoPlayerControlBar>
+          </VideoPlayer>
       </section>
 
       {/* Combined */}
