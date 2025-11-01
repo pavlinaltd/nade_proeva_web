@@ -14,22 +14,18 @@ interface MediaItem {
 }
 
 const LinkItem = ({ item }: { item: MediaItem }) => (
-  <div
-    className="bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
+  <a
+    href={item.srcOriginal}
+    target="_blank"
+    title={item.title}
+    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
     // Don't need lightbox for link
   >
-    <a
-      href={item.srcOriginal}
-      target="_blank"
-      title={item.title}
-      className="no-underline text-white"
-    >
-      <div className="flex items-center gap-4 text-sm w-full">
-        <ExternalLink />
-        <p>{item.title}</p>
-      </div>
-    </a>
-  </div>
+    <div className="flex items-center gap-4 text-sm w-full">
+      <ExternalLink />
+      <p>{item.title}</p>
+    </div>
+  </a>
 );
 
 const ImageItem = ({ item, openLightbox, isEnglish }: { item: MediaItem; openLightbox: (image: MediaItem) => void; isEnglish: boolean }) => (
