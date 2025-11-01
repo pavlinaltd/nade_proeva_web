@@ -113,14 +113,14 @@ const Media = () => {
       src: "/videos/AnticMacedonians.mp4",
       title: "",
       caption: "Interview - Macedonian National TV"
-    }
+    },
   ];
 
   return (
     <>
     <SectionHeader
       title="MEDIA"
-      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations"
+      subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations."
     />
 
     {/* Content Wrapper */}

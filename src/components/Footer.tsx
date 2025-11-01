@@ -74,7 +74,7 @@ const Footer = () => {
         
         <div className="flex justify-between gap-1 border-t-2 border-amber-800 mt-8 pt-6 text-black text-center text-xs md:text-sm">
           <p className="self-start">
-            &copy; {currentYear} <i>Nade Proeva Scholarship Endowment</i>.
+            &copy; {currentYear} <i>Nade Proeva Endowment Fund</i>.
           </p>
           <p className="self-end">
             Website courtesy of <a href="https://linkedin.com/in/coriebeale" target="_blank" rel="noopener" className="font-bold hover:underline">Corie Beale</a>

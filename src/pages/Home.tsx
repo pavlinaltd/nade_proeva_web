@@ -1,3 +1,17 @@
+import {
+  VideoPlayer,
+  VideoPlayerContent,
+  VideoPlayerControlBar,
+  VideoPlayerMuteButton,
+  VideoPlayerPlayButton,
+  VideoPlayerSeekBackwardButton,
+  VideoPlayerSeekForwardButton,
+  VideoPlayerTimeDisplay,
+  VideoPlayerTimeRange,
+  VideoPlayerVolumeRange,
+  VideoPlayerFullscreenButton
+} from "@/components/ui/shadcn-io/video-player";
+
 const Home = () => {
 
   const medals = [
@@ -85,7 +99,7 @@ const Home = () => {
               src={medal.src}
               alt={`${medal.title} Certificate and Medal`}
               title={medal.title}
-              className="rounded-lg w-full sm:w-2/3 lg:w-full"
+              className="rounded-lg w-2/3 lg:w-1/3 min-w-0"
             />
           ))}
         </div>
@@ -93,16 +107,24 @@ const Home = () => {
 
       {/* Video Section */}
       <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
-        <div className="flex justify-center overflow-hidden">
-          <video
-            controls
-            controlsList="nodownload"
-            className="aspect-video rounded-lg"
-          >
-            <source src="/videos/NADE.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <VideoPlayer className={'video-player overflow-hidden aspect-video shadow-lg rounded-lg'}>
+            <VideoPlayerContent
+              crossOrigin=""
+              preload="auto"
+              slot="media"
+              src="/videos/nade.mp4"
+            />
+            <VideoPlayerControlBar>
+              <VideoPlayerPlayButton />
+              <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
+              <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
+              <VideoPlayerTimeRange />
+              <VideoPlayerTimeDisplay showDuration className="hidden md:inline-flex" />
+              <VideoPlayerMuteButton />
+              <VideoPlayerVolumeRange className="hidden md:inline-flex" />
+              <VideoPlayerFullscreenButton />
+            </VideoPlayerControlBar>
+          </VideoPlayer>
       </section>
 
       {/* Combined */}
@@ -140,7 +162,6 @@ const Home = () => {
               <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline">
                 info@macedonianarts.org
               </a>
-              .
             </p>
           </div>
         </div>

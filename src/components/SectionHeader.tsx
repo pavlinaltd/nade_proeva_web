@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 interface SectionHeaderProps {
   title: string;
-  subtitle?: string;
+  subtitle?: string | ReactNode;
   children?: ReactNode;
   center?: boolean;
 }
@@ -15,7 +15,7 @@ const SectionHeader = ({ title, subtitle, children }: SectionHeaderProps) => {
         {title}
       </h2>
       {subtitle && (
-        <p className="text-center italic text-gray-600 mx-auto w-full text-base md:text-lg lg:text-xl">
+        <p className="text-center text-gray-600 mx-auto w-full text-base md:text-lg lg:text-xl">
           {subtitle}
         </p>
       )}
