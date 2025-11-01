@@ -112,7 +112,7 @@ const Home = () => {
               crossOrigin=""
               preload="auto"
               slot="media"
-              src="/videos/nade.mp4"
+              src="/videos/Homepage.mp4"
             />
             <VideoPlayerControlBar>
               <VideoPlayerPlayButton />
