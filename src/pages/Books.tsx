@@ -202,8 +202,8 @@ const Books = () => {
     },
     {
       makeCard: false,
-      title: "For the Illyrians from Bardilis to Ghenti IV - 2nd Century B.C.",
-      originalTitle: "За Иилирите од Бардилис до Гентиј",
+      title: "For the Ilyrians from Bardilis to Ghenti IV - 2nd Century B.C.",
+      originalTitle: "За Илирите од Бардилис до Гентиј",
       author: "Pierre Cabannes",
       editor: "Nade Proeva",
       year: "1994",
