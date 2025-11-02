@@ -11,6 +11,7 @@ import {
   VideoPlayerVolumeRange,
   VideoPlayerFullscreenButton
 } from "@/components/ui/shadcn-io/video-player";
+import { ExternalLink } from "lucide-react";
 
 const Home = () => {
 
@@ -137,12 +138,24 @@ const Home = () => {
             alt="From Her Lectures: Our Words Book Cover"
           />
 
-          <div className="text-black text-justify mx-auto p-2">
+          <div className="flex flex-col gap-4 text-black text-justify mx-auto p-2">
             <p className="lg:text-xl">
               This volume is a tribute by six former students of Professor Dr. Nade Proeva, who came together to honor her legacy.
               It brings together their writings on Macedonian history, spanning archaeology, ethnology, anthropology, mythology, and religion from antiquity to the present.
               Through these pages, they celebrate their teacher's lasting influence and honor her lifelong devotion to truth, scholarship, and her beloved homeland, Macedonia.
             </p>
+
+            <a
+              href="/images/Instead of a foreward.pdf"
+              target="_blank"
+              title="Introduction"
+              className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
+            >
+              <div className="flex items-center gap-4 text-sm">
+                <ExternalLink />
+                <p>Read introduction</p>
+              </div>
+            </a>
           </div>
         </div>
 
