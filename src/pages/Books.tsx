@@ -363,12 +363,19 @@ const Books = () => {
         </div>
 
         <div className="my-12 lg:mx-20">
-          <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">Extended Bibliography</h3>
+          <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">Co-published Books</h3>
           <p className="text-gray-700 mb-6">
             Below is an extended listing of books edited or translated by Professor Dr. Nade Proeva as part of her scholarly contribution to ancient Macedonian studies.
           </p>
           
           <BookTable books={books.filter((book) => book.author !== "Nade Proeva")} />
+        </div>
+
+        <div>
+          <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">Bibliography</h3>
+          <p className="text-gray-700 mb-6">
+            Something here.
+          </p>
         </div>
       </div>
     </>
