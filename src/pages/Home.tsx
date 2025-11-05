@@ -146,14 +146,14 @@ const Home = () => {
             </p>
 
             <a
-              href="/images/Instead of a foreward.pdf"
+              href="/images/instead-of-a-foreword.pdf"
               target="_blank"
               title="Introduction"
               className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
             >
               <div className="flex items-center gap-4 text-sm">
                 <ExternalLink />
-                <p>Read introduction</p>
+                <p>Instead of a Foreword...</p>
               </div>
             </a>
           </div>
