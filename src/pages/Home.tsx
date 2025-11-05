@@ -140,7 +140,7 @@ const Home = () => {
 
           <div className="flex flex-col gap-4 text-black text-justify mx-auto p-2">
             <p className="lg:text-xl">
-              This volume is a tribute by six former students of Professor Dr. Nade Proeva, who came together to honor her legacy.
+              This volume is a tribute by five former students of Professor Dr. Nade Proeva, who came together to honor her legacy.
               It brings together their writings on Macedonian history, spanning archaeology, ethnology, anthropology, mythology, and religion from antiquity to the present.
               Through these pages, they celebrate their teacher's lasting influence and honor her lifelong devotion to truth, scholarship, and her beloved homeland, Macedonia.
             </p>
@@ -171,7 +171,10 @@ const Home = () => {
           <div className="text-black text-justify sm:text-right mx-auto p-2">
             <p className="lg:text-xl">
               Your support of the <i>Nade Proeva Endowment Fund</i> will help inspire and empower the next generation
-              of historians dedicated to researching, preserving, and sharing Macedonian historical past. To help grow the Endowment contact{' '}
+              of historians dedicated to researching, preserving, and sharing Macedonian historical past. To help grow the Endowment,{' '}
+              <a href="https://www.paypal.com/us/fundraiser/charity/1386780" className="text-red-600 hover:underline" target="_blank">
+                donate
+              </a> or contact{' '}
               <a href="mailto:info@macedonianarts.org" className="text-red-600 hover:underline">
                 info@macedonianarts.org
               </a>
