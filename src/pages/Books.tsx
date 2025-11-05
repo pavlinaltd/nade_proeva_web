@@ -319,7 +319,7 @@ const Books = () => {
     },
     {
       makeCard: true,
-      title: "Gambling for Macedonia: A Triptych of Fractured Truths",
+      title: "Triptych on the Macedonian Identity",
       originalTitle: "Триптих за Македонскиот Идентитет",
       author: "Nade Proeva",
       editor: "Nikola Minov",
@@ -354,7 +354,7 @@ const Books = () => {
     <>
       <SectionHeader
         title="BOOKS"
-        subtitle="Professor Dr. Nade Proeva authored and edited several influential books on ancient Macedonian history, culture, and society. Her works are distinguished by their rigorous methodology and innovative interpretations."
+        subtitle="Professor Dr. Nade Proeva authored and edited several influential books on the history, culture, and society of ancient Macedonia. Her works are distinguished by their rigorous methodology and innovative interpretations."
       />
 
       <div className="animate-fade-in">
