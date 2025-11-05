@@ -315,7 +315,7 @@ const Books = () => {
       isbn: "978-9989-2978-5-4",
       amazonUrl: "",
       promoImage: "/images/books/launch-of-religion.jpg",
-      promoAudio: "/audio/16-04-2014-Religion-of-Antique-Macedonians.mp3"
+      promoAudio: "/videos/audio/religion-promo.mp3"
     },
     {
       makeCard: true,
