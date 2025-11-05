@@ -18,39 +18,15 @@ const Footer = () => {
             </p>
             <br />
             <h3 className="text-xl mb-4 text-black">Links</h3>
-            <div className="grid grid-cols-4 w-full text-xs md:text-sm lg:text-md text-black">
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/" className="hover:underline">Home</Link>
-                </li>
-                <li>
-                  <Link to="/bio" className="hover:underline">Biography</Link>
-                </li>
-              </ul>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/books" className="hover:underline">Books</Link>
-                </li>
-                <li>
-                  <Link to="/papers" className="hover:underline">Papers</Link>
-                </li>
-              </ul>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/press" className="hover:underline">Press</Link>
-                </li>
-                <li>
-                  <Link to="/media" className="hover:underline">Media</Link>
-                </li>
-              </ul>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/field-work" className="hover:underline">Field Work</Link>
-                </li>
-                <li>
-                  <Link to="/remembering-nade" className="hover:underline">Remembering Nade</Link>
-                </li>
-              </ul>
+            <div className="grid grid-cols-4 w-full gap-3 text-xs md:text-sm lg:text-md text-black">
+              <Link to="/" className="hover:underline">Home</Link>
+              <Link to="/bio" className="hover:underline">Biography</Link>
+              <Link to="/books" className="hover:underline">Books</Link>
+              <Link to="/papers" className="hover:underline">Papers</Link>
+              <Link to="/press" className="hover:underline">Press</Link>
+              <Link to="/media" className="hover:underline">Media</Link>
+              <Link to="/field-work" className="hover:underline">Field Work</Link>
+              <Link to="/remembering-nade" className="hover:underline">Remembering Nade</Link>
             </div>
           </div>
 
