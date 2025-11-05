@@ -10,6 +10,7 @@ interface MediaItem {
   title: string;
   srcOriginal?: string; // For language toggle
   srcEnglish?: string;  // For language toggle
+  targetSrc?: string; // For setting image in lightbox
   orientation?: "horizontal" | "vertical";
 }
 
@@ -45,19 +46,26 @@ const Testimonials = () => {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
   const [isEnglish, setIsEnglish] = useState(false);
 
+  const students: MediaItem = {
+    type: "image",
+    srcOriginal: "/images/memories/class-dismissed.jpg",
+    targetSrc: "/images/memories/handwritten-by-students.png",
+    title: "From her students"
+  }
+
   const columns: MediaItem[] = [
     {
       type: "image",
       srcOriginal: "/images/memories/chapeau.jpeg",
       srcEnglish: "/images/memories/chapeau-eng.jpeg",
-      title: "Title",
+      title: "Chapeau bas, madame Proeva!",
       orientation: "vertical",
     },
     {
       type: "image",
       srcOriginal: "/images/memories/fb-post.jpg",
       srcEnglish: "/images/memories/fb-post-eng.jpg",
-      title: "Title",
+      title: "Facebook post",
       orientation: "vertical",
     }
   ];
@@ -104,12 +112,24 @@ const Testimonials = () => {
 
     {/* Container */}
     <div className="lg:mx-20 flex flex-col items-center gap-10">
-      {/* Video Feature */}
-      <img
-        src="/images/memories/handwritten-by-students.png"
-        alt="Notes handwritten by her students"
-        className="w-full lg:w-4/5 h-full object-cover mb-6"
-      />
+      {/* Image Feature */}
+      <div
+        className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300`}
+        onClick={() => openLightbox(students)}
+      >
+        <div className={``}>
+          <img
+          src={students.srcOriginal}
+          alt={students.title}
+          className="object-cover"
+          />
+          <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
+          <Expand
+            className="text-white drop-shadow-2xl w-14 h-14"
+          />
+          </span>
+        </div>
+      </div>
 
       {/* Column Items */}
       <div className="flex flex-col w-full">
@@ -181,7 +201,7 @@ const Testimonials = () => {
         >
           <div className="relative">
             <img
-              src={isEnglish ? selectedImage.srcEnglish : selectedImage.srcOriginal}
+              src={selectedImage.targetSrc ? selectedImage.targetSrc : isEnglish ? selectedImage.srcEnglish : selectedImage.srcOriginal}
               alt={selectedImage.title}
               className="w-full h-auto object-fit"
             />
