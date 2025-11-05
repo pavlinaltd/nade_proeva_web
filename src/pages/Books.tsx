@@ -10,6 +10,8 @@ import {
   TableRow
 } from "@/components/ui/table";
 import { VideoPlayer, VideoPlayerContent, VideoPlayerControlBar, VideoPlayerFullscreenButton, VideoPlayerMuteButton, VideoPlayerPlayButton, VideoPlayerSeekBackwardButton, VideoPlayerSeekForwardButton, VideoPlayerTimeDisplay, VideoPlayerTimeRange, VideoPlayerVolumeRange } from "@/components/ui/shadcn-io/video-player";
+import { bibliography, bookTranslations, reviews, pressReviews, critiques, articleTranslations, interviews } from "@/lib/bibliography";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 interface BookProps {
   makeCard: boolean;
@@ -371,11 +373,80 @@ const Books = () => {
           <BookTable books={books.filter((book) => book.author !== "Nade Proeva")} />
         </div>
 
-        <div>
+        <div className="lg:mx-20">
           <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">Bibliography</h3>
-          <p className="text-gray-700 mb-6">
-            Something here.
-          </p>
+          <Accordion type="multiple">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Bibliography</AccordionTrigger>
+              <AccordionContent>
+                <ol className="list-decimal list-inside">
+                  {bibliography.map((item, index) => (
+                    <li className="py-1.5" key={index}>{item}</li>
+                  ))}
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Books and Book Translations</AccordionTrigger>
+              <AccordionContent>
+                <ol className="list-decimal list-inside">
+                  {bookTranslations.map((item, index) => (
+                    <li className="py-1.5" key={index}>{item}</li>
+                  ))}
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Reviews</AccordionTrigger>
+              <AccordionContent>
+                <ol className="list-decimal list-inside">
+                  {reviews.map((item, index) => (
+                    <li className="py-1.5" key={index}>{item}</li>
+                  ))}
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Press Reviews</AccordionTrigger>
+              <AccordionContent>
+                <ol className="list-decimal list-inside">
+                  {pressReviews.map((item, index) => (
+                    <li className="py-1.5" key={index}>{item}</li>
+                  ))}
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5">
+              <AccordionTrigger>Critiques</AccordionTrigger>
+              <AccordionContent>
+                <ol className="list-decimal list-inside">
+                  {critiques.map((item, index) => (
+                    <li className="py-1.5" key={index}>{item}</li>
+                  ))}
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-6">
+              <AccordionTrigger>Article Translations</AccordionTrigger>
+              <AccordionContent>
+                <ol className="list-decimal list-inside">
+                  {articleTranslations.map((item, index) => (
+                    <li className="py-1.5" key={index}>{item}</li>
+                  ))}
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-7">
+              <AccordionTrigger>Interviews</AccordionTrigger>
+              <AccordionContent>
+                <ol className="list-decimal list-inside">
+                  {interviews.map((item, index) => (
+                    <li className="py-1.5" key={index}>{item}</li>
+                  ))}
+                </ol>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </>
