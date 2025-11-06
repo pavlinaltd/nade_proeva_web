@@ -2,10 +2,6 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export function generateStaticParams() {
-  return [{ slug: [''] }]
-}
- 
 export default function Page() {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center gap-5">
