@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import { Expand, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,7 +11,7 @@ interface Photo {
   orientation: "vertical" | "horizontal";
 }
 
-const OnSite = () => {
+export default function FieldWork() {
   const [selectedImage, setSelectedImage] = useState<Photo | null>(null);
 
   const photos: Photo[] = [
@@ -186,5 +188,3 @@ const OnSite = () => {
     </div>
   );
 };
-
-export default OnSite;

@@ -164,7 +164,7 @@ const BookTable = ({ books }: { books: BookProps[] }) => {
   );
 };
 
-const Books = () => {
+export default function Books() {
   const books: BookProps[] = [
     {
       makeCard: false,
@@ -452,5 +452,3 @@ const Books = () => {
     </>
   );
 };
-
-export default Books;

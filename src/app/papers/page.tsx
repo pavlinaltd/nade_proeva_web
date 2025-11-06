@@ -18,7 +18,7 @@ interface PaperProps {
   abstract?: string;
 }
 
-const Papers = () => {
+export default function Papers() {
   const papers: PaperProps[] = [
     {
       title: "The legend of Philemon and Baucis and the reminiscence of afterlife beliefs on Roman tombstones in Macedonia",
@@ -124,5 +124,3 @@ const Papers = () => {
     </div>
   );
 };
-
-export default Papers;

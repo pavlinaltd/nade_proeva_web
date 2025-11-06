@@ -1,9 +1,10 @@
+'use client'
+
 import SectionHeader from "@/components/SectionHeader";
 import { X, ExternalLink, Expand } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import VideoPlayerItem from "@/components/VideoPlayer";
 
 interface MediaItem {
   type: "image" | "video" | "link";
@@ -29,20 +30,7 @@ const LinkItem = ({ item }: { item: MediaItem }) => (
   </a>
 );
 
-const ImageItem = ({ item, openLightbox, isEnglish }: { item: MediaItem; openLightbox: (image: MediaItem) => void; isEnglish: boolean }) => (
-  <div
-    className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transform transition-transform duration-200 hover:scale-105 h-min"
-    onClick={() => openLightbox(item)}
-  >
-    <img
-      src={isEnglish ? item.srcEnglish : item.srcOriginal}
-      alt={item.title}
-      className="w-auto h-auto object-cover"
-    />
-  </div>
-);
-
-const Testimonials = () => {
+export default function RememberingNade() {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
   const [isEnglish, setIsEnglish] = useState(false);
 
@@ -220,5 +208,3 @@ const Testimonials = () => {
     </>
   );
 };
-
-export default Testimonials;

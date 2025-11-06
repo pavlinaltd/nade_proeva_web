@@ -1,3 +1,5 @@
+'use client'
+
 import { X, Expand } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -14,7 +16,7 @@ interface MediaItem {
   titlePosition: "left" | "center" | "right";
 }
 
-const Press = () => {
+export default function Press() {
   const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
   const [isEnglish, setIsEnglish] = useState(false);
 
@@ -310,5 +312,3 @@ const Press = () => {
     </>
   )
 };
-
-export default Press;

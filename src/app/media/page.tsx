@@ -41,7 +41,7 @@ const VideoPlayerItem = ({ src, className }: { src: string, className?: string }
   </VideoPlayer>
 );
 
-const Media = () => {
+export default function Media() {
 
   const mainAudio: VideoItem =
   {
@@ -188,8 +188,5 @@ const Media = () => {
       </div>
     </div>
     </>
-  )
-
+  );
 };
-
-export default Media;
