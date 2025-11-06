@@ -20,11 +20,6 @@ const Navbar = () => {
     { to: "/remembering-nade", label: "REMEMBERING NADE" }
   ];
 
-  useEffect(() => {
-    // Close the mobile menu when the location changes
-    console.log("Location changed:", location.pathname);
-  }, [location.pathname]);
-
   return (
     <header className="bg-yellow-400 border-b border-burgundy-200">
       <div className="max-w-[1450px] mx-auto px-4 py-4">
