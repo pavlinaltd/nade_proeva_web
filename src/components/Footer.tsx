@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,14 +19,14 @@ const Footer = () => {
             <br />
             <h3 className="text-xl mb-4 text-black">Links</h3>
             <div className="grid grid-cols-4 w-full gap-3 text-xs md:text-sm lg:text-md text-black">
-              <Link to="/" className="hover:underline">Home</Link>
-              <Link to="/bio" className="hover:underline">Biography</Link>
-              <Link to="/books" className="hover:underline">Books</Link>
-              <Link to="/papers" className="hover:underline">Papers</Link>
-              <Link to="/press" className="hover:underline">Press</Link>
-              <Link to="/media" className="hover:underline">Media</Link>
-              <Link to="/field-work" className="hover:underline">Field Work</Link>
-              <Link to="/remembering-nade" className="hover:underline">Remembering Nade</Link>
+              <Link href="/" className="hover:underline">Home</Link>
+              <Link href="/bio" className="hover:underline">Biography</Link>
+              <Link href="/books" className="hover:underline">Books</Link>
+              <Link href="/papers" className="hover:underline">Papers</Link>
+              <Link href="/press" className="hover:underline">Press</Link>
+              <Link href="/media" className="hover:underline">Media</Link>
+              <Link href="/field-work" className="hover:underline">Field Work</Link>
+              <Link href="/remembering-nade" className="hover:underline">Remembering Nade</Link>
             </div>
           </div>
 
@@ -41,9 +41,9 @@ const Footer = () => {
             </p>
             <br />
             <div className="flex justify-between text-burgundy-800 font-bold text-xs md:text-sm lg:text-base">
-              <Link to="https://ukim.academia.edu/NadeProeva" className="hover:underline" target="_blank" rel="noopener">academia.edu</Link>
-              <Link to="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="hover:underline" target="_blank" rel="noopener">fzf.ukim.edu.mk</Link>
-              <Link to="https://mk.wikipedia.org/wiki/Наде_Проева" className="hover:underline" target="_blank" rel="noopener">mk.wikipedia.org</Link>
+              <Link href="https://ukim.academia.edu/NadeProeva" className="hover:underline" target="_blank" rel="noopener">academia.edu</Link>
+              <Link href="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="hover:underline" target="_blank" rel="noopener">fzf.ukim.edu.mk</Link>
+              <Link href="https://mk.wikipedia.org/wiki/Наде_Проева" className="hover:underline" target="_blank" rel="noopener">mk.wikipedia.org</Link>
             </div>
           </div>
         </div>

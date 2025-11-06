@@ -1,13 +1,15 @@
+'use client'
 
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import Link from 'next/link';
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const links = [
     { to: "/", label: "HOME" },
@@ -26,7 +28,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between gap-5">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <img
                 src="/images/logo-blank.png"
                 alt="Logo" 
@@ -43,15 +45,13 @@ const Navbar = () => {
             <NavigationMenuList>
               {links.map((link) => (
                 <NavigationMenuItem key={link.to}>
-                  <NavigationMenuLink>
-                    <Link
-                      to={link.to}
-                      // Source for animation: https://dev.to/vincentdorian/cool-nav-link-hover-animations-with-tailwindcss-3gf2
-                      className={`${location.pathname === link.to ? "text-burgundy-700" : "text-black"} relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center`}
-                    >
-                      {link.label}
-                    </Link>
-                  </NavigationMenuLink>
+                  <Link
+                    href={link.to}
+                    // Source for animation: https://dev.to/vincentdorian/cool-nav-link-hover-animations-with-tailwindcss-3gf2
+                    className={`${pathname === link.to ? "text-burgundy-700" : "text-black"} relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center`}
+                  >
+                    {link.label}
+                  </Link>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -79,8 +79,8 @@ const Navbar = () => {
             {links.map((link) => (
               <Link
                 key={link.to}
-                to={link.to}
-                className={`text-2xl font-bold font-vollkornsc ${location.pathname === link.to ? "text-burgundy-700" : "text-black"} transition-colors duration-200`}
+                href={link.to}
+                className={`text-2xl font-bold font-vollkornsc ${pathname === link.to ? "text-burgundy-700" : "text-black"} transition-colors duration-200`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
