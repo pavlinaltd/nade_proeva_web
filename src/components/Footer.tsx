@@ -7,7 +7,6 @@ const Footer = () => {
     <footer className="bg-gradient-to-b from-amber-500 to-yellow-100 text-white py-8">
       <div className="max-w-[1450px] mx-auto px-4">
         <div
-          // className="grid grid-cols-3 gap-8"
           className="flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-0"
         >
           {/* About and Links */}
