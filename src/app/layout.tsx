@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "../index.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import SummerCampBanner from "../components/SummerCampBanner";
 
 export const metadata: Metadata = {
     // ... keep everything the same
@@ -20,7 +19,6 @@ export default function RootLayout({
                 <div id="root">
                     <div className="flex flex-col bg-white">
                         <Navbar />
-                        <SummerCampBanner />
                         <main className="w-full max-w-[1450px] min-h-screen px-4 py-8 md:py-12 animate-fade-in mx-auto">
                             {children}
                         </main>
