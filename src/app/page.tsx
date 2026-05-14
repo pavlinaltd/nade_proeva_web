@@ -196,15 +196,15 @@ export default function Home() {
                     </div>
 
                     {/* Vertical divider (large screens) */}
-                    <div className="hidden lg:block w-[2px] bg-red-700 self-stretch rounded-full shrink-0" />
+                    {/* <div className="hidden lg:block w-[2px] bg-red-700 self-stretch rounded-full shrink-0" /> */}
 
                     {/* Horizontal divider (small screens) */}
-                    <div className="block lg:hidden h-[2px] bg-red-700 w-full rounded-full" />
+                    {/* <div className="block lg:hidden h-[2px] bg-red-700 w-full rounded-full" /> */}
 
-                    {/* Summer Camp — right side */}
+                    {/* Summer Camp — right side
                     <div className="flex flex-col items-center flex-1 lg:pl-10 xl:pl-16 self-stretch">
                         <SummerCampBanner />
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Fund Call-to-Action */}
