@@ -161,106 +161,17 @@ export default function Home() {
             </section>
 
             {/* Combined with summer camp */}
-            {/* <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5"> */}
-            {/* camp and book */}
-            {/* <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-0"> */}
-            {/* Book Feature Section */}
-            {/* <div className="flex flex-col items-center gap-4 flex-1 lg:pr-10 xl:pr-16"> */}
-            {/* <img
+            <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5">
+                {/* camp and book */}
+                <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-0">
+                    {/* Book Feature Section */}
+                    <div className="flex flex-col items-center gap-4 flex-1 lg:pr-10 xl:pr-16">
+                        <img
                             className="w-[220px] rounded-lg object-contain bg-white hover-lift"
                             src="/images/from-her-lectures.jpg"
                             alt="From Her Lectures: Our Words Book Cover"
-                        /> */}
-            {/* <p className="text-black text-justify text-base leading-relaxed flex-1">
-                            This volume is a tribute by five former students of
-                            Professor Dr. Nade Proeva, who came together to
-                            honor her legacy. It brings together their writings
-                            on Macedonian history, spanning archaeology,
-                            ethnology, anthropology, mythology, and religion
-                            from antiquity to the present. Through these pages,
-                            they celebrate their teacher's lasting influence and
-                            honor her lifelong devotion to truth, scholarship,
-                            and her beloved homeland, Macedonia.
-                        </p> */}
-            {/* <a
-                            href="/images/instead-of-a-foreword.pdf"
-                            target="_blank"
-                            title="Introduction"
-                            className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start mt-auto"
-                        > */}
-            {/* <div className="flex items-center gap-4 text-sm">
-                                <ExternalLink />
-                                <p>Instead of a Foreword...</p>
-                            </div> */}
-            {/* </a> */}
-            {/* </div> */}
-
-            {/* Vertical divider (large screens) */}
-            {/* <div className="hidden lg:block w-[2px] bg-red-700 self-stretch rounded-full shrink-0" /> */}
-
-            {/* Horizontal divider (small screens) */}
-            {/* <div className="block lg:hidden h-[2px] bg-red-700 w-full rounded-full" /> */}
-
-            {/* Summer Camp — right side
-                    <div className="flex flex-col items-center flex-1 lg:pl-10 xl:pl-16 self-stretch">
-                        <SummerCampBanner />
-                    </div> */}
-            {/* </div> */}
-
-            {/* Fund Call-to-Action */}
-            {/* <div className="mx-auto w-full xl:w-2/3 flex flex-col items-center sm:block"> */}
-            {/* <img
-                        className={`w-[250px] md:self-stretch rounded-lg object-contain sm:ml-5 sm:float-right`}
-                        style={{
-                            shapeOutside:
-                                "polygon(36% 0, 27% 12%, 29% 24%, 9% 35%, 6% 51%, 12% 70%, 31% 100%, 44% 100%, 100% 0)",
-                        }}
-                        src="/images/logo-text.jpg"
-                        alt="Nade Proeva Endowment Fund Logo"
-                        draggable={false}
-                    /> */}
-            {/* <div className="text-black text-justify sm:text-right mx-auto p-2"> */}
-            {/* <p className="lg:text-xl">
-                            Your support of the{" "} */}
-            {/* <i>Nade Proeva Endowment Fund</i> will help inspire
-                            and empower the next generation of historians
-                            dedicated to researching, preserving, and sharing
-                            Macedonian historical past. To help grow the
-                            Endowment,{" "} */}
-            {/* <a
-                                href="https://www.paypal.com/us/fundraiser/charity/1386780"
-                                className="text-red-600 hover:underline"
-                                target="_blank"
-                            >
-                                donate
-                            </a>{" "}
-                            or contact{" "} */}
-            {/* <a
-                                href="mailto:info@macedonianarts.org"
-                                className="text-red-600 hover:underline"
-                            >
-                                info@macedonianarts.org
-                            </a> */}
-            {/* </p> */}
-            {/* </div> */}
-            {/* </div> */}
-            {/* </section> */}
-
-            <section className="container flex flex-col gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5 justify-items-center">
-                {/* book feature section */}
-                <div className="flex flex-col items-center sm:flex-row sm:items-center gap-8 sm:gap-10 justify-center mx-auto w-fill">
-                    {/* Book Cover */}
-                    <div className="flex-shrink-0 w-full sm:w-1/4 max-w-[220px] mx-auto sm:max-w-none">
-                        <img
-                            className="w-full rounded-lg object-contain bg-white hover-lift"
-                            src="/images/from-her-lectures.jpg"
-                            alt="From Her Lectures: Our Words Book Cover"
                         />
-                    </div>
-
-                    {/* Text + Button */}
-                    <div className="flex flex-col gap-6 w-full sm:w-3/5 max-w-lg">
-                        <p className="text-black text-center sm:text-justify text-base sm:text-xl leading-relaxed">
+                        <p className="text-black text-justify text-base leading-relaxed flex-1">
                             This volume is a tribute by five former students of
                             Professor Dr. Nade Proeva, who came together to
                             honor her legacy. It brings together their writings
@@ -275,7 +186,7 @@ export default function Home() {
                             href="/images/instead-of-a-foreword.pdf"
                             target="_blank"
                             title="Introduction"
-                            className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer p-4 flex items-center justify-start"
+                            className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start mt-auto"
                         >
                             <div className="flex items-center gap-4 text-sm">
                                 <ExternalLink />
@@ -283,12 +194,23 @@ export default function Home() {
                             </div>
                         </a>
                     </div>
+
+                    {/* Vertical divider (large screens) */}
+                    <div className="hidden lg:block w-[2px] bg-red-700 self-stretch rounded-full shrink-0" />
+
+                    {/* Horizontal divider (small screens) */}
+                    <div className="block lg:hidden h-[2px] bg-red-700 w-full rounded-full" />
+
+                    {/* Summer Camp — right side */}
+                    <div className="flex flex-col items-center flex-1 lg:pl-10 xl:pl-16 self-stretch">
+                        <SummerCampBanner />
+                    </div>
                 </div>
 
                 {/* Fund Call-to-Action */}
                 <div className="mx-auto w-full xl:w-2/3 flex flex-col items-center sm:block">
                     <img
-                        className="w-[250px] md:self-stretch rounded-lg object-contain sm:ml-5 sm:float-right"
+                        className={`w-[250px] md:self-stretch rounded-lg object-contain sm:ml-5 sm:float-right`}
                         style={{
                             shapeOutside:
                                 "polygon(36% 0, 27% 12%, 29% 24%, 9% 35%, 6% 51%, 12% 70%, 31% 100%, 44% 100%, 100% 0)",
@@ -323,6 +245,87 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            {false && (
+                <section className="container flex flex-col gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5 justify-items-center">
+                    {/* book feature section */}
+                    <div className="flex flex-col items-center sm:flex-row sm:items-center gap-8 sm:gap-10 justify-center mx-auto w-fill">
+                        {/* Book Cover */}
+                        <div className="flex-shrink-0 w-full sm:w-1/4 max-w-[220px] mx-auto sm:max-w-none">
+                            <img
+                                className="w-full rounded-lg object-contain bg-white hover-lift"
+                                src="/images/from-her-lectures.jpg"
+                                alt="From Her Lectures: Our Words Book Cover"
+                            />
+                        </div>
+
+                        {/* Text + Button */}
+                        <div className="flex flex-col gap-6 w-full sm:w-3/5 max-w-lg">
+                            <p className="text-black text-center sm:text-justify text-base sm:text-xl leading-relaxed">
+                                This volume is a tribute by five former students
+                                of Professor Dr. Nade Proeva, who came together
+                                to honor her legacy. It brings together their
+                                writings on Macedonian history, spanning
+                                archaeology, ethnology, anthropology, mythology,
+                                and religion from antiquity to the present.
+                                Through these pages, they celebrate their
+                                teacher's lasting influence and honor her
+                                lifelong devotion to truth, scholarship, and her
+                                beloved homeland, Macedonia.
+                            </p>
+                            <a
+                                href="/images/instead-of-a-foreword.pdf"
+                                target="_blank"
+                                title="Introduction"
+                                className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer p-4 flex items-center justify-start"
+                            >
+                                <div className="flex items-center gap-4 text-sm">
+                                    <ExternalLink />
+                                    <p>Instead of a Foreword...</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Fund Call-to-Action */}
+                    <div className="mx-auto w-full xl:w-2/3 flex flex-col items-center sm:block">
+                        <img
+                            className="w-[250px] md:self-stretch rounded-lg object-contain sm:ml-5 sm:float-right"
+                            style={{
+                                shapeOutside:
+                                    "polygon(36% 0, 27% 12%, 29% 24%, 9% 35%, 6% 51%, 12% 70%, 31% 100%, 44% 100%, 100% 0)",
+                            }}
+                            src="/images/logo-text.jpg"
+                            alt="Nade Proeva Endowment Fund Logo"
+                            draggable={false}
+                        />
+                        <div className="text-black text-justify sm:text-right mx-auto p-2">
+                            <p className="lg:text-xl">
+                                Your support of the{" "}
+                                <i>Nade Proeva Endowment Fund</i> will help
+                                inspire and empower the next generation of
+                                historians dedicated to researching, preserving,
+                                and sharing Macedonian historical past. To help
+                                grow the Endowment,{" "}
+                                <a
+                                    href="https://www.paypal.com/us/fundraiser/charity/1386780"
+                                    className="text-red-600 hover:underline"
+                                    target="_blank"
+                                >
+                                    donate
+                                </a>{" "}
+                                or contact{" "}
+                                <a
+                                    href="mailto:info@macedonianarts.org"
+                                    className="text-red-600 hover:underline"
+                                >
+                                    info@macedonianarts.org
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            )}
         </div>
     );
 }

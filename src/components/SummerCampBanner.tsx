@@ -299,6 +299,36 @@ export default function SummerCampBanner() {
                                             "#ddd")
                                     }
                                 />
+                                <div style={{ display: "flex", gap: 12 }}>
+                                    <input
+                                        name="school"
+                                        type="text"
+                                        placeholder="School / University"
+                                        style={inputStyle}
+                                        onFocus={(e) =>
+                                            (e.currentTarget.style.borderColor =
+                                                "#8B1A1A")
+                                        }
+                                        onBlur={(e) =>
+                                            (e.currentTarget.style.borderColor =
+                                                "#ddd")
+                                        }
+                                    />
+                                    <input
+                                        name="gpa"
+                                        type="text"
+                                        placeholder="GPA"
+                                        style={{ ...inputStyle, maxWidth: 120 }}
+                                        onFocus={(e) =>
+                                            (e.currentTarget.style.borderColor =
+                                                "#8B1A1A")
+                                        }
+                                        onBlur={(e) =>
+                                            (e.currentTarget.style.borderColor =
+                                                "#ddd")
+                                        }
+                                    />
+                                </div>
                                 <input
                                     name="reply_to"
                                     type="email"
@@ -439,7 +469,7 @@ export default function SummerCampBanner() {
                     display: block;
                 }
 
-                @media (max-width: 640px) {
+                @media (max-width: 780px) {
                     .camp-modal {
                         grid-template-columns: 1fr;
                         width: calc(100vw - 32px);
@@ -451,7 +481,8 @@ export default function SummerCampBanner() {
                     }
                     .camp-modal-image img {
                         height: auto;
-                        object-fit: contain;   
+                        object-fit: contain;
+                        object-position: center top; 
                     }
                 }
             `}</style>

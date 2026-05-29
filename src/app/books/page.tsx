@@ -396,7 +396,6 @@ export default function Books() {
             isbn: "978-9989-2978-5-4",
             amazonUrl: "",
             promoImage: "/images/books/launch-of-religion.jpg",
-            promoAudio: "/videos/audio/religion-promo.mp3",
         },
         {
             makeCard: true,
