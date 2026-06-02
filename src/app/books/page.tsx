@@ -501,7 +501,7 @@ export default function Books() {
                         </AccordionItem>
                         <AccordionItem value="item-3">
                             <AccordionTrigger>
-                                Narratives / Прикази:
+                                Narratives / Прикази
                             </AccordionTrigger>
                             <AccordionContent>
                                 <ol className="list-decimal list-inside">
@@ -515,7 +515,7 @@ export default function Books() {
                         </AccordionItem>
                         <AccordionItem value="item-4">
                             <AccordionTrigger>
-                                Narratives in the Press / Прикази во печатот:
+                                Narratives in the Press / Прикази во печатот
                             </AccordionTrigger>
                             <AccordionContent>
                                 <ol className="list-decimal list-inside">
@@ -529,7 +529,7 @@ export default function Books() {
                         </AccordionItem>
                         <AccordionItem value="item-5">
                             <AccordionTrigger>
-                                Reviews / Осврти:
+                                Reviews / Осврти
                             </AccordionTrigger>
                             <AccordionContent>
                                 <ol className="list-decimal list-inside">
