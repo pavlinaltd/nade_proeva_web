@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import SectionHeader from "@/components/SectionHeader";
 import { X, ExternalLink, Expand } from "lucide-react";
@@ -7,204 +7,251 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 
 interface MediaItem {
-  type: "image" | "video" | "link";
-  title: string;
-  srcOriginal?: string; // For language toggle
-  srcEnglish?: string;  // For language toggle
-  targetSrc?: string; // For setting image in lightbox
-  orientation?: "horizontal" | "vertical";
+    type: "image" | "video" | "link";
+    title: string;
+    srcOriginal?: string; // For language toggle
+    srcEnglish?: string; // For language toggle
+    targetSrc?: string; // For setting image in lightbox
+    videoSrc?: string; //video playback
+    orientation?: "horizontal" | "vertical" | "cover";
 }
 
 const LinkItem = ({ item }: { item: MediaItem }) => (
-  <a
-    href={item.srcOriginal}
-    target="_blank"
-    title={item.title}
-    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
-    // Don't need lightbox for link
-  >
-    <div className="flex items-center gap-4 text-sm w-full">
-      <ExternalLink />
-      <p>{item.title}</p>
-    </div>
-  </a>
+    <a
+        href={item.srcOriginal}
+        target="_blank"
+        title={item.title}
+        className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
+        // Don't need lightbox for link
+    >
+        <div className="flex items-center gap-4 text-sm w-full">
+            <ExternalLink />
+            <p>{item.title}</p>
+        </div>
+    </a>
 );
 
 export default function RememberingNade() {
-  const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
-  const [isEnglish, setIsEnglish] = useState(false);
+    const [selectedImage, setSelectedImage] = useState<MediaItem | null>(null);
+    const [isEnglish, setIsEnglish] = useState(false);
 
-  const students: MediaItem = {
-    type: "image",
-    srcOriginal: "/images/memories/class-dismissed.jpg",
-    targetSrc: "/images/memories/handwritten-by-students.png",
-    title: "From her students"
-  }
+    const students: MediaItem = {
+        type: "image",
+        srcOriginal: "/images/memories/class-dismissed.jpg",
+        // targetSrc: "/images/memories/handwritten-by-students.png",
+        videoSrc: "/videos/comments.mp4",
+        title: "From her students",
+    };
 
-  const columns: MediaItem[] = [
-    {
-      type: "image",
-      srcOriginal: "/images/memories/chapeau.jpeg",
-      srcEnglish: "/images/memories/chapeau-eng.jpeg",
-      title: "Chapeau bas, madame Proeva!",
-      orientation: "vertical",
-    },
-    {
-      type: "image",
-      srcOriginal: "/images/memories/fb-post.jpg",
-      srcEnglish: "/images/memories/fb-post-eng.jpg",
-      title: "Facebook post",
-      orientation: "vertical",
-    }
-  ];
+    const columns: MediaItem[] = [
+        {
+            type: "image",
+            srcOriginal: "/images/memories/chapeau.jpeg",
+            srcEnglish: "/images/memories/chapeau-eng.jpeg",
+            title: "Chapeau bas, madame Proeva!",
+            orientation: "vertical",
+        },
+        {
+            type: "image",
+            srcOriginal: "/images/memories/coverpage.png",
+            srcEnglish: "/images/memories/coverpage_eng.png",
+            title: "Coverpage",
+            orientation: "cover",
+        },
+        {
+            type: "image",
+            srcOriginal: "/images/memories/fb-post.jpg",
+            srcEnglish: "/images/memories/fb-post-eng.jpg",
+            title: "Facebook post",
+            orientation: "vertical",
+        },
+    ];
 
-  const links: MediaItem[] = [
-    {
-      type: "link",
-      srcOriginal: "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
-      title: "From the President's Cabinet"
-    },
-    {
-      type: "link",
-      srcOriginal: "https://www.slobodenpecat.mk/hr/pochina-renomiranata-istoricharka-nade-proeva-beshe-ekspert-za-stariot-vek-i-antichkite-makedonci/",
-      title: "Sloboden Pecat"
-    },
-    {
-      type: "link",
-      srcOriginal: "https://meta.mk/na-75-godishna-vozrast-pochina-profesorkata-nade-proeva/",
-      title: "Meta"
-    },
-    {
-      type: "link",
-      srcOriginal: "https://lider.mk/pochina-najgolemata-ekspertka-za-antichka-makedonija-profesorkata-proeva-kje-bide-zakopana-na-grobishtata-vo-butel/",
-      title: "Lider"
-    }
-  ];
+    const links: MediaItem[] = [
+        {
+            type: "link",
+            srcOriginal:
+                "https://pretsedatel.mk/en/president-siljanovska-davkova-expresses-condolences-on-the-occasion-of-the-death-of-nade-proeva/",
+            title: "From the President's Cabinet",
+        },
+        {
+            type: "link",
+            srcOriginal:
+                "https://www.slobodenpecat.mk/hr/pochina-renomiranata-istoricharka-nade-proeva-beshe-ekspert-za-stariot-vek-i-antichkite-makedonci/",
+            title: "Sloboden Pecat",
+        },
+        {
+            type: "link",
+            srcOriginal:
+                "https://meta.mk/na-75-godishna-vozrast-pochina-profesorkata-nade-proeva/",
+            title: "Meta",
+        },
+        {
+            type: "link",
+            srcOriginal:
+                "https://lider.mk/pochina-najgolemata-ekspertka-za-antichka-makedonija-profesorkata-proeva-kje-bide-zakopana-na-grobishtata-vo-butel/",
+            title: "Lider",
+        },
+    ];
 
-  const openLightbox = (image: MediaItem) => {
-    setSelectedImage(image);
-    document.body.style.overflow = "hidden";
-  };
+    const openLightbox = (image: MediaItem) => {
+        setSelectedImage(image);
+        document.body.style.overflow = "hidden";
+    };
 
-  const closeLightbox = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = "auto";
-  };
+    const closeLightbox = () => {
+        setSelectedImage(null);
+        document.body.style.overflow = "auto";
+    };
 
-  return (
-    <>
-    <SectionHeader
-      title="REMEMBERING NADE"
-      subtitle="Through the voices of those who knew her best."
-    />
-
-    {/* Container */}
-    <div className="lg:mx-20 flex flex-col items-center gap-10">
-      {/* Image Feature */}
-      <div
-        className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300`}
-        onClick={() => openLightbox(students)}
-      >
-        <div className={``}>
-          <img
-          src={students.srcOriginal}
-          alt={students.title}
-          className="object-cover"
-          />
-          <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
-          <Expand
-            className="text-white drop-shadow-2xl w-14 h-14"
-          />
-          </span>
-        </div>
-      </div>
-
-      {/* Column Items */}
-      <div className="flex flex-col w-full">
-        {/* Language Switch */}
-        <div className="flex flex-col md:flex-row items-center gap-2 mb-6">
-          <div className="flex items-center gap-2 justify-start text-lg">
-            <p
-              className={isEnglish ? "text-gray-400 transition-colors duration-400" : "text-black transition-colors duration-200"}
-            >
-              Original
-            </p>
-            <Switch
-              id="language-switch"
-              aria-label="Switch to English or Original"
-              className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
-              checked={isEnglish}
-              onCheckedChange={setIsEnglish}
+    return (
+        <>
+            <SectionHeader
+                title="REMEMBERING NADE"
+                subtitle="Through the voices of those who knew her best."
             />
-            <p className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}>English</p>
-          </div>
-          <p className="text-center md:text-left italic text-gray-500">* Translations are done by Google Translate and may have errors.</p>
-        </div>
 
-        {/* Content */}
-        <div className="animate-fade-in flex flex-col md:flex-row justify-between gap-5">
-          {columns.map((item, index) =>
-            <div
-              key={index}
-              className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300`}
-              onClick={() => openLightbox(item)}
-            >
-              <div className={``}>
-                <img
-                src={isEnglish ? item.srcEnglish : item.srcOriginal}
-                alt={item.title}
-                className="object-cover"
-                />
-                <span className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}>
-                <Expand
-                  className="text-white drop-shadow-2xl w-14 h-14"
-                />
-                </span>
-              </div>
+            {/* Container */}
+            <div className="lg:mx-20 flex flex-col items-center gap-10">
+                {/* Image Feature */}
+                <div
+                    className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300`}
+                    onClick={() => openLightbox(students)}
+                >
+                    <div>
+                        <img
+                            src={students.srcOriginal}
+                            alt={students.title}
+                            className="object-cover mx-auto block"
+                        />
+                        <span
+                            className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}
+                        >
+                            <Expand className="text-white drop-shadow-2xl w-14 h-14" />
+                        </span>
+                    </div>
+                </div>
+
+                {/* Column Items */}
+                <div className="flex flex-col w-full">
+                    {/* Language Switch */}
+                    <div className="flex flex-col md:flex-row items-center gap-2 mb-6">
+                        <div className="flex items-center gap-2 justify-start text-lg">
+                            <p
+                                className={
+                                    isEnglish
+                                        ? "text-gray-400 transition-colors duration-400"
+                                        : "text-black transition-colors duration-200"
+                                }
+                            >
+                                Original
+                            </p>
+                            <Switch
+                                id="language-switch"
+                                aria-label="Switch to English or Original"
+                                className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
+                                checked={isEnglish}
+                                onCheckedChange={setIsEnglish}
+                            />
+                            <p
+                                className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}
+                            >
+                                English
+                            </p>
+                        </div>
+                        <p className="text-center md:text-left italic text-gray-500">
+                            * Translations are done by Google Translate and may
+                            have errors.
+                        </p>
+                    </div>
+
+                    {/* Content */}
+                    <div className="animate-fade-in flex flex-col md:flex-row justify-between gap-5 w-full">
+                        {columns.map((item, index) => (
+                            <div
+                                key={index}
+                                className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 flex-1 min-w-0"
+                                onClick={() => openLightbox(item)}
+                                style={{ alignContent: "center" }}
+                            >
+                                <div>
+                                    <img
+                                        src={
+                                            isEnglish
+                                                ? item.srcEnglish
+                                                : item.srcOriginal
+                                        }
+                                        alt={item.title}
+                                        className="w-full h-auto object-cover object-top"
+                                    />
+                                    <span
+                                        className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}
+                                    >
+                                        <Expand className="text-white drop-shadow-2xl w-14 h-14" />
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Link Item */}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 content-stretch gap-10">
+                    {links.map((link, index) => (
+                        <LinkItem key={index} item={link} />
+                    ))}
+                </div>
             </div>
-          )}
-        </div>
-      </div>
 
-      {/* Link Item */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 content-stretch gap-10">
-        {links.map((link, index) =>
-          <LinkItem key={index} item={link} />
-        )}
-      </div>
-    </div>
-
-    {/* Lightbox */}
-    {selectedImage && (
-      <div 
-        className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-        onClick={closeLightbox}
-      >
-        <div
-          className={
-            selectedImage.orientation === "vertical" ? 'w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl' :
-            'w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl'
-          }
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="relative">
-            <img
-              src={selectedImage.targetSrc ? selectedImage.targetSrc : isEnglish ? selectedImage.srcEnglish : selectedImage.srcOriginal}
-              alt={selectedImage.title}
-              className="w-full h-auto object-fit"
-            />
-          </div>
-        </div>
-        <Button 
-          variant="secondary"
-          size="icon"
-          className="absolute top-4 right-4 rounded-full border border-white text-white bg-burgundy-700 hover:bg-burgundy-900"
-          onClick={closeLightbox}
-        >
-          <X className="h-4 w-4" />
-        </Button>
-      </div>
-    )}
-    </>
-  );
-};
+            {/* Lightbox */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+                    onClick={closeLightbox}
+                >
+                    <div
+                        className={
+                            selectedImage.orientation === "vertical"
+                                ? "w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl"
+                                : selectedImage.orientation === "cover"
+                                  ? "w-[90vw] max-w-[400px] bg-white rounded-lg shadow-2xl"
+                                  : "w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl"
+                        }
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="relative">
+                            {selectedImage.videoSrc ? (
+                                <video
+                                    src={selectedImage.videoSrc}
+                                    controls
+                                    autoPlay
+                                    className="w-full h-auto"
+                                />
+                            ) : (
+                                <img
+                                    src={
+                                        selectedImage.targetSrc
+                                            ? selectedImage.targetSrc
+                                            : isEnglish
+                                              ? selectedImage.srcEnglish
+                                              : selectedImage.srcOriginal
+                                    }
+                                    alt={selectedImage.title}
+                                    className="w-full h-auto object-fit"
+                                />
+                            )}
+                        </div>
+                    </div>
+                    <Button
+                        variant="secondary"
+                        size="icon"
+                        className="absolute top-4 right-4 rounded-full border border-white text-white bg-burgundy-700 hover:bg-burgundy-900"
+                        onClick={closeLightbox}
+                    >
+                        <X className="h-4 w-4" />
+                    </Button>
+                </div>
+            )}
+        </>
+    );
+}
