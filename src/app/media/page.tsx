@@ -24,6 +24,7 @@ interface VideoItem {
     title: string;
     caption?: string;
     year?: string;
+    thumbnail?: string;
 }
 
 interface AudioItem {
@@ -42,6 +43,7 @@ const videos: VideoItem[] = [
         caption:
             "The unveiling of the Alexander the Great monument in Prilep, Macedonia - 2003",
         year: "2003",
+        thumbnail: "/images/thumbnail/video1.png",
     },
     {
         format: "mp4",
@@ -49,6 +51,7 @@ const videos: VideoItem[] = [
         title: "Strumica, Macedonia, TV NOVA - 2005",
         caption: "Strumica, Macedonia, TV NOVA - 2005",
         year: "2005",
+        thumbnail: "/images/thumbnail/video2.png",
     },
     {
         format: "youtube",
@@ -56,6 +59,7 @@ const videos: VideoItem[] = [
         title: "Промовирана книгата „Историјата на античките Македонци",
         caption: "Промовирана книгата „Историјата на античките Македонци",
         year: "2024",
+        thumbnail: "/images/thumbnail/video3.png",
     },
     {
         format: "youtube",
@@ -63,6 +67,7 @@ const videos: VideoItem[] = [
         title: "ЗАСПИЈ АКО МОЖЕШ (08.02.2023) ГОСТИН: НАДЕ ПРОЕВА",
         caption: "ЗАСПИЈ АКО МОЖЕШ (08.02.2023) ГОСТИН: НАДЕ ПРОЕВА",
         year: "2023",
+        thumbnail: "/images/thumbnail/video4.png",
     },
     {
         format: "youtube",
@@ -70,6 +75,7 @@ const videos: VideoItem[] = [
         title: "Н ПРОЕВА, КОРЕНИТЕ НИ СЕ СЛОВЕНСКИ 23 04 2015",
         caption: "Н ПРОЕВА, КОРЕНИТЕ НИ СЕ СЛОВЕНСКИ 23 04 2015",
         year: "2015",
+        thumbnail: "/images/thumbnail/video5.png",
     },
     {
         format: "mp4",
@@ -77,6 +83,7 @@ const videos: VideoItem[] = [
         title: "Interview — Macedonian National TV",
         caption: "Interview — Macedonian National TV",
         year: "",
+        thumbnail: "/images/thumbnail/video6.png",
     },
 ];
 
@@ -155,35 +162,22 @@ const VideoPlayerItem = ({
     </VideoPlayer>
 );
 
-/* ─────────────────────── Sprocket holes ────────────────────────────── */
-
-const Sprockets = () => (
-    <div className="flex flex-col justify-around py-2 px-1.5 gap-2">
-        {[...Array(5)].map((_, i) => (
-            <div
-                key={i}
-                className="w-2 h-2 rounded-sm bg-[#f7f3ee] opacity-80"
-            />
-        ))}
-    </div>
-);
-
 /* ─────────────────────── Record disc ───────────────────────────────── */
 
 const RecordDisc = ({ spinning }: { spinning: boolean }) => (
     <div
-        className="relative w-28 h-28 rounded-full bg-[#111] border-2 border-[#222] flex items-center justify-center mx-auto mb-2.5"
+        className="relative w-28 h-28 rounded-full bg-[#3a3a3a] border-2 border-[#222] flex items-center justify-center mx-auto mb-2.5"
         style={{ animation: spinning ? "spin 4s linear infinite" : "none" }}
     >
         {[0, 8, 16, 24].map((inset) => (
             <div
                 key={inset}
-                className="absolute rounded-full border border-[#2a2a2a]"
+                className="absolute rounded-full border border-[#6e6e6e]"
                 style={{ inset }}
             />
         ))}
         <div className="relative z-10 w-11 h-11 rounded-full bg-[#8B1A1A] flex flex-col items-center justify-center">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#C8962A] mb-0.5" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#dfddd9] mb-0.5" />
             <span className="text-[6px] text-[#f7f3ee] tracking-wide text-center leading-tight">
                 MAC
             </span>
@@ -226,32 +220,17 @@ export default function Media() {
 
     return (
         <>
-            <SectionHeader
-                title="MEDIA"
-                subtitle="Browse Professor Dr. Nade Proeva's speeches and presentations."
-            />
-
+            <div className=" mb-4 pt-3 text-center lg:mx-20">
+                <h2 className="text-2xl uppercase lg:text-3xl font-bold font-vollkornsc text-burgundy-900">
+                    Video
+                </h2>
+            </div>
             {/* ── CINEMA / VIDEO SECTION ─────────────────────────────────── */}
-            <section className="py-8 animate-fade-in">
+            <section className="animate-fade-in">
                 {/* Section label */}
                 <div className="flex items-center gap-3 px-6 mb-5">
-                    <div className="w-7 h-7 rounded-full bg-[#1a1008] flex items-center justify-center flex-shrink-0">
-                        <div
-                            style={{
-                                width: 0,
-                                height: 0,
-                                borderTop: "4px solid transparent",
-                                borderBottom: "4px solid transparent",
-                                borderLeft: "7px solid #C8962A",
-                                marginLeft: 2,
-                            }}
-                        />
-                    </div>
-                    <span className="text-[11px] tracking-[3px] uppercase text-[#1a1008] font-medium">
-                        Video Recordings
-                    </span>
-                    <div className="flex-1 h-px bg-[#d4c4a8]" />
-                    <span className="text-[10px] text-[#7a6a58] font-mono">
+                    <div className="flex-1 h-px bg-[#8B1A1A]" />
+                    <span className="text-[10px] text-[#8B1A1A] font-mono">
                         scroll →
                     </span>
                 </div>
@@ -262,16 +241,15 @@ export default function Media() {
                         className="overflow-x-auto pb-3 w-full max-w-6xl"
                         style={{
                             scrollbarWidth: "thin",
-                            scrollbarColor: "#C8962A #e8e0d0",
+                            scrollbarColor: "#8B1A1A #e8e0d0",
                         }}
                     >
                         <div
                             ref={filmstripRef}
-                            className="flex bg-[#111] rounded-sm w-full"
+                            className="flex bg-[#cdcfd1] rounded-sm w-full"
                             style={{ padding: "10px 0" }}
                         >
-                            <Sprockets />
-                            <div className="flex gap-1 px-1 items-center overflow-x-auto">
+                            <div className="flex gap-10 px-1 items-center overflow-x-auto">
                                 {videos.map((v, i) => (
                                     <button
                                         key={i}
@@ -279,8 +257,19 @@ export default function Media() {
                                         className="w-44 flex-shrink-0 relative cursor-pointer group focus:outline-none"
                                     >
                                         <div
-                                            className={`bg-[#222] h-28 overflow-hidden flex items-center justify-center border transition-all duration-200
+                                            className={`bg-[#3e3b3b] h-28 overflow-hidden flex items-center justify-center border transition-all duration-200
                       ${activeVideoIdx === i ? "border-[#C8962A] border-2" : "border-[#333] group-hover:border-[#C8962A]"}`}
+                                            style={
+                                                v.thumbnail
+                                                    ? {
+                                                          backgroundImage: `url(${v.thumbnail})`,
+                                                          backgroundSize:
+                                                              "cover",
+                                                          backgroundPosition:
+                                                              "center",
+                                                      }
+                                                    : {}
+                                            }
                                         >
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
                                             <span className="absolute top-1.5 left-1.5 text-[9px] text-[#C8962A] font-mono tracking-wide">
@@ -316,23 +305,22 @@ export default function Media() {
                                     </button>
                                 ))}
                             </div>
-                            <Sprockets />
                         </div>
                     </div>
                 </div>
                 {/* Info bar (no play button — player is always shown below) */}
                 <div className="mt-3 flex justify-center px-6">
-                    <div className="bg-[#1a1008] rounded px-4 py-3 w-full max-w-6xl">
-                        <div className="text-[9px] text-[#C8962A] tracking-[2px] uppercase font-mono mb-1">
+                    <div className="bg-[#cdcfd1] rounded px-4 py-3 w-full max-w-6xl">
+                        <div className="text-[9px] text-[#000000] tracking-[2px] uppercase font-mono mb-1">
                             V — {String(activeVideoIdx + 1).padStart(3, "0")}
                             {selectedVideo.year
                                 ? ` · ${selectedVideo.year}`
                                 : ""}
                         </div>
-                        <div className="text-sm text-[#f7f3ee] font-medium mb-0.5">
+                        <div className="text-sm text-[#000000] font-medium mb-0.5">
                             {selectedVideo.caption || selectedVideo.title}
                         </div>
-                        <div className="text-xs text-[#a89880] italic leading-relaxed line-clamp-1">
+                        <div className="text-xs text-[#000000] italic leading-relaxed line-clamp-1">
                             {selectedVideo.title}
                         </div>
                     </div>
@@ -360,19 +348,17 @@ export default function Media() {
                     </div>
                 </div>
             </section>
-            <hr className="border-b border-burgundy-700 my-4" />
-            {/* ── VINYL / AUDIO SECTION ──────────────────────────────────── */}
-            <section className="py-8 animate-fade-in">
+            <div className=" mb-4 pt-9 text-center lg:mx-20">
+                <h2 className="text-2xl uppercase lg:text-3xl font-bold font-vollkornsc text-burgundy-900">
+                    Audio
+                </h2>
+            </div>
+            {/* ── CINEMA / VIDEO SECTION ─────────────────────────────────── */}
+            <section className="animate-fade-in">
                 {/* Section label */}
                 <div className="flex items-center gap-3 px-6 mb-5">
-                    <div className="w-7 h-7 rounded-full bg-[#C8962A] flex items-center justify-center flex-shrink-0">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#1a1008]" />
-                    </div>
-                    <span className="text-[11px] tracking-[3px] uppercase text-[#1a1008] font-medium">
-                        Audio Recordings
-                    </span>
-                    <div className="flex-1 h-px bg-[#d4c4a8]" />
-                    <span className="text-[10px] text-[#7a6a58] font-mono">
+                    <div className="flex-1 h-px bg-[#8B1A1A]" />
+                    <span className="text-[10px] text-[#8B1A1A] font-mono">
                         scroll →
                     </span>
                 </div>
@@ -380,31 +366,12 @@ export default function Media() {
                 {/* Record shelf */}
                 <div className="flex px-6 justify-center">
                     <div
-                        className="flex gap-5 overflow-x-auto bg-[#0f0803] rounded-sm py-4 px-4 w-full max-w-6xl"
+                        className="flex gap-5 overflow-x-auto bg-[#cdcfd1] rounded-sm py-4 px-4 w-full max-w-6xl"
                         style={{
                             scrollbarWidth: "thin",
-                            scrollbarColor: "#C8962A #3a2808",
+                            scrollbarColor: "#8B1A1A #e8e0d0",
                         }}
                     >
-                        {/* Main audio as first record */}
-                        {/* <button
-                        onClick={() => handleSelectRecord(null)}
-                        className="flex-shrink-0 w-32 text-center focus:outline-none group"
-                    >
-                        <div className="text-[9px] text-[#C8962A] font-mono tracking-wide mb-1">
-                            {mainAudio.code}
-                        </div>
-                        <RecordDisc
-                            spinning={activeAudioIdx === null && isAudioPlaying}
-                        />
-                        <div
-                            className={`text-[11px] leading-tight mb-1 transition-colors line-clamp-3
-              ${activeAudioIdx === null ? "text-[#C8962A]" : "text-[#d4c4a8] group-hover:text-[#C8962A]"}`}
-                        >
-                            {mainAudio.title}
-                        </div>
-                    </button> */}
-
                         {/* Audio files */}
                         {audios.map((a, i) => (
                             <button
@@ -412,7 +379,7 @@ export default function Media() {
                                 onClick={() => handleSelectRecord(i)}
                                 className="flex-shrink-0 w-32 text-center focus:outline-none group"
                             >
-                                <div className="text-[9px] text-[#C8962A] font-mono tracking-wide mb-1">
+                                <div className="text-[9px] text-[#000000] font-mono tracking-wide mb-1">
                                     {a.code}
                                 </div>
                                 <RecordDisc
@@ -422,7 +389,7 @@ export default function Media() {
                                 />
                                 <div
                                     className={`text-[11px] leading-tight mb-1 transition-colors line-clamp-3
-                ${activeAudioIdx === i ? "text-[#C8962A]" : "text-[#d4c4a8] group-hover:text-[#C8962A]"}`}
+                ${activeAudioIdx === i ? "text-[#000000]" : "text-[#000000] group-hover:text-[#C8962A]"}`}
                                 >
                                     {a.title}
                                 </div>
@@ -433,14 +400,14 @@ export default function Media() {
 
                 {/* Now listening info bar */}
                 <div className="mt-3 flex justify-center px-6">
-                    <div className="bg-[#0f0803] rounded px-4 pt-4 pb-4 w-full max-w-6xl">
-                        <div className="text-[9px] text-[#C8962A] tracking-[2px] uppercase font-mono mb-2">
+                    <div className="bg-[#cdcfd1] rounded px-4 pt-4 pb-4 w-full max-w-6xl">
+                        <div className="text-[9px] text-[#000000] tracking-[2px] uppercase font-mono mb-2">
                             Now Playing
                         </div>
-                        <div className="text-sm text-[#f7f3ee] font-medium mb-1">
+                        <div className="text-sm text-[#000000] font-medium mb-1">
                             {selectedAudio.code}
                         </div>
-                        <div className="text-xs text-[#7a5a38] italic leading-relaxed line-clamp-2">
+                        <div className="text-xs text-[#000000] italic leading-relaxed line-clamp-2">
                             {selectedAudio.title}
                         </div>
                     </div>
@@ -469,7 +436,7 @@ export default function Media() {
                                 controls
                                 className="w-full rounded"
                                 style={{
-                                    accentColor: "#C8962A",
+                                    accentColor: "#c0b6b6",
                                     colorScheme: "dark",
                                 }}
                                 onPlay={() => setIsAudioPlaying(true)}
