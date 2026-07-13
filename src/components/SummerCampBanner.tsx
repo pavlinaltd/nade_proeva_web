@@ -74,7 +74,7 @@ export default function SummerCampBanner() {
                         letterSpacing: "0.02em",
                     }}
                 >
-                    Summer Camp 2026
+                    Summer Camp 2027
                 </h2>
                 <img
                     src="/images/summer_camp/camp_2026.png"
@@ -221,7 +221,7 @@ export default function SummerCampBanner() {
                                     margin: 0,
                                 }}
                             >
-                                Summer Camp 2026
+                                Summer Camp 2027
                             </h2>
 
                             <div

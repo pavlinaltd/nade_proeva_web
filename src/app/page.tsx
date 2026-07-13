@@ -115,6 +115,70 @@ export default function Home() {
                     </p>
                 </div>
             </section>
+            {/* New Medal Feature Section */}
+            <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
+                <div className="bg-gray-50 rounded-lg shadow-sm p-6 md:p-10">
+                    <h2 className="text-burgundy-800 text-2xl md:text-3xl font-bold text-center mb-8">
+                        The Order of{" "}
+                        <span className="text-burgundy-600 font-extrabold">
+                            8 September
+                        </span>
+                    </h2>
+
+                    <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-10">
+                        <img
+                            src="/images/new_medal.jpg"
+                            alt="The Order of 8 September Medal"
+                            title="The Order of 8 September"
+                            className="rounded-lg w-full sm:w-3/5 lg:w-1/2 min-w-0 hover-lift shrink-0"
+                        />
+
+                        <div className="flex flex-col gap-4 flex-1">
+                            <p className="text-black text-justify text-xs md:text-sm leading-relaxed">
+                                The Order of{" "}
+                                <strong className="font-semibold">
+                                    8 September
+                                </strong>{" "}
+                                is one of the highest state decorations of the
+                                Republic of North Macedonia. Bestowed by the
+                                President of the Republic, it is awarded to
+                                citizens, institutions, organizations, and
+                                distinguished foreign individuals whose work has
+                                made an exceptional contribution to the
+                                development, international reputation, and
+                                advancement of the country. Named after 8
+                                September 1991, the day of Macedonia's
+                                independence referendum, the Order recognizes
+                                achievements of lasting national significance.
+                                Professor Dr. Nade Proeva was posthumously
+                                awarded this high honor in recognition of her
+                                outstanding contribution to Macedonian
+                                historiography and her lifelong dedication to
+                                the study, preservation, and affirmation of
+                                Macedonia's historical and cultural
+                                heritage.{" "}
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-3 mt-2 justify-center">
+                                <a
+                                    href="https://pretsedatel.mk/proeva_23062026/"
+                                    target="_blank"
+                                    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center px-5 py-2.5 text-sm"
+                                >
+                                    Pretsedatel.mk
+                                </a>
+                                <a
+                                    href="https://www.google.com/search?smstk=ChhZZkhWWkxqQys0ZDkxd3RLZSt0ckY1MD0QAQ%3D%3D&smstidx=0&q=orden+8-mi+septemvri+na+rm+od+1991+do+denes+dobitnici&udm=50&csuir=1&aep=34&kgs=87ed4bea5fe327bb&shem=epsd1%2Crimspwouoe&shndl=37&shmd=H4sIAAAAAAAA_3WNQQrCMBBF7U7cCC5dBZeCjV0oKt4lTJshHTCTMIm2yx7LM3geD2AFXYm7z-O__2fPYrYLYpHVYeNJJYwZ_U1IMSjxKlhVHY-VskGNHUxjqCkzNbQ8tznHdNK667rSpQyZmrIJXicEadpNlOCDBvImtSBocnv1NQNdyshutfjaLgR3wRJIryf9MB-K-_RRmH_b5MFh0rUAW2L3sZ1xApaQs676H2ZGny2INdV-a-P7_gXBiv3g9wAAAA&shmds=v1_ARwrE23MNEsLQqANb-J20jY2jS9joerNtBWPjDfiZUWtrtEMxw&source=sh%2Fx%2Faim%2Fm1%2F4"
+                                    target="_blank"
+                                    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center px-5 py-2.5 text-sm"
+                                >
+                                    Google Search
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Awards Section */}
             <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
