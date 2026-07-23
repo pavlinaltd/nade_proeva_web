@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@600;700&display=swap");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.camp-modal {
+    width: 100%;
+    max-width: 900px;
+    height: 560px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+}
+.camp-modal-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.camp-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.camp-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    padding: 44px 40px 40px;
+
+    overflow-y: auto;
+}
+
+.camp-title {
+    margin: 0;
+    color: #8b1a1a;
+    font-family: "Montserrat", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.camp-desc {
+    color: #222;
+    font-family: "EB Garamond", serif;
+    font-size: 15.5px;
+    line-height: 1.72;
+    text-align: justify;
+}
+.camp-desc p:first-child {
+    margin: 0;
+}
+
+.camp-desc p:last-child {
+    margin: 12px 0 0;
+}
+
+.camp-divider {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+}
+
+.camp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-title {
+    margin: 0;
+    color: #8b1a1a;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.camp-form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.camp-submit {
+    padding: 13px 24px;
+    border: none;
+    border-radius: 4px;
+    background: #8b1a1a;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.camp-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.camp-success,
+.camp-error {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+}
+.camp-success {
+    color: #2e7d32;
+}
+
+.camp-error {
+    color: #c62828;
+}
+
+/* ── Mobile-only elements, hidden on desktop by default ── */
+.camp-apply-btn,
+.camp-close-btn {
+    display: none;
+}
+/* ══════════════════════════════════════════════════════════════════
+   Responsive: small/medium screens
+   Show poster + "Apply Now" button only.
+   Tapping it opens title/description/form as a full-screen overlay.
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+    .camp-modal {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-width: 480px;
+        overflow: visible;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ── Poster stays visible, full image, no cropping ── */
+    .camp-modal-image {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .camp-modal-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    /* ── Apply Now button sits right under the poster ── */
+    .camp-apply-btn {
+        display: block;
+        margin: 14px auto 18px;
+        padding: 9px 28px;
+        border: none;
+        border-radius: 4px;
+        background: #8b1a1a;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        width: auto;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .camp-apply-btn:hover {
+        background: #6e1414;
+    }
+
+    /* ── Content+form hidden until Apply is tapped ── */
+    .camp-modal-content {
+        display: none;
+    }
+
+    /* ── When open: full-screen overlay, single natural scroll ── */
+    .camp-modal-content--open {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: #fff;
+        padding: 60px 24px 32px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        animation: campFadeIn 0.2s ease-out;
+    }
+
+    .camp-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        border-radius: 50%;
+        background: #f0f0f0;
+        color: #333;
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .camp-title {
+        font-size: 22px;
+    }
+
+    .camp-desc {
+        font-size: 15px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .camp-form-row {
+        flex-direction: column;
+    }
+
+    .camp-form-row input[name="gpa"] {
+        max-width: 100%;
+    }
+}
+
+@keyframes campFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

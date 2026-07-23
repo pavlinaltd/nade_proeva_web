@@ -252,6 +252,37 @@ export default function RememberingNade() {
                     </Button>
                 </div>
             )}
+
+            {/* Book Feature Section */}
+            {/* <div className="flex flex-col items-center gap-4 flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
+                                    <img
+                                        className="w-[220px] rounded-lg object-contain bg-white hover-lift"
+                                        src="/images/from-her-lectures.jpg"
+                                        alt="From Her Lectures: Our Words Book Cover"
+                                    />
+                                    <p className="text-black text-justify text-base leading-relaxed">
+                                        This volume is a tribute by five former students of
+                                        Professor Dr. Nade Proeva, who came together to
+                                        honor her legacy. It brings together their writings
+                                        on Macedonian history, spanning archaeology,
+                                        ethnology, anthropology, mythology, and religion
+                                        from antiquity to the present. Through these pages,
+                                        they celebrate their teacher's lasting influence and
+                                        honor her lifelong devotion to truth, scholarship,
+                                        and her beloved homeland, Macedonia.
+                                    </p>
+                                    <a
+                                        href="/images/instead-of-a-foreword.pdf"
+                                        target="_blank"
+                                        title="Introduction"
+                                        className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start mt-auto"
+                                    >
+                                        <div className="flex items-center gap-4 text-sm">
+                                            <ExternalLink />
+                                            <p>Instead of a Foreword...</p>
+                                        </div>
+                                    </a>
+                                </div> */}
         </>
     );
 }

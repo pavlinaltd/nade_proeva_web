@@ -1,63 +1,131 @@
 import Link from "next/link";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="bg-gradient-to-b from-amber-500 to-yellow-100 text-white py-8">
-      <div className="max-w-[1450px] mx-auto px-4">
-        <div
-          className="flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-0"
-        >
-          {/* About and Links */}
-          <div className="w-full md:w-[48%] xl:w-[42%]">
-            <p className="text-black text-xs md:text-sm lg:text-md text-justify">
-              This site is dedicated to preserving the memory and academic legacy of
-              Professor Dr. Nade Proeva, a distinguished Macedonian scholar, author, historian, researcher, and educator.
-            </p>
-            <br />
-            <h3 className="text-xl mb-4 text-black">Links</h3>
-            <div className="grid grid-cols-4 w-full gap-3 text-xs md:text-sm lg:text-md text-black">
-              <Link href="/" className="hover:underline">Home</Link>
-              <Link href="/bio" className="hover:underline">Biography</Link>
-              <Link href="/books" className="hover:underline">Books</Link>
-              <Link href="/papers" className="hover:underline">Papers</Link>
-              <Link href="/press" className="hover:underline">Press</Link>
-              <Link href="/media" className="hover:underline">Media</Link>
-              <Link href="/field-work" className="hover:underline">Field Work</Link>
-              <Link href="/remembering-nade" className="hover:underline">Remembering Nade</Link>
-            </div>
-          </div>
+    return (
+        <footer className="bg-gradient-to-b from-amber-500 to-yellow-100 text-white py-8">
+            <div className="max-w-[1450px] mx-auto px-4">
+                <div className="flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-0">
+                    {/* About and Links */}
+                    <div className="w-full md:w-[48%] xl:w-[42%]">
+                        <p className="text-black text-xs md:text-sm lg:text-md text-justify">
+                            This site is dedicated to preserving the memory and
+                            academic legacy of Professor Dr. Nade Proeva, a
+                            distinguished Macedonian scholar, author, historian,
+                            researcher, and educator.
+                        </p>
+                        <br />
+                        <h3 className="text-xl mb-4 text-black">Links</h3>
+                        <div className="grid grid-cols-4 w-full gap-3 text-xs md:text-sm lg:text-md text-black">
+                            <Link href="/" className="hover:underline">
+                                Home
+                            </Link>
+                            <Link href="/bio" className="hover:underline">
+                                Biography
+                            </Link>
+                            <Link href="/books" className="hover:underline">
+                                Books
+                            </Link>
+                            <Link href="/papers" className="hover:underline">
+                                Papers
+                            </Link>
+                            <Link href="/press" className="hover:underline">
+                                Press
+                            </Link>
+                            <Link href="/media" className="hover:underline">
+                                Media
+                            </Link>
+                            <Link
+                                href="/field-work"
+                                className="hover:underline"
+                            >
+                                Field Work
+                            </Link>
+                            <Link
+                                href="/remembering-nade"
+                                className="hover:underline"
+                            >
+                                Remembering Nade
+                            </Link>
+                        </div>
+                    </div>
 
-          {/* Copyright Statement */}
-          <div className="w-full md:w-[48%] xl:w-[42%]">
-            <p className="text-black text-xs md:text-sm lg:text-md text-justify">
-              <span className="font-bold">&copy; All rights reserved.</span> The contents of this website, including but not limited to text,
-              images, and other media, are protected by copyright law. No part of these materials may be copied,
-              reproduced, distributed, transmitted, displayed, published, or otherwise used in any form or by any means, 
-              including electronic, mechanical, photocopying, recording, or otherwise, without 
-              the prior written permission of the copyright holder. Unauthorized use is strictly prohibited and may result in legal action.
-            </p>
-            <br />
-            <div className="flex justify-between text-burgundy-800 font-bold text-xs md:text-sm lg:text-base">
-              <Link href="https://ukim.academia.edu/NadeProeva" className="hover:underline" target="_blank" rel="noopener">academia.edu</Link>
-              <Link href="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/" className="hover:underline" target="_blank" rel="noopener">fzf.ukim.edu.mk</Link>
-              <Link href="https://mk.wikipedia.org/wiki/Наде_Проева" className="hover:underline" target="_blank" rel="noopener">mk.wikipedia.org</Link>
+                    {/* Copyright Statement */}
+                    <div className="w-full md:w-[48%] xl:w-[42%]">
+                        <p className="text-black text-xs md:text-sm lg:text-md text-justify">
+                            <span className="font-bold">
+                                &copy; All rights reserved.
+                            </span>{" "}
+                            The contents of this website, including but not
+                            limited to text, images, and other media, are
+                            protected by copyright law. No part of these
+                            materials may be copied, reproduced, distributed,
+                            transmitted, displayed, published, or otherwise used
+                            in any form or by any means, including electronic,
+                            mechanical, photocopying, recording, or otherwise,
+                            without the prior written permission of the
+                            copyright holder. Unauthorized use is strictly
+                            prohibited and may result in legal action.
+                        </p>
+                        <br />
+                        <div className="flex justify-between text-burgundy-800 font-bold text-xs md:text-sm lg:text-base">
+                            <Link
+                                href="https://ukim.academia.edu/NadeProeva"
+                                className="hover:underline"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                academia.edu
+                            </Link>
+                            <Link
+                                href="http://fzf.ukim.edu.mk/проф-д-р-наде-проева/"
+                                className="hover:underline"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                fzf.ukim.edu.mk
+                            </Link>
+                            <Link
+                                href="https://mk.wikipedia.org/wiki/Наде_Проева"
+                                className="hover:underline"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                mk.wikipedia.org
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-between gap-1 border-t-2 border-amber-800 mt-8 pt-6 text-black text-center text-xs md:text-sm">
+                    <p className="self-start">
+                        &copy; {currentYear} <i>Nade Proeva Endowment Fund</i>.
+                    </p>
+                    <p className="self-end">
+                        Website courtesy of{" "}
+                        <a
+                            href="https://linkedin.com/in/coriebeale"
+                            target="_blank"
+                            rel="noopener"
+                            className="font-bold hover:underline"
+                        >
+                            Corie Beale
+                        </a>{" "}
+                        and{" "}
+                        <a
+                            href="https://www.linkedin.com/in/dagaanchal"
+                            target="_blank"
+                            rel="noopener"
+                            className="font-bold hover:underline"
+                        >
+                            Anchal Daga
+                        </a>
+                    </p>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <div className="flex justify-between gap-1 border-t-2 border-amber-800 mt-8 pt-6 text-black text-center text-xs md:text-sm">
-          <p className="self-start">
-            &copy; {currentYear} <i>Nade Proeva Endowment Fund</i>.
-          </p>
-          <p className="self-end">
-            Website courtesy of <a href="https://linkedin.com/in/coriebeale" target="_blank" rel="noopener" className="font-bold hover:underline">Corie Beale</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 };
 
 export default Footer;

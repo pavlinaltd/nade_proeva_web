@@ -12,7 +12,8 @@ import {
     VideoPlayerFullscreenButton,
 } from "@/components/ui/shadcn-io/video-player";
 import { ExternalLink } from "lucide-react";
-import SummerCampBanner from "../components/SummerCampBanner";
+import CampTimeline from "../components/CampTimeline";
+import MacedonianCenter from "../components/MacedonianCenter";
 
 export default function Home() {
     const medals = [
@@ -31,7 +32,7 @@ export default function Home() {
     ];
 
     return (
-        <div className="animate-fade-in space-y-16">
+        <div className="animate-fade-in space-y-10">
             {/* Hero Section */}
             <section className="relative p-5 md:p-10 lg:p-20 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white">
                 <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
@@ -69,7 +70,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
             {/* Introduction Section */}
             <section className="container mx-auto px-4 w-full lg:w-4/5">
                 <div className="flex flex-col gap-8 justify-center items-center text-justify text-black">
@@ -116,8 +116,8 @@ export default function Home() {
                 </div>
             </section>
             {/* New Medal Feature Section */}
-            <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
-                <div className="bg-gray-50 rounded-lg shadow-sm p-6 md:p-10">
+            <section className="container px-4 w-full lg:w-4/5">
+                <div className="bg-gray-50 rounded-lg shadow-sm p-2 md:p-10">
                     <h2 className="text-burgundy-800 text-2xl md:text-3xl font-bold text-center mb-8">
                         The Order of{" "}
                         <span className="text-burgundy-600 font-extrabold">
@@ -125,16 +125,16 @@ export default function Home() {
                         </span>
                     </h2>
 
-                    <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-10">
+                    <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 lg:items-stretch">
                         <img
                             src="/images/new_medal.jpg"
                             alt="The Order of 8 September Medal"
                             title="The Order of 8 September"
-                            className="rounded-lg w-full sm:w-3/5 lg:w-1/2 min-w-0 hover-lift shrink-0"
+                            className="rounded-lg max-w-full lg:max-w-[48%] h-auto hover-lift"
                         />
 
-                        <div className="flex flex-col gap-4 flex-1">
-                            <p className="text-black text-justify text-xs md:text-sm leading-relaxed">
+                        <div className="flex flex-col justify-between overflow-hidden">
+                            <p className="text-black text-justify text-xs md:text-base leading-snug">
                                 The Order of{" "}
                                 <strong className="font-semibold">
                                     8 September
@@ -155,22 +155,21 @@ export default function Home() {
                                 outstanding contribution to Macedonian
                                 historiography and her lifelong dedication to
                                 the study, preservation, and affirmation of
-                                Macedonia's historical and cultural
-                                heritage.{" "}
+                                Macedonia's historical and cultural heritage.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-3 mt-2 justify-center">
+                            <div className="flex gap-3 justify-center mt-4">
                                 <a
                                     href="https://pretsedatel.mk/proeva_23062026/"
                                     target="_blank"
-                                    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center px-5 py-2.5 text-sm"
+                                    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center px-4 py-2 text-sm"
                                 >
                                     Pretsedatel.mk
                                 </a>
                                 <a
                                     href="https://www.google.com/search?smstk=ChhZZkhWWkxqQys0ZDkxd3RLZSt0ckY1MD0QAQ%3D%3D&smstidx=0&q=orden+8-mi+septemvri+na+rm+od+1991+do+denes+dobitnici&udm=50&csuir=1&aep=34&kgs=87ed4bea5fe327bb&shem=epsd1%2Crimspwouoe&shndl=37&shmd=H4sIAAAAAAAA_3WNQQrCMBBF7U7cCC5dBZeCjV0oKt4lTJshHTCTMIm2yx7LM3geD2AFXYm7z-O__2fPYrYLYpHVYeNJJYwZ_U1IMSjxKlhVHY-VskGNHUxjqCkzNbQ8tznHdNK667rSpQyZmrIJXicEadpNlOCDBvImtSBocnv1NQNdyshutfjaLgR3wRJIryf9MB-K-_RRmH_b5MFh0rUAW2L3sZ1xApaQs676H2ZGny2INdV-a-P7_gXBiv3g9wAAAA&shmds=v1_ARwrE23MNEsLQqANb-J20jY2jS9joerNtBWPjDfiZUWtrtEMxw&source=sh%2Fx%2Faim%2Fm1%2F4"
                                     target="_blank"
-                                    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center px-5 py-2.5 text-sm"
+                                    className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center px-4 py-2 text-sm"
                                 >
                                     Google Search
                                 </a>
@@ -181,7 +180,7 @@ export default function Home() {
             </section>
 
             {/* Awards Section */}
-            <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
+            <section className="container mx-auto px-4 w-full lg:w-4/5">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-10 rounded-lg">
                     {medals.map((medal, index) => (
                         <img
@@ -195,117 +194,36 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Video Section */}
-            <section className="container mx-auto px-4 py-4 w-full lg:w-4/5">
-                <VideoPlayer
-                    className={
-                        "video-player overflow-hidden aspect-video shadow-lg rounded-lg"
-                    }
-                >
-                    <VideoPlayerContent
-                        crossOrigin=""
-                        preload="auto"
-                        slot="media"
-                        src="/videos/Homepage.mp4"
-                    />
-                    <VideoPlayerControlBar>
-                        <VideoPlayerPlayButton />
-                        <VideoPlayerSeekBackwardButton className="hidden md:inline-flex" />
-                        <VideoPlayerSeekForwardButton className="hidden md:inline-flex" />
-                        <VideoPlayerTimeRange />
-                        <VideoPlayerTimeDisplay
-                            showDuration
-                            className="hidden md:inline-flex"
-                        />
-                        <VideoPlayerMuteButton />
-                        <VideoPlayerVolumeRange className="hidden md:inline-flex" />
-                        <VideoPlayerFullscreenButton />
-                    </VideoPlayerControlBar>
-                </VideoPlayer>
+            <hr style={{ borderColor: "#ab2345", color: "#ab2345" }} />
+            <section className="container w-full lg:w-4/5">
+                <CampTimeline />
             </section>
 
-            {/* Combined with summer camp */}
+            {/* Video section with macedonian center */}
             <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5">
-                {/* camp and book */}
-                <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-0">
-                    {/* Book Feature Section */}
-                    <div className="flex flex-col items-center gap-4 flex-1 lg:pr-10 xl:pr-16">
-                        <img
-                            className="w-[220px] rounded-lg object-contain bg-white hover-lift"
-                            src="/images/from-her-lectures.jpg"
-                            alt="From Her Lectures: Our Words Book Cover"
-                        />
-                        <p className="text-black text-justify text-base leading-relaxed flex-1">
-                            This volume is a tribute by five former students of
-                            Professor Dr. Nade Proeva, who came together to
-                            honor her legacy. It brings together their writings
-                            on Macedonian history, spanning archaeology,
-                            ethnology, anthropology, mythology, and religion
-                            from antiquity to the present. Through these pages,
-                            they celebrate their teacher's lasting influence and
-                            honor her lifelong devotion to truth, scholarship,
-                            and her beloved homeland, Macedonia.
-                        </p>
-                        <a
-                            href="/images/instead-of-a-foreword.pdf"
-                            target="_blank"
-                            title="Introduction"
-                            className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start mt-auto"
-                        >
-                            <div className="flex items-center gap-4 text-sm">
-                                <ExternalLink />
-                                <p>Instead of a Foreword...</p>
-                            </div>
-                        </a>
+                <div className="flex flex-col lg:flex-row gap-4">
+                    {/* Video Feature Section */}
+                    <div className="flex flex-col items-center justify-center gap-4 flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
+                        <VideoPlayer className="video-player w-full max-w-[420px] rounded-lg overflow-hidden">
+                            <VideoPlayerContent
+                                crossOrigin=""
+                                preload="auto"
+                                slot="media"
+                                src="/videos/Homepage.mp4"
+                                poster="/images/thumbnail/poster_final.jpg"
+                                className="w-full h-auto object-contain"
+                            />
+                            <VideoPlayerControlBar>
+                                <VideoPlayerPlayButton />
+                                <VideoPlayerTimeRange />
+                                <VideoPlayerMuteButton />
+                                <VideoPlayerFullscreenButton />
+                            </VideoPlayerControlBar>
+                        </VideoPlayer>
                     </div>
-
-                    {/* Vertical divider (large screens) */}
-                    <div className="hidden lg:block w-[2px] bg-red-700 self-stretch rounded-full shrink-0" />
-
-                    {/* Horizontal divider (small screens) */}
-                    <div className="block lg:hidden h-[2px] bg-red-700 w-full rounded-full" />
-
-                    {/* Summer Camp — right side */}
-                    <div className="flex flex-col items-center flex-1 lg:pl-10 xl:pl-16 self-stretch">
-                        <SummerCampBanner />
-                    </div>
-                </div>
-
-                {/* Fund Call-to-Action */}
-                <div className="mx-auto w-full xl:w-2/3 flex flex-col items-center sm:block">
-                    <img
-                        className={`w-[250px] md:self-stretch rounded-lg object-contain sm:ml-5 sm:float-right`}
-                        style={{
-                            shapeOutside:
-                                "polygon(36% 0, 27% 12%, 29% 24%, 9% 35%, 6% 51%, 12% 70%, 31% 100%, 44% 100%, 100% 0)",
-                        }}
-                        src="/images/logo-text.jpg"
-                        alt="Nade Proeva Endowment Fund Logo"
-                        draggable={false}
-                    />
-                    <div className="text-black text-justify sm:text-right mx-auto p-2">
-                        <p className="lg:text-xl">
-                            Your support of the{" "}
-                            <i>Nade Proeva Endowment Fund</i> will help inspire
-                            and empower the next generation of historians
-                            dedicated to researching, preserving, and sharing
-                            Macedonian historical past. To help grow the
-                            Endowment,{" "}
-                            <a
-                                href="https://www.paypal.com/us/fundraiser/charity/1386780"
-                                className="text-red-600 hover:underline"
-                                target="_blank"
-                            >
-                                donate
-                            </a>{" "}
-                            or contact{" "}
-                            <a
-                                href="mailto:info@macedonianarts.org"
-                                className="text-red-600 hover:underline"
-                            >
-                                info@macedonianarts.org
-                            </a>
-                        </p>
+                    {/* poster center — right side */}
+                    <div className="flex flex-col items-center justify-center flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
+                        <MacedonianCenter />
                     </div>
                 </div>
             </section>
@@ -348,44 +266,6 @@ export default function Home() {
                                     <p>Instead of a Foreword...</p>
                                 </div>
                             </a>
-                        </div>
-                    </div>
-
-                    {/* Fund Call-to-Action */}
-                    <div className="mx-auto w-full xl:w-2/3 flex flex-col items-center sm:block">
-                        <img
-                            className="w-[250px] md:self-stretch rounded-lg object-contain sm:ml-5 sm:float-right"
-                            style={{
-                                shapeOutside:
-                                    "polygon(36% 0, 27% 12%, 29% 24%, 9% 35%, 6% 51%, 12% 70%, 31% 100%, 44% 100%, 100% 0)",
-                            }}
-                            src="/images/logo-text.jpg"
-                            alt="Nade Proeva Endowment Fund Logo"
-                            draggable={false}
-                        />
-                        <div className="text-black text-justify sm:text-right mx-auto p-2">
-                            <p className="lg:text-xl">
-                                Your support of the{" "}
-                                <i>Nade Proeva Endowment Fund</i> will help
-                                inspire and empower the next generation of
-                                historians dedicated to researching, preserving,
-                                and sharing Macedonian historical past. To help
-                                grow the Endowment,{" "}
-                                <a
-                                    href="https://www.paypal.com/us/fundraiser/charity/1386780"
-                                    className="text-red-600 hover:underline"
-                                    target="_blank"
-                                >
-                                    donate
-                                </a>{" "}
-                                or contact{" "}
-                                <a
-                                    href="mailto:info@macedonianarts.org"
-                                    className="text-red-600 hover:underline"
-                                >
-                                    info@macedonianarts.org
-                                </a>
-                            </p>
                         </div>
                     </div>
                 </section>
