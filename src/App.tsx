@@ -18,27 +18,30 @@ import Media from "./app/pages/Media";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/bio" element={<About />} />
-            <Route path="/books" element={<Books />} />
-            <Route path="/papers" element={<Papers />} />
-            <Route path="/field-work" element={<OnSite />} />
-            <Route path="/press" element={<Press />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/remembering-nade" element={<Testimonials />} />
-            <Route path="/*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path="/bio" element={<About />} />
+                        <Route path="/books" element={<Books />} />
+                        <Route path="/papers" element={<Papers />} />
+                        <Route path="/field-work" element={<OnSite />} />
+                        <Route path="/press" element={<Press />} />
+                        <Route path="/media" element={<Media />} />
+                        <Route
+                            path="/remembering-nade"
+                            element={<Testimonials />}
+                        />
+                        <Route path="/*" element={<NotFound />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </TooltipProvider>
+    </QueryClientProvider>
 );
 
 export default App;

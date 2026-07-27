@@ -2,7 +2,7 @@
 
 import SectionHeader from "@/components/SectionHeader";
 import { X, ExternalLink, Expand } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 
@@ -104,6 +104,23 @@ export default function RememberingNade() {
         document.body.style.overflow = "auto";
     };
 
+    const coverRef = useRef<HTMLDivElement | null>(null);
+    const [col1Height, setCol1Height] = useState<number | undefined>(undefined);
+
+    useEffect(() => {
+        if (!coverRef.current) return;
+
+        const el = coverRef.current;
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                setCol1Height(entry.contentRect.height);
+            }
+        });
+        observer.observe(el);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <>
             <SectionHeader
@@ -135,7 +152,7 @@ export default function RememberingNade() {
                 {/* Column Items */}
                 <div className="flex flex-col w-full">
                     {/* Language Switch */}
-                    <div className="flex flex-col md:flex-row items-center gap-2 mb-6">
+                    <div className="flex flex-col lg:flex-row items-center gap-2 mb-6">
                         <div className="flex items-center gap-2 justify-start text-lg">
                             <p
                                 className={
@@ -166,32 +183,102 @@ export default function RememberingNade() {
                     </div>
 
                     {/* Content */}
-                    <div className="animate-fade-in flex flex-col md:flex-row justify-between gap-5 w-full">
-                        {columns.map((item, index) => (
-                            <div
-                                key={index}
-                                className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 flex-1 min-w-0"
-                                onClick={() => openLightbox(item)}
-                                style={{ alignContent: "center" }}
-                            >
-                                <div>
-                                    <img
-                                        src={
-                                            isEnglish
-                                                ? item.srcEnglish
-                                                : item.srcOriginal
-                                        }
-                                        alt={item.title}
-                                        className="w-full h-auto object-cover object-top"
-                                    />
-                                    <span
-                                        className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}
-                                    >
-                                        <Expand className="text-white drop-shadow-2xl w-14 h-14" />
-                                    </span>
+                    <div className="animate-fade-in flex flex-col lg:flex-row justify-between gap-5 w-full items-start">
+                        <div
+                            className="flex-1 min-w-0 flex flex-col gap-5"
+                            style={
+                                col1Height
+                                    ? { height: `${col1Height}px` }
+                                    : undefined
+                            }
+                        >
+                            {[columns[0], columns[2]].map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 flex-1 min-h-0"
+                                    onClick={() => openLightbox(item)}
+                                    style={{ alignContent: "center" }}
+                                >
+                                    <div>
+                                        <img
+                                            src={
+                                                isEnglish
+                                                    ? item.srcEnglish
+                                                    : item.srcOriginal
+                                            }
+                                            alt={columns[1].title}
+                                            className="w-full h-auto object-cover object-top"
+                                        />
+                                        <span
+                                            className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}
+                                        >
+                                            <Expand className="text-white drop-shadow-2xl w-14 h-14" />
+                                        </span>
+                                    </div>
                                 </div>
+                            ))}
+                        </div>
+
+                        {/* Book Feature Section */}
+                        <div
+                            className="min-w-0 flex flex-col items-center gap-2 flex-1 p-3 rounded-xl bg-gray-100 shadow-sm overflow-hidden"
+                            style={
+                                col1Height
+                                    ? { height: `${col1Height}px` }
+                                    : undefined
+                            }
+                        >
+                            <img
+                                className="w-[110px] rounded-lg object-contain bg-white hover-lift shrink-0"
+                                src="/images/from-her-lectures.jpg"
+                                alt="From Her Lectures: Our Words Book Cover"
+                            />
+                            <p className="text-black text-justify text-sm p-4 leading-snug">
+                                This volume is a tribute by five former students
+                                of Professor Dr. Nade Proeva, who came together
+                                to honor her legacy. It brings together their
+                                writings on Macedonian history, spanning
+                                archaeology, ethnology, anthropology, mythology,
+                                and religion from antiquity to the present.
+                                Through these pages, they celebrate their
+                                teacher's lasting influence and honor her
+                                lifelong devotion to truth, scholarship, and her
+                                beloved homeland, Macedonia.
+                            </p>
+                            <a
+                                href="/images/instead-of-a-foreword.pdf"
+                                target="_blank"
+                                title="Introduction"
+                                className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start mt-aut shrink-0"
+                            >
+                                <div className="flex items-end gap-4 text-sm">
+                                    <ExternalLink />
+                                    <p>Instead of a Foreword...</p>
+                                </div>
+                            </a>
+                        </div>
+                        {/* Second slot: coverpage — unchanged */}
+                        <div
+                            ref={coverRef}
+                            className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 flex-1 min-w-0"
+                            onClick={() => openLightbox(columns[1])}
+                            style={{ alignContent: "center" }}
+                        >
+                            <div>
+                                <img
+                                    src={
+                                        isEnglish
+                                            ? columns[1].srcEnglish
+                                            : columns[1].srcOriginal
+                                    }
+                                    alt={columns[1].title}
+                                    className="w-full h-auto object-cover object-top"
+                                />
+                                <span className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30">
+                                    <Expand className="text-white drop-shadow-2xl w-14 h-14" />
+                                </span>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
 
@@ -252,37 +339,6 @@ export default function RememberingNade() {
                     </Button>
                 </div>
             )}
-
-            {/* Book Feature Section */}
-            {/* <div className="flex flex-col items-center gap-4 flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
-                                    <img
-                                        className="w-[220px] rounded-lg object-contain bg-white hover-lift"
-                                        src="/images/from-her-lectures.jpg"
-                                        alt="From Her Lectures: Our Words Book Cover"
-                                    />
-                                    <p className="text-black text-justify text-base leading-relaxed">
-                                        This volume is a tribute by five former students of
-                                        Professor Dr. Nade Proeva, who came together to
-                                        honor her legacy. It brings together their writings
-                                        on Macedonian history, spanning archaeology,
-                                        ethnology, anthropology, mythology, and religion
-                                        from antiquity to the present. Through these pages,
-                                        they celebrate their teacher's lasting influence and
-                                        honor her lifelong devotion to truth, scholarship,
-                                        and her beloved homeland, Macedonia.
-                                    </p>
-                                    <a
-                                        href="/images/instead-of-a-foreword.pdf"
-                                        target="_blank"
-                                        title="Introduction"
-                                        className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start mt-auto"
-                                    >
-                                        <div className="flex items-center gap-4 text-sm">
-                                            <ExternalLink />
-                                            <p>Instead of a Foreword...</p>
-                                        </div>
-                                    </a>
-                                </div> */}
         </>
     );
 }

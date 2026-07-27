@@ -9,9 +9,7 @@ import SummerCampBanner from "./SummerCampBanner";
 const CAMP_YEARS = [
     { year: "2027", label: "2027", content: "banner" as const },
     { year: "2026", label: "2026", content: null },
-    { year: "2025", label: "2025", content: null },
-    { year: "2024", label: "2024", content: null },
-    { year: "2023", label: "2023", content: null },
+    { year: "2006", label: "2006", content: null },
 ];
 
 export default function CampTimeline() {
@@ -34,9 +32,7 @@ export default function CampTimeline() {
                 <p className="text-burgundy-800 font-bold text-lg">
                     {active.label}
                 </p>
-                <p className="text-gray-500 text-sm">
-                    Details for this year will be added soon.
-                </p>
+                <p className="text-gray-500 text-sm">Under Construction</p>
             </div>
         );
 

@@ -14,6 +14,7 @@ import {
 import { ExternalLink } from "lucide-react";
 import CampTimeline from "../components/CampTimeline";
 import MacedonianCenter from "../components/MacedonianCenter";
+import FilmWithPoster from "../components/FilmWithPoster";
 
 export default function Home() {
     const medals = [
@@ -194,35 +195,21 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* camp+timelines */}
             <hr style={{ borderColor: "#ab2345", color: "#ab2345" }} />
             <section className="container w-full lg:w-4/5">
                 <CampTimeline />
             </section>
 
-            {/* Video section with macedonian center */}
+            {/* Video film + macedonian center */}
             <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5">
-                <div className="flex flex-col lg:flex-row gap-4">
+                <div className="flex flex-col lg:flex-row gap-4 items-stretch">
                     {/* Video Feature Section */}
-                    <div className="flex flex-col items-center justify-center gap-4 flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
-                        <VideoPlayer className="video-player w-full max-w-[420px] rounded-lg overflow-hidden">
-                            <VideoPlayerContent
-                                crossOrigin=""
-                                preload="auto"
-                                slot="media"
-                                src="/videos/Homepage.mp4"
-                                poster="/images/thumbnail/poster_final.jpg"
-                                className="w-full h-auto object-contain"
-                            />
-                            <VideoPlayerControlBar>
-                                <VideoPlayerPlayButton />
-                                <VideoPlayerTimeRange />
-                                <VideoPlayerMuteButton />
-                                <VideoPlayerFullscreenButton />
-                            </VideoPlayerControlBar>
-                        </VideoPlayer>
+                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
+                        <FilmWithPoster />
                     </div>
                     {/* poster center — right side */}
-                    <div className="flex flex-col items-center justify-center flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
+                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
                         <MacedonianCenter />
                     </div>
                 </div>
