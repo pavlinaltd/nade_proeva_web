@@ -1,89 +1,79 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import SummerCampBanner from "./SummerCampBanner";
+import { Label } from "recharts";
 
-// ── Add/edit years here. `content: "banner"` renders the existing
-//    SummerCampBanner (poster + form). Leave content null for years
-//    that don't have material yet — they'll show a placeholder.
-const CAMP_YEARS = [
-    { year: "2027", label: "2027", content: "banner" as const },
-    { year: "2026", label: "2026", content: null },
-    { year: "2006", label: "2006", content: null },
-];
-
+const CAMP_YEARS = Array.from({ length: 11 }, (_, i) => {
+    const year = 2026 + i;
+    return {
+        year: String(year),
+        label: String(year),
+        active: year === 2026,
+    };
+});
 export default function CampTimeline() {
-    const [activeYear, setActiveYear] = useState(CAMP_YEARS[0].year);
-    const active = CAMP_YEARS.find((y) => y.year === activeYear)!;
-    const activeIndex = CAMP_YEARS.findIndex((y) => y.year === activeYear);
+    const router = useRouter();
+    const [tooltipYr, setTooltipYr] = useState<string | null>(null);
+    const tooltipTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    // % position of the active dot along the row/column, used to fill the
-    // line up to that point (progress-bar style) instead of a flat gray line.
-    const fillPercent =
-        CAMP_YEARS.length > 1
-            ? (activeIndex / (CAMP_YEARS.length - 1)) * 100
-            : 0;
+    const showTooltip = (year: string) => {
+        if (tooltipTimeout.current) clearTimeout(tooltipTimeout.current);
+        setTooltipYr(year);
+        tooltipTimeout.current = setTimeout(() => setTooltipYr(null), 1500);
+    };
 
-    const contentBlock =
-        active.content === "banner" ? (
-            <SummerCampBanner />
-        ) : (
-            <div className="flex flex-col items-center justify-center text-center gap-2 border border-dashed border-gray-300 rounded-lg bg-gray-50 w-full h-[560px]">
-                <p className="text-burgundy-800 font-bold text-lg">
-                    {active.label}
-                </p>
-                <p className="text-gray-500 text-sm">Under Construction</p>
-            </div>
-        );
+    const handleYearClick = (y: (typeof CAMP_YEARS)[number]) => {
+        if (y.active) {
+            //camp page - replace later
+            router.push("/not-found");
+        } else if (y.year === "2027") {
+            showTooltip(y.year);
+        }
+    };
 
     return (
         <div className="w-full flex flex-col xl:flex-row xl:items-start xl:justify-center xl:gap-10">
-            {/* ── Horizontal tabs — shown below xl breakpoint ── */}
-            <div className="xl:hidden -mt-4 md:-mt-6 mb-6">
+            {/*horizontal tabs*/}
+            <div className="xl:hidden -mt-8 md:-mt-10 mb-6">
                 <div className="flex items-baseline gap-3 mb-4">
                     <h3 className="text-burgundy-800 font-extrabold text-2xl md:text-3xl tracking-tight">
                         Timeline
                     </h3>
-                    <span className="text-gray-400 text-xs md:text-sm uppercase tracking-widest">
-                        Browse by year
-                    </span>
                 </div>
 
-                <div className="relative pt-[7px]">
-                    <div className="absolute left-[7px] right-[7px] top-[7px] h-[2px] bg-gray-200" />
-                    <div
-                        className="absolute left-[7px] top-[7px] h-[2px] bg-burgundy-700 transition-all duration-300 ease-out"
-                        style={{
-                            width: `calc(${fillPercent}% - ${
-                                fillPercent > 0 ? "14px" : "0px"
-                            })`,
-                        }}
-                    />
+                <div className="relative">
+                    <div className="absolute left-2 right-2 top-[15px] z-0 h-[2px] bg-gray-200 " />
 
-                    <div className="flex gap-6 md:gap-12 overflow-x-auto scrollbar-none pb-2">
+                    <div className="flex gap-3 md:gap-6 overflow-x-auto scrollbar-none pt-2 pb-2">
                         {CAMP_YEARS.map((y) => {
-                            const isActive = y.year === activeYear;
                             return (
                                 <button
                                     key={y.year}
                                     type="button"
-                                    onClick={() => setActiveYear(y.year)}
-                                    className="relative flex flex-col items-center shrink-0 group -mt-[7px]"
+                                    onClick={() => handleYearClick(y)}
+                                    className={
+                                        "relative z-10 flex flex-col items-center shrink-0 group " +
+                                        (y.active
+                                            ? "cursor-pointer"
+                                            : "cursor-default")
+                                    }
                                 >
                                     <span
                                         className={
-                                            "relative z-10 rounded-full transition-all duration-300 " +
-                                            (isActive
-                                                ? "w-[14px] h-[14px] bg-burgundy-700 shadow-[0_0_0_4px_rgba(139,26,26,0.18)]"
-                                                : "w-[14px] h-[14px] bg-white border-2 border-gray-300 group-hover:border-burgundy-400 group-hover:scale-110")
+                                            "relative z-10 rounded-full transition-all duration-300 w-4 h-4 " +
+                                            (y.active
+                                                ? "bg-burgundy-700 shadow-[0_0_0_4px_rgba(139,26,26,0.18)] group-hover:scale-110"
+                                                : "bg-gray-100 border-2 border-gray-300")
                                         }
                                     />
                                     <span
                                         className={
                                             "mt-2 font-bold transition-all duration-200 whitespace-nowrap " +
-                                            (isActive
-                                                ? "text-burgundy-700 text-xl md:text-2xl"
-                                                : "text-gray-400 text-base md:text-lg group-hover:text-burgundy-500")
+                                            (y.active
+                                                ? "text-burgundy-700 text-xl md:text-2xl group-hover:text-burgundy-800"
+                                                : "text-gray-300 text-base md:text-lg")
                                         }
                                     >
                                         {y.label}
@@ -95,54 +85,53 @@ export default function CampTimeline() {
                 </div>
             </div>
 
-            {/* ── Vertical timeline — shown at xl and above, anchored left of the banner ── */}
-            <div className="hidden xl:flex xl:flex-col xl:shrink-0 xl:w-[150px] xl:pt-10">
-                <h3 className="text-burgundy-800 font-extrabold text-xl tracking-tight mb-1">
+            {/* vertical timeline*/}
+            <div className="hidden xl:flex xl:flex-col xl:shrink-0 xl:w-[150px] xl:pt-0">
+                <h3 className="text-burgundy-800 font-extrabold text-3xl tracking-tight mb-4">
                     Timeline
                 </h3>
-                <span className="text-gray-400 text-[11px] uppercase tracking-widest mb-7">
-                    Browse by year
-                </span>
 
-                <div className="relative flex flex-col gap-8 pl-1">
-                    <div className="absolute left-[7px] top-[7px] bottom-[7px] w-[2px] bg-gray-200" />
-                    <div
-                        className="absolute left-[7px] top-[7px] w-[2px] bg-burgundy-700 transition-all duration-300 ease-out"
-                        style={{
-                            height: `calc(${fillPercent}% - ${
-                                fillPercent > 0 ? "14px" : "0px"
-                            })`,
-                        }}
-                    />
+                <div className="relative flex flex-col gap-6">
+                    <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-gray-200" />
 
                     {CAMP_YEARS.map((y) => {
-                        const isActive = y.year === activeYear;
                         return (
                             <button
                                 key={y.year}
                                 type="button"
-                                onClick={() => setActiveYear(y.year)}
-                                className="relative z-10 flex items-center gap-3 group text-left"
+                                onClick={() => handleYearClick(y)}
+                                className={
+                                    "relative z-10 flex items-center gap-3 group text-left " +
+                                    (y.active
+                                        ? "cursor-pointer"
+                                        : "cursor-default")
+                                }
                             >
                                 <span
                                     className={
-                                        "shrink-0 rounded-full transition-all duration-300 " +
-                                        (isActive
-                                            ? "w-[14px] h-[14px] bg-burgundy-700 shadow-[0_0_0_4px_rgba(139,26,26,0.18)]"
-                                            : "w-[14px] h-[14px] bg-white border-2 border-gray-300 group-hover:border-burgundy-400 group-hover:scale-110")
+                                        "shrink-0 rounded-full transition-all duration-300 w-4 h-4 " +
+                                        (y.active
+                                            ? "bg-burgundy-700 shadow-[0_0_0_4px_rgba(139,26,26,0.18)] group-hover:scale-110"
+                                            : "bg-white border-2 border-gray-200")
                                     }
                                 />
-                                <span className="flex flex-col">
+                                <span className="flex flex-col relative">
                                     <span
                                         className={
                                             "font-bold transition-all duration-200 " +
-                                            (isActive
-                                                ? "text-burgundy-700 text-lg"
-                                                : "text-gray-400 text-base group-hover:text-burgundy-500")
+                                            (y.active
+                                                ? "text-burgundy-700 text-lg group-hover:text-burgundy-800"
+                                                : "text-gray-300 text-base")
                                         }
                                     >
                                         {y.label}
                                     </span>
+                                    {tooltipYr === y.year &&
+                                        y.year === "2027" && (
+                                            <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 z-20 whitespace-nowrap rounded-md bg-gray-800 text-white text-xs px-2 py-1 shadow-lg">
+                                                Registration open!
+                                            </span>
+                                        )}
                                 </span>
                             </button>
                         );
@@ -150,9 +139,9 @@ export default function CampTimeline() {
                 </div>
             </div>
 
-            {/* ── Content — single shared instance, positioned by the flex row above ── */}
+            {/* summer camp */}
             <div className="w-full max-w-[900px] mx-auto xl:mx-0 xl:shrink-0">
-                {contentBlock}
+                <SummerCampBanner />
             </div>
         </div>
     );
