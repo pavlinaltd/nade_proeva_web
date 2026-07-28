@@ -18,6 +18,15 @@ export function FilmWithPoster() {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "video";
+        link.href = "/videos/Homepage.mp4";
+        document.head.appendChild(link);
+        return () => document.head.removeChild(link);
+    }, []);
+
+    useEffect(() => {
         if (!isOpen) return;
 
         document.body.style.overflow = "hidden";
@@ -36,7 +45,6 @@ export function FilmWithPoster() {
     return (
         <>
             {/* Thumbnail */}
-            <div className="flex flex-col mx-auto"></div>
             <div
                 onClick={() => setIsOpen(true)}
                 role="button"
@@ -87,7 +95,6 @@ export function FilmWithPoster() {
                                 preload="auto"
                                 slot="media"
                                 src="/videos/Homepage.mp4"
-                                poster="/images/thumbnail/poster_final.jpg"
                                 autoPlay
                             />
                             <VideoPlayerControlBar>
@@ -103,4 +110,5 @@ export function FilmWithPoster() {
         </>
     );
 }
+
 export default FilmWithPoster;
