@@ -12,9 +12,9 @@ import {
     VideoPlayerFullscreenButton,
 } from "@/components/ui/shadcn-io/video-player";
 import { ExternalLink } from "lucide-react";
-import CampTimeline from "../components/CampTimeline";
-import MacedonianCenter from "../components/MacedonianCenter";
-import FilmWithPoster from "../components/FilmWithPoster";
+import CampTimeline from "../app/summer-camp/CampTimeline";
+import MacedonianCenter from "./mac-center/MacedonianCenter";
+import FilmWithPoster from "./film-poster/FilmWithPoster";
 
 export default function Home() {
     const medals = [

@@ -4,16 +4,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./app/pages/Home";
-import About from "./app/pages/About";
-import Books from "./app/pages/Books";
-import Papers from "./app/pages/Papers";
-import OnSite from "./app/pages/OnSite";
-import Donate from "./app/pages/Donate";
-import NotFound from "./app/pages/NotFound";
-import Testimonials from "./app/pages/Testimonials";
-import Press from "./app/pages/Press";
-import Media from "./app/pages/Media";
+import Home from "./app/page";
+import About from "./app/bio/page";
+import Books from "./app/books/page";
+import Papers from "./app/papers/page";
+import OnSite from "./app/field-work/page";
+// import Donate from "./app/pages/Donate";
+import NotFound from "./app/not-found";
+import Testimonials from "./app/remembering-nade/page";
+import Press from "./app/press/page";
+import Media from "./app/media/page";
 
 const queryClient = new QueryClient();
 
@@ -36,7 +36,7 @@ const App = () => (
                             path="/remembering-nade"
                             element={<Testimonials />}
                         />
-                        <Route path="/*" element={<NotFound />} />
+                        <Route path="/not-found" element={<NotFound />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

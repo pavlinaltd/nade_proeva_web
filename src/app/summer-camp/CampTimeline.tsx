@@ -2,8 +2,10 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+
 import SummerCampBanner from "./SummerCampBanner";
 import { Label } from "recharts";
+// import CampContent from "./CampContent.jsx";
 
 const CAMP_YEARS = Array.from({ length: 11 }, (_, i) => {
     const year = 2026 + i;
@@ -14,22 +16,22 @@ const CAMP_YEARS = Array.from({ length: 11 }, (_, i) => {
     };
 });
 export default function CampTimeline() {
-    const router = useRouter();
     const [tooltipYr, setTooltipYr] = useState<string | null>(null);
     const tooltipTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-
+    const [showCampContent, setShowCampContent] = useState(false);
     const showTooltip = (year: string) => {
         if (tooltipTimeout.current) clearTimeout(tooltipTimeout.current);
         setTooltipYr(year);
         tooltipTimeout.current = setTimeout(() => setTooltipYr(null), 1500);
     };
-
+    const router = useRouter();
     const handleYearClick = (y: (typeof CAMP_YEARS)[number]) => {
         if (y.active) {
-            //camp page - replace later
-            router.push("/not-found");
+            router.push("/camp-content");
         } else if (y.year === "2027") {
             showTooltip(y.year);
+        } else {
+            router.push("/not-found");
         }
     };
 

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
     VideoPlayer,
     VideoPlayerContent,
@@ -10,8 +9,16 @@ import {
     VideoPlayerFullscreenButton,
     VideoPlayerTimeRange,
 } from "@/components/ui/shadcn-io/video-player";
+import { useRouter } from "next/navigation";
+// import VisitCenter from "./VisitCenter";
 
 export default function MAC_CENTER() {
+    const router = useRouter();
+
+    // const [showVisitCenter, setShowVisitCenter] = useState(false);
+    // if (showVisitCenter) {
+    //     return <VisitCenter />;
+    // }
     return (
         <div className="flex flex-col h-full gap-6">
             {/* Video pinned to top */}
@@ -56,13 +63,13 @@ export default function MAC_CENTER() {
                         evidence, critical inquiry, and intellectual integrity.
                     </p>
 
-                    <Link
-                        href="../app/not-found.tsx"
+                    <button
+                        onClick={() => router.push("/not-found")}
                         style={{ backgroundColor: "#8B1A1A" }}
                         className="block w-full text-center text-white font-bold py-3 rounded hover:opacity-90 transition-opacity mt-3"
                     >
                         Visit the Center
-                    </Link>
+                    </button>
                 </div>
             </div>
         </div>
