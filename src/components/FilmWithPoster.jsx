@@ -12,7 +12,7 @@ import {
     VideoPlayerFullscreenButton,
 } from "@/components/ui/shadcn-io/video-player";
 
-const MODAL_VIDEO_WIDTH = 850;
+const MODAL_VIDEO_WIDTH = 920;
 
 export function FilmWithPoster() {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,12 +36,12 @@ export function FilmWithPoster() {
     return (
         <>
             {/* Thumbnail */}
+            <div className="flex flex-col mx-auto"></div>
             <div
                 onClick={() => setIsOpen(true)}
                 role="button"
                 tabIndex={0}
                 aria-label="Play film"
-                style={{ width: 380 }}
                 className="relative rounded-lg overflow-hidden cursor-pointer mx-auto"
             >
                 <VideoPlayer className="video-player pointer-events-none">
