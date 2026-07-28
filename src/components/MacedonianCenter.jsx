@@ -35,13 +35,12 @@ export default function MAC_CENTER() {
                 </VideoPlayerControlBar>
             </VideoPlayer>
 
-            {/* Text fills remaining space, vertically centered within it */}
             <div className="flex-1 flex items-center">
-                <div className="flex flex-col gap-4 w-full">
+                <div className="flex flex-col gap-10 w-full mt-auto">
                     <p
                         style={{
                             textAlign: "justify",
-                            fontSize: "17px",
+                            fontSize: "18px",
                             marginTop: "auto",
                         }}
                     >
@@ -60,7 +59,7 @@ export default function MAC_CENTER() {
                     <Link
                         href="../app/not-found.tsx"
                         style={{ backgroundColor: "#8B1A1A" }}
-                        className="block w-full text-center text-white font-bold py-3 rounded hover:opacity-90 transition-opacity"
+                        className="block w-full text-center text-white font-bold py-3 rounded hover:opacity-90 transition-opacity mt-3"
                     >
                         Visit the Center
                     </Link>
