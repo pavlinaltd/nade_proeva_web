@@ -12,7 +12,9 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #fff;
+    background: url("/images/summer_camp/back_poster.jpg");
+    background-size: cover;
+    background-position: center;
     border-radius: 6px;
     overflow: hidden;
 
@@ -21,60 +23,57 @@
 .camp-modal-image {
     position: relative;
     overflow: hidden;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 }
 
 .camp-modal-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    border-radius: 4px;
     display: block;
 }
 
 .camp-modal-content {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
 
-    padding: 44px 40px 40px;
+    padding: 20px 20px 20px 0px;
 
     overflow-y: auto;
-}
-
-.camp-title {
-    margin: 0;
-    color: #8b1a1a;
-    font-family: "Montserrat", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.2;
 }
 
 .camp-desc {
     color: #222;
     font-family: "EB Garamond", serif;
-    font-size: 15.5px;
+    font-size: 15px;
     line-height: 1.72;
     text-align: justify;
 }
-.camp-desc p:first-child {
-    margin: 0;
+
+.camp-desc-block {
+    display: block;
+    margin-top: 10px;
 }
 
-.camp-desc p:last-child {
-    margin: 12px 0 0;
+.camp-desc-block:first-child {
+    margin-top: 0;
 }
-
 .camp-divider {
     margin: 0;
     border: none;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #4b4a4a;
 }
 
 .camp-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
 }
 
 .form-title {
@@ -88,11 +87,11 @@
 }
 .camp-form-row {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
 .camp-submit {
-    padding: 13px 24px;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     background: #8b1a1a;
@@ -150,6 +149,7 @@
         display: flex;
         flex-direction: column;
         cursor: pointer;
+        padding: 16px;
     }
 
     .camp-modal-image img {
@@ -193,8 +193,10 @@
         position: fixed;
         inset: 0;
         z-index: 1000;
-        background: #fff;
-        padding: 60px 24px 32px;
+        background: url("/images/summer_camp/back_poster.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 48px 20px 30px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         animation: campFadeIn 0.2s ease-out;
@@ -219,12 +221,8 @@
         z-index: 1001;
     }
 
-    .camp-title {
-        font-size: 22px;
-    }
-
     .camp-desc {
-        font-size: 15px;
+        font-size: 16px;
         text-align: left;
     }
 }

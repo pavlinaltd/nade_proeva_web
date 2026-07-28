@@ -62,7 +62,7 @@ export default function MAC_CENTER() {
                         style={{ backgroundColor: "#8B1A1A" }}
                         className="block w-full text-center text-white font-bold py-3 rounded hover:opacity-90 transition-opacity"
                     >
-                        View Center
+                        Visit the Center
                     </Link>
                 </div>
             </div>

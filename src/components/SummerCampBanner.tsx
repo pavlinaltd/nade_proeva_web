@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./summer.css";
 
-// ── Fill these in from your EmailJS dashboard ──────────────────────────────
 const EMAILJS_SERVICE_ID = "service_2o4yeke";
 const EMAILJS_TEMPLATE_ID = "template_74ehr9d";
 const EMAILJS_PUBLIC_KEY = "cjNm2rVeIdnpFrpeM";
@@ -48,7 +47,7 @@ export default function SummerCampBanner() {
     return (
         <>
             <div className="camp-modal">
-                {/* ── Left: Image ── */}
+                {/* Poster */}
                 <div
                     className="camp-modal-image"
                     onClick={() => setMobileOpen(true)}
@@ -58,7 +57,7 @@ export default function SummerCampBanner() {
                         alt="Summer Camp Poster"
                     />
 
-                    {/* Mobile/tablet only: button to open content+form overlay */}
+                    {/* Smaller screens */}
                     <button
                         type="button"
                         className="camp-apply-btn"
@@ -68,14 +67,14 @@ export default function SummerCampBanner() {
                     </button>
                 </div>
 
-                {/* ── Right: Content + Form ── */}
+                {/* Content + Form */}
                 <div
                     className={
                         "camp-modal-content" +
                         (mobileOpen ? " camp-modal-content--open" : "")
                     }
                 >
-                    {/* Mobile/tablet only: close button for the overlay */}
+                    {/* Modal - small screens */}
                     <button
                         type="button"
                         className="camp-close-btn"
@@ -85,22 +84,22 @@ export default function SummerCampBanner() {
                         &times;
                     </button>
                     {/* Description */}
-                    <h2 className="camp-title">Summer Camp 2027</h2>
+                    {/* <h2 className="camp-title">Summer Camp 2027</h2> */}
 
                     <div className="camp-desc">
-                        <p>
+                        <span className="camp-desc-block">
                             On the shores of Lake Prespa—one of Europe's ancient
                             waters—this initiative opens history as a living
-                            field of discovery, identity, and thought.
-                        </p>
-                        <p>
+                            field of discovery, identity,<br></br> and thought.
+                        </span>
+                        <span className="camp-desc-block">
                             Through work with sources, methods, and themes from
                             ancient to modern history, this annual educational
                             program fosters curiosity and analytical skills.
                             Named in honor of Professor Dr. Nade Proeva, the
                             camp continues her legacy of historical scholarship
                             and cultural study. Details are announced annually.
-                        </p>
+                        </span>
                     </div>
 
                     {/* Divider */}
