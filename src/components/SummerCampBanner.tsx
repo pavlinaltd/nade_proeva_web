@@ -18,13 +18,13 @@ export default function SummerCampBanner() {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     useEffect(() => {
-        if (mobileOpen) {
-            const prevOverflow = document.body.style.overflow;
-            document.body.style.overflow = "hidden";
-            return () => {
-                document.body.style.overflow = prevOverflow;
-            };
-        }
+        const handleResize = () => {
+            if (window.innerWidth > 900 && mobileOpen) {
+                setMobileOpen(false);
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, [mobileOpen]);
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
