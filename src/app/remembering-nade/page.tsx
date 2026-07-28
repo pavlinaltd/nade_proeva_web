@@ -2,7 +2,7 @@
 
 import SectionHeader from "@/components/SectionHeader";
 import { X, ExternalLink, Expand } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 
@@ -22,13 +22,40 @@ const LinkItem = ({ item }: { item: MediaItem }) => (
         target="_blank"
         title={item.title}
         className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start"
-        // Don't need lightbox for link
     >
         <div className="flex items-center gap-4 text-sm w-full">
             <ExternalLink />
             <p>{item.title}</p>
         </div>
     </a>
+);
+
+// Uniform frame for every press image — same size, same crop behavior
+// (object-contain so nothing is ever cut off), regardless of the source's
+// native aspect ratio (a Facebook post, a newspaper column, a book cover).
+const PressCard = ({
+    item,
+    isEnglish,
+    onOpen,
+}: {
+    item: MediaItem;
+    isEnglish: boolean;
+    onOpen: (item: MediaItem) => void;
+}) => (
+    <div
+        className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 bg-white flex flex-col"
+        onClick={() => onOpen(item)}
+    >
+        <div className="relative h-64 sm:h-72 flex items-stretch justify-center bg-gray-50">
+            <img
+                src={isEnglish ? item.srcEnglish : item.srcOriginal}
+                className="max-h-full max-w-full w-auto h-auto object-contain"
+            />
+            <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+                <Expand className="text-white drop-shadow-2xl w-10 h-10" />
+            </span>
+        </div>
+    </div>
 );
 
 export default function RememberingNade() {
@@ -38,12 +65,12 @@ export default function RememberingNade() {
     const students: MediaItem = {
         type: "image",
         srcOriginal: "/images/memories/class-dismissed.jpg",
-        // targetSrc: "/images/memories/handwritten-by-students.png",
         videoSrc: "/videos/comments.mp4",
         title: "From her students",
     };
 
-    const columns: MediaItem[] = [
+    // Every image-based press mention — all shown in full, uniformly framed.
+    const pressImages: MediaItem[] = [
         {
             type: "image",
             srcOriginal: "/images/memories/chapeau.jpeg",
@@ -53,20 +80,21 @@ export default function RememberingNade() {
         },
         {
             type: "image",
-            srcOriginal: "/images/memories/coverpage.png",
-            srcEnglish: "/images/memories/coverpage_eng.png",
-            title: "Coverpage",
-            orientation: "cover",
-        },
-        {
-            type: "image",
             srcOriginal: "/images/memories/fb-post.jpg",
             srcEnglish: "/images/memories/fb-post-eng.jpg",
             title: "Facebook post",
             orientation: "vertical",
         },
+        {
+            type: "image",
+            srcOriginal: "/images/memories/coverpage.png",
+            srcEnglish: "/images/memories/coverpage_eng.png",
+            title: "Zbornik Narodnog Muzeja Srbije",
+            orientation: "cover",
+        },
     ];
 
+    // Text-only press mentions (no image available) — plain link cards.
     const links: MediaItem[] = [
         {
             type: "link",
@@ -104,23 +132,6 @@ export default function RememberingNade() {
         document.body.style.overflow = "auto";
     };
 
-    const coverRef = useRef<HTMLDivElement | null>(null);
-    const [col1Height, setCol1Height] = useState<number | undefined>(undefined);
-
-    useEffect(() => {
-        if (!coverRef.current) return;
-
-        const el = coverRef.current;
-        const observer = new ResizeObserver((entries) => {
-            for (const entry of entries) {
-                setCol1Height(entry.contentRect.height);
-            }
-        });
-        observer.observe(el);
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <>
             <SectionHeader
@@ -128,11 +139,10 @@ export default function RememberingNade() {
                 subtitle="Through the voices of those who knew her best."
             />
 
-            {/* Container */}
-            <div className="lg:mx-20 flex flex-col items-center gap-10">
-                {/* Image Feature */}
+            <div className="lg:mx-20 flex flex-col items-center gap-12">
+                {/* Image Feature: from her students */}
                 <div
-                    className={`relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300`}
+                    className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"
                     onClick={() => openLightbox(students)}
                 >
                     <div>
@@ -141,152 +151,100 @@ export default function RememberingNade() {
                             alt={students.title}
                             className="object-cover mx-auto block"
                         />
-                        <span
-                            className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}
-                        >
+                        <span className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30">
                             <Expand className="text-white drop-shadow-2xl w-14 h-14" />
                         </span>
                     </div>
                 </div>
 
-                {/* Column Items */}
-                <div className="flex flex-col w-full">
-                    {/* Language Switch */}
-                    <div className="flex flex-col lg:flex-row items-center gap-2 mb-6">
-                        <div className="flex items-center gap-2 justify-start text-lg">
-                            <p
-                                className={
-                                    isEnglish
-                                        ? "text-gray-400 transition-colors duration-400"
-                                        : "text-black transition-colors duration-200"
-                                }
-                            >
-                                Original
-                            </p>
-                            <Switch
-                                id="language-switch"
-                                aria-label="Switch to English or Original"
-                                className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
-                                checked={isEnglish}
-                                onCheckedChange={setIsEnglish}
-                            />
-                            <p
-                                className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}
-                            >
-                                English
-                            </p>
-                        </div>
-                        <p className="text-center md:text-left italic text-gray-500">
-                            * Translations are done by Google Translate and may
-                            have errors.
+                {/* Language Switch */}
+                <div className="flex flex-col lg:flex-row items-center gap-2 -mt-6 self-start lg:self-center">
+                    <div className="flex items-center gap-2 justify-start text-lg">
+                        <p
+                            className={
+                                isEnglish
+                                    ? "text-gray-400 transition-colors duration-400"
+                                    : "text-black transition-colors duration-200"
+                            }
+                        >
+                            Original
+                        </p>
+                        <Switch
+                            id="language-switch"
+                            aria-label="Switch to English or Original"
+                            className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
+                            checked={isEnglish}
+                            onCheckedChange={setIsEnglish}
+                        />
+                        <p
+                            className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}
+                        >
+                            English
                         </p>
                     </div>
+                    <p className="text-center md:text-left italic text-gray-500">
+                        * Translations are done by Google Translate and may have
+                        errors.
+                    </p>
+                </div>
 
-                    {/* Content */}
-                    <div className="animate-fade-in flex flex-col lg:flex-row justify-between gap-5 w-full items-start">
-                        <div
-                            className="flex-1 min-w-0 flex flex-col gap-5"
-                            style={
-                                col1Height
-                                    ? { height: `${col1Height}px` }
-                                    : undefined
-                            }
+                {/* Book Feature  */}
+                <div className="animate-fade-in w-full bg-gray-50 rounded-2xl sm:p-4 md:p-5 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                    <div className="flex-shrink-0">
+                        <img
+                            className="w-64 sm:w-72 md:w-80 rounded-lg object-contain hover-lift shadow-md"
+                            src="/images/from-her-lectures.jpg"
+                            alt="From Her Lectures: Our Words Book Cover"
+                        />
+                    </div>
+                    <div className="flex-1 flex flex-col items-center gap-5 max-w-xl mx-auto">
+                        <h3 className="text-black text-2xl font-semibold text-center">
+                            From Her Lectures, in Our Words
+                        </h3>
+                        <p className="text-black text-base leading-relaxed text-justify">
+                            This volume is a tribute by five former students of
+                            Professor Dr. Nade Proeva, who came together to
+                            honor her legacy. It brings together their writings
+                            on Macedonian history, spanning archaeology,
+                            ethnology, anthropology, mythology, and religion
+                            from antiquity to the present. Through these pages,
+                            they celebrate their teacher's lasting influence and
+                            honor her lifelong devotion to truth, scholarship,
+                            and her beloved homeland, Macedonia.
+                        </p>
+                        <a
+                            href="/images/instead-of-a-foreword.pdf"
+                            target="_blank"
+                            title="Introduction"
+                            className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full max-w-xl p-4 flex items-center justify-center gap-2 text-sm"
                         >
-                            {[columns[0], columns[2]].map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 flex-1 min-h-0"
-                                    onClick={() => openLightbox(item)}
-                                    style={{ alignContent: "center" }}
-                                >
-                                    <div>
-                                        <img
-                                            src={
-                                                isEnglish
-                                                    ? item.srcEnglish
-                                                    : item.srcOriginal
-                                            }
-                                            alt={columns[1].title}
-                                            className="w-full h-auto object-cover object-top"
-                                        />
-                                        <span
-                                            className={`absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30`}
-                                        >
-                                            <Expand className="text-white drop-shadow-2xl w-14 h-14" />
-                                        </span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Book Feature Section */}
-                        <div
-                            className="min-w-0 flex flex-col items-center gap-2 flex-1 p-3 rounded-xl bg-gray-100 shadow-sm overflow-hidden"
-                            style={
-                                col1Height
-                                    ? { height: `${col1Height}px` }
-                                    : undefined
-                            }
-                        >
-                            <img
-                                className="w-[110px] rounded-lg object-contain bg-white hover-lift shrink-0"
-                                src="/images/from-her-lectures.jpg"
-                                alt="From Her Lectures: Our Words Book Cover"
-                            />
-                            <p className="text-black text-justify text-sm p-4 leading-snug">
-                                This volume is a tribute by five former students
-                                of Professor Dr. Nade Proeva, who came together
-                                to honor her legacy. It brings together their
-                                writings on Macedonian history, spanning
-                                archaeology, ethnology, anthropology, mythology,
-                                and religion from antiquity to the present.
-                                Through these pages, they celebrate their
-                                teacher's lasting influence and honor her
-                                lifelong devotion to truth, scholarship, and her
-                                beloved homeland, Macedonia.
-                            </p>
-                            <a
-                                href="/images/instead-of-a-foreword.pdf"
-                                target="_blank"
-                                title="Introduction"
-                                className="no-underline text-white bg-burgundy-700 hover:bg-burgundy-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer w-full p-4 flex items-center justify-start mt-aut shrink-0"
-                            >
-                                <div className="flex items-end gap-4 text-sm">
-                                    <ExternalLink />
-                                    <p>Instead of a Foreword...</p>
-                                </div>
-                            </a>
-                        </div>
-                        {/* Second slot: coverpage — unchanged */}
-                        <div
-                            ref={coverRef}
-                            className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 flex-1 min-w-0"
-                            onClick={() => openLightbox(columns[1])}
-                            style={{ alignContent: "center" }}
-                        >
-                            <div>
-                                <img
-                                    src={
-                                        isEnglish
-                                            ? columns[1].srcEnglish
-                                            : columns[1].srcOriginal
-                                    }
-                                    alt={columns[1].title}
-                                    className="w-full h-auto object-cover object-top"
-                                />
-                                <span className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 bg-black/30">
-                                    <Expand className="text-white drop-shadow-2xl w-14 h-14" />
-                                </span>
-                            </div>
-                        </div>
+                            <ExternalLink className="w-4 h-4" />
+                            <p>Instead of a Foreword...</p>
+                        </a>
                     </div>
                 </div>
 
-                {/* Link Item */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 content-stretch gap-10">
-                    {links.map((link, index) => (
-                        <LinkItem key={index} item={link} />
-                    ))}
+                {/* Press Wall */}
+                <div className="w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {pressImages.map((item, index) => (
+                            <PressCard
+                                key={index}
+                                item={item}
+                                isEnglish={isEnglish}
+                                onOpen={openLightbox}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Additional coverage — text-only mentions */}
+                <div className="w-full">
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 content-stretch gap-4">
+                        {links.map((link, index) => (
+                            <LinkItem key={index} item={link} />
+                        ))}
+                    </div>
                 </div>
             </div>
 
