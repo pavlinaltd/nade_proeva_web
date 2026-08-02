@@ -10,10 +10,12 @@ import Books from "./app/books/page";
 import Papers from "./app/papers/page";
 import OnSite from "./app/field-work/page";
 // import Donate from "./app/pages/Donate";
-import NotFound from "./app/not-found";
+import NotFound from "./app/not-found/page";
 import Testimonials from "./app/remembering-nade/page";
 import Press from "./app/press/page";
 import Media from "./app/media/page";
+import CampContent from "./app/summer-camp/page";
+import VisitCenter from "./app/mac-center/page";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +39,8 @@ const App = () => (
                             element={<Testimonials />}
                         />
                         <Route path="/not-found" element={<NotFound />} />
+                        <Route path="/camp" element={<CampContent />} />
+                        <Route path="/center" element={<VisitCenter />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

@@ -25,9 +25,10 @@ export default function CampTimeline() {
         tooltipTimeout.current = setTimeout(() => setTooltipYr(null), 1500);
     };
     const router = useRouter();
+
     const handleYearClick = (y: (typeof CAMP_YEARS)[number]) => {
         if (y.active) {
-            router.push("/camp-content");
+            router.push("/summer-camp");
         } else if (y.year === "2027") {
             showTooltip(y.year);
         } else {

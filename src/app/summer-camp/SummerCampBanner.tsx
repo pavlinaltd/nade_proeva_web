@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import "./summer.css";
+import "./banner-camp.css";
 
 const EMAILJS_SERVICE_ID = "service_2o4yeke";
 const EMAILJS_TEMPLATE_ID = "template_74ehr9d";
