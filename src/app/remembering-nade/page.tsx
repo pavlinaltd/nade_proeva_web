@@ -14,6 +14,7 @@ interface MediaItem {
     targetSrc?: string; // For setting image in lightbox
     videoSrc?: string; //video playback
     orientation?: "horizontal" | "vertical" | "cover";
+    externalLink?: string;
 }
 
 const LinkItem = ({ item }: { item: MediaItem }) => (
@@ -91,6 +92,7 @@ export default function RememberingNade() {
             srcEnglish: "/images/memories/coverpage_eng.png",
             title: "Zbornik Narodnog Muzeja Srbije",
             orientation: "cover",
+            externalLink: "/images/memories/archeo_book.pdf",
         },
     ];
 
@@ -157,37 +159,6 @@ export default function RememberingNade() {
                     </div>
                 </div>
 
-                {/* Language Switch */}
-                <div className="flex flex-col lg:flex-row items-center gap-2 -mt-6 self-start lg:self-center">
-                    <div className="flex items-center gap-2 justify-start text-lg">
-                        <p
-                            className={
-                                isEnglish
-                                    ? "text-gray-400 transition-colors duration-400"
-                                    : "text-black transition-colors duration-200"
-                            }
-                        >
-                            Original
-                        </p>
-                        <Switch
-                            id="language-switch"
-                            aria-label="Switch to English or Original"
-                            className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
-                            checked={isEnglish}
-                            onCheckedChange={setIsEnglish}
-                        />
-                        <p
-                            className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}
-                        >
-                            English
-                        </p>
-                    </div>
-                    <p className="text-center md:text-left italic text-gray-500">
-                        * Translations are done by Google Translate and may have
-                        errors.
-                    </p>
-                </div>
-
                 {/* Book Feature  */}
                 <div className="animate-fade-in w-full bg-gray-50 rounded-2xl sm:p-4 md:p-5 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div className="flex-shrink-0">
@@ -223,7 +194,36 @@ export default function RememberingNade() {
                         </a>
                     </div>
                 </div>
-
+                {/* Language Switch */}
+                <div className="flex flex-col lg:flex-row items-center gap-2 -mt-6 self-start lg:self-center">
+                    <div className="flex items-center gap-2 justify-start text-lg">
+                        <p
+                            className={
+                                isEnglish
+                                    ? "text-gray-400 transition-colors duration-400"
+                                    : "text-black transition-colors duration-200"
+                            }
+                        >
+                            Original
+                        </p>
+                        <Switch
+                            id="language-switch"
+                            aria-label="Switch to English or Original"
+                            className="data-[state=unchecked]:bg-burgundy-700 data-[state=checked]:bg-burgundy-900"
+                            checked={isEnglish}
+                            onCheckedChange={setIsEnglish}
+                        />
+                        <p
+                            className={`transition-colors duration-400 ${isEnglish ? "text-black " : "text-gray-400"}`}
+                        >
+                            English
+                        </p>
+                    </div>
+                    <p className="text-center md:text-left italic text-gray-500">
+                        * Translations are done by Google Translate and may have
+                        errors.
+                    </p>
+                </div>
                 {/* Press Wall */}
                 <div className="w-full">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -256,16 +256,24 @@ export default function RememberingNade() {
                 >
                     <div
                         className={
-                            selectedImage.orientation === "vertical"
-                                ? "w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl"
-                                : selectedImage.orientation === "cover"
-                                  ? "w-[90vw] max-w-[400px] bg-white rounded-lg shadow-2xl"
-                                  : "w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl"
+                            selectedImage.externalLink
+                                ? "w-[90vw] max-w-[700px] h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden"
+                                : selectedImage.orientation === "vertical"
+                                  ? "w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl"
+                                  : selectedImage.orientation === "cover"
+                                    ? "w-[90vw] max-w-[400px] bg-white rounded-lg shadow-2xl"
+                                    : "w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl"
                         }
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="relative">
-                            {selectedImage.videoSrc ? (
+                        <div className="relative h-full">
+                            {selectedImage.externalLink ? (
+                                <iframe
+                                    src={selectedImage.externalLink}
+                                    title={selectedImage.title}
+                                    className="w-full h-full"
+                                />
+                            ) : selectedImage.videoSrc ? (
                                 <video
                                     src={selectedImage.videoSrc}
                                     controls
