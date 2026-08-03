@@ -37,35 +37,34 @@ export default function MAC_CENTER() {
                 </VideoPlayerControlBar>
             </VideoPlayer>
 
-            <div className="flex-1 flex items-center">
-                <div className="flex flex-col gap-10 w-full mt-auto">
-                    <p
-                        style={{
-                            textAlign: "justify",
-                            fontSize: "18px",
-                            marginTop: "auto",
-                        }}
-                    >
-                        MACEDONICA – Center for Historical Studies "Nade Proeva"
-                        is dedicated to advancing the study, preservation, and
-                        public understanding of Macedonia's rich historical and
-                        cultural heritage. Inspired by the life and scholarship
-                        of Professor Dr. Nade Proeva, the Center promotes
-                        rigorous historical research, supports emerging
-                        scholars, encourages international academic
-                        collaboration, and develops educational programs that
-                        inspire future generations to explore the past through
-                        evidence, critical inquiry, and intellectual integrity.
-                    </p>
+            <div className="flex-1 flex flex-col justify-between p-2">
+                <p
+                    style={{
+                        textAlign: "justify",
+                        fontSize: "18px",
+                        lineHeight: "1.7",
+                        marginTop: "60px",
+                    }}
+                >
+                    MACEDONICA – Center for Historical Studies "Nade Proeva" is
+                    dedicated to advancing the study, preservation, and public
+                    understanding of Macedonia's rich historical and cultural
+                    heritage. Inspired by the life and scholarship of Professor
+                    Dr. Nade Proeva, the Center promotes rigorous historical
+                    research, supports emerging scholars, encourages
+                    international academic collaboration, and develops
+                    educational programs that inspire future generations to
+                    explore the past through evidence, critical inquiry, and
+                    intellectual integrity.
+                </p>
 
-                    <button
-                        onClick={() => router.push("/mac-center")}
-                        style={{ backgroundColor: "#8B1A1A" }}
-                        className="block w-full text-center text-white font-bold py-3 rounded hover:opacity-90 transition-opacity mt-3"
-                    >
-                        Visit the Center
-                    </button>
-                </div>
+                <button
+                    onClick={() => router.push("/mac-center")}
+                    style={{ backgroundColor: "#8B1A1A", marginTop: "40px" }}
+                    className="block w-full text-center text-white font-bold py-3 rounded hover:opacity-90 transition-opacity"
+                >
+                    Visit the Center
+                </button>
             </div>
         </div>
     );

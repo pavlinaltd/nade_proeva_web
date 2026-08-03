@@ -35,39 +35,38 @@ export default function Home() {
     return (
         <div className="animate-fade-in space-y-10">
             {/* Hero Section */}
-            <section className="relative p-5 md:p-10 lg:p-20 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white">
+
+            <section className="relative p-5 md:p-10 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white mx-0 mb-8 md:mx-[60px] md:mb-[60px]">
                 <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
                     <img
                         src="/images/nade.jpg"
                         alt="Professor Dr. Nade Proeva"
                         className="w-2/5 lg:w-1/2 h-auto object-cover rounded-lg block"
                     />
-                    <div className="container mx-auto px-4 relative z-10">
-                        <div className="flex gap-10 max-w-3xl mx-auto text-left">
-                            <div className="flex flex-col justify-center text-justify text-lg sm:text-xl lg:text-2xl xl:text-3xl italic">
-                                <h1 className=" text-white sm:font-bold">
-                                    "The study of history is not just about
-                                    uncovering the past, but understanding the
-                                    complex tapestry of human experience that
-                                    shapes our present and future."
-                                </h1>
-                                <span className="self-end">
-                                    <img
-                                        title="Nade Proeva"
-                                        src="/images/signature-white.png"
-                                        className="aspect-auto w-[150px] md:w-[200px] xl:w-[300px] mt-[-40px] mb-[-40px]"
-                                    />
-                                </span>
-                                <br />
-                                <h1 className="sm:font-bold text-yellow-400">
-                                    "Проучувањето на историјата не е само
-                                    откривање на минатото, туку и разбирање на
-                                    сложената и богата ткаенина на човечкото
-                                    искуство што го обликува нашето сегашно и
-                                    идно постоење."
-                                </h1>
-                            </div>
-                        </div>
+
+                    <div className="max-w-2xl flex flex-col gap-6 text-left">
+                        {/* eng quote */}
+                        <h1 className="text-justify text-lg sm:text-xl lg:text-2xl xl:text-3xl italic sm:font-bold text-white">
+                            "The study of history is not just about uncovering
+                            the past, but understanding the complex tapestry of
+                            human experience that shapes our present and
+                            future."
+                        </h1>
+
+                        {/* sign */}
+                        <img
+                            title="Nade Proeva"
+                            src="/images/signature-white.png"
+                            className="self-center w-[120px] md:w-[180px] xl:w-[240px] aspect-auto"
+                        />
+
+                        {/* macedonian quote */}
+                        <h1 className="text-justify text-lg sm:text-xl lg:text-2xl xl:text-3xl italic sm:font-bold text-yellow-400">
+                            "Проучувањето на историјата не е само откривање на
+                            минатото, туку и разбирање на сложената и богата
+                            ткаенина на човечкото искуство што го обликува
+                            нашето сегашно и идно постоење."
+                        </h1>
                     </div>
                 </div>
             </section>
@@ -202,7 +201,7 @@ export default function Home() {
             </section>
 
             {/* Video film + macedonian center */}
-            <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-2/3 xl:w-4/5">
+            <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-[77%] xl:w-[90%]">
                 <div className="flex flex-col lg:flex-row gap-4 items-stretch">
                     {/* Video Feature Section */}
                     <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
