@@ -91,20 +91,92 @@ export default function CampContent() {
     const [activeDay, setActiveDay] = useState(1);
     const searchParams = useSearchParams();
     const year = searchParams.get("year") || new Date().getFullYear();
+    const [delayOffset, setDelayOffset] = useState(0); // in seconds
+    const ANIMATION_DURATION = 50; // matches the 70s in ccp-marquee-scroll
+    const STEP_SECONDS = 5;
 
+    const handleManualScroll = (direction: "left" | "right") => {
+        setDelayOffset((prev) => {
+            let next =
+                direction === "right"
+                    ? prev + STEP_SECONDS
+                    : prev - STEP_SECONDS;
+            next =
+                ((next % ANIMATION_DURATION) + ANIMATION_DURATION) %
+                ANIMATION_DURATION;
+            return next;
+        });
+    };
     return (
         <div className="ccp-page">
             {/*video clip */}
-            <section className="ccp-section">
+            {/* <section className="ccp-section">
                 <div className="ccp-container">
                     <div className="ccp-hero-media">
                         <video controls preload="metadata" poster="" src="">
-                            {/* TODO: add <source src="" type="video/mp4" /> if using multiple formats */}
                         </video>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
+            {/* video + podcast, side by side */}
+            <section className="ccp-section">
+                <div className="ccp-container">
+                    <div className="ccp-vp-grid">
+                        {/* video */}
+                        <div className="ccp-vp-video">
+                            <div className="ccp-hero-media">
+                                <video
+                                    controls
+                                    preload="metadata"
+                                    poster=""
+                                    src=""
+                                >
+                                    {/* TODO: add <source src="" type="video/mp4" /> if using multiple formats */}
+                                </video>
+                            </div>
+                        </div>
+
+                        {/* podcast, simplified */}
+                        <div className="ccp-podcast-simple">
+                            <div className="ccp-podcast-simple-photo">
+                                <img
+                                    src="/images/summer_camp/podcast/1.jpg"
+                                    alt="Podcast recording session"
+                                />
+                                <span
+                                    className="ccp-podcast-simple-icon"
+                                    aria-hidden="true"
+                                >
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        width="20"
+                                        height="20"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M12 3a4 4 0 0 0-4 4v5a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4zm7 9a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V21H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 12z"
+                                        />
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <h3 className="ccp-podcast-simple-title">
+                                The Camp Podcast
+                            </h3>
+
+                            <a
+                                className="ccp-podcast-simple-btn"
+                                href=""
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Listen to the podcast
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
             {/* day grid */}
             <section className="ccp-section">
                 <div className="ccp-container">
@@ -134,44 +206,41 @@ export default function CampContent() {
                 <div className="ccp-container">
                     <h2 className="ccp-heading">Gallery</h2>
                     <div className="ccp-carousel-stage">
-                        <div className="ccp-carousel-track">
+                        <button
+                            type="button"
+                            className="ccp-carousel-btn ccp-carousel-btn--left"
+                            onClick={() => handleManualScroll("left")}
+                            aria-label="Previous"
+                        >
+                            &#8249;
+                        </button>
+                        <div
+                            className="ccp-carousel-track"
+                            style={{ animationDelay: `-${delayOffset}s` }}
+                        >
                             {[...DAYS2, ...DAYS2].map((day, i) => (
                                 <div
                                     key={`${day.id}-${i}`}
                                     className="ccp-carousel-item"
                                 >
-                                    <img src={day.image} alt={day.label} />
+                                    <img src={day.image} />
                                 </div>
                             ))}
                         </div>
+                        <button
+                            type="button"
+                            className="ccp-carousel-btn ccp-carousel-btn--right"
+                            onClick={() => handleManualScroll("right")}
+                            aria-label="Next"
+                        >
+                            &#8250;
+                        </button>
                     </div>
                 </div>
             </section>
 
             {/* podcast */}
             {/* <section className="ccp-section">
-                <div className="ccp-container">
-                    <a
-                        className="ccp-podcast-link"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <div className="ccp-podcast-fit">
-                            <img
-                                src="/images/summer_camp/podcast/1.jpg"
-                                alt="Podcast cover"
-                            />
-                        </div>
-                        <div className="ccp-podcast-footer">
-                            Listen to the podcast
-                        </div>
-                    </a>
-                </div>
-            </section> */}
-
-            {/* podcast */}
-            <section className="ccp-section">
                 <div className="ccp-container">
                     <div className="ccp-podcast-feature">
                         <div className="ccp-podcast-photos">
@@ -208,7 +277,6 @@ export default function CampContent() {
                             <p className="ccp-podcast-desc">
                                 small description
                             </p>
-                            {/* TODO: replace href with the real podcast link */}
                             <a
                                 className="ccp-podcast-cta"
                                 href=""
@@ -235,7 +303,7 @@ export default function CampContent() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* lessons */}
             <section className="ccp-section">
