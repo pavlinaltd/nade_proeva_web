@@ -249,7 +249,7 @@ export default function Media() {
                             className="flex bg-[#cdcfd1] rounded-sm w-full"
                             style={{ padding: "10px 0" }}
                         >
-                            <div className="flex gap-10 px-1 items-center overflow-x-auto">
+                            <div className="flex gap-3 px-4 items-center overflow-x-auto">
                                 {videos.map((v, i) => (
                                     <button
                                         key={i}
@@ -366,7 +366,7 @@ export default function Media() {
                 {/* Record shelf */}
                 <div className="flex px-6 justify-center">
                     <div
-                        className="flex gap-5 overflow-x-auto bg-[#cdcfd1] rounded-sm py-4 px-4 w-full max-w-6xl"
+                        className="flex gap-5 justify-center overflow-x-auto bg-[#cdcfd1] rounded-sm py-4 px-4 w-full max-w-6xl"
                         style={{
                             scrollbarWidth: "thin",
                             scrollbarColor: "#8B1A1A #e8e0d0",
