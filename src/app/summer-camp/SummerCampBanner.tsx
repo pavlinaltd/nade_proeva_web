@@ -116,6 +116,7 @@ export default function SummerCampBanner() {
                         <input
                             name="from_name"
                             type="text"
+                            className="camp-input"
                             placeholder="Full Name"
                             required
                             style={inputStyle}
@@ -130,6 +131,7 @@ export default function SummerCampBanner() {
                             <input
                                 name="school"
                                 type="text"
+                                className="camp-input"
                                 placeholder="School / University"
                                 style={{
                                     ...inputStyle,
@@ -147,6 +149,7 @@ export default function SummerCampBanner() {
                             <input
                                 name="gpa"
                                 type="text"
+                                className="camp-input"
                                 placeholder="GPA"
                                 style={{ ...inputStyle, maxWidth: 120 }}
                                 onFocus={(e) =>
@@ -161,6 +164,7 @@ export default function SummerCampBanner() {
                         <input
                             name="reply_to"
                             type="email"
+                            className="camp-input"
                             placeholder="Email Address"
                             required
                             style={inputStyle}
@@ -176,6 +180,7 @@ export default function SummerCampBanner() {
                             placeholder="Message / Questions"
                             rows={4}
                             required
+                            className="camp-input"
                             style={{
                                 ...inputStyle,
                                 resize: "vertical",

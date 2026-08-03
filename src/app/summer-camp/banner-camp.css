@@ -123,6 +123,10 @@
     color: #c62828;
 }
 
+.camp-input::placeholder {
+    color: #646161;
+}
+
 /* ── Mobile-only elements, hidden on desktop by default ── */
 .camp-apply-btn,
 .camp-close-btn {

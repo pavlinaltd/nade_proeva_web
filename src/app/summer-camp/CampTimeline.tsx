@@ -47,7 +47,7 @@ export default function CampTimeline() {
                 </div>
 
                 <div className="relative">
-                    <div className="absolute left-2 right-2 top-[15px] z-0 h-[2px] bg-gray-200 " />
+                    <div className="absolute left-2 right-2 top-[15px] z-0 h-[2px] bg-[#646161] " />
 
                     <div className="flex gap-3 md:gap-6 overflow-x-auto scrollbar-none pt-2 pb-2">
                         {CAMP_YEARS.map((y) => {
@@ -68,7 +68,7 @@ export default function CampTimeline() {
                                             "relative z-10 rounded-full transition-all duration-300 w-4 h-4 " +
                                             (y.active
                                                 ? "bg-burgundy-700 shadow-[0_0_0_4px_rgba(139,26,26,0.18)] group-hover:scale-110"
-                                                : "bg-gray-100 border-2 border-gray-300")
+                                                : "bg-white border-2 border-[#646161]")
                                         }
                                     />
                                     <span
@@ -76,7 +76,7 @@ export default function CampTimeline() {
                                             "mt-2 font-bold transition-all duration-200 whitespace-nowrap " +
                                             (y.active
                                                 ? "text-burgundy-700 text-xl md:text-2xl group-hover:text-burgundy-800"
-                                                : "text-gray-300 text-base md:text-lg")
+                                                : "text-[#646161] text-base md:text-lg")
                                         }
                                     >
                                         {y.label}
@@ -95,7 +95,7 @@ export default function CampTimeline() {
                 </h3>
 
                 <div className="relative flex flex-col gap-6">
-                    <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-gray-200" />
+                    <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-[#646161]" />
 
                     {CAMP_YEARS.map((y) => {
                         return (
@@ -115,7 +115,7 @@ export default function CampTimeline() {
                                         "shrink-0 rounded-full transition-all duration-300 w-4 h-4 " +
                                         (y.active
                                             ? "bg-burgundy-700 shadow-[0_0_0_4px_rgba(139,26,26,0.18)] group-hover:scale-110"
-                                            : "bg-white border-2 border-gray-200")
+                                            : "bg-white border-2 border-[#646161]")
                                     }
                                 />
                                 <span className="flex flex-col relative">
@@ -124,7 +124,7 @@ export default function CampTimeline() {
                                             "font-bold transition-all duration-200 " +
                                             (y.active
                                                 ? "text-burgundy-700 text-lg group-hover:text-burgundy-800"
-                                                : "text-gray-300 text-base")
+                                                : "text-[#646161] text-base")
                                         }
                                     >
                                         {y.label}
