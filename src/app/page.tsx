@@ -117,7 +117,7 @@ export default function Home() {
             </section>
             {/* New Medal Feature Section */}
             <section className="container px-4 w-full lg:w-4/5">
-                <div className="bg-gray-50 rounded-lg shadow-sm p-2 md:p-10">
+                <div className="bg-gray-50 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] p-2 md:p-10">
                     <h2 className="text-burgundy-800 text-2xl md:text-3xl font-bold text-center mb-8">
                         The Order of{" "}
                         <span className="text-burgundy-600 font-extrabold">
@@ -136,7 +136,7 @@ export default function Home() {
                         <div className="flex flex-col justify-between overflow-hidden">
                             <p className="text-black text-justify text-xs md:text-base leading-snug">
                                 The Order of{" "}
-                                <strong className="font-semibold">
+                                <strong className="font-semibold italic">
                                     8 September
                                 </strong>{" "}
                                 is one of the highest state decorations of the
@@ -181,19 +181,22 @@ export default function Home() {
 
             {/* Awards Section */}
             <section className="container mx-auto px-4 w-full lg:w-4/5">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-10 rounded-lg">
+                <div className="flex flex-col md:flex-row gap-10 rounded-lg">
                     {medals.map((medal, index) => (
-                        <img
+                        <div
                             key={index}
-                            src={medal.src}
-                            alt={`${medal.title} Certificate and Medal`}
-                            title={medal.title}
-                            className="rounded-lg w-2/3 lg:w-1/3 min-w-0"
-                        />
+                            className="w-full md:w-1/3 aspect-[4/3] overflow-hidden rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+                        >
+                            <img
+                                src={medal.src}
+                                alt={`${medal.title} Certificate and Medal`}
+                                title={medal.title}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                     ))}
                 </div>
             </section>
-
             {/* camp+timelines */}
             <hr style={{ borderColor: "#ab2345", color: "#ab2345" }} />
             <section className="container w-full lg:w-4/5">
@@ -204,11 +207,11 @@ export default function Home() {
             <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-[77%] xl:w-[90%]">
                 <div className="flex flex-col lg:flex-row gap-4 items-stretch">
                     {/* Video Feature Section */}
-                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
+                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                         <FilmWithPoster />
                     </div>
                     {/* poster center — right side */}
-                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-sm">
+                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                         <MacedonianCenter />
                     </div>
                 </div>

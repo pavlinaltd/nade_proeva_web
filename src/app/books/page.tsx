@@ -302,7 +302,8 @@ export default function Books() {
             imageUrl: "/images/books/studii.jpg",
             isbn: "9989-619-26-3",
             amazonUrl: "",
-            promoVideo: "/images/books/studies-promo.mp4",
+            // promoVideo: "/images/books/studies-promo.mp4",
+            promoImage: "/images/books/studies_promo.png",
         },
         {
             makeCard: false,

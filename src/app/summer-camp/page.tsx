@@ -1,5 +1,5 @@
 "use client";
-
+import { Expand } from "lucide-react";
 import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -8,7 +8,7 @@ import "./camp-content.css";
 const DAYS = [
     {
         id: 1,
-        label: "Getting to know each other",
+        label: "Getting to Know Each Other",
         image: "/images/summer_camp/imgs/1.png",
     },
     {
@@ -86,9 +86,12 @@ const TESTIMONIALS = [
         title: "Atanas Taškoski",
     },
 ];
+const HERO_DOC_THUMBNAIL = "/images/summer_camp/thumbnail.png";
+const HERO_DOC_URL = "/images/summer_camp/camp_doc.pdf";
 
 export default function CampContent() {
     const [activeDay, setActiveDay] = useState(1);
+    const [isDocModalOpen, setIsDocModalOpen] = useState(false);
     const searchParams = useSearchParams();
     const year = searchParams.get("year") || new Date().getFullYear();
     const [delayOffset, setDelayOffset] = useState(0); // in seconds
@@ -109,31 +112,28 @@ export default function CampContent() {
     };
     return (
         <div className="ccp-page">
-            {/*video clip */}
-            {/* <section className="ccp-section">
-                <div className="ccp-container">
-                    <div className="ccp-hero-media">
-                        <video controls preload="metadata" poster="" src="">
-                        </video>
-                    </div>
-                </div>
-            </section> */}
-
-            {/* video + podcast, side by side */}
+            {/* doc + podcast, side by side */}
             <section className="ccp-section">
                 <div className="ccp-container">
                     <div className="ccp-vp-grid">
-                        {/* video */}
+                        {/* doc */}
                         <div className="ccp-vp-video">
                             <div className="ccp-hero-media">
-                                <video
-                                    controls
-                                    preload="metadata"
-                                    poster=""
-                                    src=""
+                                <button
+                                    type="button"
+                                    className="ccp-hero-doc-thumb group relative"
+                                    onClick={() => setIsDocModalOpen(true)}
+                                    aria-haspopup="dialog"
+                                    aria-label="Open document"
                                 >
-                                    {/* TODO: add <source src="" type="video/mp4" /> if using multiple formats */}
-                                </video>
+                                    <img
+                                        src={HERO_DOC_THUMBNAIL}
+                                        alt="Document preview"
+                                    />
+                                    <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+                                        <Expand className="text-white drop-shadow-2xl w-10 h-10" />
+                                    </span>
+                                </button>
                             </div>
                         </div>
 
@@ -161,13 +161,9 @@ export default function CampContent() {
                                 </span>
                             </div>
 
-                            <h3 className="ccp-podcast-simple-title">
-                                The Camp Podcast
-                            </h3>
-
                             <a
                                 className="ccp-podcast-simple-btn"
-                                href=""
+                                href="https://youtu.be/AtBbixSiAQU?si=xn3gT7aDobLQVClY"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -239,72 +235,6 @@ export default function CampContent() {
                 </div>
             </section>
 
-            {/* podcast */}
-            {/* <section className="ccp-section">
-                <div className="ccp-container">
-                    <div className="ccp-podcast-feature">
-                        <div className="ccp-podcast-photos">
-                            <div className="ccp-podcast-photo ccp-podcast-photo-main">
-                                <img
-                                    src="/images/summer_camp/podcast/1.jpg"
-                                    alt="Podcast recording session"
-                                />
-                            </div>
-                            <div className="ccp-podcast-photo ccp-podcast-photo-secondary">
-                                <img
-                                    src="/images/summer_camp/podcast/2.jpg"
-                                    alt="Podcast crew"
-                                />
-                            </div>
-                            <span
-                                className="ccp-podcast-icon"
-                                aria-hidden="true"
-                            >
-                                <svg viewBox="0 0 24 24" width="22" height="22">
-                                    <path
-                                        fill="currentColor"
-                                        d="M12 3a4 4 0 0 0-4 4v5a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4zm7 9a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V21H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 12z"
-                                    />
-                                </svg>
-                            </span>
-                        </div>
-
-                        <div className="ccp-podcast-content">
-                            <span className="ccp-podcast-eyebrow">
-                                The Camp Podcast
-                            </span>
-                            <h3 className="ccp-podcast-title">Title</h3>
-                            <p className="ccp-podcast-desc">
-                                small description
-                            </p>
-                            <a
-                                className="ccp-podcast-cta"
-                                href=""
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <span
-                                    className="ccp-podcast-cta-icon"
-                                    aria-hidden="true"
-                                >
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        width="14"
-                                        height="14"
-                                    >
-                                        <path
-                                            d="M8 5v14l11-7z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                </span>
-                                Listen to the podcast
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-
             {/* lessons */}
             <section className="ccp-section">
                 <div className="ccp-container">
@@ -360,6 +290,41 @@ export default function CampContent() {
                     </div>
                 </div>
             </section>
+            {isDocModalOpen && (
+                <div
+                    className="ccp-doc-modal-overlay"
+                    role="dialog"
+                    aria-modal="true"
+                    onClick={() => setIsDocModalOpen(false)}
+                >
+                    <div
+                        className="ccp-doc-modal-content"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            type="button"
+                            className="ccp-doc-modal-close"
+                            onClick={() => setIsDocModalOpen(false)}
+                            aria-label="Close document"
+                        >
+                            &times;
+                        </button>
+                        <iframe
+                            className="ccp-doc-modal-iframe"
+                            src={HERO_DOC_URL}
+                            title="Document"
+                        />
+                        <a
+                            className="ccp-doc-modal-fallback"
+                            href={HERO_DOC_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Open in new tab
+                        </a>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

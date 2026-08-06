@@ -40,12 +40,6 @@ export default function CampTimeline() {
         <div className="w-full flex flex-col xl:flex-row xl:items-start xl:justify-center xl:gap-10">
             {/*horizontal tabs*/}
             <div className="xl:hidden -mt-8 md:-mt-10 mb-6">
-                <div className="flex items-baseline gap-3 mb-4">
-                    <h3 className="text-burgundy-800 font-extrabold text-2xl md:text-3xl tracking-tight">
-                        Timeline
-                    </h3>
-                </div>
-
                 <div className="relative">
                     <div className="absolute left-2 right-2 top-[15px] z-0 h-[2px] bg-[#646161] " />
 
@@ -90,10 +84,6 @@ export default function CampTimeline() {
 
             {/* vertical timeline*/}
             <div className="hidden xl:flex xl:flex-col xl:shrink-0 xl:w-[150px] xl:pt-0">
-                <h3 className="text-burgundy-800 font-extrabold text-3xl tracking-tight mb-4">
-                    Timeline
-                </h3>
-
                 <div className="relative flex flex-col gap-6">
                     <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-[#646161]" />
 
