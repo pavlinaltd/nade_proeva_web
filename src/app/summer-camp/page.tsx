@@ -1,7 +1,6 @@
 "use client";
 import { Expand } from "lucide-react";
 import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 import "./camp-content.css";
 
@@ -87,13 +86,10 @@ const TESTIMONIALS = [
     },
 ];
 const HERO_DOC_THUMBNAIL = "/images/summer_camp/thumbnail.png";
-const HERO_DOC_URL = "/images/summer_camp/camp_doc.pdf";
+const HERO_DOC_URL = "/images/summer_camp/camp_document.pdf";
 
 export default function CampContent() {
     const [activeDay, setActiveDay] = useState(1);
-    const [isDocModalOpen, setIsDocModalOpen] = useState(false);
-    const searchParams = useSearchParams();
-    const year = searchParams.get("year") || new Date().getFullYear();
     const [delayOffset, setDelayOffset] = useState(0); // in seconds
     const ANIMATION_DURATION = 50; // matches the 70s in ccp-marquee-scroll
     const STEP_SECONDS = 5;
@@ -110,6 +106,7 @@ export default function CampContent() {
             return next;
         });
     };
+
     return (
         <div className="ccp-page">
             {/* doc + podcast, side by side */}
@@ -119,11 +116,11 @@ export default function CampContent() {
                         {/* doc */}
                         <div className="ccp-vp-video">
                             <div className="ccp-hero-media">
-                                <button
-                                    type="button"
+                                <a
                                     className="ccp-hero-doc-thumb group relative"
-                                    onClick={() => setIsDocModalOpen(true)}
-                                    aria-haspopup="dialog"
+                                    href={HERO_DOC_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Open document"
                                 >
                                     <img
@@ -133,7 +130,7 @@ export default function CampContent() {
                                     <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
                                         <Expand className="text-white drop-shadow-2xl w-10 h-10" />
                                     </span>
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -290,41 +287,6 @@ export default function CampContent() {
                     </div>
                 </div>
             </section>
-            {isDocModalOpen && (
-                <div
-                    className="ccp-doc-modal-overlay"
-                    role="dialog"
-                    aria-modal="true"
-                    onClick={() => setIsDocModalOpen(false)}
-                >
-                    <div
-                        className="ccp-doc-modal-content"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button
-                            type="button"
-                            className="ccp-doc-modal-close"
-                            onClick={() => setIsDocModalOpen(false)}
-                            aria-label="Close document"
-                        >
-                            &times;
-                        </button>
-                        <iframe
-                            className="ccp-doc-modal-iframe"
-                            src={HERO_DOC_URL}
-                            title="Document"
-                        />
-                        <a
-                            className="ccp-doc-modal-fallback"
-                            href={HERO_DOC_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Open in new tab
-                        </a>
-                    </div>
-                </div>
-            )}
         </div>
     );
 }
