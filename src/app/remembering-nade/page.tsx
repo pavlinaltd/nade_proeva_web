@@ -30,10 +30,6 @@ const LinkItem = ({ item }: { item: MediaItem }) => (
         </div>
     </a>
 );
-
-// Uniform frame for every press image — same size, same crop behavior
-// (object-contain so nothing is ever cut off), regardless of the source's
-// native aspect ratio (a Facebook post, a newspaper column, a book cover).
 const PressCard = ({
     item,
     isEnglish,
@@ -45,7 +41,15 @@ const PressCard = ({
 }) => (
     <div
         className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 bg-white flex flex-col"
-        onClick={() => onOpen(item)}
+        onClick={() =>
+            item.externalLink
+                ? window.open(
+                      item.externalLink,
+                      "_blank",
+                      "noopener,noreferrer",
+                  )
+                : onOpen(item)
+        }
     >
         <div className="relative h-64 sm:h-72 flex items-stretch justify-center bg-gray-50">
             <img
@@ -92,7 +96,7 @@ export default function RememberingNade() {
             srcEnglish: "/images/memories/coverpage_eng.png",
             title: "Zbornik Narodnog Muzeja Srbije",
             orientation: "cover",
-            externalLink: "/images/memories/archeo_book.pdf",
+            externalLink: "/images/memories/book.pdf",
         },
     ];
 
@@ -256,24 +260,16 @@ export default function RememberingNade() {
                 >
                     <div
                         className={
-                            selectedImage.externalLink
-                                ? "w-[90vw] max-w-[700px] h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden"
-                                : selectedImage.orientation === "vertical"
-                                  ? "w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl"
-                                  : selectedImage.orientation === "cover"
-                                    ? "w-[90vw] max-w-[400px] bg-white rounded-lg shadow-2xl"
-                                    : "w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl"
+                            selectedImage.orientation === "vertical"
+                                ? "w-[600px] bg-white rounded-lg overflow-hidden shadow-2xl"
+                                : selectedImage.orientation === "cover"
+                                  ? "w-[90vw] max-w-[400px] bg-white rounded-lg shadow-2xl"
+                                  : "w-[1000px] bg-white rounded-lg overflow-hidden shadow-2xl"
                         }
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="relative h-full">
-                            {selectedImage.externalLink ? (
-                                <iframe
-                                    src={selectedImage.externalLink}
-                                    title={selectedImage.title}
-                                    className="w-full h-full"
-                                />
-                            ) : selectedImage.videoSrc ? (
+                            {selectedImage.videoSrc ? (
                                 <video
                                     src={selectedImage.videoSrc}
                                     controls
