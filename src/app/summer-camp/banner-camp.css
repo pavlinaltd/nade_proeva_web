@@ -12,13 +12,13 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: url("/images/summer_camp/back_poster.jpg");
+    /* background: url("/images/summer_camp/back_poster.jpg");
     background-size: cover;
     background-position: center;
-    border-radius: 6px;
+    border-radius: 6px; */
     overflow: hidden;
 
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3); */
 }
 .camp-modal-image {
     position: relative;
@@ -143,7 +143,7 @@
         height: auto;
         max-width: 480px;
         overflow: visible;
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+        /* box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25); */
     }
 
     /* ── Poster stays visible, full image, no cropping ── */
@@ -249,5 +249,24 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+.camp-timeline-box {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    background: url("/images/summer_camp/back_poster.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    padding: 20px 20px 0px 20px;
+}
+
+@media (max-width: 900px) {
+    .camp-timeline-box {
+        max-width: 520px;
+        /* padding: 20px; */
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
     }
 }

@@ -199,7 +199,7 @@ export default function Home() {
 
             {/* camp+timelines */}
             <hr style={{ borderColor: "#ab2345", color: "#ab2345" }} />
-            <section className="container w-full lg:w-[85%]">
+            <section className="container w-full px-4  lg:w-[85%]">
                 <CampTimeline />
             </section>
 
