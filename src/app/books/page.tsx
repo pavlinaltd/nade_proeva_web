@@ -441,7 +441,7 @@ export default function Books() {
             />
 
             <div className="animate-fade-in">
-                <div className="space-y-8 lg:mx-20">
+                <div className="space-y-8 lg:mx-[6rem]">
                     {books
                         .filter((book) => book.makeCard === true)
                         .map((book, index) => (

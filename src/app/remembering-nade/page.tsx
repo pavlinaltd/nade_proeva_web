@@ -145,7 +145,7 @@ export default function RememberingNade() {
                 subtitle="Through the voices of those who knew her best."
             />
 
-            <div className="lg:mx-[7.5rem] flex flex-col items-center gap-12">
+            <div className="lg:mx-[5.5rem] flex flex-col items-center gap-12">
                 {/* Image Feature: from her students */}
                 <div
                     className="relative rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"

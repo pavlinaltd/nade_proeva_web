@@ -164,7 +164,7 @@ export default function Press() {
                 subtitle="Her interviews and opinions."
             />
 
-            <div className="animate-fade-in lg:mx-20">
+            <div className="animate-fade-in lg:mx-[6rem]">
                 {/* Language Switch */}
                 <div className="flex flex-col md:flex-row items-center gap-2 mb-6">
                     <div className="flex items-center gap-2 justify-start text-lg">
