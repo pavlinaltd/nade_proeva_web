@@ -1,9 +1,10 @@
 export default function VisitCenter() {
     return (
         <div className="p-6">
-            <h1 className="text-4xl font-bold text-center">
-                Under Construction
-            </h1>
+            <img
+                src="/images/under_construction.jpg"
+                className="w-[50%] m-auto "
+            />
         </div>
     );
 }

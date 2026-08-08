@@ -34,9 +34,8 @@ export default function Home() {
 
     return (
         <div className="animate-fade-in space-y-10">
-            {/* Hero Section */}
-
-            <section className="relative p-5 md:p-10 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white mx-0 mb-8 md:mx-[60px] md:mb-[60px]">
+            {/* main red section */}
+            <section className="relative p-5 md:p-10 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white mx-0 mb-8 md:mx-[100px] md:mb-[60px]">
                 <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
                     <img
                         src="/images/nade.jpg"
@@ -49,8 +48,8 @@ export default function Home() {
                         <h1 className="text-justify text-lg sm:text-xl lg:text-2xl xl:text-3xl italic sm:font-bold text-white">
                             "The study of history is not just about uncovering
                             the past, but understanding the complex tapestry of
-                            human experience that shapes our present and
-                            future."
+                            human experience that shapes our present and future
+                            existence."
                         </h1>
 
                         {/* sign */}
@@ -70,7 +69,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            {/* Introduction Section */}
+            {/* intro text */}
             <section className="container mx-auto px-4 w-full lg:w-4/5">
                 <div className="flex flex-col gap-8 justify-center items-center text-justify text-black">
                     <p className="leading-relaxed lg:text-xl">
@@ -115,7 +114,7 @@ export default function Home() {
                     </p>
                 </div>
             </section>
-            {/* New Medal Feature Section */}
+            {/* new medal */}
             <section className="container px-4 w-full lg:w-4/5">
                 <div className="bg-gray-50 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] p-2 md:p-10">
                     <h2 className="text-burgundy-800 text-2xl md:text-3xl font-bold text-center mb-8">
@@ -137,7 +136,7 @@ export default function Home() {
                             <p className="text-black text-justify text-xs md:text-base leading-snug">
                                 The Order of{" "}
                                 <strong className="font-semibold italic">
-                                    8 September
+                                    '8 September'
                                 </strong>{" "}
                                 is one of the highest state decorations of the
                                 Republic of North Macedonia. Bestowed by the
@@ -179,7 +178,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Awards Section */}
+            {/* awards section */}
             <section className="container mx-auto px-4 w-full lg:w-4/5">
                 <div className="flex flex-col md:flex-row gap-10 rounded-lg">
                     {medals.map((medal, index) => (
@@ -197,6 +196,7 @@ export default function Home() {
                     ))}
                 </div>
             </section>
+
             {/* camp+timelines */}
             <hr style={{ borderColor: "#ab2345", color: "#ab2345" }} />
             <section className="container w-full lg:w-4/5">
