@@ -35,42 +35,42 @@ export default function Home() {
     return (
         <div className="animate-fade-in space-y-10">
             {/* main red section */}
-            <section className="relative p-5 md:p-10 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white mx-0 mb-8 md:mx-[100px] md:mb-[60px]">
-                <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10">
+            <section className="relative p-5 md:p-10 rounded-lg bg-gradient-to-b from-burgundy-700 to-burgundy-800 text-white mx-auto  w-full lg:w-[85%]">
+                <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch md:gap-10">
                     <img
                         src="/images/nade.jpg"
                         alt="Professor Dr. Nade Proeva"
                         className="w-2/5 lg:w-1/2 h-auto object-cover rounded-lg block"
                     />
 
-                    <div className="max-w-2xl flex flex-col gap-6 text-left">
+                    <div className="max-w-2xl flex flex-col justify-between text-left gap-6 h-full">
                         {/* eng quote */}
-                        <h1 className="text-justify text-lg sm:text-xl lg:text-2xl xl:text-3xl italic sm:font-bold text-white">
+                        <h4 className="text-justify text-base sm:text-lg lg:text-xl xl:text-2xl italic sm:font-bold text-white">
                             "The study of history is not just about uncovering
                             the past, but understanding the complex tapestry of
                             human experience that shapes our present and future
                             existence."
-                        </h1>
+                        </h4>
 
                         {/* sign */}
                         <img
                             title="Nade Proeva"
                             src="/images/signature-white.png"
-                            className="self-center w-[120px] md:w-[180px] xl:w-[240px] aspect-auto"
+                            className="self-center w-[100px] md:w-[150px] xl:w-[200px] aspect-auto"
                         />
 
                         {/* macedonian quote */}
-                        <h1 className="text-justify text-lg sm:text-xl lg:text-2xl xl:text-3xl italic sm:font-bold text-yellow-400">
+                        <h4 className="text-justify text-base sm:text-lg lg:text-xl xl:text-2xl italic sm:font-bold text-yellow-400">
                             "Проучувањето на историјата не е само откривање на
                             минатото, туку и разбирање на сложената и богата
                             ткаенина на човечкото искуство што го обликува
                             нашето сегашно и идно постоење."
-                        </h1>
+                        </h4>
                     </div>
                 </div>
             </section>
             {/* intro text */}
-            <section className="container mx-auto px-4 w-full lg:w-4/5">
+            <section className="container mx-auto px-4 w-full lg:w-[85%]">
                 <div className="flex flex-col gap-8 justify-center items-center text-justify text-black">
                     <p className="leading-relaxed lg:text-xl">
                         <strong>Professor Dr. Nade Proeva</strong> was a
@@ -115,7 +115,7 @@ export default function Home() {
                 </div>
             </section>
             {/* new medal */}
-            <section className="container px-4 w-full lg:w-4/5">
+            <section className="container px-4 w-full lg:w-[85%]">
                 <div className="bg-gray-50 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] p-2 md:p-10">
                     <h2 className="text-burgundy-800 text-2xl md:text-3xl font-bold text-center mb-8">
                         The Order of{" "}
@@ -179,7 +179,7 @@ export default function Home() {
             </section>
 
             {/* awards section */}
-            <section className="container mx-auto px-4 w-full lg:w-4/5">
+            <section className="container mx-auto px-4 w-full lg:w-[85%]">
                 <div className="flex flex-col md:flex-row gap-10 rounded-lg">
                     {medals.map((medal, index) => (
                         <div
@@ -199,12 +199,12 @@ export default function Home() {
 
             {/* camp+timelines */}
             <hr style={{ borderColor: "#ab2345", color: "#ab2345" }} />
-            <section className="container w-full lg:w-4/5">
+            <section className="container w-full lg:w-[85%]">
                 <CampTimeline />
             </section>
 
             {/* Video film + macedonian center */}
-            <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-[77%] xl:w-[90%]">
+            <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-[85%]">
                 <div className="flex flex-col lg:flex-row gap-4 items-stretch">
                     {/* Video Feature Section */}
                     <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
