@@ -57,31 +57,31 @@ const TESTIMONIALS = [
     {
         id: 1,
         image: "/images/summer_camp/testimonials/people/1.jpg",
-        docURL: "/images/summer_camp/testimonials/test1.docx",
+        docURL: "/images/summer_camp/testimonials/Nektarija_Ilievska.pdf",
         title: "Nektarija Ilievska",
     },
     {
         id: 2,
         image: "/images/summer_camp/testimonials/people/2.jpg",
-        docURL: "/images/summer_camp/testimonials/test2.docx",
+        docURL: "/images/summer_camp/testimonials/Kirjana_Miloshevska.pdf",
         title: "Kirjana Miloshevska",
     },
     {
         id: 3,
         image: "/images/summer_camp/testimonials/people/3.jpg",
-        docURL: "/images/summer_camp/testimonials/test3.docx",
+        docURL: "/images/summer_camp/testimonials/Sofija_Gakova.pdf",
         title: "Sofija Gakova",
     },
     {
         id: 4,
         image: "/images/summer_camp/testimonials/people/4.jpg",
-        docURL: "/images/summer_camp/testimonials/test4.docx",
+        docURL: "/images/summer_camp/testimonials/Valentina_Spaseska.pdf",
         title: "Valentina Spaseska",
     },
     {
         id: 5,
         image: "/images/summer_camp/testimonials/people/5.jpg",
-        docURL: "/images/summer_camp/testimonials/test5.docx",
+        docURL: "/images/summer_camp/testimonials/Atanas_Taškoski.pdf",
         title: "Atanas Taškoski",
     },
 ];
@@ -108,7 +108,7 @@ export default function CampContent() {
     };
 
     return (
-        <div className="ccp-page">
+        <div className="ccp-page ">
             {/* doc + podcast, side by side */}
             <section className="ccp-section">
                 <div className="ccp-container">
@@ -271,6 +271,7 @@ export default function CampContent() {
                                     className="ccp-testimonial-photo"
                                     href={t.docURL || "#"}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <img
                                         src={t.image}

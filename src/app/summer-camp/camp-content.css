@@ -12,16 +12,14 @@
     font-family:
         -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
     line-height: 1.5;
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
 }
 
 .ccp-container {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-.ccp-section {
-    padding-bottom: 26px;
+    /* padding: 0 20px; */
 }
 
 .ccp-section + .ccp-section {
@@ -448,6 +446,10 @@
     .ccp-testimonial-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .ccp-page {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
     /* days */
     .ccp-day-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -462,6 +464,10 @@
     /* testimonials */
     .ccp-testimonial-grid {
         grid-template-columns: 1fr;
+    }
+    .ccp-page {
+        padding-left: 0px;
+        padding-right: 0px;
     }
     /* page */
     .ccp-section {
@@ -488,6 +494,10 @@
     /* days */
     .ccp-day-grid {
         grid-template-columns: 1fr 1fr;
+    }
+    .ccp-page {
+        padding-left: 0px;
+        padding-right: 0px;
     }
     /* gallery carousal */
     .ccp-carousel-item {
