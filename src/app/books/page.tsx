@@ -56,6 +56,7 @@ interface BookProps {
     promoImage?: string;
     promoVideo?: string;
     promoAudio?: string;
+    amazonPublished: boolean;
 }
 
 const BookCard = ({ book }: { book: BookProps }) => {
@@ -114,11 +115,11 @@ const BookCard = ({ book }: { book: BookProps }) => {
                                 Find on Amazon Books
                             </a>
                         </Button>
-                    ) : (
+                    ) : book.amazonPublished ? (
                         <Button className="flex items-center bg-gray-600 pointer-events-none">
                             Coming Soon to Amazon Books
                         </Button>
-                    )}
+                    ) : null}
                 </div>
             </div>
             {/* Promo section */}
@@ -251,6 +252,7 @@ export default function Books() {
             volume: "5",
             imageUrl: "/images/books/studii.jpg",
             isbn: "9989-693-00-5",
+            amazonPublished: false,
         },
         {
             makeCard: false,
@@ -262,6 +264,7 @@ export default function Books() {
             publisher: "Biblioteka HISTORIA ANTIQUA MACEDONICA",
             series: "HISTORIA ANTIQUA MACEDONICA",
             isbn: "2715401841",
+            amazonPublished: false,
         },
         {
             makeCard: false,
@@ -275,6 +278,7 @@ export default function Books() {
             series: "HISTORIA ANTIQUA MACEDONICA",
             volume: "3",
             isbn: "9989-693-03-X",
+            amazonPublished: false,
         },
         {
             makeCard: false,
@@ -286,6 +290,7 @@ export default function Books() {
             publisher: "Biblioteka HISTORIA ANTIQUA MACEDONICA",
             series: "HISTORIA ANTIQUA MACEDONICA",
             isbn: "9989-677-12-3",
+            amazonPublished: false,
         },
         {
             makeCard: true,
@@ -304,6 +309,7 @@ export default function Books() {
             amazonUrl: "",
             // promoVideo: "/images/books/studies-promo.mp4",
             promoImage: "/images/books/studies_promo.png",
+            amazonPublished: false,
         },
         {
             makeCard: false,
@@ -321,6 +327,7 @@ export default function Books() {
             imageUrl:
                 "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
             isbn: "9989-619-40-9",
+            amazonPublished: false,
         },
         {
             makeCard: true,
@@ -338,6 +345,7 @@ export default function Books() {
             isbn: "",
             amazonUrl: "",
             promoImage: "/images/books/istorija-promo.jpg",
+            amazonPublished: false,
         },
         {
             makeCard: false,
@@ -350,6 +358,7 @@ export default function Books() {
             series: "HISTORIA ANTIQUA MACEDONICA",
             volume: "7",
             isbn: "978-9989-136-63-4",
+            amazonPublished: false,
         },
         {
             makeCard: false,
@@ -365,6 +374,7 @@ export default function Books() {
             description:
                 "A scholarly analysis of the period following Alexander the Great's death, examining the complex power dynamics and conflicts among his successors known as the Epigoni.",
             isbn: "978 N-9989-297 9788 78-0-9",
+            amazonPublished: false,
         },
         {
             makeCard: false,
@@ -380,6 +390,7 @@ export default function Books() {
             description:
                 "A detailed biographical work on Alexander the Great, examining his conquests, policies, and lasting impact on world history through a critical historical lens.",
             isbn: "978-9989-2978-2-3",
+            amazonPublished: false,
         },
         {
             makeCard: true,
@@ -397,6 +408,7 @@ export default function Books() {
             isbn: "978-9989-2978-5-4",
             amazonUrl: "",
             promoImage: "/images/books/launch-of-religion.jpg",
+            amazonPublished: true,
         },
         {
             makeCard: true,
@@ -413,7 +425,8 @@ export default function Books() {
             imageUrl: "/images/books/triptych.jpg",
             isbn: "978-608-245-363-7",
             amazonUrl: "",
-            promoImage: "/images/books/triptych-promo.jpg",
+            promoImage: "/images/books/triptych-promo.png",
+            amazonPublished: true,
         },
         {
             makeCard: false,
@@ -430,6 +443,7 @@ export default function Books() {
                 "An examination of the development of national consciousness among Macedonian Slavs throughout history, with particular focus on identity formation processes during the 19th and early 20th centuries.",
             imageUrl: "",
             isbn: "978-608-66974-0-2",
+            amazonPublished: false,
         },
     ];
 
@@ -449,7 +463,7 @@ export default function Books() {
                         ))}
                 </div>
 
-                <div className="my-12 lg:mx-20">
+                <div className="my-12 mx-6 lg:mx-20">
                     <h3 className="font-semibold text-burgundy-900 mb-4 text-xl lg:text-2xl">
                         Co-published Books
                     </h3>

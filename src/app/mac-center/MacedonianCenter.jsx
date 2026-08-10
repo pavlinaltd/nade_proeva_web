@@ -42,8 +42,8 @@ export default function MAC_CENTER() {
                     style={{
                         textAlign: "justify",
                         fontSize: "18px",
-                        lineHeight: "1.7",
-                        marginTop: "30px",
+                        lineHeight: "1.5",
+                        marginTop: "10px",
                     }}
                 >
                     MACEDONICA – Center for Historical Studies "Nade Proeva" is

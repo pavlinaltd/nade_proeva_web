@@ -28,6 +28,7 @@ interface AudioItem {
     src: string;
     title: string;
     code: string;
+    date: string;
 }
 
 // data
@@ -85,45 +86,53 @@ const videos: VideoItem[] = [
 
 const mainAudio: AudioItem = {
     src: "https://www.youtube.com/embed/PABGFsmHnhk",
-    title: "Historical Focus — Историски Фокус, July 19, 2024",
+    title: "Historical Focus — Историски Фокус",
     code: "A — 001",
+    date: "July 19, 2024",
 };
 
 const audios: AudioItem[] = [
     {
         src: "/videos/audio/footprints-in-time.mp4",
-        title: "Footprints in Time — Траги во Времето, May 6, 2018",
-        code: "A — 002",
+        title: "Footprints in Time — Траги во Времето",
+        code: "A — 001",
+        date: "May 6, 2018",
     },
     {
         src: "/videos/audio/from-our-unforgettable-past.mp4",
-        title: "From Our Unforgettable Past — Од Нашиот Незаборав, March 3, 2001",
-        code: "A — 003",
+        title: "From Our Unforgettable Past — Од Нашиот Незаборав",
+        code: "A — 002",
+        date: "March 3, 2001",
     },
     {
         src: "/videos/audio/historical-focus-dec-26.mp4",
-        title: "Historical Focus — Историски Фокус, December 26, 1998",
-        code: "A — 004",
+        title: "Historical Focus — Историски Фокус",
+        code: "A — 003",
+        date: "December 26, 1998",
     },
     {
         src: "/videos/audio/studies-of-the-ancient-macedonians.mp4",
-        title: "Studies of the Ancient Macedonians — Студии за Античките Македонци, 1997",
-        code: "A — 005",
+        title: "Studies of the Ancient Macedonians — Студии за Античките Македонци",
+        code: "A — 004",
+        date: "1997",
     },
     {
         src: "/videos/audio/the-ylirians.mp4",
-        title: "The Ylirians From Bardilis to Gentij — Илирите Од Бардилис до Гентиј, June 12, 1997",
-        code: "A — 006",
+        title: "The Ylirians From Bardilis to Gentij — Илирите Од Бардилис до Гентиј",
+        code: "A — 005",
+        date: "June 12, 1997",
     },
     {
         src: "/videos/audio/historical-focus-march-23.mp4",
-        title: "Historical Focus — Историски Фокус, March 23, 1996",
-        code: "A — 007",
+        title: "Historical Focus — Историски Фокус",
+        code: "A — 006",
+        date: "March 23, 1996",
     },
     {
         src: "/videos/audio/traditions-and-currents.mp4",
-        title: "Traditions and Currents — Традиции и Текови, March 12, 1991",
-        code: "A — 008",
+        title: "Traditions and Currents — Традиции и Текови",
+        code: "A — 007",
+        date: "March 12, 1991",
     },
 ];
 
@@ -460,7 +469,7 @@ export default function Media() {
                         {/* record shelf */}
                         <div className="flex px-3">
                             <div
-                                className="flex gap-5 justify-start xl:justify-center overflow-x-auto bg-[#cdcfd1] rounded-sm py-4 px-3 w-full max-w-6xl"
+                                className="flex gap-5 items-start justify-start xl:justify-center overflow-x-auto bg-[#cdcfd1] rounded-sm py-4 px-3 w-full max-w-6xl"
                                 style={{
                                     scrollbarWidth: "thin",
                                     scrollbarColor: "#8B1A1A #e8e0d0",
@@ -470,9 +479,9 @@ export default function Media() {
                                     <button
                                         key={i}
                                         onClick={() => handleSelectRecord(i)}
-                                        className="flex-shrink-0 w-32 text-center focus:outline-none group"
+                                        className="flex-shrink-0 w-32 grid grid-rows-[16px_auto_1fr_16px] items-start justify-items-center text-center focus:outline-none group"
                                     >
-                                        <div className="text-[9px] text-[#000000] font-mono tracking-wide mb-1">
+                                        <div className="text-[9px] text-[#000000] font-mono tracking-wide leading-none">
                                             {a.code}
                                         </div>
                                         <RecordDisc
@@ -482,10 +491,13 @@ export default function Media() {
                                             }
                                         />
                                         <div
-                                            className={`text-[11px] leading-tight mb-1 transition-colors line-clamp-3
-                ${activeAudioIdx === i ? "text-[#000000]" : "text-[#000000] group-hover:text-[#C8962A]"}`}
+                                            className={`text-[11px] leading-tight line-clamp-3
+            ${activeAudioIdx === i ? "text-[#000000]" : "text-[#000000] group-hover:text-[#C8962A]"}`}
                                         >
                                             {a.title}
+                                        </div>
+                                        <div className="text-[9px] text-[#000000] font-mono tracking-wide leading-none">
+                                            {a.date}
                                         </div>
                                     </button>
                                 ))}
@@ -526,6 +538,9 @@ export default function Media() {
                                             }`}
                                         >
                                             {a.title}
+                                        </div>
+                                        <div className="text-[11px] text-[#000000] font-mono tracking-wide mb-0.5">
+                                            {a.date}
                                         </div>
                                     </div>
                                 </button>

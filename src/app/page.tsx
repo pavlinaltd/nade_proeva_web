@@ -207,11 +207,11 @@ export default function Home() {
             <section className="container flex flex-col justify-between gap-10 md:gap-20 mx-auto px-4 w-full lg:w-[85%]">
                 <div className="flex flex-col lg:flex-row gap-4 items-stretch">
                     {/* Video Feature Section */}
-                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
+                    <div className="flex flex-col flex-1 p-[2.25rem] rounded-xl bg-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                         <FilmWithPoster />
                     </div>
                     {/* poster center — right side */}
-                    <div className="flex flex-col flex-1 p-5 rounded-xl bg-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
+                    <div className="flex flex-col flex-1 p-[2.25rem] rounded-xl bg-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                         <MacedonianCenter />
                     </div>
                 </div>

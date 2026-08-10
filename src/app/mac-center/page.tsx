@@ -3,7 +3,7 @@ export default function VisitCenter() {
         <div className="p-6">
             <img
                 src="/images/under_construction.jpg"
-                className="w-[50%] m-auto "
+                className="w-[100%] lg:w-[88%] m-auto"
             />
         </div>
     );
