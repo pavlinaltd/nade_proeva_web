@@ -39,7 +39,7 @@
     position: relative;
     width: 80%;
     margin: auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 13 / 9;
     border-radius: var(--radius);
     background: #0f1620;
     overflow: hidden;
@@ -529,7 +529,6 @@
     background: var(--card);
     border: 0px solid var(--line);
     border-radius: var(--radius);
-    /* padding: 24px; */
     height: 100%;
     justify-content: center;
 }
@@ -601,16 +600,13 @@
         grid-template-columns: 1fr;
         gap: 24px;
     }
-    .ccp-podcast-simple {
-        padding: 16px;
-    }
 }
 
 .ccp-hero-doc-thumb {
     position: relative;
     display: block;
     width: 100%;
-    height: 100%;
+    height: 115%;
     padding: 0;
     border: 2px solid var(--line);
     border-radius: var(--radius);
@@ -621,6 +617,6 @@
 .ccp-hero-doc-thumb img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     display: block;
 }
