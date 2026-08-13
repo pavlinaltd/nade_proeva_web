@@ -225,10 +225,6 @@ export default function Media() {
             <div className="text-center lg:mx-20">
                 {/* video */}
 
-                <h2 className="text-2xl mb-3 uppercase lg:text-3xl font-bold font-vollkornsc text-burgundy-900">
-                    Video
-                </h2>
-
                 {/* video - content */}
                 <section className="animate-fade-in">
                     {/* desktop view */}
@@ -450,9 +446,6 @@ export default function Media() {
                 </section>
 
                 {/* audio */}
-                <h2 className=" mb-3 pt-9 text-2xl uppercase lg:text-3xl font-bold font-vollkornsc text-burgundy-900">
-                    Audio
-                </h2>
 
                 {/* audio - content */}
                 <section className="animate-fade-in">
@@ -467,7 +460,7 @@ export default function Media() {
                         </div>
 
                         {/* record shelf */}
-                        <div className="flex px-3">
+                        <div className="flex px-3 justify-center">
                             <div
                                 className="flex gap-5 items-start justify-start xl:justify-center overflow-x-auto bg-[#cdcfd1] rounded-sm py-4 px-3 w-full max-w-6xl"
                                 style={{
@@ -550,9 +543,22 @@ export default function Media() {
 
                     {/* Info bar */}
 
-                    <div className="mt-3 flex justify-center px-6 lg:px-3">
+                    {/* <div className="mt-3 flex justify-center px-6 lg:px-3">
                         <div className="bg-[#cdcfd1] rounded px-3 py-3 w-full max-w-6xl [@media(max-width:1023px)]:shadow-[inset_4px_0_0_0_#8B1A1A]">
                             {" "}
+                            <div className="text-[9px] text-[#000000] tracking-[2px] uppercase font-mono mb-1">
+                                Now Playing
+                            </div>
+                            <div className="text-sm text-[#000000] font-medium mb-0.5">
+                                {selectedAudio.code}
+                            </div>
+                            <div className="text-xs text-[#000000] italic leading-relaxed line-clamp-1">
+                                {selectedAudio.title}
+                            </div>
+                        </div>
+                    </div> */}
+                    <div className="mt-3 flex justify-center px-3">
+                        <div className="bg-[#cdcfd1] rounded px-3 py-3 w-full max-w-6xl">
                             <div className="text-[9px] text-[#000000] tracking-[2px] uppercase font-mono mb-1">
                                 Now Playing
                             </div>
