@@ -41,7 +41,7 @@ export default function MAC_CENTER() {
                 <p
                     style={{
                         textAlign: "justify",
-                        fontSize: "18px",
+                        fontSize: "15px",
                         lineHeight: "1.5",
                         marginTop: "10px",
                     }}
