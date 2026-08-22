@@ -149,7 +149,7 @@ const VideoPlayerItem = ({
   autoPlay?: boolean;
 }) => (
   <VideoPlayer
-    className={`video-player overflow-hidden aspect-video shadow-lg ${className ?? ""}`}
+    className={`video-player w-full overflow-hidden aspect-video shadow-lg ${className ?? ""}`}
   >
     <VideoPlayerContent
       crossOrigin=""
@@ -297,7 +297,7 @@ export default function Media() {
               </div>
 
               {/* video player*/}
-              <div className="mt-5">
+              <div className="mt-10">
                 {selectedVideo.format === "youtube" ? (
                   <iframe
                     key={selectedVideo.src}
@@ -310,13 +310,13 @@ export default function Media() {
                   <VideoPlayerItem
                     key={selectedVideo.src}
                     src={selectedVideo.src}
-                    className="rounded-lg border border-[#C8962A]/40"
+                    className="rounded-lg border border-[#C8962A]/40 w-full"
                   />
                 )}
               </div>
 
               {/* Info bar */}
-              <div className="mt-5 bg-[#cdcfd1] rounded px-3 py-3">
+              <div className="mt-10 bg-[#cdcfd1] rounded px-3 py-3">
                 <div className="text-[9px] text-[#000000] tracking-[2px] uppercase font-mono mb-1">
                   V — {String(activeVideoIdx + 1).padStart(3, "0")}
                   {selectedVideo.year ? ` · ${selectedVideo.year}` : ""}
@@ -446,7 +446,7 @@ export default function Media() {
                 ))}
               </div>
               {/* info bar */}
-              <div className="mt-8 bg-[#cdcfd1] rounded px-3 py-3">
+              <div className="mt-10 bg-[#cdcfd1] rounded px-3 py-3">
                 <div className="text-[9px] text-[#000000] tracking-[2px] uppercase font-mono mb-1">
                   Now Playing
                 </div>
@@ -459,7 +459,7 @@ export default function Media() {
               </div>
 
               {/* audio player */}
-              <div className="mt-8">
+              <div className="mt-10">
                 {activeAudioIdx === null ? (
                   <div
                     className="w-full overflow-hidden rounded"
@@ -535,7 +535,7 @@ export default function Media() {
             </div>
 
             {/* info bar */}
-            <div className="mt-5 bg-[#cdcfd1] rounded px-3 py-3">
+            <div className="mt-10 bg-[#cdcfd1] rounded px-3 py-3">
               <div className="text-[9px] text-[#000000] tracking-[2px] uppercase font-mono mb-1">
                 Now Playing
               </div>
@@ -549,7 +549,7 @@ export default function Media() {
 
             {/* audio player */}
 
-            <div className="mt-5">
+            <div className="mt-10">
               {activeAudioIdx === null ? (
                 <div
                   className="w-full overflow-hidden rounded"

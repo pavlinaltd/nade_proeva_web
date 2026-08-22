@@ -7,56 +7,52 @@ import "./camp-content.css";
 const DAYS = [
   {
     id: 1,
-    label: "Getting to Know Each Other",
-    image: "/images/summer_camp/imgs/1.png",
+    label: "Set and Ready to Go",
+    image: "/images/summer_camp/imgs/1.jpg",
   },
   {
     id: 2,
-    label: "Objective and Goals",
-    image: "/images/summer_camp/imgs/2.jpg",
+    label: "Getting to Know Each Other",
+    image: "/images/summer_camp/imgs/2.png",
   },
   {
     id: 3,
-    label: "Lesson in History",
-    image: "/images/summer_camp/imgs/3.png",
+    label: "Objective and Goals",
+    image: "/images/summer_camp/imgs/3.jpg",
   },
   {
     id: 4,
-    label: "The Debate",
+    label: "Lesson in History",
     image: "/images/summer_camp/imgs/4.png",
+  },
+  {
+    id: 5,
+    label: "Paying Attention",
+    image: "/images/summer_camp/imgs/5.jpg",
   },
 
   {
-    id: 5,
-    label: "Interpreting History",
-    image: "/images/summer_camp/imgs/5.png",
-  },
-  {
     id: 6,
-    label: "On Field Research",
-    image: "/images/summer_camp/imgs/6.jpg",
+    label: "The Debate",
+    image: "/images/summer_camp/imgs/6.png",
   },
+
   {
     id: 7,
-    label: "Final Day at The Camp",
-    image: "/images/summer_camp/imgs/7.jpg",
+    label: "Interpreting History",
+    image: "/images/summer_camp/imgs/7.png",
   },
   {
     id: 8,
-    label: "Group Certificate Ceremony",
-    image: "/images/summer_camp/imgs/8.png",
+    label: "Field Work",
+    image: "/images/summer_camp/imgs/8.jpg",
   },
-];
-// gallery pictures
-const DAYS2 = [
-  { id: 1, image: "/images/summer_camp/imgs/1.png" },
-  { id: 2, image: "/images/summer_camp/imgs/2.jpg" },
-  { id: 3, image: "/images/summer_camp/imgs/3.png" },
-  { id: 4, image: "/images/summer_camp/imgs/4.png" },
-  { id: 5, image: "/images/summer_camp/imgs/5.png" },
-  { id: 6, image: "/images/summer_camp/imgs/6.jpg" },
-  { id: 7, image: "/images/summer_camp/imgs/7.jpg" },
-  { id: 8, image: "/images/summer_camp/imgs/8.png" },
+
+  {
+    id: 9,
+    label: "Something for the CV",
+    image: "/images/summer_camp/imgs/9.png",
+  },
 ];
 
 const LESSONS = [
@@ -111,25 +107,12 @@ const HERO_DOC_URL = "/images/summer_camp/camp_document.pdf";
 
 export default function CampContent() {
   const [activeDay, setActiveDay] = useState(1);
-  const [delayOffset, setDelayOffset] = useState(0);
 
   const [selectedDayImage, setSelectedDayImage] = useState<{
     src: string;
     label: string;
   } | null>(null);
 
-  const ANIMATION_DURATION = 50;
-  const STEP_SECONDS = 5;
-
-  const handleManualScroll = (direction: "left" | "right") => {
-    setDelayOffset((prev) => {
-      let next =
-        direction === "right" ? prev + STEP_SECONDS : prev - STEP_SECONDS;
-      next =
-        ((next % ANIMATION_DURATION) + ANIMATION_DURATION) % ANIMATION_DURATION;
-      return next;
-    });
-  };
   const openDayLightbox = (
     e: React.MouseEvent,
     day: { image: string; label: string },
@@ -146,7 +129,7 @@ export default function CampContent() {
 
   return (
     <div className="ccp-page ">
-      {/* doc + podcast, side by side */}
+      {/* doc + podcast*/}
       <section className="ccp-section">
         <div className="ccp-container">
           <div className="ccp-vp-grid">
@@ -168,7 +151,7 @@ export default function CampContent() {
               </div>
             </div>
 
-            {/* podcast, simplified */}
+            {/* podcast */}
             <div className="ccp-podcast-simple">
               <div className="ccp-podcast-simple-photo">
                 <img
@@ -235,44 +218,6 @@ export default function CampContent() {
         </div>
       )}
 
-      {/* gallery carousal */}
-      {/* <section className="ccp-section">
-                <div className="ccp-container">
-                    <h2 className="ccp-heading">Gallery</h2>
-                    <div className="ccp-carousel-stage">
-                        <button
-                            type="button"
-                            className="ccp-carousel-btn ccp-carousel-btn--left"
-                            onClick={() => handleManualScroll("left")}
-                            aria-label="Previous"
-                        >
-                            &#8249;
-                        </button>
-                        <div
-                            className="ccp-carousel-track"
-                            style={{ animationDelay: `-${delayOffset}s` }}
-                        >
-                            {[...DAYS2, ...DAYS2].map((day, i) => (
-                                <div
-                                    key={`${day.id}-${i}`}
-                                    className="ccp-carousel-item"
-                                >
-                                    <img src={day.image} />
-                                </div>
-                            ))}
-                        </div>
-                        <button
-                            type="button"
-                            className="ccp-carousel-btn ccp-carousel-btn--right"
-                            onClick={() => handleManualScroll("right")}
-                            aria-label="Next"
-                        >
-                            &#8250;
-                        </button>
-                    </div>
-                </div>
-            </section> */}
-
       {/* lessons */}
       <section className="ccp-section">
         <div className="ccp-container">
@@ -286,9 +231,7 @@ export default function CampContent() {
                     preload="metadata"
                     poster={lesson.poster}
                     src={lesson.videoSrc}
-                  >
-                    {/* TODO: add <source src="" type="video/mp4" /> if using multiple formats */}
-                  </video>
+                  ></video>
                 </div>
                 <div className="ccp-lesson-title">{lesson.label}</div>
               </div>

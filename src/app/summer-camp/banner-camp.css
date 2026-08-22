@@ -3,270 +3,249 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .camp-modal {
-    width: 100%;
-    max-width: 900px;
-    height: 560px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* background: url("/images/summer_camp/back_poster.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 6px; */
-    overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  height: 560px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    /* box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3); */
+  overflow: hidden;
 }
 .camp-modal-image {
-    position: relative;
-    overflow: hidden;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
 .camp-modal-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 4px;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
 }
 
 .camp-modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    padding: 20px 20px 20px 0px;
-
-    overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 20px 20px 0px;
+  overflow-y: auto;
 }
 
 .camp-desc {
-    color: #222;
-    font-family: "EB Garamond", serif;
-    font-size: 15px;
-    line-height: 1.72;
-    text-align: justify;
+  color: #222;
+  font-family: "EB Garamond", serif;
+  font-size: 15px;
+  line-height: 1.72;
+  text-align: justify;
 }
 
 .camp-desc-block {
-    display: block;
-    margin-top: 10px;
+  display: block;
+  margin-top: 10px;
 }
 
 .camp-desc-block:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 .camp-divider {
-    margin: 0;
-    border: none;
-    border-top: 1px solid #4b4a4a;
+  margin: 0;
+  border: none;
+  border-top: 1px solid #4b4a4a;
 }
 
 .camp-form {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .form-title {
-    margin: 0;
-    color: #8b1a1a;
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  margin: 0;
+  color: #8b1a1a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .camp-form-row {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .camp-submit {
-    padding: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #8b1a1a;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.camp-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.camp-success,
+.camp-error {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+}
+.camp-success {
+  color: #2e7d32;
+}
+
+.camp-error {
+  color: #c62828;
+}
+
+.camp-input::placeholder {
+  color: #646161;
+}
+
+.camp-apply-btn,
+.camp-close-btn {
+  display: none;
+}
+@media (max-width: 900px) {
+  .camp-modal {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-width: 480px;
+    overflow: visible;
+  }
+
+  .camp-modal-image {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 16px;
+  }
+
+  .camp-modal-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .camp-apply-btn {
+    display: block;
+    margin: 14px auto 18px;
+    padding: 9px 28px;
     border: none;
     border-radius: 4px;
     background: #8b1a1a;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
+    width: auto;
     cursor: pointer;
     transition: background 0.2s;
-}
+  }
 
-.camp-submit:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
+  .camp-apply-btn:hover {
+    background: #6e1414;
+  }
 
-.camp-success,
-.camp-error {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    font-size: 13px;
-}
-.camp-success {
-    color: #2e7d32;
-}
-
-.camp-error {
-    color: #c62828;
-}
-
-.camp-input::placeholder {
-    color: #646161;
-}
-
-/* ── Mobile-only elements, hidden on desktop by default ── */
-.camp-apply-btn,
-.camp-close-btn {
+  .camp-modal-content {
     display: none;
-}
-/* ══════════════════════════════════════════════════════════════════
-   Responsive: small/medium screens
-   Show poster + "Apply Now" button only.
-   Tapping it opens title/description/form as a full-screen overlay.
-   ══════════════════════════════════════════════════════════════════ */
-@media (max-width: 900px) {
-    .camp-modal {
-        grid-template-columns: 1fr;
-        height: auto;
-        max-width: 480px;
-        overflow: visible;
-        /* box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25); */
-    }
+  }
 
-    /* ── Poster stays visible, full image, no cropping ── */
-    .camp-modal-image {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        padding: 16px;
-    }
-
-    .camp-modal-image img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: center;
-    }
-
-    /* ── Apply Now button sits right under the poster ── */
-    .camp-apply-btn {
-        display: block;
-        margin: 14px auto 18px;
-        padding: 9px 28px;
-        border: none;
-        border-radius: 4px;
-        background: #8b1a1a;
-        color: #fff;
-        font-family: "Montserrat", sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        width: auto;
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-
-    .camp-apply-btn:hover {
-        background: #6e1414;
-    }
-
-    /* ── Content+form hidden until Apply is tapped ── */
-    .camp-modal-content {
-        display: none;
-    }
-
-    /* ── When open: full-screen overlay, single natural scroll ── */
-    .camp-modal-content--open {
-        display: flex;
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        background: url("/images/summer_camp/back_poster.jpg");
-        background-size: cover;
-        background-position: center;
-        padding: 48px 20px 30px;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        animation: campFadeIn 0.2s ease-out;
-    }
-
-    .camp-close-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        top: 16px;
-        right: 16px;
-        width: 36px;
-        height: 36px;
-        border: none;
-        border-radius: 50%;
-        background: #f0f0f0;
-        color: #333;
-        font-size: 22px;
-        line-height: 1;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .camp-desc {
-        font-size: 16px;
-        text-align: left;
-    }
-}
-
-@media (max-width: 480px) {
-    .camp-form-row {
-        flex-direction: column;
-    }
-
-    .camp-form-row input[name="gpa"] {
-        max-width: 100%;
-    }
-}
-
-@keyframes campFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.camp-timeline-box {
-    width: 100%;
-    /* max-width: 1050px; */
-    margin: 0 auto;
+  .camp-modal-content--open {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
     background: url("/images/summer_camp/back_poster.jpg");
     background-size: cover;
     background-position: center;
-    border-radius: 6px;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
-    padding: 2.25rem 2.25rem 0px 2.5rem;
+    padding: 48px 20px 30px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    animation: campFadeIn 0.2s ease-out;
+  }
+
+  .camp-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: #333;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .camp-desc {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .camp-form-row {
+    flex-direction: column;
+  }
+
+  .camp-form-row input[name="gpa"] {
+    max-width: 100%;
+  }
+}
+
+@keyframes campFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.camp-timeline-box {
+  width: 100%;
+  margin: 0 auto;
+  background: url("/images/summer_camp/back_poster.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  padding: 2.25rem 2.25rem 0px 2.5rem;
 }
 
 @media (max-width: 900px) {
-    .camp-timeline-box {
-        /* max-width: 520px; */
-        /* padding: 20px; */
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
-    }
+  .camp-timeline-box {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  }
 }
