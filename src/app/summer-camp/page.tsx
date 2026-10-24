@@ -170,7 +170,7 @@ export default function CampContent() {
 
               <a
                 className="ccp-podcast-simple-btn"
-                href="https://youtu.be/AtBbixSiAQU?si=xn3gT7aDobLQVClY"
+                href="https://www.youtube.com/watch?v=60r7ag37ioE"
                 target="_blank"
                 rel="noopener noreferrer"
               >
