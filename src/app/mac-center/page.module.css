@@ -1,0 +1,454 @@
+:global(*) {
+	box-sizing: border-box;
+}
+
+:global(html) {
+	scroll-behavior: smooth;
+}
+
+.pageRoot {
+	font:
+		16px/1.65 Arial,
+		sans-serif;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.pageRoot a {
+	color: inherit;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 22px 6%;
+	border-bottom: 1px solid #cfcbbd;
+	gap: 22px;
+}
+
+.brand {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.brand strong {
+	display: block;
+	font:
+		22px Georgia,
+		serif;
+	letter-spacing: 0.08em;
+}
+
+.brand small {
+	font-size: 10px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.nav {
+	display: flex;
+	gap: 25px;
+	align-items: center;
+}
+
+.nav a {
+	text-decoration: none;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.button {
+	display: inline-block;
+	background: #572222;
+	color: white !important;
+	padding: 14px 21px;
+	text-decoration: none;
+	border: 1px solid #572222;
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.light {
+	background: transparent;
+	color: #572222 !important;
+}
+
+.hero {
+	min-height: 620px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.heroCopy {
+	padding-left: 110px;
+	padding-right: 73px;
+	padding-top: 30px;
+}
+
+.eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 11px;
+	font-weight: bold;
+	color: #572222;
+}
+
+.hero h1,
+.pageRoot h2,
+.pageRoot h3 {
+	font-family: Georgia, serif;
+	font-weight: normal;
+	line-height: 1.12;
+}
+
+.hero h1 {
+	font-size: clamp(52px, 6vw, 88px);
+	margin: 22px 0;
+}
+
+.hero p {
+	font:
+		20px/1.6 Georgia,
+		serif;
+	max-width: 580px;
+}
+
+.heroArt {
+	justify-content: center;
+	align-items: center;
+	/* background: #e6e4d9; */
+
+	display: flex;
+}
+
+.heroLogo {
+	display: block;
+	width: 100%;
+	max-width: 410px;
+	height: auto;
+	box-shadow: 0 15px 45px #263931;
+}
+
+.section {
+	padding: 100px 8%;
+}
+
+.intro {
+	background: #e6e4d9;
+	display: grid;
+	grid-template-columns: 1fr 1.4fr;
+	gap: 10%;
+	border-top: 1px solid #cfcbbd;
+}
+
+.pageRoot h2 {
+	font-size: clamp(38px, 4vw, 58px);
+	margin: 18px 0 25px;
+}
+
+.large {
+	font:
+		26px/1.5 Georgia,
+		serif;
+}
+
+.band {
+	background: #e6e4d9;
+}
+
+.sectionHead {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	gap: 30px;
+	margin-bottom: 35px;
+}
+
+.sectionHead p {
+	max-width: 430px;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.card {
+	border-top: 1px solid #879488;
+	padding: 25px 10px 0 0;
+}
+
+.number {
+	font:
+		italic 19px Georgia,
+		serif;
+	color: #a9884d;
+}
+
+.card h3 {
+	font-size: 28px;
+	min-height: 62px;
+}
+
+.card p {
+	color: #53645b;
+}
+
+.link {
+	display: inline-block;
+	margin-top: 15px;
+	text-decoration: none;
+	border-bottom: 1px solid #7a371c;
+	padding-bottom: 4px;
+}
+
+.legacy {
+	color: #0f0f0e;
+	background: #98958e;
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+	gap: 12%;
+	align-items: center;
+}
+
+.legacy h2 {
+	font-family: Georgia, serif;
+	font-size: clamp(42px, 4.5vw, 65px);
+	line-height: 1.15;
+	margin: 25px 0 35px;
+}
+.legacy p {
+	font-size: 17px;
+	line-height: 1.9;
+	margin-bottom: 22px;
+	color: #0f0f0e;
+	max-width: 650px;
+}
+.legacy blockquote {
+	margin: 0;
+	padding-left: 25px;
+	border-left: 2px solid #ffe99f;
+	font:
+		italic 30px/1.6 Georgia,
+		serif;
+	color: #ffe99f;
+}
+.legacy blockquote span {
+	display: block;
+	font-size: 75px;
+	line-height: 0.7;
+	color: #ffe99f;
+}
+.quoteLine {
+	width: 45px;
+	height: 1px;
+	background: #e1c998;
+	margin: 30px 0 15px;
+}
+
+.board {
+	color: #0f0f0e;
+	background: #98958e;
+	display: grid;
+	grid-template-columns: 0.75fr 1.25fr;
+	gap: 7%;
+}
+
+.boardMembers {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 32px;
+}
+
+.boardMember {
+	border-top: 1px solid #879488;
+	padding-top: 20px;
+}
+
+.boardMember h3 {
+	font-size: 26px;
+	margin: 5px 0 12px;
+}
+
+.boardMember p {
+	font-size: 13px;
+	margin: 0;
+}
+
+.boardMember .link {
+	font-size: 13px;
+}
+
+.formWrap {
+	display: grid;
+	grid-template-columns: 0.8fr 1.2fr;
+	gap: 10%;
+}
+
+.proposalForm {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.proposalForm label {
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.proposalForm input,
+.proposalForm textarea,
+.proposalForm select {
+	display: block;
+	width: 100%;
+	margin-top: 8px;
+	border: 1px solid #b9bfb4;
+	background: #faf9f4;
+	padding: 13px;
+	font:
+		16px Arial,
+		sans-serif;
+	color: #263931;
+}
+
+.proposalForm textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+.full {
+	grid-column: 1 / -1;
+}
+
+.hint {
+	font-size: 13px;
+	color: #596b60;
+}
+
+.status {
+	font-size: 14px;
+}
+
+.output {
+	min-height: 220px;
+}
+
+.footer {
+	color: #000000;
+	background: #98958e;
+	padding: 50px 4%;
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.footer strong {
+	font:
+		20px Georgia,
+		serif;
+	letter-spacing: 0.1em;
+}
+
+.footer small {
+	display: block;
+	margin-top: 8px;
+}
+
+.organizationLogo {
+	width: 94px;
+	height: auto;
+	display: block;
+}
+
+@media (max-width: 800px) {
+	.header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.nav {
+		flex-wrap: wrap;
+		gap: 14px;
+	}
+
+	.nav a {
+		font-size: 11px;
+	}
+
+	.hero,
+	.intro,
+	.legacy,
+	.board,
+	.formWrap {
+		grid-template-columns: 1fr;
+	}
+
+	.heroCopy {
+		/* padding: 70px 8%; */
+	}
+
+	.heroArt {
+		min-height: 260px;
+	}
+
+	.section {
+		padding: 70px 7%;
+	}
+
+	.cards {
+		grid-template-columns: 1fr;
+	}
+
+	.card h3 {
+		min-height: 0;
+	}
+
+	.sectionHead {
+		display: block;
+	}
+
+	.footer {
+		flex-direction: column;
+	}
+
+	.proposalForm {
+		grid-template-columns: 1fr;
+	}
+
+	.proposalForm > * {
+		grid-column: 1 !important;
+	}
+
+	.organizationLogo {
+		width: 75px;
+	}
+
+	.brand strong {
+		font-size: 19px;
+	}
+
+	.brand small {
+		font-size: 8px;
+	}
+
+	.board {
+		grid-template-columns: 1fr;
+	}
+
+	.boardMembers {
+		grid-template-columns: 1fr;
+	}
+
+	.heroLogo {
+		max-width: 300px;
+	}
+}
