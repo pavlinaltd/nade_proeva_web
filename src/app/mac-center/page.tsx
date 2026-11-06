@@ -50,11 +50,7 @@ export default function MacCenterPage() {
 		<div className={styles.pageRoot}>
 			<main>
 				{/* past has a future - intro */}
-				<section
-					className={styles.hero}
-					id="home"
-					style={{ textAlign: "justify" }}
-				>
+				<section className={styles.hero} id="home">
 					<div className={styles.heroCopy}>
 						<div className={styles.eyebrow}>
 							History · Scholarship · Education
@@ -64,23 +60,25 @@ export default function MacCenterPage() {
 							Keeping historical inquiry alive through research,
 							education, and meaningful collaboration.
 						</p>
-						<a
-							className={styles.button}
-							href="#mission"
-							style={{ marginRight: "70px", marginTop: "70px" }}
-						>
-							Discover our mission
-						</a>{" "}
-						<a
-							className={`${styles.button} ${styles.light}`}
-							href="#collaborate"
-						>
-							Work with us
-						</a>
+						<div className={styles.heroButtons}>
+							<a
+								className={styles.button}
+								href="#mission"
+								// style={{ marginRight: "70px", marginTop: "70px" }}
+							>
+								Discover our mission
+							</a>
+							<a
+								className={`${styles.button} ${styles.light}`}
+								href="#collaborate"
+							>
+								Work with us
+							</a>
+						</div>
 					</div>
 
 					<div className={styles.heroArt}>
-						<VideoPlayer className="video-player w-full max-w-[550px] rounded-lg mx-auto">
+						<VideoPlayer className={styles.heroVideo}>
 							<VideoPlayerContent
 								crossOrigin=""
 								preload="auto"
@@ -92,12 +90,6 @@ export default function MacCenterPage() {
 								loop
 								playsInline
 							/>
-							{/* <VideoPlayerControlBar>
-								<VideoPlayerPlayButton />
-								<VideoPlayerTimeRange />
-								<VideoPlayerMuteButton />
-								<VideoPlayerFullscreenButton />
-							</VideoPlayerControlBar> */}
 						</VideoPlayer>
 					</div>
 				</section>
@@ -106,27 +98,28 @@ export default function MacCenterPage() {
 				<section
 					className={`${styles.section} ${styles.intro}`}
 					id="mission"
-					style={{ textAlign: "justify" }}
 				>
 					<div>
 						<div className={styles.eyebrow}>01 / Our purpose</div>
-						<h2>Knowledge for generations to come.</h2>
+						<p style={{ fontSize: "50px" }}>
+							Knowledge for generations to come.
+						</p>
 					</div>
-					<div style={{ textAlign: "justify" }}>
-						<h3>
+					<div>
+						<p>
 							MAKEDONIKA exists to advance the study of history,
 							preserve scholarly knowledge and inspire new
 							generations to approach the past with curiosity,
 							rigor, and independence.
-						</h3>
-						<h3 style={{ marginTop: "30px" }}>
+						</p>
+						<p style={{ marginTop: "30px" }}>
 							Named in honor of Professor Dr. Nade Proeva, the
 							center brings researchers, educators, students and
 							cultural institutions together. We seek to support
 							historical research, make resources more accessible
 							and create opportunities for learning and exchange
 							in Macedonia and beyond.
-						</h3>
+						</p>
 					</div>
 				</section>
 
@@ -234,9 +227,8 @@ export default function MacCenterPage() {
 				<section
 					className={`${styles.section} ${styles.band}`}
 					id="projects"
-					style={{ textAlign: "justify" }}
 				>
-					<div className={styles.sectionHead}>
+					<div className={styles.workheader}>
 						<div>
 							<div className={styles.eyebrow}>03 / Our work</div>
 							<h2>History in Action.</h2>
@@ -288,7 +280,6 @@ export default function MacCenterPage() {
 				</section>
 
 				{/* person behind the name */}
-
 				<section className={`${styles.section} ${styles.legacy}`}>
 					<div>
 						<div className={styles.eyebrow}>
@@ -298,7 +289,7 @@ export default function MacCenterPage() {
 						<h2>Professor Dr. Nade Proeva</h2>
 
 						<p style={{ textAlign: "justify" }}>
-							Historian, classicist, and teacher, Nade Proeva
+							Historian, classicist and teacher, Nade Proeva
 							(1949–2024) devoted her life to the study of ancient
 							Macedonia and to educating generations of students.
 						</p>
@@ -314,7 +305,7 @@ export default function MacCenterPage() {
 					<blockquote>
 						Her work continues through the questions we ask, the
 						knowledge we share and the students we inspire.
-						<div className={styles.quoteLine}></div>
+						{/* <div className={styles.quoteLine}></div> */}
 					</blockquote>
 				</section>
 
@@ -325,18 +316,10 @@ export default function MacCenterPage() {
 				>
 					<div>
 						<div className={styles.eyebrow}>05 / Work with us</div>
-						<p
-							style={{
-								fontSize: "60px",
-								lineHeight: "1.1",
-								marginTop: "20px",
-								marginBottom: "20px",
-								fontFamily: "Georgia, serif",
-							}}
-						>
+						<p className={styles.formtitle}>
 							Let’s make history together.
 						</p>
-						<p style={{ textAlign: "justify" }}>
+						<p className={styles.formsubtitle}>
 							Have an idea for research, education, preservation,
 							or a cultural initiative? Tell us about the project
 							and how you envision working with MAKEDONIKA.
@@ -394,7 +377,7 @@ export default function MacCenterPage() {
 						</label>
 
 						<label>
-							Funding or resources needed
+							Funding & resources needed
 							<input name="resources" placeholder="If known" />
 						</label>
 
